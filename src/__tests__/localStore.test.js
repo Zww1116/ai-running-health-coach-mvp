@@ -22,6 +22,7 @@ describe('local storage adapter', () => {
       storage: {
         getItem: (key) => memory.get(key) ?? null,
         setItem: (key, value) => memory.set(key, value),
+        removeItem: (key) => memory.delete(key),
       },
       key: 'test-records',
       fallback: [],
@@ -30,5 +31,23 @@ describe('local storage adapter', () => {
     adapter.save([{ id: 'today', running: { km: 10 } }]);
 
     expect(adapter.load()).toEqual([{ id: 'today', running: { km: 10 } }]);
+  });
+
+  it('clears saved records for the configured key', () => {
+    const memory = new Map();
+    const adapter = createStorageAdapter({
+      storage: {
+        getItem: (key) => memory.get(key) ?? null,
+        setItem: (key, value) => memory.set(key, value),
+        removeItem: (key) => memory.delete(key),
+      },
+      key: 'test-records',
+      fallback: [{ id: 'sample' }],
+    });
+
+    adapter.save([{ id: 'today' }]);
+    adapter.clear();
+
+    expect(adapter.load()).toEqual([{ id: 'sample' }]);
   });
 });

@@ -1,5 +1,45 @@
 # AI 运动健康管理 Web MVP
 
+## 长期记录：Supabase 云端账号版
+
+当前项目已预留并实现 Supabase 云端同步结构。没有配置 Supabase 时，应用仍会使用 `localStorage`，数据只保存在当前浏览器；配置 Supabase 并登录邮箱验证码后，记录会保存到 Supabase/PostgreSQL。
+
+### 隐私保护机制
+
+- 前端只使用 `VITE_SUPABASE_URL` 和 `VITE_SUPABASE_ANON_KEY`。
+- 不要把 Supabase `service_role` key 放进前端、GitHub Pages、`.env` 或仓库。
+- 云端表 `health_records` 必须开启 Row Level Security。
+- 每条记录都有 `user_id`，RLS 策略强制用户只能读取、写入、更新、删除自己的记录。
+- 当前阶段不会把健康记录发送给 OpenAI，也不会把饮食图片上传到云端 AI 识别服务。
+
+### Supabase 配置步骤
+
+1. 在 Supabase 创建项目。
+2. 打开 SQL Editor，复制执行 `supabase/schema.sql`。
+3. 在 Supabase 项目设置里找到 Project URL 和 anon public key。
+4. 本地开发时复制 `.env.example` 为 `.env`，填写：
+
+```bash
+VITE_SUPABASE_URL=你的 Supabase Project URL
+VITE_SUPABASE_ANON_KEY=你的 Supabase anon public key
+```
+
+5. GitHub Pages 部署时，在仓库 `Settings -> Secrets and variables -> Actions` 添加：
+
+```text
+VITE_SUPABASE_URL
+VITE_SUPABASE_ANON_KEY
+```
+
+6. 推送到 `main` 后 GitHub Actions 会重新构建公网版本。
+
+### 使用说明
+
+- 未登录：本机浏览器记录模式。
+- 登录后：云端同步模式，同一账号可跨设备同步。
+- 不同用户登录同一个网址，会看到各自独立的数据。
+- 页面提供导出 JSON、清除本机数据、删除当前账号云端记录。
+
 面向女性跑者的 React + Vite + Tailwind MVP。第一版使用本地示例数据和 `localStorage`，用规则版多专家 Agent 模拟 AI 分析流程；饮食图片识别可通过本机 Ollama 运行，不需要 OpenAI API。
 
 ## 功能

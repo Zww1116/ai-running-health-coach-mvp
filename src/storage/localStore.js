@@ -16,6 +16,9 @@ export function createStorageAdapter({ storage, key = DEFAULT_KEY, fallback = []
     save(records) {
       storage.setItem(key, JSON.stringify(records));
     },
+    clear() {
+      storage.removeItem(key);
+    },
   };
 }
 

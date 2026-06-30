@@ -1,23 +1,116 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Activity, Bot, Database, Sparkles } from 'lucide-react';
+import { getCurrentSession, sendLoginOtp, signOut, subscribeToAuth } from './auth/supabaseAuth';
 import { generateCoachAnalysis } from './ai/expertEngine';
+import { AuthPanel } from './components/AuthPanel';
 import { ExpertReports } from './components/ExpertReports';
 import { HeadCoachPlan } from './components/HeadCoachPlan';
 import { HistoryList } from './components/HistoryList';
+import { PrivacyPanel } from './components/PrivacyPanel';
 import { RecordForm } from './components/RecordForm';
 import { RuleAgentAnalysis } from './components/RuleAgentAnalysis';
 import { WeeklyOverview } from './components/WeeklyOverview';
 import { sampleProfile, sampleRecords } from './data/sampleData';
+import { createOptionalSupabaseClient } from './integrations/supabaseClient';
 import { createBrowserStorageAdapter } from './storage/localStore';
+import { createRecordRepository } from './storage/recordRepository';
+import { downloadRecordsExport } from './storage/exportRecords';
+import { createSupabaseRecordStore } from './storage/supabaseRecordStore';
 
 export default function App() {
+  const supabase = useMemo(() => createOptionalSupabaseClient(), []);
+  const supabaseClient = supabase.client;
   const storage = useMemo(() => createBrowserStorageAdapter(sampleRecords), []);
-  const [records, setRecords] = useState(() => storage.load());
+  const cloudStore = useMemo(() => {
+    if (!supabaseClient) return null;
+    return createSupabaseRecordStore({
+      client: supabaseClient,
+      getUser: async () => {
+        const { data, error } = await supabaseClient.auth.getUser();
+        if (error) throw new Error(error.message);
+        return data.user;
+      },
+    });
+  }, [supabaseClient]);
+  const repository = useMemo(
+    () =>
+      createRecordRepository({
+        localStore: storage,
+        cloudStore,
+        getSession: () => getCurrentSession(supabaseClient),
+      }),
+    [cloudStore, storage, supabaseClient],
+  );
+  const [records, setRecords] = useState(sampleRecords);
+  const [session, setSession] = useState(null);
+  const [storageMode, setStorageMode] = useState('local');
+  const [syncState, setSyncState] = useState({
+    message: supabase.message,
+    isReady: false,
+  });
   const analysis = useMemo(() => generateCoachAnalysis(sampleProfile, records), [records]);
 
   useEffect(() => {
-    storage.save(records);
-  }, [records, storage]);
+    let active = true;
+
+    getCurrentSession(supabaseClient)
+      .then((currentSession) => {
+        if (active) setSession(currentSession);
+      })
+      .catch((error) => {
+        if (active) setSyncState((current) => ({ ...current, message: error.message }));
+      });
+
+    return subscribeToAuth(supabaseClient, (nextSession) => {
+      setSession(nextSession);
+    });
+  }, [supabaseClient]);
+
+  useEffect(() => {
+    let active = true;
+    setSyncState((current) => ({ ...current, isReady: false }));
+
+    repository
+      .load()
+      .then((result) => {
+        if (!active) return;
+        setRecords(result.records);
+        setStorageMode(result.mode);
+        setSyncState({ message: result.message, isReady: true });
+      })
+      .catch((error) => {
+        if (!active) return;
+        setRecords(storage.load());
+        setStorageMode('local');
+        setSyncState({
+          message: `云端同步失败，已显示本机记录：${error.message}`,
+          isReady: true,
+        });
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [repository, session, storage]);
+
+  useEffect(() => {
+    if (!syncState.isReady) return;
+
+    repository
+      .save(records)
+      .then((result) => {
+        setStorageMode(result.mode);
+        setSyncState((current) => ({ ...current, message: result.message }));
+      })
+      .catch((error) => {
+        storage.save(records);
+        setStorageMode('local');
+        setSyncState((current) => ({
+          ...current,
+          message: `云端保存失败，已保存在本机：${error.message}`,
+        }));
+      });
+  }, [records, repository, storage, syncState.isReady]);
 
   function addRecord(record) {
     setRecords((current) => {
@@ -28,6 +121,52 @@ export default function App() {
 
   function resetData() {
     setRecords(sampleRecords);
+  }
+
+  async function handleSendOtp(email) {
+    try {
+      await sendLoginOtp(supabaseClient, email);
+      setSyncState((current) => ({ ...current, message: '登录验证码已发送，请检查邮箱。' }));
+    } catch (error) {
+      setSyncState((current) => ({ ...current, message: error.message }));
+    }
+  }
+
+  async function handleSignOut() {
+    try {
+      await signOut(supabaseClient);
+      setSession(null);
+      setSyncState((current) => ({ ...current, message: '已退出云端账号，当前使用本机记录。' }));
+    } catch (error) {
+      setSyncState((current) => ({ ...current, message: error.message }));
+    }
+  }
+
+  function handleExport() {
+    downloadRecordsExport(records);
+  }
+
+  function handleClearLocal() {
+    repository.clearLocal();
+    if (storageMode === 'local') {
+      setRecords([]);
+    }
+    setSyncState((current) => ({
+      ...current,
+      message:
+        storageMode === 'cloud'
+          ? '已清除本机浏览器缓存，云端记录不受影响。'
+          : '已清除本机浏览器记录。',
+    }));
+  }
+
+  async function handleDeleteCloud() {
+    try {
+      const result = await repository.deleteCloudRecords();
+      setSyncState((current) => ({ ...current, message: result.message }));
+    } catch (error) {
+      setSyncState((current) => ({ ...current, message: error.message }));
+    }
   }
 
   return (
@@ -60,6 +199,19 @@ export default function App() {
       </header>
 
       <div className="mx-auto grid max-w-7xl gap-5 px-4 py-5 lg:px-6">
+        <AuthPanel
+          authState={{ session, supabaseStatus: supabase.status }}
+          syncState={syncState}
+          onSendOtp={handleSendOtp}
+          onSignOut={handleSignOut}
+        />
+        <PrivacyPanel
+          mode={storageMode}
+          records={records}
+          onExport={handleExport}
+          onClearLocal={handleClearLocal}
+          onDeleteCloud={handleDeleteCloud}
+        />
         <WeeklyOverview analysis={analysis} monthlyRunningKm={sampleProfile.runningMonthlyKm} />
         <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_360px]">
           <div className="grid gap-5">
