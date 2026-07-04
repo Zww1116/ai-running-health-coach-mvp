@@ -4,6 +4,8 @@ import { requestAiCoachAnalysis } from '../integrations/openaiClient';
 import { parseCorosTrainingHubCsv } from '../integrations/corosFileParser';
 import { syncHealthRecords } from '../integrations/supabaseClient';
 import { getNutritionVisionMode } from '../integrations/nutritionVisionClient';
+import { syncLatestCorosSleepRecovery, syncLatestTerraRecovery } from '../integrations/recoverySyncClient';
+import { uploadRecordAttachment } from '../integrations/supabaseStorageClient';
 import {
   buildOllamaNutritionRequest,
   normalizeNutritionEstimate,
@@ -55,6 +57,24 @@ describe('data import adapters', () => {
       provider: 'Supabase/PostgreSQL',
       status: 'not_configured',
       message: 'Supabase is not configured. Records are stored in localStorage.',
+    });
+  });
+
+  it('keeps sleep recovery API sync disabled until a real provider is configured', async () => {
+    await expect(syncLatestCorosSleepRecovery()).resolves.toMatchObject({
+      provider: 'COROS',
+      status: 'not_configured',
+    });
+    await expect(syncLatestTerraRecovery()).resolves.toMatchObject({
+      provider: 'Terra',
+      status: 'not_configured',
+    });
+  });
+
+  it('keeps record attachment cloud uploads disabled in the local-image phase', async () => {
+    await expect(uploadRecordAttachment()).resolves.toMatchObject({
+      provider: 'Supabase Storage',
+      status: 'not_configured',
     });
   });
 

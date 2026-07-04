@@ -8,8 +8,10 @@ import { HeadCoachPlan } from './components/HeadCoachPlan';
 import { HistoryList } from './components/HistoryList';
 import { PrivacyPanel } from './components/PrivacyPanel';
 import { RecordForm } from './components/RecordForm';
+import { SleepRecoveryPage } from './components/SleepRecoveryPage';
 import { RuleAgentAnalysis } from './components/RuleAgentAnalysis';
 import { WeeklyOverview } from './components/WeeklyOverview';
+import { buildRecordFromForm, initialForm } from './components/recordFormModel';
 import { sampleProfile, sampleRecords } from './data/sampleData';
 import { createOptionalSupabaseClient } from './integrations/supabaseClient';
 import { createBrowserStorageAdapter } from './storage/localStore';
@@ -119,6 +121,22 @@ export default function App() {
     });
   }
 
+  function saveSleepRecord({ date, sleep, attachments = [] }) {
+    setRecords((current) => {
+      const existing = current.find((item) => item.date === date);
+      const base = existing ?? buildRecordFromForm({ ...initialForm, date, attachments: [] });
+      const merged = {
+        ...base,
+        id: date,
+        date,
+        sleep,
+        attachments: mergeAttachments(base.attachments, attachments),
+      };
+      const withoutSameDate = current.filter((item) => item.date !== date);
+      return [...withoutSameDate, merged].sort((a, b) => a.date.localeCompare(b.date));
+    });
+  }
+
   function resetData() {
     setRecords(sampleRecords);
   }
@@ -218,6 +236,7 @@ export default function App() {
             <HeadCoachPlan report={analysis.headCoach} riskLevel={analysis.riskLevel} />
             <RuleAgentAnalysis />
             <ExpertReports specialists={analysis.specialists} />
+            <SleepRecoveryPage onSaveSleepRecord={saveSleepRecord} />
             <RecordForm onAddRecord={addRecord} onResetData={resetData} />
           </div>
           <HistoryList records={records} />
@@ -225,6 +244,14 @@ export default function App() {
       </div>
     </main>
   );
+}
+
+function mergeAttachments(existing = [], incoming = []) {
+  const byId = new Map();
+  [...existing, ...incoming].forEach((item) => {
+    if (item?.id) byId.set(item.id, item);
+  });
+  return [...byId.values()];
 }
 
 function Badge({ icon, text }) {

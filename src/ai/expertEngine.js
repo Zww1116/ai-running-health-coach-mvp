@@ -6,8 +6,11 @@ const specialists = [
     analyze: ({ profile, week, latest }) => {
       const targetWeekKm = profile.runningMonthlyKm / 4;
       const delta = week.runningKm - targetWeekKm;
+      const poorSleepRecovery = isPoorSleepRecovery(latest.sleep);
       const advice =
-        delta >= 4
+        poorSleepRecovery
+          ? '睡眠恢复不足，今天把跑步改为 20-40 分钟恢复跑或完全休息，取消速度训练和长距离加量。'
+          : delta >= 4
           ? '本周跑量略高于目标，下一次跑步建议保持轻松配速，避免继续叠加强度。'
           : delta <= -4
             ? '本周跑量低于 200km/月节奏，可补一次 8-10km 轻松跑，但不追强度。'
@@ -103,6 +106,9 @@ export function summarizeWeek(records) {
     runningKm: round(sum(ordered, (item) => item.running?.km ?? 0), 1),
     strengthSessions: ordered.filter((item) => item.strength?.trained).length,
     averageSleepHours: round(sum(ordered, (item) => item.sleep?.hours ?? 0) / count, 1),
+    averageDeepSleepHours: round(sum(ordered, (item) => item.sleep?.deepHours ?? 0) / count, 1),
+    averageHrv: Math.round(sum(ordered, (item) => item.sleep?.hrv ?? 0) / count),
+    averageWakeFatigue: round(sum(ordered, (item) => item.sleep?.wakeFatigue ?? 0) / count, 1),
     averageProtein: Math.round(sum(ordered, (item) => item.nutrition?.protein ?? 0) / count),
     averageHydration: round(sum(ordered, (item) => item.nutrition?.hydration ?? 0) / count, 1),
     latestWeightKg: latest.body?.weightKg ?? null,
@@ -135,7 +141,16 @@ export function createEmptyRecord() {
     strength: { trained: false, focus: '', minutes: 0 },
     nutrition: { calories: 0, protein: 0, carbs: 0, hydration: 0 },
     body: { weightKg: null },
-    sleep: { hours: 0, quality: 0 },
+    sleep: {
+      hours: 0,
+      deepHours: 0,
+      lightHours: 0,
+      remHours: 0,
+      quality: 0,
+      restingHr: 0,
+      hrv: 0,
+      wakeFatigue: 0,
+    },
     cycle: { phase: 'unknown', day: 1, symptoms: [] },
     pain: { area: 'none', level: 0, note: '' },
   };
@@ -172,11 +187,11 @@ function buildHeadCoachReport({ week, latest, riskLevel, specialistReports }) {
 }
 
 function getRiskLevel(week, latest) {
-  if (week.painMax >= 5 || latest.sleep.hours < 6 || latest.cycle.phase === 'menstruation') {
+  if (week.painMax >= 5 || latest.sleep.hours < 6 || latest.sleep?.wakeFatigue >= 9 || latest.cycle.phase === 'menstruation') {
     return 'high';
   }
 
-  if (week.painMax >= 3 || week.averageSleepHours < 7) {
+  if (week.painMax >= 3 || week.averageSleepHours < 7 || isPoorSleepRecovery(latest.sleep)) {
     return 'medium';
   }
 
@@ -190,6 +205,22 @@ function sum(items, selector) {
 function round(value, digits) {
   const factor = 10 ** digits;
   return Math.round(value * factor) / factor;
+}
+
+function isPoorSleepRecovery(sleep = {}) {
+  const hours = Number(sleep.hours ?? 0);
+  const quality = Number(sleep.quality ?? 0);
+  const deepHours = Number(sleep.deepHours ?? 0);
+  const hrv = Number(sleep.hrv ?? 0);
+  const wakeFatigue = Number(sleep.wakeFatigue ?? 0);
+
+  return (
+    hours < 7 ||
+    quality <= 2 ||
+    (deepHours > 0 && deepHours < 1) ||
+    (hrv > 0 && hrv < 35) ||
+    wakeFatigue >= 7
+  );
 }
 
 function formatSymptoms(symptoms) {

@@ -49,10 +49,26 @@ describe('record form model', () => {
       hydration: '2.5',
       weightKg: '56.7',
       sleepHours: '7.8',
+      deepSleepHours: '1.4',
+      lightSleepHours: '4.2',
+      remSleepHours: '2.2',
       sleepQuality: '4',
+      restingHr: '48',
+      hrv: '62',
+      wakeFatigue: '3',
       cyclePhase: 'luteal',
       cycleDay: '15',
       cycleSymptoms: 'bloating, tired',
+      attachments: [
+        {
+          id: 'img-1',
+          type: 'meal',
+          name: 'lunch.jpg',
+          mimeType: 'image/jpeg',
+          size: 1234,
+          createdAt: '2026-06-28T08:00:00.000Z',
+        },
+      ],
     });
 
     expect(record).toEqual({
@@ -72,8 +88,27 @@ describe('record form model', () => {
       strength: { trained: true, focus: '髋稳定', minutes: 40 },
       nutrition: { calories: 2200, protein: 96, carbs: 260, hydration: 2.5 },
       body: { weightKg: 56.7 },
-      sleep: { hours: 7.8, quality: 4 },
+      sleep: {
+        hours: 7.8,
+        deepHours: 1.4,
+        lightHours: 4.2,
+        remHours: 2.2,
+        quality: 4,
+        restingHr: 48,
+        hrv: 62,
+        wakeFatigue: 3,
+      },
       cycle: { phase: 'luteal', day: 15, symptoms: ['bloating', 'tired'] },
+      attachments: [
+        {
+          id: 'img-1',
+          type: 'meal',
+          name: 'lunch.jpg',
+          mimeType: 'image/jpeg',
+          size: 1234,
+          createdAt: '2026-06-28T08:00:00.000Z',
+        },
+      ],
     });
   });
 });

@@ -19,11 +19,18 @@ export const initialForm = {
   hydration: 2.4,
   weightKg: 56.8,
   sleepHours: 7.5,
+  deepSleepHours: 1.3,
+  lightSleepHours: 4.4,
+  remSleepHours: 1.8,
   sleepQuality: 4,
+  restingHr: 48,
+  hrv: 58,
+  wakeFatigue: 3,
   cyclePhase: 'luteal',
   cycleDay: 14,
   cycleSymptoms: '',
   painNote: '',
+  attachments: [],
 };
 
 export const recordSections = [
@@ -51,7 +58,16 @@ export const recordSections = [
   },
   {
     title: '睡眠记录',
-    fields: ['sleepHours', 'sleepQuality'],
+    fields: [
+      'sleepHours',
+      'deepSleepHours',
+      'lightSleepHours',
+      'remSleepHours',
+      'sleepQuality',
+      'restingHr',
+      'hrv',
+      'wakeFatigue',
+    ],
   },
   {
     title: '经期记录',
@@ -92,7 +108,16 @@ export function buildRecordFromForm(form) {
       hydration: Number(form.hydration),
     },
     body: { weightKg: Number(form.weightKg) },
-    sleep: { hours: Number(form.sleepHours), quality: Number(form.sleepQuality) },
+    sleep: {
+      hours: Number(form.sleepHours),
+      deepHours: Number(form.deepSleepHours ?? 0),
+      lightHours: Number(form.lightSleepHours ?? 0),
+      remHours: Number(form.remSleepHours ?? 0),
+      quality: Number(form.sleepQuality),
+      restingHr: Number(form.restingHr ?? 0),
+      hrv: Number(form.hrv ?? 0),
+      wakeFatigue: Number(form.wakeFatigue ?? 0),
+    },
     cycle: {
       phase: form.cyclePhase,
       day: Number(form.cycleDay),
@@ -101,5 +126,6 @@ export function buildRecordFromForm(form) {
         .map((item) => item.trim())
         .filter(Boolean),
     },
+    attachments: Array.isArray(form.attachments) ? form.attachments : [],
   };
 }

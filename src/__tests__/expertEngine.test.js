@@ -44,4 +44,31 @@ describe('expert engine', () => {
     expect(summary.latestWeightKg).toBe(56.8);
     expect(summary.painMax).toBe(3);
   });
+
+  it('lowers running and head coach advice when sleep recovery is poor', () => {
+    const poorRecoveryRecords = [
+      {
+        ...sampleRecords[0],
+        sleep: {
+          hours: 6.4,
+          deepHours: 0.7,
+          lightHours: 4.7,
+          remHours: 1,
+          quality: 2,
+          restingHr: 58,
+          hrv: 32,
+          wakeFatigue: 8,
+        },
+        pain: { area: 'none', level: 0, note: '' },
+        cycle: { phase: 'follicular', day: 8, symptoms: [] },
+      },
+    ];
+
+    const analysis = generateCoachAnalysis(sampleProfile, poorRecoveryRecords);
+    const running = analysis.specialists.find((item) => item.id === 'running');
+
+    expect(analysis.riskLevel).toBe('medium');
+    expect(running.advice).toContain('恢复跑');
+    expect(analysis.headCoach.dailyPlan.join(' ')).toContain('低强度');
+  });
 });

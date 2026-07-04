@@ -1,5 +1,17 @@
 # AI 运动健康管理 Web MVP
 
+## 睡眠与恢复记录模块
+
+当前版本新增独立的“睡眠与恢复记录”模块，适合把 COROS 睡眠数据先手动录入系统：
+
+- 支持记录睡眠时长、深睡、浅睡、REM、睡眠质量、夜间静息心率、HRV、起床疲劳感。
+- 支持上传 COROS 睡眠截图、COROS 运动截图、饮食照片、体重/体脂截图。
+- 图片只保存到当前浏览器的 IndexedDB，本阶段不会上传到 Supabase、OpenAI 或任何图片识别服务。
+- 健康记录里只保存图片元数据，例如图片 ID、类型、文件名和大小；换设备或清理浏览器数据后，本地图片需要重新上传。
+- 跑步教练和总教练会读取睡眠不足、深睡偏少、HRV 偏低、睡眠质量偏低、起床疲劳感偏高等信号，并自动把当天建议调整为恢复跑、低强度有氧或休息。
+- 已预留 `src/integrations/recoverySyncClient.js`，后续可接 COROS / Terra API 自动同步睡眠与恢复数据。
+- 已预留 `src/integrations/supabaseStorageClient.js`，后续可接 Supabase Storage 保存图片；当前阶段保持本地图片优先，降低隐私泄露风险。
+
 ## 长期记录：Supabase 云端账号版
 
 当前项目已预留并实现 Supabase 云端同步结构。没有配置 Supabase 时，应用仍会使用 `localStorage`，数据只保存在当前浏览器；配置 Supabase 并登录邮箱验证码后，记录会保存到 Supabase/PostgreSQL。

@@ -10,7 +10,8 @@ export function headCoachAgent(agentReports, data) {
     overallRiskLevel = 'high';
   }
 
-  const runLoadHighAndSleepLow = Number(data.run?.distanceKm ?? 0) > 15 && Number(data.sleepHours ?? 0) < 7;
+  const recoveryPoor = isPoorSleepRecovery(data);
+  const runLoadHighAndSleepLow = (Number(data.run?.distanceKm ?? 0) > 15 && Number(data.sleepHours ?? 0) < 7) || recoveryPoor;
   const nutritionPriority = ['medium', 'high'].includes(nutrition?.riskLevel) || ['medium', 'high'].includes(femaleHealth?.riskLevel);
 
   return {
@@ -20,7 +21,7 @@ export function headCoachAgent(agentReports, data) {
       ? '今天优先补足能量、蛋白、碳水、健康脂肪与补铁食物，再追求训练质量。'
       : '营养支持基本可维持，训练前后继续保留碳水和蛋白。 ',
     recoveryAdvice: runLoadHighAndSleepLow
-      ? '跑步负荷偏高且睡眠不足，建议安排恢复日并把睡眠目标提高到 7.5 小时以上。'
+      ? '睡眠或恢复指标不足，建议安排恢复日，并把睡眠目标提高到 7.5 小时以上。'
       : '维持睡眠、放松和疼痛监控，避免连续叠加强度。',
     keyRisks,
     tomorrowAdjustment: buildTomorrowAdjustment(overallRiskLevel, nutritionPriority),
@@ -64,4 +65,21 @@ function buildTomorrowAdjustment(overallRiskLevel, nutritionPriority) {
     return '明天训练前确认主食和蛋白补足，再决定是否进行质量课。';
   }
   return '明天可按计划训练，保留热身、跑后放松和疼痛评分记录。';
+}
+
+function isPoorSleepRecovery(data) {
+  const sleep = data.sleep ?? {};
+  const sleepHours = Number(data.sleepHours ?? sleep.hours ?? 0);
+  const quality = Number(sleep.quality ?? 0);
+  const deepSleepHours = Number(sleep.deepHours ?? sleep.deepSleepHours ?? 0);
+  const hrv = Number(sleep.hrv ?? 0);
+  const wakeFatigue = Number(sleep.wakeFatigue ?? data.fatigueLevel ?? 0);
+
+  return (
+    sleepHours < 7 ||
+    quality <= 2 ||
+    (deepSleepHours > 0 && deepSleepHours < 1) ||
+    (hrv > 0 && hrv < 35) ||
+    wakeFatigue >= 7
+  );
 }

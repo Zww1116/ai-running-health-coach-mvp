@@ -9,7 +9,23 @@ export function runCoachAgent(data) {
   const distanceKm = Number(run.distanceKm ?? 0);
   const sleepHours = Number(data.sleepHours ?? 0);
   const fatigueLevel = Number(data.fatigueLevel ?? 0);
+  const sleep = data.sleep ?? {};
+  const deepSleepHours = Number(sleep.deepHours ?? sleep.deepSleepHours ?? 0);
+  const hrv = Number(sleep.hrv ?? 0);
+  const wakeFatigue = Number(sleep.wakeFatigue ?? fatigueLevel);
   const intensity = run.intensity;
+  const poorSleepRecovery =
+    sleepHours < 7 ||
+    Number(sleep.quality ?? 0) <= 2 ||
+    (deepSleepHours > 0 && deepSleepHours < 1) ||
+    (hrv > 0 && hrv < 35) ||
+    wakeFatigue >= 7;
+
+  if (poorSleepRecovery) {
+    findings.push('睡眠恢复信号偏弱，训练适应能力可能下降。');
+    recommendations.push('今天降低强度，优先 20-40 分钟恢复跑、散步或完全休息，取消速度训练。');
+    risks.push(sleepHours < 6 || wakeFatigue >= 9 ? 'high' : 'medium');
+  }
 
   if (distanceKm > 15 && sleepHours < 7) {
     findings.push('跑步距离超过 15km 且睡眠不足 7 小时，训练负荷和恢复压力叠加。');

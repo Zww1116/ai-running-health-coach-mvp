@@ -15,6 +15,7 @@ import {
 import { syncLatestCorosRunning, syncLatestCorosStrength } from '../integrations/corosClient';
 import { parseCorosTrainingHubCsv } from '../integrations/corosFileParser';
 import { estimateNutritionFromMealImage } from '../integrations/nutritionVisionClient';
+import { RecordImageUploader } from './RecordImageUploader';
 import { buildRecordFromForm, defaultOpenRecordSections, initialForm } from './recordFormModel';
 
 export function RecordForm({ onAddRecord, onResetData }) {
@@ -132,6 +133,11 @@ export function RecordForm({ onAddRecord, onResetData }) {
           </button>
         </div>
 
+        <RecordImageUploader
+          value={form.attachments}
+          onChange={(attachments) => setForm({ attachments })}
+        />
+
         <FormSection
           title="跑步记录"
           icon={<Activity size={18} />}
@@ -203,7 +209,13 @@ export function RecordForm({ onAddRecord, onResetData }) {
           onToggle={() => toggleSection('睡眠记录')}
         >
           <Input label="睡眠 h" type="number" value={form.sleepHours} onChange={(sleepHours) => setForm({ sleepHours })} />
+          <Input label="深睡 h" type="number" value={form.deepSleepHours} onChange={(deepSleepHours) => setForm({ deepSleepHours })} />
+          <Input label="浅睡 h" type="number" value={form.lightSleepHours} onChange={(lightSleepHours) => setForm({ lightSleepHours })} />
+          <Input label="REM h" type="number" value={form.remSleepHours} onChange={(remSleepHours) => setForm({ remSleepHours })} />
           <Input label="睡眠质量 1-5" type="number" min="1" max="5" value={form.sleepQuality} onChange={(sleepQuality) => setForm({ sleepQuality })} />
+          <Input label="夜间静息心率" type="number" value={form.restingHr} onChange={(restingHr) => setForm({ restingHr })} />
+          <Input label="HRV" type="number" value={form.hrv} onChange={(hrv) => setForm({ hrv })} />
+          <Input label="起床疲劳感 1-10" type="number" min="1" max="10" value={form.wakeFatigue} onChange={(wakeFatigue) => setForm({ wakeFatigue })} />
         </FormSection>
 
         <FormSection

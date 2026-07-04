@@ -88,4 +88,37 @@ describe('rule-based health agents', () => {
     expect(femaleHealth.riskLevel).toBe('medium');
     expect(result.headCoach.nutritionAdvice).toContain('优先');
   });
+
+  it('lowers daily training advice when sleep recovery metrics are poor', () => {
+    const result = analyzeHealthData({
+      ...sampleAgentDailyHealthData,
+      sleepHours: 6.8,
+      fatigueLevel: 7,
+      sleep: {
+        deepHours: 0.6,
+        lightHours: 4.8,
+        remHours: 1.1,
+        quality: 2,
+        restingHr: 58,
+        hrv: 30,
+        wakeFatigue: 8,
+      },
+      run: {
+        ...sampleAgentDailyHealthData.run,
+        distanceKm: 8,
+        intensity: 'easy',
+      },
+      pain: {
+        ...sampleAgentDailyHealthData.pain,
+        knee: 0,
+      },
+    });
+
+    const runCoach = result.specialists.find((report) => report.agentName === '跑步教练 Agent');
+
+    expect(runCoach.riskLevel).toBe('medium');
+    expect(runCoach.recommendations.join(' ')).toContain('恢复跑');
+    expect(result.headCoach.todayTrainingAdvice).toContain('低强度');
+    expect(result.headCoach.recoveryAdvice).toContain('睡眠');
+  });
 });
