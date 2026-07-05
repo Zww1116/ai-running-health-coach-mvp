@@ -129,3 +129,55 @@ export function buildRecordFromForm(form) {
     attachments: Array.isArray(form.attachments) ? form.attachments : [],
   };
 }
+
+export function buildDailyHealthDataFromRecord(record) {
+  return {
+    date: record.date,
+    bodyWeight: Number(record.body?.weightKg ?? 0),
+    sleepHours: Number(record.sleep?.hours ?? 0),
+    fatigueLevel: Number(record.sleep?.wakeFatigue ?? record.running?.rpe ?? 0),
+    menstrualPhase: record.cycle?.phase ?? '',
+    sleep: {
+      deepHours: Number(record.sleep?.deepHours ?? 0),
+      lightHours: Number(record.sleep?.lightHours ?? 0),
+      remHours: Number(record.sleep?.remHours ?? 0),
+      quality: Number(record.sleep?.quality ?? 0),
+      restingHr: Number(record.sleep?.restingHr ?? 0),
+      hrv: Number(record.sleep?.hrv ?? 0),
+      wakeFatigue: Number(record.sleep?.wakeFatigue ?? 0),
+    },
+    run: {
+      distanceKm: Number(record.running?.km ?? 0),
+      durationMin: Number(record.running?.durationMin ?? 0),
+      avgPace: record.running?.pace ?? '',
+      avgHeartRate: Number(record.running?.avgHr ?? 0),
+      intensity: normalizeAgentRunIntensity(record.running?.type),
+    },
+    strength: {
+      trained: Boolean(record.strength?.trained),
+      bodyPart: record.strength?.focus ?? '',
+      durationMin: Number(record.strength?.minutes ?? 0),
+      intensity: 'medium',
+    },
+    nutrition: {
+      calories: Number(record.nutrition?.calories ?? 0),
+      proteinGram: Number(record.nutrition?.protein ?? 0),
+      carbsGram: Number(record.nutrition?.carbs ?? 0),
+      fatGram: 0,
+      ironRichFoods: false,
+      omega3Foods: false,
+      hydrationMl: Number(record.nutrition?.hydration ?? 0) * 1000,
+    },
+    pain: {
+      knee: 0,
+      hip: 0,
+      ankle: 0,
+      lowerBack: 0,
+    },
+  };
+}
+
+function normalizeAgentRunIntensity(type) {
+  if (['tempo', 'interval', 'long'].includes(type)) return type;
+  return 'easy';
+}

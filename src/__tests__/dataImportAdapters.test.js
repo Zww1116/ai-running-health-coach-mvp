@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { syncLatestCorosRunning, syncLatestCorosStrength } from '../integrations/corosClient';
 import { requestAiCoachAnalysis } from '../integrations/openaiClient';
-import { parseCorosTrainingHubCsv } from '../integrations/corosFileParser';
+import { parseCorosActivityFile, parseCorosTrainingHubCsv } from '../integrations/corosFileParser';
 import { syncHealthRecords } from '../integrations/supabaseClient';
 import { getNutritionVisionMode } from '../integrations/nutritionVisionClient';
 import { syncLatestCorosSleepRecovery, syncLatestTerraRecovery } from '../integrations/recoverySyncClient';
@@ -182,4 +182,118 @@ describe('data import adapters', () => {
       },
     });
   });
+
+  it('parses a GPX running file into editable form fields', () => {
+    const gpx = `<?xml version="1.0"?>
+<gpx><trk><name>Morning Run</name><trkseg>
+<trkpt lat="31.2304" lon="121.4737"><time>2026-07-04T00:00:00Z</time><extensions><gpxtpx:hr>140</gpxtpx:hr></extensions></trkpt>
+<trkpt lat="31.2376" lon="121.4737"><time>2026-07-04T00:05:00Z</time><extensions><gpxtpx:hr>150</gpxtpx:hr></extensions></trkpt>
+</trkseg></trk></gpx>`;
+
+    const result = parseCorosActivityFile({ fileName: 'run.gpx', content: gpx });
+
+    expect(result).toMatchObject({
+      source: 'COROS GPX',
+      activityType: 'running',
+      patch: {
+        date: '2026-07-04',
+        runningDurationMin: 5,
+        runningAvgHr: 145,
+        runningRpe: 4,
+      },
+    });
+    expect(result.patch.runningKm).toBeGreaterThan(0.7);
+    expect(result.patch.runningPace).toMatch(/\d+:\d{2}/);
+  });
+
+  it('parses a TCX running file into editable form fields', () => {
+    const tcx = `<?xml version="1.0"?>
+<TrainingCenterDatabase><Activities><Activity Sport="Running"><Id>2026-07-04T00:00:00Z</Id>
+<Lap StartTime="2026-07-04T00:00:00Z"><TotalTimeSeconds>1800</TotalTimeSeconds><DistanceMeters>5000</DistanceMeters>
+<Track>
+<Trackpoint><Time>2026-07-04T00:00:00Z</Time><DistanceMeters>0</DistanceMeters><HeartRateBpm><Value>140</Value></HeartRateBpm></Trackpoint>
+<Trackpoint><Time>2026-07-04T00:30:00Z</Time><DistanceMeters>5000</DistanceMeters><HeartRateBpm><Value>160</Value></HeartRateBpm></Trackpoint>
+</Track></Lap></Activity></Activities></TrainingCenterDatabase>`;
+
+    const result = parseCorosActivityFile({ fileName: 'run.tcx', content: tcx });
+
+    expect(result).toEqual({
+      source: 'COROS TCX',
+      activityType: 'running',
+      patch: {
+        date: '2026-07-04',
+        runningKm: 5,
+        runningType: 'easy',
+        runningDurationMin: 30,
+        runningPace: '6:00',
+        runningAvgHr: 150,
+        runningCadence: 0,
+        runningRpe: 4,
+        runningNote: 'COROS TCX 导入：run.tcx',
+      },
+    });
+  });
+
+  it('parses a FIT session summary into editable form fields', () => {
+    const result = parseCorosActivityFile({ fileName: 'run.fit', content: createMinimalFitSession() });
+
+    expect(result).toEqual({
+      source: 'COROS FIT',
+      activityType: 'running',
+      patch: {
+        date: '2026-07-04',
+        runningKm: 10,
+        runningType: 'easy',
+        runningDurationMin: 50,
+        runningPace: '5:00',
+        runningAvgHr: 152,
+        runningCadence: 0,
+        runningRpe: 4,
+        runningNote: 'COROS FIT 导入：run.fit',
+      },
+    });
+  });
+
+  it('gives a clear message for unsupported COROS file types', () => {
+    expect(() => parseCorosActivityFile({ fileName: 'run.xlsx', content: '' })).toThrow(
+      '支持 FIT、TCX、GPX 或 CSV 文件',
+    );
+  });
 });
+
+function createMinimalFitSession() {
+  const bytes = [];
+  const push = (...values) => bytes.push(...values);
+  const u16 = (value) => push(value & 0xff, (value >> 8) & 0xff);
+  const u32 = (value) => push(value & 0xff, (value >> 8) & 0xff, (value >> 16) & 0xff, (value >> 24) & 0xff);
+
+  push(14, 0x10);
+  u16(0);
+  u32(0);
+  push(0x2e, 0x46, 0x49, 0x54);
+  u16(0);
+
+  const dataStart = bytes.length;
+  push(0x40, 0, 0);
+  u16(20);
+  push(4);
+  push(2, 4, 0x86);
+  push(5, 4, 0x86);
+  push(13, 4, 0x86);
+  push(33, 1, 0x02);
+
+  push(0x00);
+  u32(Math.round(new Date('2026-07-04T00:00:00Z').getTime() / 1000 - 631065600));
+  u32(1000000);
+  u32(3000000);
+  push(152);
+
+  const dataSize = bytes.length - dataStart;
+  bytes[4] = dataSize & 0xff;
+  bytes[5] = (dataSize >> 8) & 0xff;
+  bytes[6] = (dataSize >> 16) & 0xff;
+  bytes[7] = (dataSize >> 24) & 0xff;
+
+  push(0, 0);
+  return new Uint8Array(bytes).buffer;
+}

@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { buildRecordFromForm, defaultOpenRecordSections, recordSections } from '../components/recordFormModel';
+import {
+  buildDailyHealthDataFromRecord,
+  buildRecordFromForm,
+  defaultOpenRecordSections,
+  recordSections,
+} from '../components/recordFormModel';
 
 describe('record form model', () => {
   it('defines five focused record sections with marathon running fields and pain note only', () => {
@@ -109,6 +114,64 @@ describe('record form model', () => {
           createdAt: '2026-06-28T08:00:00.000Z',
         },
       ],
+    });
+  });
+
+  it('maps imported running records into dailyHealthData for rule agents', () => {
+    const record = buildRecordFromForm({
+      date: '2026-07-04',
+      runningKm: 10,
+      runningType: 'easy',
+      runningDurationMin: 50,
+      runningPace: '5:00',
+      runningAvgHr: 152,
+      runningCadence: 0,
+      runningRpe: 4,
+      runningNote: 'COROS FIT 导入：run.fit',
+      painNote: '',
+      strengthTrained: false,
+      strengthFocus: '',
+      strengthMinutes: 0,
+      calories: 2100,
+      protein: 90,
+      carbs: 260,
+      hydration: 2.3,
+      weightKg: 50,
+      sleepHours: 7.5,
+      deepSleepHours: 1.4,
+      lightSleepHours: 4.2,
+      remSleepHours: 1.9,
+      sleepQuality: 4,
+      restingHr: 48,
+      hrv: 60,
+      wakeFatigue: 3,
+      cyclePhase: 'follicular',
+      cycleDay: 8,
+      cycleSymptoms: '',
+      attachments: [],
+    });
+
+    expect(buildDailyHealthDataFromRecord(record)).toMatchObject({
+      date: '2026-07-04',
+      bodyWeight: 50,
+      sleepHours: 7.5,
+      fatigueLevel: 3,
+      menstrualPhase: 'follicular',
+      run: {
+        distanceKm: 10,
+        durationMin: 50,
+        avgPace: '5:00',
+        avgHeartRate: 152,
+        intensity: 'easy',
+      },
+      sleep: {
+        deepHours: 1.4,
+        lightHours: 4.2,
+        remHours: 1.9,
+        hrv: 60,
+        restingHr: 48,
+        wakeFatigue: 3,
+      },
     });
   });
 });

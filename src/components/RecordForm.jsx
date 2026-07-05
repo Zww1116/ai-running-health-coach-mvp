@@ -13,7 +13,7 @@ import {
   Utensils,
 } from 'lucide-react';
 import { syncLatestCorosRunning, syncLatestCorosStrength } from '../integrations/corosClient';
-import { parseCorosTrainingHubCsv } from '../integrations/corosFileParser';
+import { parseCorosActivityFile } from '../integrations/corosFileParser';
 import { estimateNutritionFromMealImage } from '../integrations/nutritionVisionClient';
 import { RecordImageUploader } from './RecordImageUploader';
 import { buildRecordFromForm, defaultOpenRecordSections, initialForm } from './recordFormModel';
@@ -63,26 +63,25 @@ export function RecordForm({ onAddRecord, onResetData }) {
     }
   }
 
-  function importCorosFile(event) {
+  async function importCorosFile(event) {
     const file = event.target.files?.[0];
     if (!file) return;
 
-    const reader = new FileReader();
-    reader.onload = () => {
-      try {
-        const result = parseCorosTrainingHubCsv(String(reader.result));
-        setForm(result.patch);
-        setSyncMessage(
-          result.activityType === 'strength'
-            ? '已从 COROS CSV 导入力量训练记录。'
-            : '已从 COROS CSV 导入跑步记录。',
-        );
-      } catch (error) {
-        setSyncMessage(error instanceof Error ? error.message : 'COROS CSV 解析失败。');
-      }
-    };
-    reader.readAsText(file, 'utf-8');
-    event.target.value = '';
+    try {
+      const extension = file.name.split('.').pop()?.toLowerCase();
+      const content = extension === 'fit' ? await file.arrayBuffer() : await file.text();
+      const result = parseCorosActivityFile({ fileName: file.name, content });
+      setForm(result.patch);
+      setSyncMessage(
+        result.activityType === 'strength'
+          ? `已从 ${result.source} 导入力量训练记录，可继续手动修改后保存。`
+          : `已从 ${result.source} 导入跑步记录，可继续手动修改后保存。`,
+      );
+    } catch (error) {
+      setSyncMessage(error instanceof Error ? error.message : 'COROS 文件解析失败，请检查文件格式。');
+    } finally {
+      event.target.value = '';
+    }
   }
 
   function toggleSection(title) {
@@ -252,7 +251,7 @@ function CorosFileInput({ onChange }) {
     <label className="inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-md border border-slate-200 bg-white px-3 text-sm font-medium text-slate-700 hover:bg-slate-50">
       <Upload size={16} />
       导入 COROS 文件
-      <input type="file" accept=".csv,text/csv" onChange={onChange} className="sr-only" />
+      <input type="file" accept=".fit,.tcx,.gpx,.csv,text/csv,application/gpx+xml,application/vnd.garmin.tcx+xml" onChange={onChange} className="sr-only" />
     </label>
   );
 }

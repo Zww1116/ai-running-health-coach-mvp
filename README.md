@@ -12,6 +12,26 @@
 - 已预留 `src/integrations/recoverySyncClient.js`，后续可接 COROS / Terra API 自动同步睡眠与恢复数据。
 - 已预留 `src/integrations/supabaseStorageClient.js`，后续可接 Supabase Storage 保存图片；当前阶段保持本地图片优先，降低隐私泄露风险。
 
+## COROS 数据导入模块
+
+当前项目已经支持 COROS 数据导入，第一阶段重点覆盖跑步记录：
+
+- 在“今日记录中心”点击“导入 COROS 文件”。
+- 支持上传 `.fit`、`.tcx`、`.gpx`、`.csv` 文件。
+- GPX 会根据轨迹点计算跑步距离、时长、平均配速，并读取轨迹里的心率字段。
+- TCX 会读取距离、时长、平均心率。
+- FIT 会读取标准 session 汇总里的开始时间、距离、总运动时间和平均心率。
+- 导入后只会自动填入跑步记录表单，你仍然可以手动修改距离、时长、配速、心率、RPE 和备注后再保存。
+- 保存后数据会进入记录模型，并可通过 `buildDailyHealthDataFromRecord(record)` 映射为规则版 Agent 使用的 `dailyHealthData`。
+
+FIT 说明：当前 MVP 不引入大型第三方 FIT 解析库，只实现 session 汇总解析。若某些 COROS FIT 文件没有 session 汇总，页面会提示改用 TCX/GPX 导出。
+
+第二阶段睡眠支持已经具备基础能力：
+
+- 可上传 COROS 睡眠截图，图片仅保存在当前浏览器 IndexedDB。
+- 可手动填写睡眠时长、深睡、浅睡、REM、HRV、夜间静息心率、起床疲劳感。
+- OCR 图片识别、COROS API、Terra API 均保留接口入口，当前阶段不连接真实 API。
+
 ## 长期记录：Supabase 云端账号版
 
 当前项目已预留并实现 Supabase 云端同步结构。没有配置 Supabase 时，应用仍会使用 `localStorage`，数据只保存在当前浏览器；配置 Supabase 并登录邮箱验证码后，记录会保存到 Supabase/PostgreSQL。
