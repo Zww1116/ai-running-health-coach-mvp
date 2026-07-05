@@ -1,23 +1,20 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Activity, Bot, Database, Sparkles } from 'lucide-react';
-import { getCurrentSession, sendLoginOtp, signOut, subscribeToAuth } from './auth/supabaseAuth';
 import { generateCoachAnalysis } from './ai/expertEngine';
-import { AuthPanel } from './components/AuthPanel';
-import { ExpertReports } from './components/ExpertReports';
-import { HeadCoachPlan } from './components/HeadCoachPlan';
-import { HistoryList } from './components/HistoryList';
-import { RecordForm } from './components/RecordForm';
-import { SettingsCenter } from './components/SettingsCenter';
-import { SleepRecoveryPage } from './components/SleepRecoveryPage';
-import { RuleAgentAnalysis } from './components/RuleAgentAnalysis';
-import { WeeklyOverview } from './components/WeeklyOverview';
+import { getCurrentSession, sendLoginOtp, signOut, subscribeToAuth } from './auth/supabaseAuth';
+import { AppShell } from './components/AppShell';
 import { buildRecordFromForm, initialForm } from './components/recordFormModel';
 import { sampleProfile, sampleRecords } from './data/sampleData';
 import { createOptionalSupabaseClient } from './integrations/supabaseClient';
-import { createBrowserStorageAdapter } from './storage/localStore';
-import { createLocalImageStore } from './storage/localImageStore';
-import { createRecordRepository } from './storage/recordRepository';
+import { AnalysisPage } from './pages/AnalysisPage';
+import { getDefaultPageId, getPageById } from './pages/pageConfig';
+import { ImportPage } from './pages/ImportPage';
+import { RecordsPage } from './pages/RecordsPage';
+import { SettingsPage } from './pages/SettingsPage';
+import { TodayPage } from './pages/TodayPage';
 import { downloadRecordsExport } from './storage/exportRecords';
+import { createLocalImageStore } from './storage/localImageStore';
+import { createBrowserStorageAdapter } from './storage/localStore';
+import { createRecordRepository } from './storage/recordRepository';
 import { createLocalBackupStore, getStorageEstimate, parseRecordsImport } from './storage/settingsData';
 import { createSupabaseRecordStore } from './storage/supabaseRecordStore';
 
@@ -46,6 +43,7 @@ export default function App() {
       }),
     [cloudStore, storage, supabaseClient],
   );
+  const [activePageId, setActivePageId] = useState(getDefaultPageId());
   const [records, setRecords] = useState(sampleRecords);
   const [session, setSession] = useState(null);
   const [storageMode, setStorageMode] = useState('local');
@@ -56,6 +54,7 @@ export default function App() {
   const [settingsMessage, setSettingsMessage] = useState('');
   const [storageEstimate, setStorageEstimate] = useState(null);
   const analysis = useMemo(() => generateCoachAnalysis(sampleProfile, records), [records]);
+  const activePage = getPageById(activePageId);
 
   useEffect(() => {
     let active = true;
@@ -114,7 +113,7 @@ export default function App() {
         setStorageMode('local');
         setSyncState((current) => ({
           ...current,
-          message: `云端保存失败，已保存在本机：${error.message}`,
+          message: `云端保存失败，已保存到本机：${error.message}`,
         }));
       });
   }, [records, repository, storage, syncState.isReady]);
@@ -203,7 +202,9 @@ export default function App() {
   }
 
   async function handleClearAll() {
-    const confirmed = window.confirm('确认清空所有数据吗？这会删除当前浏览器记录、本地备份、本地图片缓存；云端模式下也会删除当前账号云端记录。');
+    const confirmed = window.confirm(
+      '确认清空所有数据吗？这会删除当前浏览器记录、本地备份、本地图片缓存；云端模式下也会删除当前账号云端记录。',
+    );
     if (!confirmed) return;
 
     try {
@@ -239,46 +240,34 @@ export default function App() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f6f7f4] text-ink">
-      <header className="border-b border-ink/10 bg-white">
-        <div className="mx-auto grid max-w-7xl gap-5 px-4 py-4 md:grid-cols-[minmax(0,1fr)_300px] md:items-center lg:px-6">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-md bg-skysoft px-3 py-1 text-sm font-medium text-ink">
-              <Sparkles size={15} />
-              AI 运动健康管理 Web MVP
-            </div>
-            <h1 className="mt-3 max-w-4xl text-3xl font-semibold tracking-normal text-ink md:text-4xl">
-              专属多专家Agent健康运动管理平台
-            </h1>
-            <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">
-              本地记录跑步、力量、饮食、体重、睡眠、经期和疼痛状态；多专家规则引擎输出独立建议，总教练生成每日与每周方案。
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2 text-sm text-slate-600">
-              <Badge icon={<Activity size={15} />} text={sampleProfile.goal} />
-              <Badge icon={<Bot size={15} />} text="规则版多专家 Agent" />
-              <Badge icon={<Database size={15} />} text="localStorage 数据存储" />
-            </div>
-          </div>
-          <img
-            className="h-40 w-full rounded-lg object-cover md:h-48"
-            src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=900&q=80"
-            alt="女性跑者训练"
-          />
-        </div>
-      </header>
-
-      <div className="mx-auto grid max-w-7xl gap-5 px-4 py-5 lg:px-6">
-        <AuthPanel
+    <AppShell activePageId={activePage.id} onChangePage={setActivePageId} profile={sampleProfile}>
+      {activePage.id === 'today' && (
+        <TodayPage
+          analysis={analysis}
+          monthlyRunningKm={sampleProfile.runningMonthlyKm}
+          records={records}
+        />
+      )}
+      {activePage.id === 'records' && (
+        <RecordsPage
+          records={records}
+          onAddRecord={addRecord}
+          onResetData={resetData}
+          onSaveSleepRecord={saveSleepRecord}
+        />
+      )}
+      {activePage.id === 'import' && <ImportPage onAddRecord={addRecord} onResetData={resetData} />}
+      {activePage.id === 'analysis' && <AnalysisPage analysis={analysis} />}
+      {activePage.id === 'settings' && (
+        <SettingsPage
           authState={{ session, supabaseStatus: supabase.status }}
           syncState={syncState}
-          onSendOtp={handleSendOtp}
-          onSignOut={handleSignOut}
-        />
-        <SettingsCenter
+          settingsMessage={settingsMessage}
           mode={storageMode}
           records={records}
           storageEstimate={storageEstimate}
-          message={settingsMessage || syncState.message}
+          onSendOtp={handleSendOtp}
+          onSignOut={handleSignOut}
           onExport={handleExport}
           onImport={handleImport}
           onCreateBackup={handleCreateBackup}
@@ -288,19 +277,8 @@ export default function App() {
           onRefreshStorage={refreshStorageEstimate}
           onUpgradeDatabase={handleUpgradeDatabase}
         />
-        <WeeklyOverview analysis={analysis} monthlyRunningKm={sampleProfile.runningMonthlyKm} />
-        <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_360px]">
-          <div className="grid gap-5">
-            <HeadCoachPlan report={analysis.headCoach} riskLevel={analysis.riskLevel} />
-            <RuleAgentAnalysis />
-            <ExpertReports specialists={analysis.specialists} />
-            <SleepRecoveryPage onSaveSleepRecord={saveSleepRecord} />
-            <RecordForm onAddRecord={addRecord} onResetData={resetData} />
-          </div>
-          <HistoryList records={records} />
-        </div>
-      </div>
-    </main>
+      )}
+    </AppShell>
   );
 }
 
@@ -310,13 +288,4 @@ function mergeAttachments(existing = [], incoming = []) {
     if (item?.id) byId.set(item.id, item);
   });
   return [...byId.values()];
-}
-
-function Badge({ icon, text }) {
-  return (
-    <span className="inline-flex items-center gap-2 rounded-md border border-slate-200 bg-white px-3 py-2">
-      {icon}
-      {text}
-    </span>
-  );
 }
