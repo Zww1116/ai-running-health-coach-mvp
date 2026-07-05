@@ -33,7 +33,7 @@ describe('local storage adapter', () => {
     expect(adapter.load()).toEqual([{ id: 'today', running: { km: 10 } }]);
   });
 
-  it('clears saved records for the configured key', () => {
+  it('clears saved records without falling back to template data', () => {
     const memory = new Map();
     const adapter = createStorageAdapter({
       storage: {
@@ -48,6 +48,6 @@ describe('local storage adapter', () => {
     adapter.save([{ id: 'today' }]);
     adapter.clear();
 
-    expect(adapter.load()).toEqual([{ id: 'sample' }]);
+    expect(adapter.load()).toEqual([]);
   });
 });

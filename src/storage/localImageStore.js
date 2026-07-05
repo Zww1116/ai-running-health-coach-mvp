@@ -50,6 +50,13 @@ export function createLocalImageStore(indexedDb = globalThis.indexedDB) {
       await deleteImageRecord(db, id);
       db.close();
     },
+
+    async clearAll() {
+      if (!indexedDb) return;
+      const db = await openImageDb(indexedDb);
+      await clearImageRecords(db);
+      db.close();
+    },
   };
 }
 
@@ -77,6 +84,10 @@ function getImageRecord(db, id) {
 
 function deleteImageRecord(db, id) {
   return runImageTransaction(db, 'readwrite', (store) => store.delete(id));
+}
+
+function clearImageRecords(db) {
+  return runImageTransaction(db, 'readwrite', (store) => store.clear());
 }
 
 function runImageTransaction(db, mode, action) {

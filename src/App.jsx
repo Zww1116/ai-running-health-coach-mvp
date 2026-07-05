@@ -6,8 +6,8 @@ import { AuthPanel } from './components/AuthPanel';
 import { ExpertReports } from './components/ExpertReports';
 import { HeadCoachPlan } from './components/HeadCoachPlan';
 import { HistoryList } from './components/HistoryList';
-import { PrivacyPanel } from './components/PrivacyPanel';
 import { RecordForm } from './components/RecordForm';
+import { SettingsCenter } from './components/SettingsCenter';
 import { SleepRecoveryPage } from './components/SleepRecoveryPage';
 import { RuleAgentAnalysis } from './components/RuleAgentAnalysis';
 import { WeeklyOverview } from './components/WeeklyOverview';
@@ -15,14 +15,17 @@ import { buildRecordFromForm, initialForm } from './components/recordFormModel';
 import { sampleProfile, sampleRecords } from './data/sampleData';
 import { createOptionalSupabaseClient } from './integrations/supabaseClient';
 import { createBrowserStorageAdapter } from './storage/localStore';
+import { createLocalImageStore } from './storage/localImageStore';
 import { createRecordRepository } from './storage/recordRepository';
 import { downloadRecordsExport } from './storage/exportRecords';
+import { createLocalBackupStore, getStorageEstimate, parseRecordsImport } from './storage/settingsData';
 import { createSupabaseRecordStore } from './storage/supabaseRecordStore';
 
 export default function App() {
   const supabase = useMemo(() => createOptionalSupabaseClient(), []);
   const supabaseClient = supabase.client;
   const storage = useMemo(() => createBrowserStorageAdapter(sampleRecords), []);
+  const backupStore = useMemo(() => createLocalBackupStore(), []);
   const cloudStore = useMemo(() => {
     if (!supabaseClient) return null;
     return createSupabaseRecordStore({
@@ -50,6 +53,8 @@ export default function App() {
     message: supabase.message,
     isReady: false,
   });
+  const [settingsMessage, setSettingsMessage] = useState('');
+  const [storageEstimate, setStorageEstimate] = useState(null);
   const analysis = useMemo(() => generateCoachAnalysis(sampleProfile, records), [records]);
 
   useEffect(() => {
@@ -114,6 +119,10 @@ export default function App() {
       });
   }, [records, repository, storage, syncState.isReady]);
 
+  useEffect(() => {
+    refreshStorageEstimate();
+  }, [records]);
+
   function addRecord(record) {
     setRecords((current) => {
       const withoutSameDate = current.filter((item) => item.date !== record.date);
@@ -162,29 +171,71 @@ export default function App() {
 
   function handleExport() {
     downloadRecordsExport(records);
+    setSettingsMessage('已导出当前记录 JSON。');
   }
 
-  function handleClearLocal() {
-    repository.clearLocal();
-    if (storageMode === 'local') {
-      setRecords([]);
-    }
-    setSyncState((current) => ({
-      ...current,
-      message:
-        storageMode === 'cloud'
-          ? '已清除本机浏览器缓存，云端记录不受影响。'
-          : '已清除本机浏览器记录。',
-    }));
-  }
-
-  async function handleDeleteCloud() {
+  async function handleImport(file) {
     try {
-      const result = await repository.deleteCloudRecords();
-      setSyncState((current) => ({ ...current, message: result.message }));
+      const text = await file.text();
+      const imported = parseRecordsImport(text);
+      setRecords(imported);
+      setSettingsMessage(`已导入 ${imported.length} 条记录。`);
     } catch (error) {
-      setSyncState((current) => ({ ...current, message: error.message }));
+      setSettingsMessage(error instanceof Error ? error.message : '导入失败，请检查 JSON 文件。');
     }
+  }
+
+  function handleCreateBackup() {
+    const backup = backupStore.save(records);
+    setSettingsMessage(`已创建本地备份：${backup.exportedAt.slice(0, 10)}。`);
+    refreshStorageEstimate();
+  }
+
+  function handleRestoreBackup() {
+    const backup = backupStore.load();
+    if (!backup) {
+      setSettingsMessage('当前浏览器还没有本地备份。');
+      return;
+    }
+
+    setRecords(backup.records);
+    setSettingsMessage(`已恢复本地备份：${backup.exportedAt.slice(0, 10)}。`);
+  }
+
+  async function handleClearAll() {
+    const confirmed = window.confirm('确认清空所有数据吗？这会删除当前浏览器记录、本地备份、本地图片缓存；云端模式下也会删除当前账号云端记录。');
+    if (!confirmed) return;
+
+    try {
+      if (storageMode === 'cloud') {
+        await repository.deleteCloudRecords();
+      }
+      repository.clearLocal();
+      backupStore.clear();
+      await createLocalImageStore().clearAll();
+      setRecords([]);
+      setSettingsMessage('已清空所有数据，可以从 0 开始记录。');
+      refreshStorageEstimate();
+    } catch (error) {
+      setSettingsMessage(error instanceof Error ? error.message : '清空数据失败。');
+    }
+  }
+
+  function handleFactoryReset() {
+    const confirmed = window.confirm('确认恢复出厂设置吗？这会把当前记录替换为系统示例模板。');
+    if (!confirmed) return;
+
+    setRecords(sampleRecords);
+    setSettingsMessage('已恢复出厂示例模板。');
+  }
+
+  function handleUpgradeDatabase() {
+    setSettingsMessage('数据库升级入口已预留：后续可执行 Supabase migration、Storage bucket 和 RLS 策略升级。');
+  }
+
+  async function refreshStorageEstimate() {
+    const estimate = await getStorageEstimate();
+    setStorageEstimate(estimate);
   }
 
   return (
@@ -223,12 +274,19 @@ export default function App() {
           onSendOtp={handleSendOtp}
           onSignOut={handleSignOut}
         />
-        <PrivacyPanel
+        <SettingsCenter
           mode={storageMode}
           records={records}
+          storageEstimate={storageEstimate}
+          message={settingsMessage || syncState.message}
           onExport={handleExport}
-          onClearLocal={handleClearLocal}
-          onDeleteCloud={handleDeleteCloud}
+          onImport={handleImport}
+          onCreateBackup={handleCreateBackup}
+          onRestoreBackup={handleRestoreBackup}
+          onClearAll={handleClearAll}
+          onFactoryReset={handleFactoryReset}
+          onRefreshStorage={refreshStorageEstimate}
+          onUpgradeDatabase={handleUpgradeDatabase}
         />
         <WeeklyOverview analysis={analysis} monthlyRunningKm={sampleProfile.runningMonthlyKm} />
         <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_360px]">
