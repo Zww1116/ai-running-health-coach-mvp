@@ -11,6 +11,10 @@
 
 数据中心不会改变已有 `localStorage` / Supabase 记录结构，也不会破坏规则版多专家 Agent。所有保存后的记录仍通过既有 `buildDailyHealthDataFromRecord(record)` 进入 Agent 分析。
 
+## V2 第三阶段：实时规则版 Agent 分析
+
+“多专家分析”页面现在会优先读取你保存的最新一条健康记录，转换为 `dailyHealthData` 后交给规则版多专家 Agent。没有任何记录时，页面才会回退到系统示例数据。
+
 ## 睡眠与恢复记录模块
 
 当前版本新增独立的“睡眠与恢复记录”模块，适合把 COROS 睡眠数据先手动录入系统：

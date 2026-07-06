@@ -1,12 +1,14 @@
 import { useMemo, useState } from 'react';
 import { Bot, ChevronRight, ClipboardList, ShieldCheck } from 'lucide-react';
-import { analyzeHealthData } from '../agents/analyzeHealthData';
-import { sampleAgentDailyHealthData } from '../data/sampleData';
+import { buildLiveAgentAnalysis } from '../features/analysis/liveAgentAnalysis';
 
-export function RuleAgentAnalysis() {
-  const initialAnalysis = useMemo(() => analyzeHealthData(sampleAgentDailyHealthData), []);
-  const [analysis, setAnalysis] = useState(initialAnalysis);
-  const data = sampleAgentDailyHealthData;
+export function RuleAgentAnalysis({ records = [], profile = {} }) {
+  const [refreshKey, setRefreshKey] = useState(0);
+  const liveAnalysis = useMemo(
+    () => buildLiveAgentAnalysis(records, profile),
+    [records, profile, refreshKey],
+  );
+  const { dailyHealthData: data, analysis, source } = liveAnalysis;
 
   return (
     <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-soft">
@@ -16,14 +18,14 @@ export function RuleAgentAnalysis() {
             <Bot size={20} />
             <p className="text-sm font-medium">规则版多专家 Agent</p>
           </div>
-          <h2 className="mt-2 text-lg font-semibold text-ink">规则版 Agent 决策台</h2>
+          <h2 className="mt-2 text-lg font-semibold text-ink">基于最新记录生成多专家分析</h2>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">
-            不连接 OpenAI API，先用规则逻辑分析运动、营养、恢复、疼痛和经期信号。
+            不连接 OpenAI API，优先读取你保存的最新健康记录；没有记录时使用示例数据兜底。
           </p>
         </div>
         <button
           type="button"
-          onClick={() => setAnalysis(analyzeHealthData(data))}
+          onClick={() => setRefreshKey((value) => value + 1)}
           className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-ink px-4 text-sm font-semibold text-white hover:bg-moss"
         >
           <ClipboardList size={17} />
@@ -31,16 +33,17 @@ export function RuleAgentAnalysis() {
         </button>
       </div>
 
-      <div className="mt-4 grid gap-3 md:grid-cols-4">
-        <DataPill label="身高/体重" value={`${data.heightCm}cm / ${data.bodyWeight}kg`} />
-        <DataPill label="月跑量" value={`${data.monthlyRunningKm}km`} />
+      <div className="mt-4 grid gap-3 md:grid-cols-5">
+        <DataPill label="数据来源" value={source === 'latest-record' ? '最新记录' : '示例数据'} />
+        <DataPill label="日期" value={data.date} />
+        <DataPill label="月跑量" value={`${data.monthlyRunningKm ?? 0}km`} />
         <DataPill label="睡眠/疲劳" value={`${data.sleepHours}h / ${data.fatigueLevel}/10`} />
-        <DataPill label="经期阶段" value={formatPhase(data.menstrualPhase)} />
+        <DataPill label="周期阶段" value={formatPhase(data.menstrualPhase)} />
       </div>
 
       <div className="mt-3 rounded-md border border-slate-200 bg-slate-50 p-3 text-sm leading-6 text-slate-600">
-        <span className="font-medium text-ink">目标：</span>
-        {data.goal}
+        <span className="font-medium text-ink">当前目标：</span>
+        {data.goal || '暂无目标记录'}
       </div>
 
       {analysis && (

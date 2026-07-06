@@ -263,7 +263,9 @@ export default function App() {
           onSaveSleepRecord={saveSleepRecord}
         />
       )}
-      {activePage.id === 'analysis' && <AnalysisPage analysis={analysis} />}
+      {activePage.id === 'analysis' && (
+        <AnalysisPage analysis={analysis} records={records} profile={sampleProfile} />
+      )}
       {activePage.id === 'settings' && (
         <SettingsPage
           authState={{ session, supabaseStatus: supabase.status }}
