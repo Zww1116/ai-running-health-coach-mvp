@@ -5,7 +5,7 @@ import { parseCorosActivityFile } from '../../integrations/corosFileParser';
 import { estimateNutritionFromMealImage } from '../../integrations/nutritionVisionClient';
 import { buildImportDraft, buildRecordFromImportDraft } from './importCenterModel';
 
-export function ImportCenter({ onAddRecord }) {
+export function ImportCenter({ onAddRecord, enabledSources = ['coros', 'nutrition'] }) {
   const [draft, setDraft] = useState(null);
   const [message, setMessage] = useState('');
   const [mealPreview, setMealPreview] = useState('');
@@ -74,7 +74,7 @@ export function ImportCenter({ onAddRecord }) {
 
       <div className="mt-4 grid gap-3 md:grid-cols-3">
         <ImportFileButton onChange={importCorosFile} />
-        <MealImageButton onChange={estimateMeal} />
+        {enabledSources.includes('nutrition') && <MealImageButton onChange={estimateMeal} />}
         <button
           type="button"
           disabled={!draft}

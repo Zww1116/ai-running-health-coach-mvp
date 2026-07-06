@@ -11,8 +11,8 @@ export const appPages = [
   },
   {
     id: 'import',
-    title: '数据导入中心',
-    purpose: '导入 COROS 文件、图片和未来平台数据',
+    title: '数据中心',
+    purpose: '集中采集 COROS、睡眠、饮食图片和手动记录',
   },
   {
     id: 'analysis',

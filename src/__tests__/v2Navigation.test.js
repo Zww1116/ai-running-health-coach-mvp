@@ -23,4 +23,11 @@ describe('V2 page navigation', () => {
   it('falls back to today when a page id is unknown', () => {
     expect(getPageById('missing').id).toBe('today');
   });
+
+  it('uses data center as the data collection page title', () => {
+    expect(getPageById('import')).toMatchObject({
+      title: '数据中心',
+      purpose: '集中采集 COROS、睡眠、饮食图片和手动记录',
+    });
+  });
 });

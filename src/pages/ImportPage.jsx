@@ -1,7 +1,7 @@
 import { UploadCloud } from 'lucide-react';
-import { ImportCenter } from '../features/import/ImportCenter';
+import { DataCenter } from '../features/dataCenter/DataCenter';
 
-export function ImportPage({ onAddRecord }) {
+export function ImportPage({ onAddRecord, onResetData, onSaveSleepRecord }) {
   return (
     <div className="grid gap-5">
       <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-soft">
@@ -10,15 +10,19 @@ export function ImportPage({ onAddRecord }) {
             <UploadCloud size={20} />
           </span>
           <div>
-            <p className="text-sm text-slate-500">第一轮导入中心</p>
-            <h2 className="mt-1 text-lg font-semibold text-ink">独立导入、复核，再保存为正式健康记录</h2>
+            <p className="text-sm text-slate-500">V2 数据中心</p>
+            <h2 className="mt-1 text-lg font-semibold text-ink">所有采集入口集中在一个页面</h2>
             <p className="mt-2 text-sm leading-6 text-slate-600">
-              当前支持 COROS FIT / TCX / GPX / CSV 文件解析、训练截图和饮食图片本地保存。导入结果会先生成草稿，你可以手动修改关键字段后再保存。
+              从 COROS 文件、睡眠截图、饮食照片到手动记录，都先进入这里，再流向今日决策台和规则版多专家 Agent。
             </p>
           </div>
         </div>
       </section>
-      <ImportCenter onAddRecord={onAddRecord} />
+      <DataCenter
+        onAddRecord={onAddRecord}
+        onResetData={onResetData}
+        onSaveSleepRecord={onSaveSleepRecord}
+      />
     </div>
   );
 }
