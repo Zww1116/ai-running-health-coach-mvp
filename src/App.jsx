@@ -256,7 +256,7 @@ export default function App() {
           onSaveSleepRecord={saveSleepRecord}
         />
       )}
-      {activePage.id === 'import' && <ImportPage onAddRecord={addRecord} onResetData={resetData} />}
+      {activePage.id === 'import' && <ImportPage onAddRecord={addRecord} />}
       {activePage.id === 'analysis' && <AnalysisPage analysis={analysis} />}
       {activePage.id === 'settings' && (
         <SettingsPage
