@@ -11,7 +11,10 @@
     "deploy": "npx vercel --prod",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "export:ai-context": "node scripts/build-ai-handoff.mjs",
+    "audit:privacy": "node scripts/privacy-audit.mjs",
+    "validate:foundation": "node scripts/validate-foundation.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.0",

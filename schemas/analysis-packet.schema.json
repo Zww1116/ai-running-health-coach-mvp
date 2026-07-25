@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://personal-ai-health-os.local/schemas/analysis-packet.schema.json",
+  "title": "Analysis Packet",
+  "description": "Minimized and user-reviewed input that may be sent to a replaceable AI provider.",
+  "version": "0.1.0",
+  "status": "draft",
+  "type": "object",
+  "required": ["packetId", "createdAt", "purpose", "schemaVersion", "dailyHealthData"],
+  "properties": {
+    "packetId": { "type": "string", "description": "Local packet identifier." },
+    "createdAt": { "type": "string", "description": "Packet creation timestamp." },
+    "purpose": { "type": "string", "description": "Reason for analysis." },
+    "schemaVersion": { "type": "string" },
+    "dataMinimizationConfirmed": { "type": "boolean" },
+    "excludedIdentityFields": {
+      "type": "array",
+      "description": "Identity fields intentionally excluded, such as name, email, phone, address and precise location.",
+      "items": { "type": "string" }
+    },
+    "dailyHealthData": { "$ref": "daily-health-data.schema.json" }
+  },
+  "not": {
+    "required": ["name", "email", "phone", "address", "preciseLocation"]
+  }
+}

@@ -1,5 +1,15 @@
 # AI 运动健康管理 Web MVP
 
+## Project Foundation
+
+本仓库现在增加了 Sprint 001 项目治理、隐私保护与 AI 可迁移基础。最高入口是 [PROJECT.md](PROJECT.md)，它只做项目级导航；详细规则分别保存在 `project/`、`architecture/`、`security/`、`schemas/`、`prompts/` 和 `migration/`。
+
+- Project Governance：见 [project/README.md](project/README.md) 和 [project/SourceOfTruth.md](project/SourceOfTruth.md)。
+- Privacy Boundary：私人健康记录、健康图片、导出包、数据库文件和密钥不进入 Git，见 [security/PrivacyModel.md](security/PrivacyModel.md)。
+- Data Ownership：用户拥有自己的健康数据；云端同步和 AI 分享必须由用户主动选择。
+- AI Portability：规则引擎、OpenAI、Claude、Gemini 和本地模型都应作为可替换 Provider，见 [architecture/AIProviderPortability.md](architecture/AIProviderPortability.md)。
+- AI Context Export：可运行 `npm run validate:foundation` 和 `npm run export:ai-context` 生成 `exports/AI_CONTEXT_COMPLETE.md` 与 `exports/AI-Core-Pack/`。`exports/` 已被忽略，不是正式来源。
+
 ## V2 第二阶段：数据中心
 
 当前版本新增“数据中心”，把日常数据采集入口集中到一个页面，减少在多个模块之间来回切换。
@@ -151,7 +161,7 @@ Agent 职责：
 - `headCoachAgent`：汇总所有专家输出，生成最终训练、营养、恢复、明日调整和本周重点。
 - `analyzeHealthData`：统一编排所有专家 Agent。
 
-页面中的“规则版多专家 Agent”区块使用 `src/data/sampleData.js` 里的示例数据，代表身高 157cm、体重 50kg、月跑量约 200km、每周 3 次力量训练的女性跑者。
+页面中的“规则版多专家 Agent”区块使用 `src/data/sampleData.js` 里的虚构 Demo Persona。示例只用于演示数据结构和 Agent 行为，不代表真实个人健康档案。
 
 ## 本地饮食图片识别
 

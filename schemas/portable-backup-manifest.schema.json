@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://personal-ai-health-os.local/schemas/portable-backup-manifest.schema.json",
+  "title": "Portable Backup Manifest",
+  "description": "Draft manifest for future user-controlled private backup packages.",
+  "version": "0.1.0",
+  "status": "draft",
+  "type": "object",
+  "required": [
+    "exportVersion",
+    "generatedAt",
+    "sourceApplication",
+    "sourceCommit",
+    "profile",
+    "healthRecords",
+    "analysisHistory",
+    "reports",
+    "attachmentsIndex",
+    "schemaVersions",
+    "checksums",
+    "encryptionStatus"
+  ],
+  "properties": {
+    "exportVersion": { "type": "string" },
+    "generatedAt": { "type": "string" },
+    "sourceApplication": { "type": "string" },
+    "sourceCommit": { "type": "string" },
+    "profile": { "type": "object" },
+    "healthRecords": { "type": "array" },
+    "analysisHistory": { "type": "array" },
+    "reports": { "type": "array" },
+    "attachmentsIndex": { "type": "array" },
+    "schemaVersions": { "type": "object" },
+    "checksums": { "type": "object" },
+    "encryptionStatus": { "type": "string" }
+  }
+}
