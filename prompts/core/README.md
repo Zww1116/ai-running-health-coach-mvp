@@ -7,8 +7,8 @@ owner: product
 source_of_truth: true
 ---
 
-# Core Prompts
+# 核心 Prompt
 
-This is the future single formal source for provider-neutral prompts. Private GPT instructions, Claude prompts, Gemini prompts and local model prompts must derive from this source.
+本目录是未来与提供商无关 Prompt 的唯一正式来源。私有 GPT 指令、Claude Prompt、Gemini Prompt 和本地模型 Prompt 都必须派生自此来源。
 
-Current status: no full analysis prompt is written in Sprint 001.
+当前状态：Sprint 001 尚未编写完整分析 Prompt。

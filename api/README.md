@@ -9,6 +9,6 @@ source_of_truth: true
 
 # API
 
-This directory will store future API contracts and adapter notes. It does not store API keys, access tokens, service-role keys or private response logs.
+本目录将保存未来的 API 契约和适配器说明，不保存 API 密钥、Access Token、`service_role` 密钥或私人响应日志。
 
-Current status: foundation placeholder only.
+当前状态：仅有基础占位内容。

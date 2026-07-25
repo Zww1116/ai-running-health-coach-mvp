@@ -7,8 +7,8 @@ owner: engineering
 source_of_truth: true
 ---
 
-# Architecture
+# 架构
 
-This directory stores system architecture, data flow, ownership boundaries, AI portability and backup concepts.
+本目录保存系统架构、数据流、所有权边界、AI 可迁移性和备份概念。
 
-It does not store runtime code, private records, secrets or deployment credentials. Runtime code remains in `src/` and `server/`.
+本目录不保存运行时代码、私人记录、密钥或部署凭据。运行时代码仍位于 `src/` 和 `server/`。

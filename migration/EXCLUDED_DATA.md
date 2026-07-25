@@ -7,8 +7,8 @@ owner: engineering
 source_of_truth: true
 ---
 
-# Excluded Data
+# 排除的数据
 
-The AI handoff pack excludes `.env`, `.env.*`, `node_modules/`, `dist/`, `exports/`, `backups/`, `private-data/`, `private-profile/`, database files, health images, private exports, logs, Git internals, API keys, secrets and tokens.
+AI 交接包排除 `.env`、`.env.*`、`node_modules/`、`dist/`、`exports/`、`backups/`、`private-data/`、`private-profile/`、数据库文件、健康图片、私人导出、日志、Git 内部文件、API 密钥、Secrets 和 Token。
 
-Generated handoff files are project-context exports only and are not formal sources.
+生成的交接文件只用于导出项目上下文，不是正式来源。

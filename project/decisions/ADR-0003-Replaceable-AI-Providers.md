@@ -7,40 +7,40 @@ owner: engineering
 source_of_truth: true
 ---
 
-# ADR-0003: Replaceable AI Providers
+# ADR-0003：可替换的 AI 提供商
 
-## Status
+## 状态
 
-Proposed.
+`Proposed`。
 
-## Background
+## 背景
 
-The product should not depend on a single AI platform, model or private GPT instruction set.
+产品不应依赖单一 AI 平台、模型或私有 GPT 指令集。
 
-## Decision
+## 决策
 
-ChatGPT, Claude, Gemini, local models and rule engines are replaceable providers. Core prompts, agents, schemas and knowledge must be stored independently from provider-specific tools.
+ChatGPT、Claude、Gemini、本地模型和规则引擎都是可替换的提供商。核心 Prompt、Agent、Schema 和知识必须独立于提供商专用工具保存。
 
-## Reasons
+## 理由
 
-Provider portability protects the project from pricing, policy, availability and capability changes.
+提供商可迁移性能够保护项目，使其不被价格、政策、可用性和能力变化锁定。
 
-## Alternatives
+## 备选方案
 
-Put core logic inside one private GPT or one hosted AI API. This is rejected because it creates lock-in.
+将核心逻辑放入单个私有 GPT 或单个托管 AI API。该方案被否决，因为它会造成供应商锁定。
 
-## Positive Impact
+## 正面影响
 
-Easier migration, easier testing and clearer intellectual ownership.
+更容易迁移和测试，知识产权归属也更清晰。
 
-## Negative Impact
+## 负面影响
 
-Provider adapters require extra discipline and versioning.
+提供商适配器需要额外的纪律和版本管理。
 
-## Risks
+## 风险
 
-Adapters may drift if prompts are copied and edited separately.
+如果 Prompt 被分别复制和编辑，适配器可能逐渐偏离共同来源。
 
-## Review Conditions
+## 复审条件
 
-Review when the first real external AI provider is connected.
+连接第一个真实外部 AI 提供商时复审。

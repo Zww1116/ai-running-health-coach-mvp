@@ -7,17 +7,17 @@ owner: founder
 source_of_truth: true
 ---
 
-# Project Index
+# 项目索引
 
-- Top entry: [../PROJECT.md](../PROJECT.md)
-- Current status: [CurrentStatus.md](CurrentStatus.md)
-- Roadmap: [Roadmap.md](Roadmap.md)
-- Backlog: [Backlog.md](Backlog.md)
-- Source of truth: [SourceOfTruth.md](SourceOfTruth.md)
-- Definition of done: [DefinitionOfDone.md](DefinitionOfDone.md)
-- File rules: [FileManagementRules.md](FileManagementRules.md)
-- Versioning: [VersioningPolicy.md](VersioningPolicy.md)
-- Decision capture: [DecisionCaptureWorkflow.md](DecisionCaptureWorkflow.md)
-- Decisions: [decisions/README.md](decisions/README.md)
-- Sprint records: [sprints/](sprints/)
-- Templates: [templates/](templates/)
+- 顶层入口：[../PROJECT.md](../PROJECT.md)
+- 当前状态：[CurrentStatus.md](CurrentStatus.md)
+- 路线图：[Roadmap.md](Roadmap.md)
+- Backlog：[Backlog.md](Backlog.md)
+- 唯一正式来源：[SourceOfTruth.md](SourceOfTruth.md)
+- 完成定义（Definition of Done）：[DefinitionOfDone.md](DefinitionOfDone.md)
+- 文件管理规则：[FileManagementRules.md](FileManagementRules.md)
+- 版本策略：[VersioningPolicy.md](VersioningPolicy.md)
+- 决策记录流程：[DecisionCaptureWorkflow.md](DecisionCaptureWorkflow.md)
+- 决策记录：[decisions/README.md](decisions/README.md)
+- Sprint 记录：[sprints/](sprints/)
+- 模板：[templates/](templates/)

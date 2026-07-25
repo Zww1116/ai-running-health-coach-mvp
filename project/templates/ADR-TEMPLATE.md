@@ -7,22 +7,22 @@ owner: engineering
 source_of_truth: true
 ---
 
-# ADR Template
+# ADR 模板
 
-## Status
+## 状态
 
-## Background
+## 背景
 
-## Decision
+## 决策
 
-## Reasons
+## 理由
 
-## Alternatives
+## 备选方案
 
-## Positive Impact
+## 正面影响
 
-## Negative Impact
+## 负面影响
 
-## Risks
+## 风险
 
-## Review Conditions
+## 复审条件

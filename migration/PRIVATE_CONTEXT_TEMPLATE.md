@@ -7,30 +7,30 @@ owner: founder
 source_of_truth: false
 ---
 
-# Private Context Template
+# 私人背景模板
 
-Do not fill this file with real data in Git. Copy it outside the repository before use.
+不要在 Git 中向本文件填写真实数据。使用前先把模板复制到仓库之外。
 
-## Basic Background
+## 基本背景
 
-## Long-Term Goals
+## 长期目标
 
-## Health Focus Areas
+## 健康关注重点
 
-## Training Habits
+## 训练习惯
 
-## Nutrition Preferences
+## 营养偏好
 
-## Known Limits
+## 已知限制
 
-## Recent Status Summary
+## 近期状态摘要
 
-## Fields Allowed for AI
+## 允许发送给 AI 的字段
 
-## Fields Forbidden for AI
+## 禁止发送给 AI 的字段
 
-## Authorization Time
+## 授权时间
 
-## Data Minimization Confirmation
+## 数据最小化确认
 
-Real private context must not be committed. By default, exclude name, email, address, phone and complete health history. Provide only the minimum needed for the task and manually inspect before uploading to any AI.
+真实私人背景不得提交。默认排除姓名、邮箱、地址、电话和完整健康史。只提供当前任务所需的最少信息，并在上传到任何 AI 前进行人工检查。

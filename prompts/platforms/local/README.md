@@ -7,6 +7,6 @@ owner: product
 source_of_truth: false
 ---
 
-# Local Model Prompt Adapter
+# 本地模型 Prompt 适配器
 
-This folder may contain local-model formatting derived from `prompts/core/`. It must not include secrets, private records or provider-specific business rules.
+本目录可以包含派生自 `prompts/core/` 的本地模型格式，但不得包含 Secrets、私人记录或特定提供商的业务规则。

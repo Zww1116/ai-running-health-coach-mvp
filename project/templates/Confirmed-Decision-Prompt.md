@@ -7,22 +7,22 @@ owner: founder
 source_of_truth: true
 ---
 
-# Confirmed Decision Prompt
+# 已确认决策 Prompt
 
-Use this prompt when the founder confirms a brand, product, architecture or agent decision in any AI conversation:
+当创始人在任意 AI 对话中确认品牌、产品、架构或 Agent 决策时，使用以下 Prompt：
 
 ```text
-Please write this confirmed decision into the repository.
+请将这项已确认决策写入仓库。
 
-Requirements:
-1. Find the single formal source from project/SourceOfTruth.md.
-2. Do not maintain the same conclusion in multiple files.
-3. Update the corresponding formal source.
-4. If this is a major decision, create or update an ADR.
-5. Update project/CurrentStatus.md if current state changes.
-6. Update related version or changelog information.
-7. Mark the document status correctly.
-8. Record the source and confirmation date.
-9. Do not paste the full chat transcript into Git.
-10. Output the modified file list.
+要求：
+1. 根据 project/SourceOfTruth.md 找到唯一正式来源。
+2. 不要在多个文件中重复维护同一结论。
+3. 更新对应的正式来源。
+4. 如果这是重大决策，创建或更新 ADR。
+5. 如果当前状态发生变化，更新 project/CurrentStatus.md。
+6. 更新相关版本或 Changelog 信息。
+7. 正确标记文档状态。
+8. 记录来源和确认日期。
+9. 不要把完整聊天记录粘贴到 Git。
+10. 输出修改文件清单。
 ```

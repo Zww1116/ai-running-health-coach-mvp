@@ -7,24 +7,24 @@ owner: founder
 source_of_truth: true
 ---
 
-# Source of Truth
+# 唯一正式来源
 
-| Content | Single Formal Source |
+| 内容 | 唯一正式来源 |
 | --- | --- |
-| Project current status | `project/CurrentStatus.md` |
-| Brand core | `brand/00_BrandDNA.md` |
-| Roadmap | `project/Roadmap.md` |
-| Current development tasks | `project/sprints/` |
-| Major decisions | `project/decisions/` |
-| Product requirements | `product/` |
-| System architecture | `architecture/` |
-| Privacy policy | `security/` |
-| Data formats | `schemas/` |
-| Agent business rules | `agents/` |
-| Core prompts | `prompts/core/` |
-| Platform prompts | `prompts/platforms/` |
-| Runtime code | `src/`, `server/` |
-| Private health data | Browser local storage or user private database |
-| Secrets | Environment variables and deployment platform secrets |
+| 项目当前状态 | `project/CurrentStatus.md` |
+| 品牌核心 | `brand/00_BrandDNA.md` |
+| 路线图 | `project/Roadmap.md` |
+| 当前开发任务 | `project/sprints/` |
+| 重大决策 | `project/decisions/` |
+| 产品需求 | `product/` |
+| 系统架构 | `architecture/` |
+| 隐私策略 | `security/` |
+| 数据格式 | `schemas/` |
+| Agent 业务规则 | `agents/` |
+| 核心 Prompt | `prompts/core/` |
+| 平台 Prompt | `prompts/platforms/` |
+| 运行时代码 | `src/`、`server/` |
+| 私人健康数据 | 浏览器本地存储或用户私有数据库 |
+| 密钥 | 环境变量和部署平台 Secrets |
 
-README files introduce and navigate. Chat history is not a formal source. AI-generated summaries cannot overwrite formal sources until reviewed and recorded. A single formal conclusion should not be maintained independently in multiple files.
+README 文件负责介绍与导航。聊天记录不是正式来源。AI 生成的摘要在经过审阅并正式记录前，不得覆盖正式来源。同一项正式结论不应在多个文件中独立维护。

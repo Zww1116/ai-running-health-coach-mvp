@@ -7,6 +7,6 @@ owner: engineering
 source_of_truth: true
 ---
 
-# Architecture Decision Records
+# 架构决策记录
 
-This directory stores major project decisions and the reasons behind them. ADRs should be updated when decisions are superseded and reviewed when their review conditions are reached.
+本目录保存重大项目决策及其理由。当决策被替代时，应更新对应 ADR；当满足其复审条件时，应重新审阅。

@@ -7,8 +7,8 @@ owner: product
 source_of_truth: true
 ---
 
-# Prompts
+# Prompt
 
-Prompts are project assets and should be portable. Core prompts live in `prompts/core/`; platform folders only adapt formatting.
+Prompt 属于项目资产，应保持可迁移。核心 Prompt 位于 `prompts/core/`；平台目录只负责格式适配。
 
-Do not hardcode private health data in prompts. Prompt changes must record version changes.
+不得在 Prompt 中硬编码私人健康数据。Prompt 变更必须记录版本变化。

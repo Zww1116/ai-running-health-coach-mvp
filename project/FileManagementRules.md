@@ -7,22 +7,22 @@ owner: engineering
 source_of_truth: true
 ---
 
-# File Management Rules
+# 文件管理规则
 
-1. Each asset type has one formal source.
-2. Do not put temporary documents in the repository root.
-3. Avoid names such as final, latest, final2, new, copy or temporary.
-4. Use stable and clear English file names.
-5. Use Chinese as the main body language when appropriate for the founder.
-6. Every sprint has an independent record.
-7. Major decisions use ADRs.
-8. Invalid files move to `archive/`.
-9. Record replacement before deleting a file.
-10. README does not duplicate detailed rules.
-11. Health data must not enter Git.
-12. Private exports must not enter Git.
-13. Schema changes must bump schema version.
-14. Prompt changes must record prompt version.
-15. Agent-rule changes must record agent version.
-16. AI chat is not a formal conclusion.
-17. Only founder confirmation can move proposed content to approved.
+1. 每类资产只有一个正式来源。
+2. 不要把临时文档放在仓库根目录。
+3. 避免使用 `final`、`latest`、`final2`、`new`、`copy` 或 `temporary` 等命名。
+4. 文件名使用稳定、清晰的英文。
+5. 在适合创始人阅读的场景中，正文以中文为主。
+6. 每个 Sprint 都有独立记录。
+7. 重大决策使用 ADR。
+8. 失效文件移入 `archive/`。
+9. 删除文件前先记录其替代关系。
+10. README 不重复维护详细规则。
+11. 健康数据不得进入 Git。
+12. 私人导出不得进入 Git。
+13. Schema 变更必须提升 Schema 版本。
+14. Prompt 变更必须记录 Prompt 版本。
+15. Agent 规则变更必须记录 Agent 版本。
+16. AI 聊天不是正式结论。
+17. 只有创始人确认后，内容状态才能从 `proposed` 变为 `approved`。

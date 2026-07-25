@@ -7,14 +7,14 @@ owner: engineering
 source_of_truth: true
 ---
 
-# Incident Response
+# 安全事件响应
 
-If private data or a secret is suspected to be committed:
+如果怀疑私人数据或密钥已被提交：
 
-1. Stop adding new commits that spread the data.
-2. Identify file path, data type and exposure level.
-3. For secrets, revoke and rotate immediately.
-4. For health data, remove current file content and assess Git history exposure.
-5. Decide whether history rewrite is needed with the repository owner.
-6. Record the incident without copying the sensitive value.
-7. Add prevention rules or tests.
+1. 停止增加会进一步扩散数据的 Commit。
+2. 确认文件路径、数据类型和暴露级别。
+3. 对于密钥，立即撤销并轮换。
+4. 对于健康数据，移除当前文件内容，并评估 Git 历史中的暴露情况。
+5. 与仓库所有者共同决定是否需要重写历史。
+6. 记录事件，但不要复制敏感值。
+7. 增加预防规则或测试。

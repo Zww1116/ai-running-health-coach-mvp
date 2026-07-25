@@ -7,85 +7,85 @@ owner: founder
 source_of_truth: true
 ---
 
-# Project Overview
+# 项目概览
 
-This repository contains a working personal AI health decision platform. The current product helps a user collect training, nutrition, sleep, recovery, pain and cycle data, then uses local rule-based specialist agents to produce daily and weekly coaching guidance.
+本仓库包含一个可运行的个人 AI 健康决策平台。当前产品帮助用户采集训练、营养、睡眠、恢复、疼痛和经期数据，再由本地规则版专家 Agent 生成每日与每周教练建议。
 
-## Current Positioning
+## 当前定位
 
-The current positioning is: personal AI health decision and growth companion. The broader V2 direction is Personal AI Health OS, organized around getting data, analyzing with multiple specialists, making a head-coach decision, executing, and reviewing.
+当前定位是：个人 AI 健康决策与成长伙伴。V2 的更长远方向是 Personal AI Health OS，围绕“获取数据、多专家分析、总教练决策、执行与复盘”组织产品。
 
-## Current Brand Core
+## 当前品牌核心
 
-The current proposed brand core is: remember the path, understand yourself, become yourself. The brand name is not finalized.
+当前拟议（proposed）的品牌核心是：记住来路、看懂自己、成为自己。品牌名称尚未确定。
 
-## Current Product
+## 当前产品
 
-The first product is an AI-assisted health and training management system for runners. It is usable as a React web application and has a public deployment path through GitHub Pages or Vercel.
+首个产品是面向跑者的 AI 辅助健康与训练管理系统。它以 React Web 应用形式运行，并可通过 GitHub Pages 或 Vercel 公开部署。
 
-## Current Phase
+## 当前阶段
 
-The project is in Phase 0 and Phase 1 overlap: governance, privacy foundation, product and data foundation.
+项目目前处于 Phase 0 与 Phase 1 的交叠阶段：项目治理和隐私基础，以及产品和数据基础。
 
-## Current Technical Status
+## 当前技术状态
 
-The app uses React, Vite and Tailwind. It includes local rule-based agents, local browser storage, optional Supabase synchronization, local image storage in IndexedDB, COROS file-import foundations, and a local Ollama nutrition estimation adapter.
+应用使用 React、Vite 和 Tailwind，包含本地规则版 Agent、浏览器本地存储、可选的 Supabase 同步、IndexedDB 本地图片存储、COROS 文件导入基础，以及本地 Ollama 营养估算适配器。
 
-## Current Data Storage Status
+## 当前数据存储状态
 
-Personal health records are primarily stored in the user's browser. Supabase is optional or reserved as a user-selected cloud synchronization capability. GitHub does not store raw personal health data.
+个人健康记录主要保存在用户浏览器中。Supabase 是可选能力，或作为由用户选择启用的云端同步能力预留。GitHub 不存储原始个人健康数据。
 
-## Current Privacy Boundary
+## 当前隐私边界
 
-Project assets may live in Git. Private health records, health images, exports, database files and secrets must not be committed. Any AI sharing must use explicit user review and a minimized analysis packet.
+项目资产可以进入 Git。私人健康记录、健康图片、导出文件、数据库文件和密钥不得提交。任何 AI 数据共享都必须经过用户明确审阅，并使用最小化的分析数据包（analysis packet）。
 
-## Current Implemented Capabilities
+## 当前已实现能力
 
-- Running, strength, nutrition, body, sleep, cycle and pain records.
-- Rule-based specialist agents and head-coach aggregation.
-- Data center entry points for imports, sleep, nutrition images and manual records.
-- Local image upload and preview through browser storage.
-- Optional Supabase auth and row-level-security backed record sync.
-- COROS import foundations for activity files.
+- 跑步、力量、饮食、身体、睡眠、经期和疼痛记录。
+- 规则版专家 Agent 与总教练聚合。
+- 面向导入、睡眠、饮食图片和手动记录的数据中心入口。
+- 通过浏览器存储实现本地图片上传与预览。
+- 可选的 Supabase 认证，以及由行级安全（RLS）保护的记录同步。
+- 面向运动文件的 COROS 导入基础。
 
-## Current Main Limitations
+## 当前主要限制
 
-- No real OpenAI, Claude or Gemini API integration is enabled.
-- Image recognition is local or placeholder-first, not a hosted production AI service.
-- Long-term cloud backup and restore are not yet a complete user-facing workflow.
-- Current schemas are draft and do not yet drive runtime validation.
+- 尚未启用真实的 OpenAI、Claude 或 Gemini API 集成。
+- 图片识别以本地能力或占位流程为主，不是托管式生产 AI 服务。
+- 长期云端备份与恢复尚未形成完整的用户流程。
+- 当前 Schema 状态为 `draft`，尚未用于运行时验证。
 
-## Current Sprint
+## 当前 Sprint
 
-Sprint 001: Project Foundation, Privacy and AI Portability.
+Sprint 001：项目基础、隐私保护与 AI 可迁移性。
 
-## Next Plan
+## 下一步计划
 
-Finish the governance, privacy, schema, prompt and AI handoff foundation before adding more product features.
+在增加更多产品功能之前，完成治理、隐私、Schema、Prompt 和 AI 交接基础。
 
-## Document Navigation
+## 文档导航
 
-- Project governance: [project/README.md](project/README.md)
-- Current status: [project/CurrentStatus.md](project/CurrentStatus.md)
-- Source of truth: [project/SourceOfTruth.md](project/SourceOfTruth.md)
-- Brand core: [brand/00_BrandDNA.md](brand/00_BrandDNA.md)
-- Architecture: [architecture/README.md](architecture/README.md)
-- Security: [security/README.md](security/README.md)
-- Migration: [migration/AI_HANDOFF.md](migration/AI_HANDOFF.md)
+- 项目治理：[project/README.md](project/README.md)
+- 当前状态：[project/CurrentStatus.md](project/CurrentStatus.md)
+- 唯一正式来源：[project/SourceOfTruth.md](project/SourceOfTruth.md)
+- 品牌核心：[brand/00_BrandDNA.md](brand/00_BrandDNA.md)
+- 架构：[architecture/README.md](architecture/README.md)
+- 安全：[security/README.md](security/README.md)
+- 迁移：[migration/AI_HANDOFF.md](migration/AI_HANDOFF.md)
 
-## Confirmed Items
+## 已确认事项
 
-- Use one main GitHub repository for the current stage.
-- Keep private health data separate from project assets.
-- Keep AI providers replaceable.
+- 当前阶段使用一个主要 GitHub 仓库。
+- 私人健康数据与项目资产分离。
+- AI 提供商保持可替换。
 
-## Unconfirmed Items
+## 未确认事项
 
-- Final brand name.
-- License and repository visibility strategy.
-- Final production AI provider.
-- Final long-term backup product flow.
+- 最终品牌名称。
+- 许可证和仓库可见性策略。
+- 最终生产环境 AI 提供商。
+- 最终长期备份产品流程。
 
-## Single Source Statement
+## 唯一正式来源声明
 
-Chat history is not a formal project source. Each important asset has one formal source listed in [project/SourceOfTruth.md](project/SourceOfTruth.md). README files should introduce and navigate, not duplicate detailed rules.
+聊天记录不是项目的正式来源。每类重要资产都只有一个正式来源，具体见 [project/SourceOfTruth.md](project/SourceOfTruth.md)。README 文件只负责介绍和导航，不重复维护详细规则。

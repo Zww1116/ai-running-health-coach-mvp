@@ -9,60 +9,60 @@ source_of_truth: true
 
 # Backlog
 
-## Governance
+## 治理
 
-- Confirm Sprint 001 review process. Status: Confirmed.
-- Add periodic dependency and privacy review. Status: Proposed.
+- 确认 Sprint 001 审阅流程。状态：`Confirmed`。
+- 增加周期性的依赖与隐私审阅。状态：`Proposed`。
 
-## Brand
+## 品牌
 
-- Complete Brand Foundation after this sprint. Status: Proposed.
-- Finalize brand name. Status: Proposed.
+- 在本 Sprint 后完成品牌基础。状态：`Proposed`。
+- 确定最终品牌名称。状态：`Proposed`。
 
-## Product
+## 产品
 
-- Improve daily review loop. Status: Proposed.
-- Add coach sharing mode. Status: Not Now.
+- 改进每日复盘闭环。状态：`Proposed`。
+- 增加教练分享模式。状态：`Not Now`。
 
-## User Experience
+## 用户体验
 
-- Refine mobile data entry. Status: Proposed.
+- 优化移动端数据录入。状态：`Proposed`。
 
-## Privacy
+## 隐私
 
-- Build user-reviewed analysis packet UI. Status: Proposed.
-- Add encrypted backup flow. Status: Proposed.
+- 构建由用户审阅的分析数据包界面。状态：`Proposed`。
+- 增加加密备份流程。状态：`Proposed`。
 
-## Data
+## 数据
 
-- Stabilize draft JSON Schemas. Status: Proposed.
-- Map COROS imports into daily records. Status: Confirmed.
+- 稳定 `draft` 状态的 JSON Schema。状态：`Proposed`。
+- 将 COROS 导入映射到每日记录。状态：`Confirmed`。
 
-## Backup and Recovery
+## 备份与恢复
 
-- Implement restore test workflow in product. Status: Proposed.
+- 在产品中实现恢复测试流程。状态：`Proposed`。
 
-## Agents
+## Agent
 
-- Version runtime rule-agent rules. Status: Proposed.
+- 对运行时规则版 Agent 规则进行版本管理。状态：`Proposed`。
 
-## Prompts
+## Prompt
 
-- Create provider-neutral core prompts. Status: Proposed.
+- 创建与提供商无关的核心 Prompt。状态：`Proposed`。
 
-## Knowledge
+## 知识
 
-- Build a reviewed health knowledge base. Status: Proposed.
+- 建立经过审阅的健康知识库。状态：`Proposed`。
 
-## Engineering
+## 工程
 
-- Add foundation validation scripts. Status: Confirmed.
+- 增加基础验证脚本。状态：`Confirmed`。
 
-## Testing
+## 测试
 
-- Keep build, unit tests and foundation validation in CI. Status: Proposed.
+- 在 CI 中持续运行构建、单元测试和基础验证。状态：`Proposed`。
 
-## Future Ideas
+## 未来想法
 
-- Garmin integration. Status: Not Now.
-- Terra API integration. Status: Not Now.
+- Garmin 集成。状态：`Not Now`。
+- Terra API 集成。状态：`Not Now`。

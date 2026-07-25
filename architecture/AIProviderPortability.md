@@ -7,15 +7,15 @@ owner: engineering
 source_of_truth: true
 ---
 
-# AI Provider Portability
+# AI 提供商可迁移性
 
-Future provider adapters should expose the same conceptual interface:
+未来的提供商适配器应暴露同一概念接口：
 
 ```js
 analyzeHealthData(analysisPacket)
 ```
 
-Possible providers:
+可选提供商：
 
 - `RuleBasedProvider`
 - `OpenAIProvider`
@@ -23,6 +23,6 @@ Possible providers:
 - `GeminiProvider`
 - `LocalModelProvider`
 
-Core prompts, schemas, agent rules and health knowledge should stay provider-neutral. Platform directories should only adapt formatting and transport details.
+核心 Prompt、Schema、Agent 规则和健康知识应保持与提供商无关。平台目录只负责适配格式和传输细节。
 
-This sprint does not implement real providers.
+本 Sprint 不实现真实提供商。

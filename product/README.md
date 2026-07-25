@@ -7,10 +7,10 @@ owner: product
 source_of_truth: true
 ---
 
-# Product
+# 产品
 
-This directory stores product requirements and product decisions. It does not store private user health records, screenshots, exports or raw chat logs.
+本目录保存产品需求和产品决策，不保存用户私人健康记录、截图、导出文件或原始聊天日志。
 
-Current status: placeholder foundation only. Product requirements will be added in future focused sprints.
+当前状态：仅有基础占位内容。产品需求将在后续范围聚焦的 Sprint 中补充。
 
-Changes should reference the active sprint and avoid duplicating roadmap or architecture decisions.
+变更应引用当前 Sprint，并避免重复维护路线图或架构决策。

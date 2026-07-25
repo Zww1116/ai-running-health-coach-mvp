@@ -7,40 +7,40 @@ owner: engineering
 source_of_truth: true
 ---
 
-# ADR-0002: Private Data Separation
+# ADR-0002：私人数据分离
 
-## Status
+## 状态
 
-Proposed.
+`Proposed`。
 
-## Background
+## 背景
 
-The app handles sensitive health records, images and future AI analysis packets.
+应用会处理敏感健康记录、图片，以及未来的 AI 分析数据包。
 
-## Decision
+## 决策
 
-Project code and documents can enter Git. Private health data must not enter Git. Local records, private databases and backup packs must remain separate from project assets.
+项目代码和文档可以进入 Git，私人健康数据不得进入 Git。本地记录、私有数据库和备份包必须与项目资产分离。
 
-## Reasons
+## 理由
 
-Git history is not a safe place for personal health data because deletion from the latest file does not remove history.
+Git 历史不适合保存个人健康数据，因为从最新文件中删除内容并不会移除历史记录。
 
-## Alternatives
+## 备选方案
 
-Store sample-like personal records in the repo. This is rejected because it creates unnecessary privacy risk.
+在仓库中保存类似示例的个人记录。该方案被否决，因为它会制造不必要的隐私风险。
 
-## Positive Impact
+## 正面影响
 
-Lower leakage risk and clearer ownership boundaries.
+降低泄露风险，并使所有权边界更清晰。
 
-## Negative Impact
+## 负面影响
 
-Developers need demo personas and fixtures instead of real records.
+开发者需要使用虚构 Demo Persona 和 Fixture，而不能使用真实记录。
 
-## Risks
+## 风险
 
-Accidental screenshots, exports or logs can still be committed without checks.
+如果缺少检查，截图、导出文件或日志仍可能被意外提交。
 
-## Review Conditions
+## 复审条件
 
-Review when encrypted backups or private cloud sync are implemented.
+实现加密备份或私有云同步时复审。

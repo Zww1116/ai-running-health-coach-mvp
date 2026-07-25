@@ -7,40 +7,40 @@ owner: engineering
 source_of_truth: true
 ---
 
-# ADR-0001: Single Repository
+# ADR-0001：单一仓库
 
-## Status
+## 状态
 
-Proposed.
+`Proposed`。
 
-## Background
+## 背景
 
-The project combines application code, product documents, architecture notes, schemas, prompts and governance records.
+本项目同时包含应用代码、产品文档、架构说明、Schema、Prompt 和治理记录。
 
-## Decision
+## 决策
 
-Use one main GitHub repository for the current stage. Do not split into multiple repositories yet. Manage assets through clear directories.
+当前阶段使用一个主要 GitHub 仓库，暂不拆分为多个仓库，并通过清晰的目录管理资产。
 
-## Reasons
+## 理由
 
-One repository keeps the early project easy to understand, deploy and review.
+单一仓库让早期项目更容易理解、部署和审阅。
 
-## Alternatives
+## 备选方案
 
-Multiple repositories for app, docs and prompts. This was rejected for now because it adds coordination overhead.
+为应用、文档和 Prompt 使用多个仓库。当前暂不采用，因为这会增加协作成本。
 
-## Positive Impact
+## 正面影响
 
-Simple history, simple deployment and easier onboarding for a new AI or human contributor.
+历史简单、部署简单，也便于新的 AI 或人类协作者上手。
 
-## Negative Impact
+## 负面影响
 
-Public repository visibility can expose more product thinking if the repository remains public.
+如果仓库保持公开，可见性可能暴露更多产品思路。
 
-## Risks
+## 风险
 
-Poor file rules could turn one repository into a dumping ground.
+不清晰的文件规则可能使单一仓库变成无序堆放区。
 
-## Review Conditions
+## 复审条件
 
-Review when product scope, permissions or team size grows substantially.
+当产品范围、权限需求或团队规模显著增长时复审。

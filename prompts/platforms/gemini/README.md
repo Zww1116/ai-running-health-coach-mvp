@@ -7,6 +7,6 @@ owner: product
 source_of_truth: false
 ---
 
-# Gemini Prompt Adapter
+# Gemini Prompt 适配器
 
-This folder may contain Gemini-specific formatting derived from `prompts/core/`. It must not drift from the shared prompt source.
+本目录可以包含派生自 `prompts/core/` 的 Gemini 专用格式，不得偏离共享 Prompt 来源。

@@ -7,10 +7,10 @@ owner: engineering
 source_of_truth: true
 ---
 
-# Backup and Recovery
+# 备份与恢复
 
-Future backups should be user-controlled, portable and clearly separated from Git. A backup package may include health records, analysis history, reports, attachments index, schema versions and checksums.
+未来的备份应由用户控制、可迁移，并与 Git 清晰分离。备份包可以包含健康记录、分析历史、报告、附件索引、Schema 版本和校验值。
 
-Backups should not be uploaded automatically. The user should be able to export, inspect, store a second copy, restore and delete.
+备份不应自动上传。用户应能够导出、检查、保存第二份副本、恢复和删除。
 
-This sprint creates only schemas and migration handoff files. It does not export private health records.
+本 Sprint 只创建 Schema 和迁移交接文件，不导出私人健康记录。

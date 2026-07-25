@@ -7,35 +7,35 @@ owner: engineering
 source_of_truth: true
 ---
 
-# Data Ownership and Boundaries
+# 数据所有权与边界
 
-## GitHub May Store
+## GitHub 可以保存
 
-- Code.
-- Brand concepts.
-- Product documents.
-- Architecture.
-- General agent rules.
-- General prompts.
-- General health knowledge.
-- Schemas.
-- Tests.
-- Project decisions.
+- 代码。
+- 品牌概念。
+- 产品文档。
+- 架构。
+- 通用 Agent 规则。
+- 通用 Prompt。
+- 通用健康知识。
+- Schema。
+- 测试。
+- 项目决策。
 
-## GitHub Must Not Store
+## GitHub 禁止保存
 
-- Real personal health profiles.
-- Daily health records.
-- Cycle records.
-- Pain records.
-- Medical files.
-- Health photos.
-- Email verification codes.
-- API keys.
-- Supabase `service_role` keys.
-- Access tokens.
-- Private data export packs.
-- Database files.
-- Unsanitized logs.
+- 真实个人健康资料。
+- 每日健康记录。
+- 经期记录。
+- 疼痛记录。
+- 医疗文件。
+- 健康照片。
+- 邮箱验证码。
+- API 密钥。
+- Supabase `service_role` 密钥。
+- Access Token。
+- 私人数据导出包。
+- 数据库文件。
+- 未脱敏日志。
 
-The user owns health data. Cloud sync must be a user-selected capability, not a hidden default.
+健康数据归用户所有。云端同步必须是由用户选择启用的能力，而不是隐藏的默认行为。

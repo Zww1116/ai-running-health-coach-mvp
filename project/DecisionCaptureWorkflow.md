@@ -7,14 +7,14 @@ owner: founder
 source_of_truth: true
 ---
 
-# Decision Capture Workflow
+# 决策记录流程
 
-When the founder confirms a product, brand, architecture or agent decision:
+当创始人确认产品、品牌、架构或 Agent 决策时：
 
-1. Identify the single formal source.
-2. Update that source only.
-3. Create or update an ADR for major decisions.
-4. Update `project/CurrentStatus.md` if the decision changes current state.
-5. Record status, version, source and date.
-6. Avoid copying full chat transcripts into the repository.
-7. Record modified files in the sprint record.
+1. 确认唯一正式来源。
+2. 只更新该正式来源。
+3. 重大决策应创建或更新 ADR。
+4. 如果决策改变当前状态，则更新 `project/CurrentStatus.md`。
+5. 记录状态、版本、来源和日期。
+6. 不要把完整聊天记录复制进仓库。
+7. 在 Sprint 记录中列出修改文件。

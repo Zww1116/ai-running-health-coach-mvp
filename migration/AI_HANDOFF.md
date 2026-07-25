@@ -7,21 +7,23 @@ owner: engineering
 source_of_truth: true
 ---
 
-# AI Handoff
+# AI 交接
 
-## Project Positioning
+## 项目定位
 
-Personal AI health decision and growth companion, moving toward Personal AI Health OS.
+个人 AI 健康决策与成长伙伴，长期方向是 Personal AI Health OS。
 
-## Brand Core
+## 品牌核心
 
-Proposed: remember the path, understand yourself, become yourself.
+拟议（`Proposed`）：记住来路、看懂自己、成为自己。
 
-## Current Phase
+品牌名称尚未确定。
 
-Working MVP plus Sprint 001 foundation work.
+## 当前阶段
 
-## Reading Order
+可运行 MVP，加上 Sprint 001 基础建设工作。
+
+## 阅读顺序
 
 1. `migration/AI_HANDOFF.md`
 2. `PROJECT.md`
@@ -34,32 +36,36 @@ Working MVP plus Sprint 001 foundation work.
 9. `schemas/`
 10. `agents/`
 11. `prompts/core/`
-12. Current sprint
+12. 当前 Sprint
 
-## Source Rules
+## 正式来源规则
 
-Use formal files, not old chat memory. Respect document status values. Report conflicts before editing.
+使用正式文件，不依赖旧聊天记忆。尊重文档状态值；编辑前如发现冲突，先报告冲突。
 
-## Privacy Boundary
+## 隐私边界
 
-Do not put private health records, images, exports, secrets, database files or unsanitized logs in Git. Do not send private data to AI without user confirmation.
+不得把私人健康记录、图片、导出文件、密钥、数据库文件或未脱敏日志放入 Git。未经用户确认，不得把私人数据发送给 AI。
 
-## Data Ownership
+## 数据所有权
 
-The user owns personal health data. The project owns portable code, docs, schemas, prompts and agent rules.
+个人健康数据归用户所有。可迁移的代码、文档、Schema、Prompt 和 Agent 规则属于项目资产。
 
-## New AI Checks
+## 新 AI 接手检查
 
-Restate project positioning, current phase, brand core, confirmed items, unconfirmed items, privacy boundary, current sprint and next step before making changes.
+开始修改前，重新说明项目定位、当前阶段、品牌核心、已确认事项、未确认事项、隐私边界、当前 Sprint 和下一步。
 
-## Conflict Handling
+## 冲突处理
 
-If sources conflict, prefer the file listed in `project/SourceOfTruth.md`. If status or owner is unclear, stop and report.
+如果来源冲突，优先采用 `project/SourceOfTruth.md` 中列出的文件。如果状态或负责人不清楚，停止并报告。
 
-## Standard Change Flow
+## 标准变更流程
 
-Use one focused sprint, keep scope narrow, update formal source, validate, record changes and avoid merging without review.
+每次使用一个范围聚焦的 Sprint，控制变更范围，更新正式来源，完成验证并记录变更；未经审阅不要合并。
 
-## Unconfirmed Items
+## 迁移包完整性
 
-Final brand name, license, repository visibility strategy, production AI provider and complete backup flow.
+`FILE_INDEX.md` 应列出全部最终交接文件。`CHECKSUMS.txt` 应计算除自身以外所有最终文件的 SHA-256；`CHECKSUMS.txt` 不包含自身校验值。
+
+## 未确认事项
+
+最终品牌名称、许可证、仓库可见性策略、生产 AI 提供商和完整备份流程。

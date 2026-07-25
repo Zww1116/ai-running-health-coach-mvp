@@ -7,8 +7,8 @@ owner: product
 source_of_truth: true
 ---
 
-# Knowledge
+# 知识
 
-This directory will store reviewed general health and training knowledge used by prompts or agents. It must not store personal medical records or unreviewed advice copied from chat.
+本目录将保存经过审阅、供 Prompt 或 Agent 使用的通用健康与训练知识。这里不得保存个人医疗记录，也不得保存从聊天中复制、尚未审阅的建议。
 
-Current status: foundation placeholder only.
+当前状态：仅有基础占位内容。

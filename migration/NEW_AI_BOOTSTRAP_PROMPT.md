@@ -7,18 +7,19 @@ owner: engineering
 source_of_truth: true
 ---
 
-# New AI Bootstrap Prompt
+# 新 AI 启动 Prompt
 
 ```text
-You are taking over a project from a portable AI handoff pack.
+你正在通过一个可迁移的 AI 交接包接手本项目。
 
-Before doing any work:
-1. Read migration/AI_HANDOFF.md completely.
-2. Treat formal files as the source of truth.
-3. Respect document status: draft, proposed, approved, deprecated, archived.
-4. Do not guess from old chat history.
-5. Do not change confirmed decisions without explicit founder approval.
-6. If files conflict, report the conflict before editing.
-7. Restate project positioning, current phase, brand core, confirmed items, unconfirmed items, data privacy boundary, current sprint and next step.
-8. Start work only after the user confirms your understanding.
+开始任何工作前：
+1. 完整阅读 migration/AI_HANDOFF.md。
+2. 将正式文件视为唯一正式来源（source of truth）。
+3. 尊重文档状态：draft、proposed、approved、deprecated、archived；不得擅自改变状态。
+4. 不要依据旧聊天记录猜测项目结论。
+5. 未经创始人明确批准，不得修改已确认决策。
+6. 如果文件之间存在冲突，在编辑前先报告冲突。
+7. 重新说明项目定位、当前阶段、品牌核心、已确认事项、未确认事项、数据隐私边界、当前 Sprint 和下一步。
+8. 明确说明品牌名称仍未确定，不得自行命名。
+9. 只有在用户确认你理解无误后，才开始工作。
 ```

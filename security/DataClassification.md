@@ -7,29 +7,29 @@ owner: engineering
 source_of_truth: true
 ---
 
-# Data Classification
+# 数据分级
 
-## Level 0: Public Project Assets
+## Level 0：公开项目资产
 
-Examples: brand ideas, code, general schemas and general agents. Allowed in Git. AI sharing is allowed after normal review.
+示例：品牌想法、代码、通用 Schema 和通用 Agent。允许进入 Git。经过常规审阅后可以与 AI 共享。
 
-## Level 1: Private Configuration
+## Level 1：私人配置
 
-Examples: long-term goals, preferences and training strategy. Store in browser or private database. Do not commit. AI sharing requires user confirmation.
+示例：长期目标、偏好和训练策略。保存在浏览器或私有数据库中，不得提交。与 AI 共享需要用户确认。
 
-## Level 2: Sensitive Health Data
+## Level 2：敏感健康数据
 
-Examples: sleep, weight, cycle, pain, health images and medical information. Store in browser, user private database or encrypted backup. Never commit. AI sharing requires minimization and explicit confirmation.
+示例：睡眠、体重、经期、疼痛、健康图片和医疗信息。保存在浏览器、用户私有数据库或加密备份中，绝不提交。与 AI 共享必须先最小化数据并获得明确确认。
 
-## Level 3: Secrets and Authentication
+## Level 3：密钥与认证
 
-Examples: API keys, service-role keys, access tokens and private keys. Store only in environment variables or secret managers. Never commit and never send to AI.
+示例：API 密钥、`service_role` 密钥、Access Token 和私钥。只能保存在环境变量或 Secret Manager 中，绝不提交，也绝不发送给 AI。
 
-## Handling Matrix
+## 处理矩阵
 
-| Level | Allowed Storage | Forbidden Storage | AI Sharing | Confirmation | Export | Delete | Backup | Logging |
+| 级别 | 允许存储位置 | 禁止存储位置 | AI 共享 | 确认 | 导出 | 删除 | 备份 | 日志 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | Git, docs | None specific | Allowed | Normal review | Git/export | Git history rules | Git | Public logs ok |
-| 1 | Browser, private DB | Git | Minimal only | Required | User export | User action | Private backup | No raw logs |
-| 2 | Browser, private DB, encrypted backup | Git, public logs | Minimized only | Required | User export | User action | Encrypted preferred | No raw logs |
-| 3 | Secret manager, env vars | Git, frontend, logs | Never | Not applicable | Never | Rotate/revoke | Secret manager | Never log |
+| 0 | Git、文档 | 无特别限制 | 允许 | 常规审阅 | Git/导出 | 遵循 Git 历史规则 | Git | 可使用公开日志 |
+| 1 | 浏览器、私有数据库 | Git | 仅最小必要内容 | 必须 | 用户导出 | 用户操作 | 私人备份 | 不记录原始数据 |
+| 2 | 浏览器、私有数据库、加密备份 | Git、公开日志 | 仅最小化数据 | 必须 | 用户导出 | 用户操作 | 优先加密 | 不记录原始数据 |
+| 3 | Secret Manager、环境变量 | Git、前端、日志 | 绝不 | 不适用 | 绝不 | 轮换/撤销 | Secret Manager | 绝不记录 |

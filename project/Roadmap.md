@@ -7,60 +7,60 @@ owner: product
 source_of_truth: true
 ---
 
-# Roadmap
+# 路线图
 
-## Phase 0: Governance, Privacy and Brand Foundation
+## Phase 0：治理、隐私与品牌基础
 
-Goal: make the project maintainable, privacy-first and portable across AI platforms.
+目标：使项目可维护、隐私优先，并能够跨 AI 平台迁移。
 
-Main outcomes: governance docs, privacy model, source-of-truth matrix, migration handoff pack and proposed brand core.
+主要成果：治理文档、隐私模型、唯一正式来源矩阵、迁移交接包，以及拟议（proposed）的品牌核心。
 
-Exit condition: Sprint records, ADRs, privacy audit and AI handoff export are in place.
+退出条件：Sprint 记录、ADR、隐私审计和 AI 交接导出均已建立。
 
-## Phase 1: Product and Data Foundation
+## Phase 1：产品与数据基础
 
-Goal: stabilize the health data model and collection workflows.
+目标：稳定健康数据模型和采集工作流。
 
-Main outcomes: data center, manual records, import foundations, settings data management and draft schemas.
+主要成果：数据中心、手动记录、导入基础、设置中心的数据管理，以及 `draft` 状态的 Schema。
 
-Exit condition: records consistently map into `dailyHealthData` without data loss.
+退出条件：记录能够稳定映射到 `dailyHealthData`，且不丢失数据。
 
-## Phase 2: Daily Personal Health Experience
+## Phase 2：每日个人健康体验
 
-Goal: make daily use simple and trustworthy.
+目标：让每日使用简单且可信。
 
-Main outcomes: daily plan, data review, feedback loop and recovery-first guidance.
+主要成果：每日计划、数据回顾、反馈闭环，以及恢复优先的指导。
 
-Exit condition: a user can record, review, decide and follow up daily.
+退出条件：用户每天都能完成记录、回顾、决策和跟进。
 
-## Phase 3: Multi-Agent Intelligence
+## Phase 3：多 Agent 智能
 
-Goal: deepen specialist analysis while keeping outputs structured.
+目标：深化专家分析，同时保持输出结构化。
 
-Main outcomes: versioned agent rules, prompt packs, analysis history and head-coach reasoning.
+主要成果：带版本的 Agent 规则、Prompt 包、分析历史和总教练推理。
 
-Exit condition: agent outputs are comparable across rule and AI providers.
+退出条件：规则提供商与 AI 提供商的 Agent 输出可以相互比较。
 
-## Phase 4: Private Cloud Sync and Backup
+## Phase 4：私有云同步与备份
 
-Goal: support long-term use without losing ownership.
+目标：支持长期使用，同时不失去数据所有权。
 
-Main outcomes: private sync, export, backup, restore and deletion workflows.
+主要成果：私有同步、导出、备份、恢复和删除工作流。
 
-Exit condition: a user can move and recover personal records safely.
+退出条件：用户可以安全迁移和恢复个人记录。
 
-## Phase 5: Replaceable AI Integration
+## Phase 5：可替换的 AI 集成
 
-Goal: connect external AI services without lock-in.
+目标：连接外部 AI 服务，同时避免供应商锁定。
 
-Main outcomes: provider abstraction, OpenAI/Anthropic/Gemini/local adapters and analysis-packet confirmation.
+主要成果：提供商抽象、OpenAI/Anthropic/Gemini/本地适配器，以及分析数据包确认。
 
-Exit condition: provider swap does not change the core data contract.
+退出条件：切换提供商不会改变核心数据契约。
 
-## Phase 6: Cross-Platform Personal Companion
+## Phase 6：跨平台个人伙伴
 
-Goal: extend the companion beyond the web app while preserving ownership.
+目标：在保留用户所有权的前提下，将个人伙伴体验扩展到 Web 应用之外。
 
-Main outcomes: mobile-friendly usage, coach sharing, reports and cross-device workflows.
+主要成果：移动端友好体验、教练分享、报告和跨设备工作流。
 
-Exit condition: core records and decisions remain portable.
+退出条件：核心记录和决策保持可迁移。

@@ -7,8 +7,8 @@ owner: product
 source_of_truth: true
 ---
 
-# Agent Business Rules
+# Agent 业务规则
 
-This directory will store provider-neutral agent business rules. Runtime rule-agent code currently remains in `src/agents/`.
+本目录将保存与提供商无关的 Agent 业务规则。运行时规则版 Agent 代码目前仍位于 `src/agents/`。
 
-Do not copy runtime rules here until they are reviewed and versioned, to avoid two conflicting sources. Private user context must not be stored here.
+在规则经过审阅和版本管理前，不要把运行时规则复制到这里，以免形成两个相互冲突的来源。本目录不得保存用户私人背景。

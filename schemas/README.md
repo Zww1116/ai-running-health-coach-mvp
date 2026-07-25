@@ -7,8 +7,8 @@ owner: engineering
 source_of_truth: true
 ---
 
-# Schemas
+# Schema
 
-This directory stores draft portable JSON Schemas for health records, analysis packets, AI results and backup manifests.
+本目录保存 `draft` 状态、可迁移的 JSON Schema，用于健康记录、分析数据包、AI 结果和备份 Manifest。
 
-Schemas are not yet runtime validators. Schema changes must record version changes and must not include platform-specific fields without a portability reason.
+这些 Schema 尚未用作运行时验证器。Schema 变更必须记录版本变化；如果没有可迁移性方面的理由，不得加入平台专用字段。

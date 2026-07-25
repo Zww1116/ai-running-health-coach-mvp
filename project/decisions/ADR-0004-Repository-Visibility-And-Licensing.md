@@ -7,40 +7,40 @@ owner: founder
 source_of_truth: true
 ---
 
-# ADR-0004: Repository Visibility and Licensing
+# ADR-0004：仓库可见性与许可证
 
-## Status
+## 状态
 
-Proposed.
+`Proposed`。
 
-## Background
+## 背景
 
-The current deployment path may use a public GitHub repository, while the product may later need stronger source protection.
+当前部署路径可能使用公开 GitHub 仓库，而产品未来可能需要更强的源代码保护。
 
-## Decision
+## 决策
 
-Codex must not change repository visibility. Codex must not add an open-source license by itself. Brand, trademark, copyright and code licensing decisions remain with the founder.
+Codex 不得修改仓库可见性，也不得自行添加开源许可证。品牌、商标、版权和代码许可决策仍由创始人决定。
 
-## Reasons
+## 理由
 
-Public source helps deployment and review but reveals code and product thinking. Private source protects code but may require deployment changes.
+公开源代码有利于部署和审阅，但也会展示代码和产品思路；私有源代码可以保护代码，但可能需要调整部署方式。
 
-## Alternatives
+## 备选方案
 
-Make the repository private now, or add a permissive license now. Both require founder decision.
+现在将仓库设为私有，或现在添加宽松许可证。两项方案都需要创始人决定。
 
-## Positive Impact
+## 正面影响
 
-Prevents accidental legal or visibility changes.
+避免意外改变法律状态或仓库可见性。
 
-## Negative Impact
+## 负面影响
 
-Licensing remains unresolved.
+许可证问题仍未解决。
 
-## Risks
+## 风险
 
-If the repo is public and unlicensed, viewers can see source but reuse rights are unclear.
+如果仓库公开但没有许可证，访问者可以看到源代码，但复用权利并不明确。
 
-## Review Conditions
+## 复审条件
 
-Review before broader public sharing, collaborators, commercialization or open-source release.
+在更广泛公开分享、增加协作者、商业化或开源发布前复审。

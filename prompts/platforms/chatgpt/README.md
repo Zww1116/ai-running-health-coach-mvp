@@ -7,6 +7,6 @@ owner: product
 source_of_truth: false
 ---
 
-# ChatGPT Prompt Adapter
+# ChatGPT Prompt 适配器
 
-This folder may contain ChatGPT-specific formatting derived from `prompts/core/`. It must not become an independent business-rule source.
+本目录可以包含派生自 `prompts/core/` 的 ChatGPT 专用格式，但不得成为独立的业务规则来源。

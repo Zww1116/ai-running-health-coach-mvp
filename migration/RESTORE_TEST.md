@@ -7,15 +7,15 @@ owner: engineering
 source_of_truth: true
 ---
 
-# Restore Test
+# 恢复测试
 
-1. Copy `AI-Core-Pack` into an empty directory.
-2. Verify `FILE_INDEX.md`.
-3. Verify `CHECKSUMS.txt`.
-4. Verify `VERSION.json`.
-5. Upload `AI_CONTEXT_COMPLETE.md` to a new AI session with no old chat history.
-6. Use `NEW_AI_BOOTSTRAP_PROMPT.md`.
-7. Check whether the new AI understands the project.
-8. Do not use old chat to fill gaps.
-9. Record missing items, conflicts and misunderstandings.
-10. If restore fails, fix the formal source files.
+1. 将 `AI-Core-Pack` 复制到一个空目录。
+2. 验证 `FILE_INDEX.md`。
+3. 验证 `CHECKSUMS.txt`；它应覆盖其他全部最终文件，但不包含自身校验值。
+4. 验证 `VERSION.json`。
+5. 将 `AI_CONTEXT_COMPLETE.md` 上传到一个没有旧聊天记录的新 AI 会话。
+6. 使用 `NEW_AI_BOOTSTRAP_PROMPT.md`。
+7. 检查新 AI 是否理解项目。
+8. 不要使用旧聊天记录填补缺失信息。
+9. 记录缺失项、冲突和误解。
+10. 如果恢复失败，修正正式来源文件。

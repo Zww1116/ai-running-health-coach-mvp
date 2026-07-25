@@ -7,10 +7,10 @@ owner: engineering
 source_of_truth: true
 ---
 
-# Privacy Model
+# 隐私模型
 
-The project is privacy-first and local-first. Local-first means the browser is the default storage location, not that data must remain only local forever. Cloud sync and AI sharing must be explicit user choices.
+本项目坚持隐私优先（privacy-first）和本地优先（local-first）。本地优先表示浏览器是默认存储位置，并不表示数据必须永远只保存在本地。云端同步和 AI 数据共享都必须由用户明确选择。
 
-Health data and project assets are separate. Git stores project assets; user-controlled local storage or private databases store health data.
+健康数据与项目资产相互分离。Git 保存项目资产；由用户控制的本地存储或私有数据库保存健康数据。
 
-Before sending data to any AI provider, the user should be able to review, minimize and confirm the analysis packet.
+向任何 AI 提供商发送数据前，用户应能够审阅、最小化并确认分析数据包。

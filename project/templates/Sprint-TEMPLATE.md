@@ -7,45 +7,45 @@ owner: engineering
 source_of_truth: true
 ---
 
-# Sprint Template
+# Sprint 模板
 
 ## Sprint ID
 
-## Name
+## 名称
 
-## Status
+## 状态
 
-## Background
+## 背景
 
-## Goal
+## 目标
 
-## Scope
+## 范围
 
-## Non-Scope
+## 非范围
 
-## Inputs
+## 输入
 
-## Files
+## 文件
 
-## Steps
+## 步骤
 
-## Acceptance Criteria
+## 验收标准
 
-## Privacy Impact
+## 隐私影响
 
-## Data Migration Impact
+## 数据迁移影响
 
-## Test Results
+## 测试结果
 
-## Build Results
+## 构建结果
 
-## Decisions
+## 决策
 
-## Open Issues
+## 未解决问题
 
-## Modified Files
+## 修改文件
 
-## Branch
+## 分支
 
 ## Commit
 

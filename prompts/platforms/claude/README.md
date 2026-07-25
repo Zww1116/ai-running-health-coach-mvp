@@ -7,6 +7,6 @@ owner: product
 source_of_truth: false
 ---
 
-# Claude Prompt Adapter
+# Claude Prompt 适配器
 
-This folder may contain Claude-specific formatting derived from `prompts/core/`. It must not contain private user data.
+本目录可以包含派生自 `prompts/core/` 的 Claude 专用格式，但不得包含用户私人数据。

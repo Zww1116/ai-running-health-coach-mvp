@@ -7,6 +7,6 @@ owner: engineering
 source_of_truth: false
 ---
 
-# Project Archive
+# 项目归档
 
-This directory stores project governance files that have been replaced but remain useful for history. It does not store private health data, backups, images, secrets or temporary notes.
+本目录保存已被替代、但仍具有历史参考价值的项目治理文件。这里不保存私人健康数据、备份、图片、密钥或临时笔记。

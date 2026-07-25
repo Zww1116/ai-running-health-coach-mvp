@@ -7,20 +7,20 @@ owner: engineering
 source_of_truth: true
 ---
 
-# Data Flow
+# 数据流
 
-The target flow is:
+目标流程如下：
 
 ```text
-Data collection
--> local save
--> user review
--> analysis packet selection
--> minimization and anonymization
--> user confirmation
--> replaceable AI provider
--> standardized analysis result
--> user decides whether to save
+数据采集
+-> 本地保存
+-> 用户审阅
+-> 选择分析数据包
+-> 最小化与匿名化
+-> 用户确认
+-> 可替换的 AI 提供商
+-> 标准化分析结果
+-> 用户决定是否保存
 ```
 
-This sprint designs the flow only. It does not implement analysis-packet confirmation or external provider calls.
+本 Sprint 只设计该流程，不实现分析数据包确认，也不调用外部提供商。
