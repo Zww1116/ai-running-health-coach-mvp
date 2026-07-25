@@ -7,89 +7,104 @@ owner: engineering
 source_of_truth: true
 ---
 
-# Sprint 001: Foundation, Privacy and AI Portability
+# Sprint 001：项目基础、隐私保护与 AI 可迁移性
 
-## Sprint ID
+## Sprint 编号
 
-Sprint 001.
+Sprint 001。
 
-## Name
+## 名称
 
-Project Foundation, Privacy and AI Portability.
+项目基础、隐私保护与 AI 可迁移性。
 
-## Status
+## 状态
 
-Implemented, pending owner review.
+已实现，等待所有者审查。
 
-## Background
+## 背景
 
-The web MVP is already usable. This sprint protects long-term value by separating project assets from private data and by making AI context portable.
+Web MVP 已可使用。本 Sprint 通过分离项目资产与私人数据，并让 AI 上下文可迁移，保护项目的长期价值。
 
-## Goal
+## 目标
 
-Create governance, privacy, schema, prompt and migration foundations without adding product features or changing runtime data structures.
+在不新增产品功能、不改变运行时数据结构的前提下，建立治理、隐私、Schema、Prompt 和迁移基础。
 
-## Scope
+## 范围
 
-Documentation, draft schemas, `.gitignore`, package scripts, privacy audit, AI handoff export script and foundation validation script.
+文档、草案状态的 Schema、`.gitignore`、package scripts、隐私审计、AI 交接导出脚本和基础验证脚本。
 
-## Non-Scope
+## 不在范围内
 
-No website business features, no visual redesign, no data migration, no real AI API, no repository visibility change, no license decision and no new npm dependency.
+不修改网站业务功能，不做视觉重设计，不迁移现有数据，不接入真实 AI API，不改变仓库可见性，不决定许可证，也不新增 npm 依赖。
 
-## Inputs
+## 输入
 
-The Sprint 001 request pasted into Codex on 2026-07-25 and current repository state at commit `787382b2cb520d2a0a976a4230185de48afbcab0`.
+2026-07-25 提交给 Codex 的 Sprint 001 要求，以及提交 `787382b2cb520d2a0a976a4230185de48afbcab0` 时的仓库状态。
 
-## Files
+## 文件
 
-See the final modified file list in this document after implementation.
+实现后的完整文件范围见本文末尾。
 
-## Steps
+## 实施步骤
 
-1. Check baseline branch, commit and tests.
-2. Add governance and source-of-truth documents.
-3. Add architecture, privacy and security documents.
-4. Add draft schemas and prompt/migration structure.
-5. Add AI handoff export and validation scripts.
-6. Update README, package scripts and `.gitignore`.
-7. Run tests, build, validation and export.
+1. 检查基线分支、Commit 和测试。
+2. 增加治理与唯一正式来源（Source of Truth）文档。
+3. 增加架构、隐私和安全文档。
+4. 增加草案 Schema、Prompt 和迁移结构。
+5. 增加 AI 交接导出与基础验证脚本。
+6. 更新 README、package scripts 和 `.gitignore`。
+7. 运行测试、构建、验证和导出。
+8. 根据合并前审查意见，强化排除规则、迁移包完整性、基础验证和隐私审计。
 
-## Acceptance Criteria
+## 验收标准
 
-Existing website behavior remains unchanged, JSON files are valid, export files are generated, private-data directories are ignored, and no high-confidence secrets are introduced.
+现有网站行为保持不变；JSON 文件有效；迁移包可生成；私人数据目录被排除；没有引入高可信 Secret。
 
-## Privacy Impact
+## 隐私影响
 
-Positive. The sprint adds classification, boundaries, ignore rules, audit notes and a provider-neutral AI sharing model.
+正向。本 Sprint 增加数据分类、边界、忽略规则、审计记录和提供商中立的 AI 数据共享模型。
 
-## Data Migration Impact
+## 数据迁移影响
 
-None. Existing localStorage, IndexedDB and Supabase record structures are not changed.
+无。现有 `localStorage`、IndexedDB 和 Supabase 记录结构均未改变。
 
-## Test Results
+## 测试结果
 
-- Baseline before implementation: `vitest run` passed, 16 files and 61 tests.
-- Sprint verification: `vitest run` passed, 17 files and 63 tests.
-- Added `src/__tests__/foundationScripts.test.js` with red-green verification for foundation scripts and AI handoff export.
+- 实现前基线：`vitest run` 通过，16 个测试文件、61 项测试。
+- Sprint 初次验证：`vitest run` 通过，17 个测试文件、63 项测试。
+- 合并前审查修正验证：`vitest run` 通过，20 个测试文件、77 项测试。
+- `src/__tests__/foundationScripts.test.js` 覆盖基础脚本和 AI 交接导出。
+- `src/__tests__/handoffReviewFixes.test.js` 覆盖 `manifest.exclude`、路径越界、完整索引和校验值。
+- `src/__tests__/foundationValidationReview.test.js` 覆盖 Markdown 链接、JSON Schema 元数据和敏感夹具导出。
+- `src/__tests__/privacyAudit.test.js` 覆盖 Secret 失败、打码、个人信息 warning 和二进制跳过。
 
-## Build Results
+## 构建结果
 
-Baseline and sprint verification builds passed with the existing Vite chunk-size warning. The warning is not introduced by this sprint.
+基线、Sprint 初次验证和合并前审查修正的生产构建均通过。仍存在原有 Vite chunk-size warning，该提示不是本 Sprint 引入。
 
-## Decisions
+## 决策
 
-Initial ADRs added for one repository, private data separation, replaceable AI providers and repository visibility/licensing.
+已为单仓库、私人数据分离、可替换 AI 提供商，以及仓库可见性/许可证增加初始 ADR。各 ADR 的 `status` 保持原值。
 
-## Open Issues
+## 合并前审查修正
 
-- Repository visibility and licensing remain founder decisions.
-- Brand name remains unconfirmed.
-- The current execution environment has no `npm` executable and bundled `pnpm run` is blocked by a symlink permission issue. The underlying package scripts were verified directly with `node scripts/validate-foundation.mjs` and `node scripts/build-ai-handoff.mjs`.
+- 基础文档正文调整为中文为主，文件名、路径、代码标识和既有状态不变。
+- `scripts/build-ai-handoff.mjs` 现在同时执行 `manifest.exclude` 与硬编码最低安全阻断规则。
+- 导出顺序固定为上下文、核心包、版本、完整索引、最终校验值。
+- `CHECKSUMS.txt` 计算其他所有最终文件的 SHA-256，不计算自身。
+- `scripts/validate-foundation.mjs` 现在验证必需文件、JSON、Schema 元数据、本地 Markdown 链接、manifest、敏感夹具导出、索引、校验值和版本信息。
+- 新增 `scripts/privacy-audit.mjs` 与 `npm run audit:privacy`。
 
-## Modified Files
+## 待处理问题
 
-### Added
+- 仓库可见性和许可证仍由创始人决定。
+- 最终品牌名称仍未确定。
+- 二进制图片、未跟踪本地文件和外部服务数据仍需人工复核。
+- 当前执行环境没有 `npm` 可执行文件；底层命令通过本地已安装的 Vitest/Vite 和 Node 直接验证。
+
+## 文件清单
+
+### Sprint 001 新增
 
 - `PROJECT.md`
 - `agents/README.md`
@@ -155,21 +170,36 @@ Initial ADRs added for one repository, private data separation, replaceable AI p
 - `security/SecretsPolicy.md`
 - `src/__tests__/foundationScripts.test.js`
 
-### Modified
+### Sprint 001 修改
 
 - `.gitignore`
 - `README.md`
 - `package.json`
 - `src/data/sampleData.js`
 
-## Branch
+### 合并前审查修正新增
+
+- `scripts/privacy-audit.mjs`
+- `src/__tests__/foundationValidationReview.test.js`
+- `src/__tests__/handoffReviewFixes.test.js`
+- `src/__tests__/privacyAudit.test.js`
+
+### 合并前审查修正修改
+
+- `package.json`
+- `scripts/build-ai-handoff.mjs`
+- `scripts/validate-foundation.mjs`
+- `security/PrivacyAudit-Initial.md`
+- 本任务要求范围内的中文基础文档
+
+## 分支
 
 `sprint/001-foundation-privacy-portability`
 
 ## Commit
 
-Pending.
+等待本次审查修正提交。
 
 ## PR
 
-Pending.
+现有 PR #1；本次任务不新建 PR，也不合并 `main`。

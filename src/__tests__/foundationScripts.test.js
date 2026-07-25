@@ -18,7 +18,7 @@ describe('project foundation scripts', () => {
     const output = runNodeScript(path.join(rootDir, 'scripts', 'validate-foundation.mjs'));
 
     expect(output).toContain('Foundation validation passed');
-  });
+  }, 15000);
 
   test('exports a portable AI handoff pack without private data directories', () => {
     const output = runNodeScript(path.join(rootDir, 'scripts', 'build-ai-handoff.mjs'));
