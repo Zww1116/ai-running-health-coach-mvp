@@ -1,9 +1,9 @@
 export const sampleProfile = {
-  name: 'Lina',
-  goal: '稳定维持月跑量 200km，同时保持每周 3 次力量训练',
-  runningMonthlyKm: 200,
+  name: 'Demo Runner A',
+  goal: '虚构示例：稳定维持中高跑量，同时保持每周 3 次力量训练',
+  runningMonthlyKm: 180,
   strengthSessionsPerWeek: 3,
-  preference: '女性跑者，关注表现、恢复、经期和伤病预防',
+  preference: '虚构女性跑者示例，关注表现、恢复、经期和伤病预防',
 };
 
 export const sampleRecords = [
@@ -88,12 +88,12 @@ export const sampleRecords = [
 
 export const sampleAgentDailyHealthData = {
   date: '2026-06-28',
-  heightCm: 157,
-  bodyWeight: 50,
-  monthlyRunningKm: 200,
+  heightCm: 164,
+  bodyWeight: 58,
+  monthlyRunningKm: 180,
   weeklyStrengthSessions: 3,
   goal:
-    '保护雌激素、足量蛋白、防掉肌肉、补铁、抗炎护膝盖、控体脂不垮脸、稳定经期、线条美不追求瘦',
+    '虚构示例：保护恢复质量、足量蛋白、维持肌肉量、补铁、抗炎护膝盖、稳定经期和训练连续性',
   sleepHours: 6.8,
   sleep: {
     deepHours: 0.8,

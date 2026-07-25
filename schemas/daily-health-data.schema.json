@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://personal-ai-health-os.local/schemas/daily-health-data.schema.json",
+  "title": "Daily Health Data",
+  "description": "Portable draft shape for one day of health, training, nutrition, sleep, cycle and pain data.",
+  "version": "0.1.0",
+  "status": "draft",
+  "type": "object",
+  "required": ["date", "run", "strength", "nutrition", "pain"],
+  "properties": {
+    "date": { "type": "string", "description": "Record date in ISO date format.", "privacyLevel": 2 },
+    "heightCm": { "type": "number", "description": "Optional height in centimeters.", "privacyLevel": 1 },
+    "bodyWeight": { "type": "number", "description": "Body weight in kilograms.", "privacyLevel": 2 },
+    "monthlyRunningKm": { "type": "number", "description": "Approximate monthly running volume.", "privacyLevel": 1 },
+    "weeklyStrengthSessions": { "type": "number", "description": "Strength sessions in the current week.", "privacyLevel": 1 },
+    "goal": { "type": "string", "description": "User-stated training or health goal.", "privacyLevel": 1 },
+    "sleepHours": { "type": "number", "description": "Total sleep hours.", "privacyLevel": 2 },
+    "fatigueLevel": { "type": "number", "minimum": 1, "maximum": 10, "description": "Subjective fatigue level.", "privacyLevel": 2 },
+    "menstrualPhase": { "type": "string", "description": "Cycle phase, if provided.", "privacyLevel": 2 },
+    "sleep": {
+      "type": "object",
+      "description": "Sleep and recovery metrics.",
+      "privacyLevel": 2,
+      "properties": {
+        "deepHours": { "type": "number" },
+        "lightHours": { "type": "number" },
+        "remHours": { "type": "number" },
+        "quality": { "type": "number" },
+        "restingHr": { "type": "number" },
+        "hrv": { "type": "number" },
+        "wakeFatigue": { "type": "number" }
+      }
+    },
+    "run": {
+      "type": "object",
+      "required": ["distanceKm", "durationMin", "avgPace", "avgHeartRate", "intensity"],
+      "properties": {
+        "distanceKm": { "type": "number", "privacyLevel": 2 },
+        "durationMin": { "type": "number", "privacyLevel": 2 },
+        "avgPace": { "type": "string", "privacyLevel": 2 },
+        "avgHeartRate": { "type": "number", "privacyLevel": 2 },
+        "intensity": { "type": "string", "enum": ["easy", "tempo", "interval", "long"], "privacyLevel": 2 }
+      }
+    },
+    "strength": {
+      "type": "object",
+      "required": ["trained", "bodyPart", "durationMin", "intensity"],
+      "properties": {
+        "trained": { "type": "boolean", "privacyLevel": 2 },
+        "bodyPart": { "type": "string", "privacyLevel": 2 },
+        "durationMin": { "type": "number", "privacyLevel": 2 },
+        "intensity": { "type": "string", "enum": ["low", "medium", "high"], "privacyLevel": 2 }
+      }
+    },
+    "nutrition": {
+      "type": "object",
+      "required": ["calories", "proteinGram", "carbsGram", "fatGram", "ironRichFoods", "omega3Foods", "hydrationMl"],
+      "properties": {
+        "calories": { "type": "number", "privacyLevel": 2 },
+        "proteinGram": { "type": "number", "privacyLevel": 2 },
+        "carbsGram": { "type": "number", "privacyLevel": 2 },
+        "fatGram": { "type": "number", "privacyLevel": 2 },
+        "ironRichFoods": { "type": "boolean", "privacyLevel": 2 },
+        "omega3Foods": { "type": "boolean", "privacyLevel": 2 },
+        "hydrationMl": { "type": "number", "privacyLevel": 2 }
+      }
+    },
+    "pain": {
+      "type": "object",
+      "required": ["knee", "hip", "ankle", "lowerBack"],
+      "properties": {
+        "knee": { "type": "number", "minimum": 0, "maximum": 10, "privacyLevel": 2 },
+        "hip": { "type": "number", "minimum": 0, "maximum": 10, "privacyLevel": 2 },
+        "ankle": { "type": "number", "minimum": 0, "maximum": 10, "privacyLevel": 2 },
+        "lowerBack": { "type": "number", "minimum": 0, "maximum": 10, "privacyLevel": 2 }
+      }
+    }
+  }
+}

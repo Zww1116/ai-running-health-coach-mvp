@@ -1,0 +1,81 @@
+{
+  "packName": "AI-Core-Pack",
+  "packVersion": "0.1.0",
+  "projectVersion": "0.1.0",
+  "schemaVersion": "0.1.0",
+  "promptVersion": "0.1.0",
+  "agentVersion": "0.1.0",
+  "privacyLevel": "Level 0 project assets only",
+  "include": [
+    "PROJECT.md",
+    "README.md",
+    "project",
+    "brand",
+    "product",
+    "architecture",
+    "security",
+    "knowledge",
+    "agents",
+    "prompts",
+    "schemas",
+    "api",
+    "migration/AI_HANDOFF.md",
+    "migration/NEW_AI_BOOTSTRAP_PROMPT.md"
+  ],
+  "exclude": [
+    ".env",
+    ".env.*",
+    "node_modules",
+    "dist",
+    "exports",
+    "backups",
+    "private-data",
+    "private-profile",
+    "*.sqlite",
+    "*.sqlite3",
+    "*.db",
+    "*.pem",
+    "*.key",
+    "*.p12",
+    "*.pfx",
+    "*.health-backup.zip",
+    "*.health-backup.json",
+    "*.private-context.md",
+    ".git",
+    "API Key",
+    "Secret",
+    "Token"
+  ],
+  "mergeOrder": [
+    "migration/AI_HANDOFF.md",
+    "PROJECT.md",
+    "project/CurrentStatus.md",
+    "project/SourceOfTruth.md",
+    "brand/00_BrandDNA.md",
+    "project/decisions",
+    "architecture",
+    "security",
+    "schemas",
+    "agents",
+    "prompts/core",
+    "project/sprints/Sprint-001-Foundation-Privacy-Portability.md"
+  ],
+  "generatedFiles": [
+    "exports/AI_CONTEXT_COMPLETE.md",
+    "exports/FILE_INDEX.md",
+    "exports/VERSION.json",
+    "exports/CHECKSUMS.txt",
+    "exports/AI-Core-Pack"
+  ],
+  "requiredFiles": [
+    "PROJECT.md",
+    "project/CurrentStatus.md",
+    "project/SourceOfTruth.md",
+    "brand/00_BrandDNA.md",
+    "migration/AI_HANDOFF.md",
+    "migration/NEW_AI_BOOTSTRAP_PROMPT.md"
+  ],
+  "optionalFiles": [
+    "docs/superpowers"
+  ]
+}
