@@ -2,9 +2,10 @@
 
 ## Project Foundation
 
-本仓库现在增加了 Sprint 001 项目治理、隐私保护与 AI 可迁移基础。最高入口是 [PROJECT.md](PROJECT.md)，它只做项目级导航；详细规则分别保存在 `project/`、`architecture/`、`security/`、`schemas/`、`prompts/` 和 `migration/`。
+本仓库已经完成 Sprint 001 项目治理、隐私保护与 AI 可迁移基础，并进入 Sprint 002 Brand Foundation。最高入口是 [PROJECT.md](PROJECT.md)，它只做项目级导航；详细规则分别保存在 `project/`、`brand/`、`architecture/`、`security/`、`schemas/`、`prompts/` 和 `migration/`。
 
 - Project Governance：见 [project/README.md](project/README.md) 和 [project/SourceOfTruth.md](project/SourceOfTruth.md)。
+- Brand Foundation：当前全部内容均为 `proposed`，品牌名称与视觉尚未确定，见 [brand/README.md](brand/README.md)。
 - Privacy Boundary：私人健康记录、健康图片、导出包、数据库文件和密钥不进入 Git，见 [security/PrivacyModel.md](security/PrivacyModel.md)。
 - Data Ownership：用户拥有自己的健康数据；云端同步和 AI 分享必须由用户主动选择。
 - AI Portability：规则引擎、OpenAI、Claude、Gemini 和本地模型都应作为可替换 Provider，见 [architecture/AIProviderPortability.md](architecture/AIProviderPortability.md)。

@@ -1,7 +1,7 @@
 ---
 title: Sprint 001 Foundation Privacy Portability
 status: proposed
-version: 0.1.0
+version: 0.1.1
 last_updated: 2026-07-25
 owner: engineering
 source_of_truth: true
@@ -19,7 +19,7 @@ Sprint 001。
 
 ## 状态
 
-已实现，等待所有者审查。
+已合并完成。
 
 ## 背景
 
@@ -199,8 +199,8 @@ Web MVP 已可使用。本 Sprint 通过分离项目资产与私人数据，并�
 
 ## Commit
 
-等待本次审查修正提交。
+`74a00904f4ca19a9ef1d0438cb1313ad4122d0f9`
 
 ## PR
 
-现有 PR #1；本次任务不新建 PR，也不合并 `main`。
+[PR #1](https://github.com/Zww1116/ai-running-health-coach-mvp/pull/1)，已合并至 `main`。

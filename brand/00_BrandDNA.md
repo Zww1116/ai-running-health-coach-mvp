@@ -1,7 +1,7 @@
 ---
 title: Brand DNA
 status: proposed
-version: 0.1.0
+version: 0.1.1
 last_updated: 2026-07-25
 owner: founder
 source_of_truth: true
@@ -9,29 +9,39 @@ source_of_truth: true
 
 # Brand DNA
 
-## Core Expression
+## 当前状态
+
+本文件是品牌核心的唯一正式来源。内容已形成可审核草案，状态仍为 `proposed`；Brand DNA 不代表最终品牌名称。
+
+## 核心表达
 
 记住来路，理解自己，成为自己。
 
-## Proposed Mission
+## 品牌使命
 
 帮助每个人记住自己的成长轨迹，理解自己、找到自己，并通过持续行动成为自己。
 
-## Proposed Vision
+## 品牌愿景
 
 让每个人都拥有一个真正理解自己、记得自己来时的路，并长期陪伴自己成长的 AI 伙伴。
 
-## Proposed Promise
+## 品牌承诺
 
 我们不会替用户定义理想的样子，而会陪伴用户找到属于自己的答案。
 
-## Core Thesis
+## 核心命题
 
-人不是被 AI 塑造的。人是在 AI 的陪伴下，更清楚地成为自己。
+人不是被 AI 塑造的。
 
-## Not Yet Confirmed
+人是在 AI 的陪伴下，更清楚地成为自己。
 
-- Brand name is not finalized.
-- English expression is not finalized.
-- Logo, color, typography and visual system are not finalized.
-- Full Brand Foundation will be completed in a later sprint.
+## 已形成内容
+
+核心表达、品牌使命、品牌愿景、品牌承诺与核心命题已形成 proposed 基础。具体应用分别见[使命与愿景](02_MissionVision.md)、[品牌定位](01_BrandPositioning.md)和[品牌护栏](09_BrandGuardrails.md)。
+
+## 仍待确认事项
+
+- 最终品牌名称与最终英文核心表达。
+- 母品牌与产品的最终命名关系。
+- 本文件何时可由创始人批准为 `approved`。
+- Logo、颜色、字体和视觉系统。

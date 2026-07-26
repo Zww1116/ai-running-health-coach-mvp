@@ -1,7 +1,7 @@
 ---
 title: Current Status
 status: proposed
-version: 0.1.0
+version: 0.2.0
 last_updated: 2026-07-25
 owner: founder
 source_of_truth: true
@@ -11,7 +11,7 @@ source_of_truth: true
 
 ## 当前阶段
 
-项目已有可运行的 MVP，当前正在完成下一轮产品功能开发前的项目治理、隐私保护与 AI 可迁移性基础工作。
+项目已有可运行的 MVP。Sprint 001 的项目治理、隐私保护与 AI 可迁移性基础已合并完成；当前阶段是 Brand Foundation，建立 proposed 品牌正式来源与审核体系。
 
 ## 在线网站
 
@@ -29,12 +29,7 @@ source_of_truth: true
 
 GitHub 只应保存代码和项目资产。私人健康数据、截图、导出包、Secret 和数据库文件由政策、`.gitignore`、迁移排除规则及可重复隐私审计共同防护。
 
-本次审查修正已补充：
-
-- `migration/manifest.json` 中 `exclude` 的真实执行与临时敏感文件导出验证。
-- 导出包完整索引与 SHA-256 校验。
-- Git 跟踪文本文件的可重复隐私审计。
-- JSON、JSON Schema、Markdown 本地链接和版本信息验证。
+Sprint 001 已建立 `manifest.exclude`、硬编码安全阻断、完整索引与 SHA-256 校验、Git 跟踪文本隐私审计，以及 JSON、Schema、Markdown 链接和版本验证。Sprint 002 只处理抽象品牌文档，不加入私人故事、健康数据或联系信息。
 
 ## 当前 Agent 状态
 
@@ -46,11 +41,11 @@ GitHub 只应保存代码和项目资产。私人健康数据、截图、导出�
 
 ## 当前 Sprint
 
-Sprint 001：项目基础、隐私保护与 AI 可迁移性。
+Sprint 002：Brand Foundation（品牌基础体系）。
 
 ## 下一步
 
-完成 Sprint 001 的所有者审查并合并后，只选择一个下一 Sprint 开始开发。
+创始人审核 Brand Foundation proposed 文件。
 
 ## 当前风险
 
@@ -58,3 +53,4 @@ Sprint 001：项目基础、隐私保护与 AI 可迁移性。
 - 过于精确的演示数据可能看起来像真实个人资料，公开前仍需人工确认。
 - 未来 AI 集成不得绕过用户确认和数据最小化原则。
 - 二进制图片、未被 Git 跟踪的本地文件及外部服务数据不属于当前文本隐私审计范围。
+- 所有品牌文件仍为 `proposed`，品牌名称、视觉与商标可用性均未确定。

@@ -1,7 +1,7 @@
 ---
 title: Roadmap
 status: proposed
-version: 0.1.0
+version: 0.2.0
 last_updated: 2026-07-25
 owner: product
 source_of_truth: true
@@ -13,9 +13,11 @@ source_of_truth: true
 
 目标：使项目可维护、隐私优先，并能够跨 AI 平台迁移。
 
-主要成果：治理文档、隐私模型、唯一正式来源矩阵、迁移交接包，以及拟议（proposed）的品牌核心。
+主要成果：已合并的治理文档、隐私模型、唯一正式来源矩阵、迁移交接包，以及当前正在建立的 Brand Foundation proposed 文件体系。
 
-退出条件：Sprint 记录、ADR、隐私审计和 AI 交接导出均已建立。
+当前进展：Sprint 001 已合并完成；Sprint 002 Brand Foundation 正在进行。
+
+退出条件：创始人完成 Brand Foundation proposed 文件审核，并决定哪些内容可进入后续批准流程。
 
 ## Phase 1：产品与数据基础
 

@@ -1,7 +1,7 @@
 ---
 title: Backlog
 status: proposed
-version: 0.1.0
+version: 0.2.0
 last_updated: 2026-07-25
 owner: product
 source_of_truth: true
@@ -11,13 +11,14 @@ source_of_truth: true
 
 ## 治理
 
-- 确认 Sprint 001 审阅流程。状态：`Confirmed`。
+- Sprint 001 项目基础、隐私保护与 AI 可迁移性。状态：`Merged / Completed`。
 - 增加周期性的依赖与隐私审阅。状态：`Proposed`。
 
 ## 品牌
 
-- 在本 Sprint 后完成品牌基础。状态：`Proposed`。
-- 确定最终品牌名称。状态：`Proposed`。
+- Brand Foundation 文档与创始人审核。状态：`In Progress`。
+- Brand Naming 独立 Sprint。状态：`Proposed / Future`。
+- Brand Visual System。状态：`Not Now`。
 
 ## 产品
 

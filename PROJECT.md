@@ -1,7 +1,7 @@
 ---
 title: Project Entry
 status: proposed
-version: 0.1.0
+version: 0.2.0
 last_updated: 2026-07-25
 owner: founder
 source_of_truth: true
@@ -25,7 +25,7 @@ source_of_truth: true
 
 ## 当前阶段
 
-项目目前处于 Phase 0 与 Phase 1 的交叠阶段：项目治理和隐私基础，以及产品和数据基础。
+项目目前处于 Phase 0 的 Brand Foundation 阶段。Sprint 001 的治理、隐私与 AI 可迁移基础已经合并完成；本阶段建立 proposed 品牌基础体系，不改变现有网站功能。
 
 ## 当前技术状态
 
@@ -57,17 +57,18 @@ source_of_truth: true
 
 ## 当前 Sprint
 
-Sprint 001：项目基础、隐私保护与 AI 可迁移性。
+Sprint 002：Brand Foundation（品牌基础体系）。
 
 ## 下一步计划
 
-在增加更多产品功能之前，完成治理、隐私、Schema、Prompt 和 AI 交接基础。
+创始人审核 Brand Foundation proposed 文件。
 
 ## 文档导航
 
 - 项目治理：[project/README.md](project/README.md)
 - 当前状态：[project/CurrentStatus.md](project/CurrentStatus.md)
 - 唯一正式来源：[project/SourceOfTruth.md](project/SourceOfTruth.md)
+- 品牌基础导航：[brand/README.md](brand/README.md)
 - 品牌核心：[brand/00_BrandDNA.md](brand/00_BrandDNA.md)
 - 架构：[architecture/README.md](architecture/README.md)
 - 安全：[security/README.md](security/README.md)
@@ -78,10 +79,12 @@ Sprint 001：项目基础、隐私保护与 AI 可迁移性。
 - 当前阶段使用一个主要 GitHub 仓库。
 - 私人健康数据与项目资产分离。
 - AI 提供商保持可替换。
+- Sprint 001 已合并完成。
 
 ## 未确认事项
 
 - 最终品牌名称。
+- Brand Foundation proposed 文件是否可以转为 `approved`。
 - 许可证和仓库可见性策略。
 - 最终生产环境 AI 提供商。
 - 最终长期备份产品流程。
