@@ -1,8 +1,8 @@
 ---
 title: Project Index
 status: proposed
-version: 0.2.0
-last_updated: 2026-07-25
+version: 0.2.1
+last_updated: 2026-08-05
 owner: founder
 source_of_truth: true
 ---
@@ -21,5 +21,5 @@ source_of_truth: true
 - 决策记录流程：[DecisionCaptureWorkflow.md](DecisionCaptureWorkflow.md)
 - 决策记录：[decisions/README.md](decisions/README.md)
 - Sprint 记录：[sprints/](sprints/)
-- 当前 Sprint：[Sprint-002-Brand-Foundation.md](sprints/Sprint-002-Brand-Foundation.md)
+- Sprint 记录：[sprints/](sprints/)；当前 Sprint 只以 [CurrentStatus.md](CurrentStatus.md) 为准
 - 模板：[templates/](templates/)

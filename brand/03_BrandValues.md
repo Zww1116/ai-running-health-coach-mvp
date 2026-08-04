@@ -1,13 +1,15 @@
 ---
 title: Brand Values
 status: proposed
-version: 0.1.0
-last_updated: 2026-07-25
+version: 0.1.1
+last_updated: 2026-08-05
 owner: founder
 source_of_truth: true
 ---
 
 # 品牌价值观
+
+本文件遵循 [Brand DNA](00_BrandDNA.md)，负责定义价值观的 proposed 展开，不修改或替代品牌核心原文。
 
 以下八项是当前完整的 proposed 价值观集合，不包含第九项正式价值观。
 

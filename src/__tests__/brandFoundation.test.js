@@ -39,7 +39,7 @@ describe('Sprint 002 brand foundation', () => {
       expect(source).toMatch(/^---\r?\n/);
       expect(source).toMatch(/\nstatus: proposed\r?\n/);
       expect(source).toMatch(/\nversion: 0\.\d+\.\d+\r?\n/);
-      expect(source).toMatch(/\nlast_updated: 2026-07-25\r?\n/);
+      expect(source).toMatch(/\nlast_updated: \d{4}-\d{2}-\d{2}\r?\n/);
       expect(source).toMatch(/\nowner: (founder|product)\r?\n/);
       expect(source).toMatch(/\nsource_of_truth: (true|false)\r?\n/);
       expect(source).toContain('已形成内容');
@@ -68,12 +68,12 @@ describe('Sprint 002 brand foundation', () => {
     expect(allBrandContent).toContain('品牌名称尚未确定');
   });
 
-  test('exports every brand file in the declared order at pack version 0.2.0', () => {
+  test('exports every brand file in the declared order at pack version 0.2.1', () => {
     const manifest = JSON.parse(
       fs.readFileSync(path.join(rootDir, 'migration', 'manifest.json'), 'utf8'),
     );
-    expect(manifest.packVersion).toBe('0.2.0');
-    expect(manifest.projectVersion).toBe('0.2.0');
+    expect(manifest.packVersion).toBe('0.2.1');
+    expect(manifest.projectVersion).toBe('0.2.1');
     expect(manifest.schemaVersion).toBe('0.1.0');
     expect(manifest.promptVersion).toBe('0.1.0');
     expect(manifest.agentVersion).toBe('0.1.0');

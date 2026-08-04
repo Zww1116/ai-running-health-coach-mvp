@@ -1,7 +1,7 @@
 {
   "packName": "AI-Core-Pack",
-  "packVersion": "0.2.0",
-  "projectVersion": "0.2.0",
+  "packVersion": "0.2.1",
+  "projectVersion": "0.2.1",
   "schemaVersion": "0.1.0",
   "promptVersion": "0.1.0",
   "agentVersion": "0.1.0",
@@ -99,7 +99,8 @@
     "brand/CHANGELOG.md",
     "project/sprints/Sprint-002-Brand-Foundation.md",
     "migration/AI_HANDOFF.md",
-    "migration/NEW_AI_BOOTSTRAP_PROMPT.md"
+    "migration/NEW_AI_BOOTSTRAP_PROMPT.md",
+    "security/PrivacyAudit-Review.md"
   ],
   "optionalFiles": [
     "docs/superpowers"

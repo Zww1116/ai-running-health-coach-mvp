@@ -1,8 +1,8 @@
 ---
 title: Brand Foundation Index
 status: proposed
-version: 0.1.0
-last_updated: 2026-07-25
+version: 0.1.1
+last_updated: 2026-08-05
 owner: founder
 source_of_truth: true
 ---
@@ -24,9 +24,9 @@ source_of_truth: true
 
 | 文件 | 负责回答的问题 | 正式来源 |
 | --- | --- | --- |
-| [00_BrandDNA.md](00_BrandDNA.md) | 品牌最核心的表达、使命、愿景、承诺与命题是什么？ | 是 |
+| [00_BrandDNA.md](00_BrandDNA.md) | 品牌核心、使命、愿景、承诺与核心命题的准确原文是什么？ | 是 |
 | [01_BrandPositioning.md](01_BrandPositioning.md) | 品牌服务谁、解决什么问题、与其他产品有何定位差异？ | 是 |
-| [02_MissionVision.md](02_MissionVision.md) | Mission、Vision、Promise 和 Core Thesis 如何用于决策？ | 是 |
+| [02_MissionVision.md](02_MissionVision.md) | Brand DNA 中的 Mission、Vision、Promise 和 Core Thesis 如何用于决策？ | 否，派生说明 |
 | [03_BrandValues.md](03_BrandValues.md) | 团队、产品与 AI 应遵守哪些价值观？ | 是 |
 | [04_BrandPersonality.md](04_BrandPersonality.md) | 品牌应呈现怎样的人格与关系感？ | 是 |
 | [05_BrandVoice.md](05_BrandVoice.md) | 品牌在不同情境下如何表达？ | 是 |
@@ -39,7 +39,7 @@ source_of_truth: true
 
 ## 唯一正式来源
 
-每类品牌结论只在上表对应文件中维护，其他文件通过链接引用。聊天记录、AI 摘要和口头讨论不是正式品牌文件；未经审阅，不得覆盖正式来源。完整矩阵见 [项目唯一正式来源](../project/SourceOfTruth.md)。
+Brand DNA 是品牌核心原文的唯一正式来源。Values、Voice、Product Principles 等文件可以分别作为自身展开领域的正式来源，但必须继承 Brand DNA，不得重复定义核心原文。聊天记录、AI 摘要和口头讨论不是正式品牌文件；未经审阅，不得覆盖正式来源。完整矩阵见 [项目唯一正式来源](../project/SourceOfTruth.md)。
 
 ## 文档状态
 

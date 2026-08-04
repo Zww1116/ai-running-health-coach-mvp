@@ -2,7 +2,7 @@
 
 ## Project Foundation
 
-本仓库已经完成 Sprint 001 项目治理、隐私保护与 AI 可迁移基础，并进入 Sprint 002 Brand Foundation。最高入口是 [PROJECT.md](PROJECT.md)，它只做项目级导航；详细规则分别保存在 `project/`、`brand/`、`architecture/`、`security/`、`schemas/`、`prompts/` 和 `migration/`。
+最高入口是 [PROJECT.md](PROJECT.md)，它只做项目级导航；当前项目阶段和审核状态只以 [project/CurrentStatus.md](project/CurrentStatus.md) 为准。详细规则分别保存在 `project/`、`brand/`、`architecture/`、`security/`、`schemas/`、`prompts/` 和 `migration/`。
 
 - Project Governance：见 [project/README.md](project/README.md) 和 [project/SourceOfTruth.md](project/SourceOfTruth.md)。
 - Brand Foundation：当前全部内容均为 `proposed`，品牌名称与视觉尚未确定，见 [brand/README.md](brand/README.md)。

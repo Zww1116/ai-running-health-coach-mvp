@@ -1,8 +1,8 @@
 ---
 title: Project Entry
 status: proposed
-version: 0.2.0
-last_updated: 2026-07-25
+version: 0.2.1
+last_updated: 2026-08-05
 owner: founder
 source_of_truth: true
 ---
@@ -23,9 +23,9 @@ source_of_truth: true
 
 首个产品是面向跑者的 AI 辅助健康与训练管理系统。它以 React Web 应用形式运行，并可通过 GitHub Pages 或 Vercel 公开部署。
 
-## 当前阶段
+## 当前状态入口
 
-项目目前处于 Phase 0 的 Brand Foundation 阶段。Sprint 001 的治理、隐私与 AI 可迁移基础已经合并完成；本阶段建立 proposed 品牌基础体系，不改变现有网站功能。
+当前项目阶段、当前 Sprint、审核状态和下一步只在 [project/CurrentStatus.md](project/CurrentStatus.md) 中维护。本文件是项目入口，不独立定义动态状态。
 
 ## 当前技术状态
 
@@ -55,13 +55,9 @@ source_of_truth: true
 - 长期云端备份与恢复尚未形成完整的用户流程。
 - 当前 Schema 状态为 `draft`，尚未用于运行时验证。
 
-## 当前 Sprint
+## 当前工作导航
 
-Sprint 002：Brand Foundation（品牌基础体系）。
-
-## 下一步计划
-
-创始人审核 Brand Foundation proposed 文件。
+当前工作与下一步见 [project/CurrentStatus.md](project/CurrentStatus.md)，Sprint 历史与范围见 [project/sprints/](project/sprints/)。
 
 ## 文档导航
 
@@ -74,17 +70,14 @@ Sprint 002：Brand Foundation（品牌基础体系）。
 - 安全：[security/README.md](security/README.md)
 - 迁移：[migration/AI_HANDOFF.md](migration/AI_HANDOFF.md)
 
-## 已确认事项
+## 决策入口
 
-- 当前阶段使用一个主要 GitHub 仓库。
-- 私人健康数据与项目资产分离。
-- AI 提供商保持可替换。
-- Sprint 001 已合并完成。
+重大项目决策及其成熟度只以 [project/decisions/](project/decisions/) 中的 ADR 为准。`proposed` ADR 不应在入口文件中被描述为已批准结论。
 
 ## 未确认事项
 
 - 最终品牌名称。
-- Brand Foundation proposed 文件是否可以转为 `approved`。
+- Foundation Review 是否完成，以及 Brand Foundation proposed 文件是否可以进入后续审核。
 - 许可证和仓库可见性策略。
 - 最终生产环境 AI 提供商。
 - 最终长期备份产品流程。

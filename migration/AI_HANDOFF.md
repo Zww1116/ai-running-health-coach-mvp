@@ -1,8 +1,8 @@
 ---
 title: AI Handoff
 status: proposed
-version: 0.2.0
-last_updated: 2026-07-25
+version: 0.2.1
+last_updated: 2026-08-05
 owner: product
 source_of_truth: true
 ---
@@ -21,9 +21,9 @@ source_of_truth: true
 
 ## 当前阶段
 
-- Sprint 001 已合并完成。
-- 当前 Sprint 是 Sprint 002：Brand Foundation。
-- 下一步：创始人审核 Brand Foundation proposed 文件。
+当前阶段、当前 Sprint、审核状态和下一步只读取 `project/CurrentStatus.md`。本文件不独立维护动态状态。
+
+生成本交接快照时，Foundation 状态为 `Draft / Review`，本次 Review Fix 尚未合并至 `main`；Draft PR #2 的 Brand Foundation 保持暂停和 `proposed`。
 
 ## 总体阅读顺序
 
@@ -74,7 +74,7 @@ source_of_truth: true
 
 ## 新 AI 接手检查
 
-开始修改前，重新说明项目定位、当前阶段、正式品牌核心、品牌状态、已确认事项、未确认事项、隐私边界、当前 Sprint 和下一步。必须明确最终品牌名称与视觉均未确定。
+开始修改前，从 `project/CurrentStatus.md` 读取并重新说明项目定位、当前阶段、正式品牌核心、品牌状态、已确认事项、未确认事项、隐私边界、当前 Sprint 和下一步。必须明确最终品牌名称与视觉均未确定。
 
 ## 冲突处理
 
@@ -86,7 +86,7 @@ source_of_truth: true
 
 ## 迁移包完整性
 
-- `packVersion` 与 `projectVersion` 当前为 `0.2.0`。
+- `packVersion` 与 `projectVersion` 当前为 `0.2.1`。
 - Schema、Prompt 与 Agent 版本仍为 `0.1.0`。
 - `FILE_INDEX.md` 列出全部最终交接文件。
 - `CHECKSUMS.txt` 计算除自身以外所有最终文件的 SHA-256；它不包含自身校验值。

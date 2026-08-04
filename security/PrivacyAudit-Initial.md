@@ -1,8 +1,8 @@
 ---
 title: Initial Privacy Audit
 status: proposed
-version: 0.1.0
-last_updated: 2026-07-25
+version: 0.1.1
+last_updated: 2026-08-05
 owner: engineering
 source_of_truth: true
 ---
@@ -36,6 +36,8 @@ npm run audit:privacy
 ## 初始结果
 
 当前自动审计未发现高可信 Secret。现有人工复核提示来自测试数据、示例健康数据和界面邮箱占位符；这些内容仍需在公开发布前由维护者确认其为虚构数据。
+
+9 条 warning 的逐项风险、处理决定、负责人和状态见 [PrivacyAudit-Review.md](PrivacyAudit-Review.md)。该复核不删除或抑制原始审计 warning。
 
 ## 自动审计不能替代的检查
 

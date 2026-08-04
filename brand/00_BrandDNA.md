@@ -1,8 +1,8 @@
 ---
 title: Brand DNA
 status: proposed
-version: 0.1.1
-last_updated: 2026-07-25
+version: 0.1.2
+last_updated: 2026-08-05
 owner: founder
 source_of_truth: true
 ---
@@ -11,7 +11,7 @@ source_of_truth: true
 
 ## 当前状态
 
-本文件是品牌核心的唯一正式来源。内容已形成可审核草案，状态仍为 `proposed`；Brand DNA 不代表最终品牌名称。
+本文件是品牌核心、使命、愿景、品牌承诺与核心命题原文的唯一正式来源。内容已形成可审核草案，状态仍为 `proposed`；Brand DNA 不代表最终品牌名称。其他品牌文件只能引用和展开说明，不得重复定义或创建替代原文。
 
 ## 核心表达
 
@@ -37,7 +37,7 @@ source_of_truth: true
 
 ## 已形成内容
 
-核心表达、品牌使命、品牌愿景、品牌承诺与核心命题已形成 proposed 基础。具体应用分别见[使命与愿景](02_MissionVision.md)、[品牌定位](01_BrandPositioning.md)和[品牌护栏](09_BrandGuardrails.md)。
+核心表达、品牌使命、品牌愿景、品牌承诺与核心命题已形成 proposed 基础。决策展开说明见[使命与愿景](02_MissionVision.md)，具体应用另见[品牌定位](01_BrandPositioning.md)和[品牌护栏](09_BrandGuardrails.md)。
 
 ## 仍待确认事项
 

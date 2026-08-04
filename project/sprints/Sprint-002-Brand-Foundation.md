@@ -1,8 +1,8 @@
 ---
 title: Sprint 002 Brand Foundation
 status: proposed
-version: 0.1.0
-last_updated: 2026-07-25
+version: 0.1.1
+last_updated: 2026-08-05
 owner: product
 source_of_truth: true
 ---
@@ -15,7 +15,7 @@ Sprint 002。
 
 ## 背景
 
-Sprint 001 已合并并建立项目治理、隐私保护、文件管理与跨 AI 迁移基础。当前需要在既有 [Brand DNA](../../brand/00_BrandDNA.md) 上建立完整、可审查、可迁移的品牌基础体系。
+Brand Foundation 已形成 Draft PR #2，但在 Sprint 001 Foundation Review 完成前保持暂停。当前状态只以 [project/CurrentStatus.md](../CurrentStatus.md) 为准。
 
 ## 目标
 
@@ -125,7 +125,7 @@ Sprint 001 已合并并建立项目治理、隐私保护、文件管理与跨 AI
 
 ## Draft PR
 
-创建后以 GitHub Draft Pull Request 记录为准；不得自动合并 `main`。
+PR #2 保持 Draft；不得自动合并 `main`，不得在 Foundation Review 完成前把品牌文件改为 `approved`。
 
 ## 已形成内容
 

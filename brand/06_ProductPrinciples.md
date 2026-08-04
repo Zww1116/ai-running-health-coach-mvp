@@ -1,13 +1,15 @@
 ---
 title: Product Principles
 status: proposed
-version: 0.1.0
-last_updated: 2026-07-25
+version: 0.1.1
+last_updated: 2026-08-05
 owner: product
 source_of_truth: true
 ---
 
 # 产品设计原则
+
+本文件遵循 [Brand DNA](00_BrandDNA.md)，把品牌核心展开为产品评审原则，不修改或替代品牌核心原文。
 
 本文件定义未来产品评审使用的 proposed 原则，不要求在本 Sprint 修改现有 UI。
 

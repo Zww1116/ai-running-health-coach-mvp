@@ -1,17 +1,25 @@
 ---
 title: Current Status
-status: proposed
-version: 0.2.0
-last_updated: 2026-07-25
+status: draft
+version: 0.2.1
+last_updated: 2026-08-05
 owner: founder
 source_of_truth: true
 ---
 
 # 当前状态
 
+## Foundation 状态
+
+Sprint 001：Governance + Privacy + AI Portability Foundation。
+
+当前治理状态为 `Draft / Review`。Sprint 001 的初始资产曾通过 PR #1 进入 `main`，但这只表示 Git 交付历史，不表示 Foundation 已完成治理审批。本次 Review Fix 尚未合并至 `main`。
+
+本文件是当前项目阶段、当前 Sprint 和下一步的唯一正式来源。其他入口、Sprint、ADR、Roadmap、Backlog 与迁移文件只能引用本文件，不得独立维护不同的当前状态。
+
 ## 当前阶段
 
-项目已有可运行的 MVP。Sprint 001 的项目治理、隐私保护与 AI 可迁移性基础已合并完成；当前阶段是 Brand Foundation，建立 proposed 品牌正式来源与审核体系。
+项目已有可运行的 MVP。当前优先完成 Sprint 001 Review Fix，解决状态唯一来源、品牌来源边界与隐私 warning 复核；Draft PR #2 的 Brand Foundation 保持暂停和 `proposed`，不进入批准流程。
 
 ## 在线网站
 
@@ -29,7 +37,7 @@ source_of_truth: true
 
 GitHub 只应保存代码和项目资产。私人健康数据、截图、导出包、Secret 和数据库文件由政策、`.gitignore`、迁移排除规则及可重复隐私审计共同防护。
 
-Sprint 001 已建立 `manifest.exclude`、硬编码安全阻断、完整索引与 SHA-256 校验、Git 跟踪文本隐私审计，以及 JSON、Schema、Markdown 链接和版本验证。Sprint 002 只处理抽象品牌文档，不加入私人故事、健康数据或联系信息。
+Sprint 001 已形成 `manifest.exclude`、硬编码安全阻断、完整索引与 SHA-256 校验、Git 跟踪文本隐私审计，以及 JSON、Schema、Markdown 链接和版本验证。这些能力仍处于 Foundation Review 范围，最终状态以本文件为准。
 
 ## 当前 Agent 状态
 
@@ -41,11 +49,11 @@ Sprint 001 已建立 `manifest.exclude`、硬编码安全阻断、完整索引�
 
 ## 当前 Sprint
 
-Sprint 002：Brand Foundation（品牌基础体系）。
+Sprint 001 Review Fix。Brand Foundation 位于 Draft PR #2，继续保持 Draft，不合并、不转为 `approved`。
 
 ## 下一步
 
-创始人审核 Brand Foundation proposed 文件。
+完成 Foundation Review 阻塞项，重新运行测试、构建、隐私审计、基础验证和 AI 交接导出，再决定是否允许进入下一阶段。
 
 ## 当前风险
 

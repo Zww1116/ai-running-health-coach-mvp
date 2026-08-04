@@ -61,6 +61,7 @@ const requiredFiles = [
   'security/LocalPrivateFiles.md',
   'security/IncidentResponse.md',
   'security/PrivacyAudit-Initial.md',
+  'security/PrivacyAudit-Review.md',
   'knowledge/README.md',
   'agents/README.md',
   'prompts/README.md',

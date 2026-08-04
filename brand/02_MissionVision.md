@@ -1,41 +1,31 @@
 ---
 title: Mission Vision and Promise
 status: proposed
-version: 0.1.0
-last_updated: 2026-07-25
+version: 0.1.1
+last_updated: 2026-08-05
 owner: founder
-source_of_truth: true
+source_of_truth: false
 ---
 
-# 使命、愿景与品牌承诺
+# 基于 Brand DNA 的展开说明
 
-以下文字直接引用 [Brand DNA](00_BrandDNA.md)，本文件只解释其决策用途，不创建替代版本。
+品牌核心、使命、愿景、品牌承诺与核心命题的准确原文只保存在 [Brand DNA](00_BrandDNA.md)。本文件不是原文正式来源，不重复定义这些文字，只说明它们如何用于产品和 AI 决策。
 
-## Mission
+## Mission 的决策用途
 
-帮助每个人记住自己的成长轨迹，理解自己、找到自己，并通过持续行动成为自己。
+Mission 要求产品持续保存成长轨迹、促进用户理解，并支持用户把理解转化为行动。具体措辞始终回到 Brand DNA 核对。
 
-Mission 是品牌现在持续做的事情：保存轨迹、促进理解，并支持用户把理解转化为行动。
+## Vision 的决策用途
 
-## Vision
+Vision 描述品牌希望长期实现的未来，但不能被用于扩大当前产品范围。当前仍只正式开发 Health，未来方向保持可能性而不是承诺。
 
-让每个人都拥有一个真正理解自己、记得自己来时的路，并长期陪伴自己成长的 AI 伙伴。
+## Brand Promise 的决策用途
 
-Vision 是品牌希望长期实现的未来，不是扩大当前产品范围的理由。当前仍只正式开发 Health。
+Brand Promise 要求每次接触都尊重用户、保留选择权，并提供有依据的陪伴。任何功能都不能替用户定义理想状态。
 
-## Brand Promise
+## Core Thesis 的决策用途
 
-我们不会替用户定义理想的样子，而会陪伴用户找到属于自己的答案。
-
-Promise 是用户每次接触品牌时应当感受到的承诺：被尊重、有选择权，并获得有依据的陪伴。
-
-## Core Thesis
-
-人不是被 AI 塑造的。
-
-人是在 AI 的陪伴下，更清楚地成为自己。
-
-Core Thesis 是品牌对人与 AI 关系的根本判断。用户始终是主角；AI 是可替换的能力提供者，不能成为最终决定者或唯一资产来源。
+Core Thesis 约束人与 AI 的关系：用户始终是主角；AI 是可替换的能力提供者，不能成为最终决定者或唯一资产来源。
 
 ## 决策含义
 
@@ -46,10 +36,10 @@ Core Thesis 是品牌对人与 AI 关系的根本判断。用户始终是主角�
 
 ## 已形成内容
 
-已形成 Mission、Vision、Brand Promise、Core Thesis 及其在产品和 AI 决策中的 proposed 解释。
+已形成基于 Brand DNA 的 Mission、Vision、Brand Promise 与 Core Thesis 决策展开说明；本文件不保存正式原文。
 
 ## 仍待确认事项
 
 - 最终英文核心表达。
 - 创始人对各段决策解释的逐项认可。
-- 本文件何时可转为 `approved`。
+- 本文件作为派生说明何时可以完成审核。

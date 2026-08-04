@@ -1,13 +1,15 @@
 ---
 title: Brand Voice
 status: proposed
-version: 0.1.0
-last_updated: 2026-07-25
+version: 0.1.1
+last_updated: 2026-08-05
 owner: founder
 source_of_truth: true
 ---
 
 # 品牌语言规范
+
+本文件遵循 [Brand DNA](00_BrandDNA.md)，把品牌核心展开为表达规范，不修改或替代品牌核心原文。
 
 ## Tone of Voice
 

@@ -1,8 +1,8 @@
 ---
 title: Sprint 001 Foundation Privacy Portability
-status: proposed
-version: 0.1.1
-last_updated: 2026-07-25
+status: draft
+version: 0.1.2
+last_updated: 2026-08-05
 owner: engineering
 source_of_truth: true
 ---
@@ -19,7 +19,9 @@ Sprint 001。
 
 ## 状态
 
-已合并完成。
+`Draft / Review`。当前项目状态只以 [project/CurrentStatus.md](../CurrentStatus.md) 为准。
+
+初始 Foundation 资产曾通过 PR #1 进入 `main`，但治理审批尚未完成；本次 Review Fix 尚未合并至 `main`。
 
 ## 背景
 
@@ -86,7 +88,7 @@ Web MVP 已可使用。本 Sprint 通过分离项目资产与私人数据，并�
 
 已为单仓库、私人数据分离、可替换 AI 提供商，以及仓库可见性/许可证增加初始 ADR。各 ADR 的 `status` 保持原值。
 
-## 合并前审查修正
+## 早期审查修正
 
 - 基础文档正文调整为中文为主，文件名、路径、代码标识和既有状态不变。
 - 修正品牌核心文字漂移，统一使用 `brand/00_BrandDNA.md` 中的正式表达“记住来路，理解自己，成为自己。”。
@@ -96,7 +98,28 @@ Web MVP 已可使用。本 Sprint 通过分离项目资产与私人数据，并�
 - `scripts/validate-foundation.mjs` 现在验证必需文件、JSON、Schema 元数据、本地 Markdown 链接、manifest、敏感夹具导出、索引、校验值和版本信息。
 - 新增 `scripts/privacy-audit.mjs` 与 `npm run audit:privacy`。
 
-## 待处理问题
+## Review Findings
+
+1. `PROJECT.md`、Sprint、Backlog、Roadmap 与迁移交接曾重复维护当前状态，并把 Git 落地误写为治理完成。
+2. ADR 仍为 `proposed`，但入口文件曾将相关内容列为“已确认事项”。
+3. `brand/00_BrandDNA.md` 与 `brand/02_MissionVision.md` 重复维护使命、愿景与承诺原文，唯一正式来源边界不清。
+4. 隐私审计的 9 条 warning 尚未逐项记录处理决定。
+
+## Resolution
+
+- 以 `project/CurrentStatus.md` 作为当前项目阶段、当前 Sprint、审核状态和下一步的唯一正式来源。
+- 保留真实 Git 历史，同时把 Foundation 治理状态统一为 `Draft / Review`；ADR 决策成熟度继续保持 `proposed`。
+- 以 `brand/00_BrandDNA.md` 保存品牌核心、使命、愿景、承诺与核心命题原文；`brand/02_MissionVision.md` 只保存展开说明。
+- 新增 `security/PrivacyAudit-Review.md`，逐项分类并记录 9 条 warning 的风险、决定、负责人和状态。
+
+## Remaining Issues
+
+- Review Fix 尚未合并至 `main`。
+- Foundation 尚未完成最终治理审批。
+- Git 历史、未跟踪文件与二进制图片仍不属于自动文本隐私审计范围。
+- Draft PR #2 的 Brand Foundation 继续暂停并保持 `proposed`。
+
+## 其他待处理问题
 
 - 仓库可见性和许可证仍由创始人决定。
 - 最终品牌名称仍未确定。
@@ -201,6 +224,6 @@ Web MVP 已可使用。本 Sprint 通过分离项目资产与私人数据，并�
 
 `74a00904f4ca19a9ef1d0438cb1313ad4122d0f9`
 
-## PR
+## 历史 PR
 
-[PR #1](https://github.com/Zww1116/ai-running-health-coach-mvp/pull/1)，已合并至 `main`。
+[PR #1](https://github.com/Zww1116/ai-running-health-coach-mvp/pull/1) 记录初始资产进入 `main` 的 Git 历史；它不代表当前 Foundation 已获得治理批准。

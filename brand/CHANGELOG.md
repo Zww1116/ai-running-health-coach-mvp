@@ -1,13 +1,24 @@
 ---
 title: Brand Changelog
 status: proposed
-version: 0.1.0
-last_updated: 2026-07-25
+version: 0.1.1
+last_updated: 2026-08-05
 owner: founder
 source_of_truth: true
 ---
 
 # 品牌变更记录
+
+## Brand Foundation 0.1.1
+
+**状态：** Proposed
+
+**内容：**
+
+- 明确 `brand/00_BrandDNA.md` 是品牌核心、使命、愿景、承诺与核心命题原文的唯一正式来源。
+- 将 `brand/02_MissionVision.md` 调整为基于 Brand DNA 的派生决策说明，并移除重复原文。
+- 明确 Values、Voice 与 Product Principles 必须继承 Brand DNA。
+- 不改变品牌核心文字，不将任何品牌文件转为 `approved`。
 
 ## Brand Foundation 0.1.0
 
