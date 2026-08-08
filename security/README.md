@@ -1,8 +1,8 @@
 ---
 title: Security
-status: proposed
-version: 0.1.1
-last_updated: 2026-08-05
+status: approved
+version: 0.1.2
+last_updated: 2026-08-08
 owner: engineering
 source_of_truth: true
 ---

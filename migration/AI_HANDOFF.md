@@ -1,8 +1,8 @@
 ---
 title: AI Handoff
-status: proposed
-version: 0.2.1
-last_updated: 2026-08-05
+status: approved
+version: 0.2.2
+last_updated: 2026-08-08
 owner: product
 source_of_truth: true
 ---
@@ -17,13 +17,22 @@ source_of_truth: true
 
 拟议（`proposed`）：[记住来路，理解自己，成为自己。](../brand/00_BrandDNA.md)
 
-品牌名称尚未确定；Brand Foundation 仍等待创始人审核。
+品牌名称、最终英文表达和视觉系统尚未确定；Brand Foundation 当前为 `Proposed / Founder Review`。
 
 ## 当前阶段
 
 当前阶段、当前 Sprint、审核状态和下一步只读取 `project/CurrentStatus.md`。本文件不独立维护动态状态。
 
-生成本交接快照时，Foundation 状态为 `Draft / Review`，本次 Review Fix 尚未合并至 `main`；Draft PR #2 的 Brand Foundation 保持暂停和 `proposed`。
+生成本交接快照时，Foundation 状态为 `Approved / Completed`，当前阶段为 `Sprint 002 — Brand Foundation Review`。PR #2 contains proposed Brand Foundation documents；合并草案不等于批准品牌内容。
+
+## 已批准治理决策
+
+- Sprint 001 Foundation 已由创始人批准并完成。
+- 私人健康数据、图片、身份资料、导出、数据库与密钥不得进入 Git。
+- AI 提供商必须可替换；核心 Prompt、Agent、Schema 与知识不得锁定在单一平台。
+- 公开网站可以继续访问；当前公开仓库是迁移到长期私有源资产管理前的过渡安排。
+- 当前不授予开源许可证；未经创始人另行批准，默认保留全部权利。
+- 迁移私有仓库前必须验证部署、Codex 访问和备份恢复流程。
 
 ## 总体阅读顺序
 
@@ -86,11 +95,11 @@ source_of_truth: true
 
 ## 迁移包完整性
 
-- `packVersion` 与 `projectVersion` 当前为 `0.2.1`。
+- `packVersion` 与 `projectVersion` 当前为 `0.2.2`。
 - Schema、Prompt 与 Agent 版本仍为 `0.1.0`。
 - `FILE_INDEX.md` 列出全部最终交接文件。
 - `CHECKSUMS.txt` 计算除自身以外所有最终文件的 SHA-256；它不包含自身校验值。
 
 ## 未确认事项
 
-最终品牌名称、最终英文核心表达、品牌视觉、商标与域名、许可证、仓库可见性策略、生产 AI 提供商和完整备份流程。
+最终品牌名称、最终英文核心表达、品牌视觉、商标与域名、私有仓库迁移时机、生产 AI 提供商和完整备份流程。

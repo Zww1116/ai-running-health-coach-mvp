@@ -1,8 +1,8 @@
 ---
 title: Project Entry
-status: proposed
-version: 0.2.1
-last_updated: 2026-08-05
+status: approved
+version: 0.2.2
+last_updated: 2026-08-08
 owner: founder
 source_of_truth: true
 ---
@@ -72,13 +72,13 @@ source_of_truth: true
 
 ## 决策入口
 
-重大项目决策及其成熟度只以 [project/decisions/](project/decisions/) 中的 ADR 为准。`proposed` ADR 不应在入口文件中被描述为已批准结论。
+重大项目决策及其成熟度只以 [project/decisions/](project/decisions/) 中的 ADR 为准。`approved` ADR 是已接受的治理决策；`proposed` ADR 不应被描述为已批准结论。
 
 ## 未确认事项
 
 - 最终品牌名称。
-- Foundation Review 是否完成，以及 Brand Foundation proposed 文件是否可以进入后续审核。
-- 许可证和仓库可见性策略。
+- Brand Foundation proposed 文件的逐项审核结果。
+- 从当前公开过渡仓库迁移到私有源资产仓库的时机与验证方案。
 - 最终生产环境 AI 提供商。
 - 最终长期备份产品流程。
 

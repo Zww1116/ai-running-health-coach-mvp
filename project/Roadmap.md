@@ -1,8 +1,8 @@
 ---
 title: Roadmap
 status: proposed
-version: 0.2.1
-last_updated: 2026-08-05
+version: 0.2.2
+last_updated: 2026-08-08
 owner: product
 source_of_truth: true
 ---
@@ -13,7 +13,7 @@ source_of_truth: true
 
 目标：使项目可维护、隐私优先，并能够跨 AI 平台迁移。
 
-主要成果：已合并的治理文档、隐私模型、唯一正式来源矩阵、迁移交接包，以及当前正在建立的 Brand Foundation proposed 文件体系。
+主要成果：已批准的治理、隐私与 AI 可迁移 Foundation，以及当前处于创始人审核阶段的 Brand Foundation proposed 文件体系。
 
 当前进展不在 Roadmap 中独立维护，见 [CurrentStatus.md](CurrentStatus.md)。
 

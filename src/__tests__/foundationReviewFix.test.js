@@ -34,31 +34,90 @@ const brandFiles = [
   'brand/CHANGELOG.md',
 ];
 
-describe('Sprint 001 foundation review fixes', () => {
-  test('uses CurrentStatus as the only current project status source', () => {
+const approvedFoundationFiles = [
+  'PROJECT.md',
+  'project/CurrentStatus.md',
+  'project/SourceOfTruth.md',
+  'project/decisions/README.md',
+  'project/decisions/ADR-0001-Single-Repository.md',
+  'project/decisions/ADR-0002-Private-Data-Separation.md',
+  'project/decisions/ADR-0003-Replaceable-AI-Providers.md',
+  'project/decisions/ADR-0004-Repository-Visibility-And-Licensing.md',
+  'migration/AI_HANDOFF.md',
+  'security/PrivacyModel.md',
+  'security/DataClassification.md',
+  'security/AIDataSharingPolicy.md',
+  'security/SecretsPolicy.md',
+];
+
+describe('Sprint 001 foundation governance', () => {
+  test('records founder approval while keeping CurrentStatus authoritative', () => {
     const currentStatus = read('project/CurrentStatus.md');
     expect(currentStatus).toContain('Foundation 状态');
-    expect(currentStatus).toContain('`Draft / Review`');
-    expect(currentStatus).toContain('本次 Review Fix 尚未合并至 `main`');
+    expect(currentStatus).toContain('`Approved / Completed`');
+    expect(currentStatus).toContain('Sprint 002 — Brand Foundation Review');
+    expect(currentStatus).toContain('`Proposed / Founder Review`');
+    expect(currentStatus).toContain(
+      '将 `proposed` 文件合并进 `main`，只表示将草案纳入版本管理，不代表内容已经转为 `approved`',
+    );
 
     for (const relativePath of statusSummaryFiles) {
       const source = read(relativePath);
       expect(source, relativePath).not.toMatch(
-        /Sprint 001[^\n]*(?:已合并完成|Merged \/ Completed|已合并并建立)/,
+        /Foundation[^\n]*(?:Draft \/ Review|尚未完成最终治理审批|仍未获得治理批准)/,
       );
+    }
+
+    for (const relativePath of approvedFoundationFiles) {
+      expect(read(relativePath), relativePath).toMatch(/\nstatus: approved\r?\n/);
     }
 
     const projectEntry = read('PROJECT.md');
     expect(projectEntry).toContain('project/CurrentStatus.md');
-    expect(projectEntry).not.toContain('## 已确认事项');
 
     const sprint = read(
       'project/sprints/Sprint-001-Foundation-Privacy-Portability.md',
     );
-    expect(sprint).toContain('status: draft');
+    expect(sprint).toContain('status: approved');
+    expect(sprint).toContain('`Approved / Completed`');
     expect(sprint).toContain('## Review Findings');
     expect(sprint).toContain('## Resolution');
     expect(sprint).toContain('## Remaining Issues');
+
+    const decisions = read('project/decisions/README.md');
+    for (let index = 1; index <= 4; index += 1) {
+      expect(decisions).toContain(`ADR-000${index}`);
+      expect(read(`project/decisions/ADR-000${index}-${[
+        'Single-Repository',
+        'Private-Data-Separation',
+        'Replaceable-AI-Providers',
+        'Repository-Visibility-And-Licensing',
+      ][index - 1]}.md`)).toContain('`Approved`');
+    }
+
+    const repositoryDecision = read(
+      'project/decisions/ADR-0004-Repository-Visibility-And-Licensing.md',
+    );
+    expect(repositoryDecision).toContain('当前公开仓库属于过渡状态');
+    expect(repositoryDecision).toContain('当前不添加开源许可证');
+    expect(repositoryDecision).toContain('默认保留全部权利');
+
+    const manifest = JSON.parse(read('migration/manifest.json'));
+    expect(manifest.governance).toMatchObject({
+      foundationStatus: 'Approved / Completed',
+      brandFoundationStatus: 'Proposed / Founder Review',
+      brandNameStatus: 'undetermined',
+      aiProviders: 'replaceable',
+      repositoryStatus: 'public transition toward private source asset management',
+      licenseStatus: 'no open-source license; all rights reserved by default',
+    });
+
+    const handoff = read('migration/AI_HANDOFF.md');
+    expect(handoff).toContain('Foundation 状态为 `Approved / Completed`');
+    expect(handoff).toContain('当前不授予开源许可证');
+    expect(read('migration/NEW_AI_BOOTSTRAP_PROMPT.md')).toContain(
+      '合并 proposed 文件不等于 Brand Approval',
+    );
   });
 
   test('keeps Brand DNA as the only source for core brand wording', () => {

@@ -1,8 +1,8 @@
 ---
 title: Privacy Audit Warning Review
-status: draft
-version: 0.1.0
-last_updated: 2026-08-05
+status: approved
+version: 0.1.1
+last_updated: 2026-08-08
 owner: engineering
 source_of_truth: true
 ---
@@ -40,7 +40,7 @@ source_of_truth: true
 
 - 必须修复：0。
 - 可接受风险：8，均已人工复核并保留自动 warning。
-- 后续优化：1，不阻塞本次文档 Review Fix，但在公开产品数据策略复审时重新评估。
+- 后续优化：1，已由创始人作为 Foundation 剩余风险接受；在公开产品数据策略复审时重新评估。
 - 高可信 Secret：0。
 - Git 历史、未跟踪文件、二进制图片和外部服务数据仍不属于当前文本审计范围。
 

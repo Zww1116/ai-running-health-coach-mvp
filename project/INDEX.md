@@ -1,8 +1,8 @@
 ---
 title: Project Index
-status: proposed
-version: 0.2.1
-last_updated: 2026-08-05
+status: approved
+version: 0.2.2
+last_updated: 2026-08-08
 owner: founder
 source_of_truth: true
 ---

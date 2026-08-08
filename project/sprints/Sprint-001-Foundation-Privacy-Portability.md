@@ -1,8 +1,8 @@
 ---
 title: Sprint 001 Foundation Privacy Portability
-status: draft
-version: 0.1.2
-last_updated: 2026-08-05
+status: approved
+version: 0.2.0
+last_updated: 2026-08-08
 owner: engineering
 source_of_truth: true
 ---
@@ -19,9 +19,9 @@ Sprint 001。
 
 ## 状态
 
-`Draft / Review`。当前项目状态只以 [project/CurrentStatus.md](../CurrentStatus.md) 为准。
+`Approved / Completed`。当前项目状态只以 [project/CurrentStatus.md](../CurrentStatus.md) 为准。
 
-初始 Foundation 资产曾通过 PR #1 进入 `main`，但治理审批尚未完成；本次 Review Fix 尚未合并至 `main`。
+初始 Foundation 资产通过 PR #1 进入 `main`；创始人于后续治理复核中正式批准 Foundation，并确认技术验证、隐私审计、Foundation Validation 与 AI Handoff Export 已通过。
 
 ## 背景
 
@@ -75,6 +75,7 @@ Web MVP 已可使用。本 Sprint 通过分离项目资产与私人数据，并�
 - 实现前基线：`vitest run` 通过，16 个测试文件、61 项测试。
 - Sprint 初次验证：`vitest run` 通过，17 个测试文件、63 项测试。
 - 合并前审查修正验证：`vitest run` 通过，20 个测试文件、77 项测试。
+- 创始人治理决策更新验证：`vitest run` 通过，22 个测试文件、83 项测试。
 - `src/__tests__/foundationScripts.test.js` 覆盖基础脚本和 AI 交接导出。
 - `src/__tests__/handoffReviewFixes.test.js` 覆盖 `manifest.exclude`、路径越界、完整索引和校验值。
 - `src/__tests__/foundationValidationReview.test.js` 覆盖 Markdown 链接、JSON Schema 元数据和敏感夹具导出。
@@ -82,11 +83,17 @@ Web MVP 已可使用。本 Sprint 通过分离项目资产与私人数据，并�
 
 ## 构建结果
 
-基线、Sprint 初次验证和合并前审查修正的生产构建均通过。仍存在原有 Vite chunk-size warning，该提示不是本 Sprint 引入。
+基线、Sprint 初次验证、合并前审查修正和创始人治理决策更新的生产构建均通过。最新构建转换 1669 个模块；仍存在原有 523.91 kB Vite chunk-size warning，该提示不是本 Sprint 引入。
+
+## 最终验证结果
+
+- Privacy Audit：扫描 174 个 Git 跟踪文本文件，9 条已复核 warning，0 个高可信 Secret。
+- Foundation Validation：通过，0 warning。
+- AI Handoff Export：成功，`packVersion 0.2.2`、`projectVersion 0.2.2`，46 个合并来源、68 个 AI-Core-Pack 文件。
 
 ## 决策
 
-已为单仓库、私人数据分离、可替换 AI 提供商，以及仓库可见性/许可证增加初始 ADR。各 ADR 的 `status` 保持原值。
+ADR-0001 至 ADR-0004 均已由创始人批准。仓库公开状态按 ADR-0004 作为过渡安排保留，当前不添加开源许可证。
 
 ## 早期审查修正
 
@@ -108,20 +115,20 @@ Web MVP 已可使用。本 Sprint 通过分离项目资产与私人数据，并�
 ## Resolution
 
 - 以 `project/CurrentStatus.md` 作为当前项目阶段、当前 Sprint、审核状态和下一步的唯一正式来源。
-- 保留真实 Git 历史，同时把 Foundation 治理状态统一为 `Draft / Review`；ADR 决策成熟度继续保持 `proposed`。
+- 保留真实 Git 历史，并在创始人正式决策后把 Foundation 治理状态更新为 `Approved / Completed`；ADR-0001 至 ADR-0004 更新为 `approved`。
 - 以 `brand/00_BrandDNA.md` 保存品牌核心、使命、愿景、承诺与核心命题原文；`brand/02_MissionVision.md` 只保存展开说明。
 - 新增 `security/PrivacyAudit-Review.md`，逐项分类并记录 9 条 warning 的风险、决定、负责人和状态。
 
 ## Remaining Issues
 
-- Review Fix 尚未合并至 `main`。
-- Foundation 尚未完成最终治理审批。
+- Foundation 已获创始人批准并完成；本次状态更新仍需通过 PR #2 的正常审查与合并流程进入 `main`。
 - Git 历史、未跟踪文件与二进制图片仍不属于自动文本隐私审计范围。
-- Draft PR #2 的 Brand Foundation 继续暂停并保持 `proposed`。
+- Draft PR #2 的 Brand Foundation 继续保持 `proposed`；合并草案不代表品牌内容获得批准。
 
 ## 其他待处理问题
 
-- 仓库可见性和许可证仍由创始人决定。
+- 当前公开仓库是过渡安排；私有仓库迁移前仍需验证部署、Codex 访问和备份流程。
+- 当前不授予开源许可证，未经创始人另行批准默认保留全部权利。
 - 最终品牌名称仍未确定。
 - 二进制图片、未跟踪本地文件和外部服务数据仍需人工复核。
 - 当前执行环境没有 `npm` 可执行文件；底层命令通过本地已安装的 Vitest/Vite 和 Node 直接验证。
@@ -226,4 +233,4 @@ Web MVP 已可使用。本 Sprint 通过分离项目资产与私人数据，并�
 
 ## 历史 PR
 
-[PR #1](https://github.com/Zww1116/ai-running-health-coach-mvp/pull/1) 记录初始资产进入 `main` 的 Git 历史；它不代表当前 Foundation 已获得治理批准。
+[PR #1](https://github.com/Zww1116/ai-running-health-coach-mvp/pull/1) 记录初始资产进入 `main` 的 Git 历史；Foundation 的正式批准由后续创始人治理决策记录完成。

@@ -1,8 +1,8 @@
 ---
 title: Sprint 002 Brand Foundation
 status: proposed
-version: 0.1.1
-last_updated: 2026-08-05
+version: 0.1.2
+last_updated: 2026-08-08
 owner: product
 source_of_truth: true
 ---
@@ -13,9 +13,13 @@ source_of_truth: true
 
 Sprint 002。
 
+## 状态
+
+`Proposed / Review`。当前项目状态只以 [project/CurrentStatus.md](../CurrentStatus.md) 为准。
+
 ## 背景
 
-Brand Foundation 已形成 Draft PR #2，但在 Sprint 001 Foundation Review 完成前保持暂停。当前状态只以 [project/CurrentStatus.md](../CurrentStatus.md) 为准。
+Sprint 001 Foundation 已获创始人批准并完成。Brand Foundation 已形成 Draft PR #2，当前进入创始人逐项审核；所有品牌内容继续保持 `proposed`。
 
 ## 目标
 
@@ -93,11 +97,11 @@ Brand Foundation 已形成 Draft PR #2，但在 Sprint 001 Foundation Review 完
 
 ## 测试结果
 
-执行前基线为 20 个测试文件、77 项测试通过。Sprint 实现后为 21 个测试文件、80 项测试通过，其中新增 3 项品牌与迁移包专项测试。
+执行前基线为 20 个测试文件、77 项测试通过。创始人治理决策更新后为 22 个测试文件、83 项测试通过；品牌状态测试继续确认所有 Brand Foundation 文件保持 `proposed`。
 
 ## Build 结果
 
-生产构建通过，共转换 1669 个模块。保留既有的 Vite chunk-size warning，本 Sprint 未修改网站运行时代码。
+生产构建通过，共转换 1669 个模块。保留既有的 523.91 kB Vite chunk-size warning，本 Sprint 未修改网站运行时代码。
 
 ## Foundation Validation 结果
 
@@ -105,7 +109,7 @@ Brand Foundation 已形成 Draft PR #2，但在 Sprint 001 Foundation Review 完
 
 ## AI 迁移包结果
 
-导出成功：`packVersion 0.2.0`、`projectVersion 0.2.0`，45 个合并来源、67 个 AI-Core-Pack 文件；完整索引与校验值验证通过。
+导出成功：`packVersion 0.2.2`、`projectVersion 0.2.2`，46 个合并来源、68 个 AI-Core-Pack 文件；完整索引与校验值验证通过。
 
 ## 待创始人确认内容
 
@@ -125,7 +129,7 @@ Brand Foundation 已形成 Draft PR #2，但在 Sprint 001 Foundation Review 完
 
 ## Draft PR
 
-PR #2 保持 Draft；不得自动合并 `main`，不得在 Foundation Review 完成前把品牌文件改为 `approved`。
+PR #2 contains proposed Brand Foundation documents。Foundation 已获创始人批准；Brand Foundation 仍是 `proposed`。Merge 不等于 Brand Approval，后续品牌批准必须通过独立 Commit 或 PR 完成。
 
 ## 已形成内容
 

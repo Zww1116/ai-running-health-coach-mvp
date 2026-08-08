@@ -68,12 +68,12 @@ describe('Sprint 002 brand foundation', () => {
     expect(allBrandContent).toContain('品牌名称尚未确定');
   });
 
-  test('exports every brand file in the declared order at pack version 0.2.1', () => {
+  test('exports every brand file in the declared order at pack version 0.2.2', () => {
     const manifest = JSON.parse(
       fs.readFileSync(path.join(rootDir, 'migration', 'manifest.json'), 'utf8'),
     );
-    expect(manifest.packVersion).toBe('0.2.1');
-    expect(manifest.projectVersion).toBe('0.2.1');
+    expect(manifest.packVersion).toBe('0.2.2');
+    expect(manifest.projectVersion).toBe('0.2.2');
     expect(manifest.schemaVersion).toBe('0.1.0');
     expect(manifest.promptVersion).toBe('0.1.0');
     expect(manifest.agentVersion).toBe('0.1.0');

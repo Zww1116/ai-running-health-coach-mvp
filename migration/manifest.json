@@ -1,10 +1,20 @@
 {
   "packName": "AI-Core-Pack",
-  "packVersion": "0.2.1",
-  "projectVersion": "0.2.1",
+  "packVersion": "0.2.2",
+  "projectVersion": "0.2.2",
   "schemaVersion": "0.1.0",
   "promptVersion": "0.1.0",
   "agentVersion": "0.1.0",
+  "governance": {
+    "foundationStatus": "Approved / Completed",
+    "brandFoundationStatus": "Proposed / Founder Review",
+    "brandNameStatus": "undetermined",
+    "englishExpressionStatus": "undetermined",
+    "visualSystemStatus": "undetermined",
+    "aiProviders": "replaceable",
+    "repositoryStatus": "public transition toward private source asset management",
+    "licenseStatus": "no open-source license; all rights reserved by default"
+  },
   "privacyLevel": "Level 0 project assets only",
   "include": [
     "PROJECT.md",

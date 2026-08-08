@@ -1,8 +1,8 @@
 ---
 title: Source of Truth
-status: proposed
-version: 0.2.1
-last_updated: 2026-08-05
+status: approved
+version: 0.2.2
+last_updated: 2026-08-08
 owner: founder
 source_of_truth: true
 ---
@@ -43,3 +43,5 @@ README 文件负责介绍与导航。聊天记录不是正式来源。AI 生成�
 `project/CurrentStatus.md` 是当前项目阶段、当前 Sprint、审核状态与下一步的唯一正式来源。其他文件只能链接或记录历史，不得独立定义不同的当前状态。
 
 `brand/10_FounderReviewChecklist.md` 是审核辅助工具，不是正式来源。
+
+正式来源关系获批准，不代表其指向的所有内容均为 `approved`。品牌正式来源当前仍保存 `proposed` 内容，须以各文件元数据为准。
