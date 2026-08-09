@@ -1,8 +1,8 @@
 ---
 title: Project Entry
-status: proposed
-version: 0.1.0
-last_updated: 2026-07-25
+status: approved
+version: 0.2.2
+last_updated: 2026-08-08
 owner: founder
 source_of_truth: true
 ---
@@ -23,9 +23,9 @@ source_of_truth: true
 
 首个产品是面向跑者的 AI 辅助健康与训练管理系统。它以 React Web 应用形式运行，并可通过 GitHub Pages 或 Vercel 公开部署。
 
-## 当前阶段
+## 当前状态入口
 
-项目目前处于 Phase 0 与 Phase 1 的交叠阶段：项目治理和隐私基础，以及产品和数据基础。
+当前项目阶段、当前 Sprint、审核状态和下一步只在 [project/CurrentStatus.md](project/CurrentStatus.md) 中维护。本文件是项目入口，不独立定义动态状态。
 
 ## 当前技术状态
 
@@ -55,34 +55,30 @@ source_of_truth: true
 - 长期云端备份与恢复尚未形成完整的用户流程。
 - 当前 Schema 状态为 `draft`，尚未用于运行时验证。
 
-## 当前 Sprint
+## 当前工作导航
 
-Sprint 001：项目基础、隐私保护与 AI 可迁移性。
-
-## 下一步计划
-
-在增加更多产品功能之前，完成治理、隐私、Schema、Prompt 和 AI 交接基础。
+当前工作与下一步见 [project/CurrentStatus.md](project/CurrentStatus.md)，Sprint 历史与范围见 [project/sprints/](project/sprints/)。
 
 ## 文档导航
 
 - 项目治理：[project/README.md](project/README.md)
 - 当前状态：[project/CurrentStatus.md](project/CurrentStatus.md)
 - 唯一正式来源：[project/SourceOfTruth.md](project/SourceOfTruth.md)
+- 品牌基础导航：[brand/README.md](brand/README.md)
 - 品牌核心：[brand/00_BrandDNA.md](brand/00_BrandDNA.md)
 - 架构：[architecture/README.md](architecture/README.md)
 - 安全：[security/README.md](security/README.md)
 - 迁移：[migration/AI_HANDOFF.md](migration/AI_HANDOFF.md)
 
-## 已确认事项
+## 决策入口
 
-- 当前阶段使用一个主要 GitHub 仓库。
-- 私人健康数据与项目资产分离。
-- AI 提供商保持可替换。
+重大项目决策及其成熟度只以 [project/decisions/](project/decisions/) 中的 ADR 为准。`approved` ADR 是已接受的治理决策；`proposed` ADR 不应被描述为已批准结论。
 
 ## 未确认事项
 
 - 最终品牌名称。
-- 许可证和仓库可见性策略。
+- Brand Foundation proposed 文件的逐项审核结果。
+- 从当前公开过渡仓库迁移到私有源资产仓库的时机与验证方案。
 - 最终生产环境 AI 提供商。
 - 最终长期备份产品流程。
 

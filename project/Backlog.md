@@ -1,8 +1,8 @@
 ---
 title: Backlog
 status: proposed
-version: 0.1.0
-last_updated: 2026-07-25
+version: 0.2.2
+last_updated: 2026-08-08
 owner: product
 source_of_truth: true
 ---
@@ -11,13 +11,14 @@ source_of_truth: true
 
 ## 治理
 
-- 确认 Sprint 001 审阅流程。状态：`Confirmed`。
+- Sprint 001 Foundation 已批准完成；后续治理复审按 [CurrentStatus.md](CurrentStatus.md) 与 ADR 复审条件执行。
 - 增加周期性的依赖与隐私审阅。状态：`Proposed`。
 
 ## 品牌
 
-- 在本 Sprint 后完成品牌基础。状态：`Proposed`。
-- 确定最终品牌名称。状态：`Proposed`。
+- Brand Foundation 文档与创始人审核：`Proposed / Founder Review`，下一步见 [CurrentStatus.md](CurrentStatus.md)。
+- Brand Naming 独立 Sprint。状态：`Proposed / Future`。
+- Brand Visual System。状态：`Not Now`。
 
 ## 产品
 

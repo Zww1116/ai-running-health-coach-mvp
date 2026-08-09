@@ -1,8 +1,8 @@
 ---
 title: Incident Response
-status: proposed
-version: 0.1.0
-last_updated: 2026-07-25
+status: approved
+version: 0.1.1
+last_updated: 2026-08-08
 owner: engineering
 source_of_truth: true
 ---
