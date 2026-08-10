@@ -1,8 +1,8 @@
 ---
 title: Brand Foundation Index
 status: proposed
-version: 0.1.1
-last_updated: 2026-08-05
+version: 0.1.2
+last_updated: 2026-08-09
 owner: founder
 source_of_truth: true
 ---
@@ -15,7 +15,7 @@ source_of_truth: true
 
 ## 当前品牌状态
 
-- 当前全部品牌文件均为 `proposed`，尚未获得创始人逐项批准。
+- 当前全部品牌文件整体均为 `proposed`；Brand DNA 的核心表达与 Mission 分区已获创始人批准，其余分区仍待审核。
 - Brand DNA 不等于最终品牌名称；品牌名称尚未确定。
 - 品牌视觉尚未开始，Logo、颜色、字体、图标和视觉系统均未确定。
 - 当前只正式开发 Health 产品，未来方向不属于当前开发范围。
@@ -47,7 +47,7 @@ Brand DNA 是品牌核心原文的唯一正式来源。Values、Voice、Product 
 - `approved`：仅能由创始人完成逐项审核后设置。
 - `deprecated` 或 `archived`：应记录替代关系与原因。
 
-本目录当前没有 `approved` 文件。
+本目录当前没有整体状态为 `approved` 的文件；分区批准状态只以 [Brand DNA](00_BrandDNA.md) 为准。
 
 ## 品牌变更流程
 
@@ -64,7 +64,7 @@ Brand DNA 是品牌核心原文的唯一正式来源。Values、Voice、Product 
 
 ## 已形成内容
 
-已形成完整的 proposed 品牌基础结构、正式来源关系、审核与变更流程，以及与当前 Health 产品相适配的边界。
+已形成完整的 proposed 品牌基础结构、正式来源关系、审核与变更流程，以及与当前 Health 产品相适配的边界；Brand DNA 的核心表达与 Mission 已完成分区级审核。
 
 ## 仍待确认事项
 

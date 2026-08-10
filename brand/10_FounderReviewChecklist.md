@@ -1,8 +1,8 @@
 ---
 title: Founder Review Checklist
 status: proposed
-version: 0.1.0
-last_updated: 2026-07-25
+version: 0.1.1
+last_updated: 2026-08-09
 owner: founder
 source_of_truth: false
 ---
@@ -13,14 +13,14 @@ source_of_truth: false
 
 ## Brand DNA
 
-- [ ] 我是否认可这一表述：
-- [ ] 哪些词最像我：
-- [ ] 哪些词不像我：
-- [ ] 哪些内容需要删除：
-- [ ] 哪些内容需要补充：
-- [ ] 是否可以转为 `approved`：
-- 创始人备注：
-- 审核日期：
+- [x] Brand DNA 核心表达审核
+- [x] Mission 审核
+- [ ] Vision 审核
+- [ ] Promise 审核
+- [ ] Core Thesis 审核
+- [ ] Brand DNA 整体是否可以转为 `approved`
+- 创始人批准日期：2026-08-09（仅适用于核心表达与 Mission）
+- 创始人备注：Brand DNA 整体继续保持 `proposed`。
 
 ## Brand Positioning
 
@@ -35,14 +35,11 @@ source_of_truth: false
 
 ## Mission and Vision
 
-- [ ] 我是否认可这一表述：
-- [ ] 哪些词最像我：
-- [ ] 哪些词不像我：
-- [ ] 哪些内容需要删除：
-- [ ] 哪些内容需要补充：
-- [ ] 是否可以转为 `approved`：
-- 创始人备注：
-- 审核日期：
+- [x] Mission 已完成创始人审核。
+- [ ] Vision 尚待创始人审核。
+- [ ] Mission and Vision 派生说明文件是否可以转为 `approved`。
+- 创始人批准日期：2026-08-09（仅适用于 Mission 正式原文）。
+- 创始人备注：正式 Mission 原文以 [Brand DNA](00_BrandDNA.md) 为准；Vision 仍为 `proposed`。
 
 ## Values
 
@@ -127,7 +124,7 @@ source_of_truth: false
 
 ## 仍待确认事项
 
-所有检查项、备注和审核日期均等待创始人填写。
+Brand DNA 核心表达与 Mission 已完成首轮审核；其余检查项、备注和审核日期仍等待创始人填写。
 
 ## 尚未确认的重大问题
 

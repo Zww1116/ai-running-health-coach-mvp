@@ -22,6 +22,10 @@ const brandFiles = [
   'brand/CHANGELOG.md',
 ];
 const coreExpression = '记住来路，理解自己，成为自己。';
+const approvedMission =
+  '帮助人们记住自己的成长轨迹，在持续的记录、理解与选择中找到自己，并一步一步成为自己。';
+const previousMission =
+  '帮助每个人记住自己的成长轨迹，理解自己、找到自己，并通过持续行动成为自己。';
 
 afterEach(() => {
   for (const directory of temporaryDirectories.splice(0)) {
@@ -57,15 +61,86 @@ describe('Sprint 002 brand foundation', () => {
       .map((relativePath) => fs.readFileSync(path.join(rootDir, relativePath), 'utf8'))
       .join('\n');
 
-    expect(brandDna).toMatch(
-      new RegExp(`## 核心表达\\r?\\n\\r?\\n${coreExpression}`),
-    );
+    expect(brandDna).toContain(coreExpression);
     expect(project).toContain(
       `[${coreExpression}](brand/00_BrandDNA.md)`,
     );
     expect(allBrandContent).not.toContain('看懂自己');
     expect(allBrandContent).toContain('[Brand Name Pending]');
     expect(allBrandContent).toContain('品牌名称尚未确定');
+  });
+
+  test('records partial founder approval without approving Brand DNA as a whole', () => {
+    const brandDna = fs.readFileSync(
+      path.join(rootDir, 'brand', '00_BrandDNA.md'),
+      'utf8',
+    );
+    const changelog = fs.readFileSync(
+      path.join(rootDir, 'brand', 'CHANGELOG.md'),
+      'utf8',
+    );
+    const checklist = fs.readFileSync(
+      path.join(rootDir, 'brand', '10_FounderReviewChecklist.md'),
+      'utf8',
+    );
+    const currentStatus = fs.readFileSync(
+      path.join(rootDir, 'project', 'CurrentStatus.md'),
+      'utf8',
+    );
+    const handoff = fs.readFileSync(
+      path.join(rootDir, 'migration', 'AI_HANDOFF.md'),
+      'utf8',
+    );
+    const bootstrap = fs.readFileSync(
+      path.join(rootDir, 'migration', 'NEW_AI_BOOTSTRAP_PROMPT.md'),
+      'utf8',
+    );
+
+    expect(brandDna).toMatch(/\nstatus: proposed\r?\n/);
+    expect(brandDna).toMatch(
+      /## 核心表达\r?\n\r?\n\*\*Section Status:\*\* `Approved`/,
+    );
+    expect(brandDna).toMatch(
+      /## 品牌使命\r?\n\r?\n\*\*Section Status:\*\* `Approved`/,
+    );
+    expect(brandDna).toContain(coreExpression);
+    expect(brandDna).toContain(approvedMission);
+    expect(brandDna).not.toContain(previousMission);
+
+    for (const heading of ['品牌愿景', '品牌承诺', '核心命题']) {
+      expect(brandDna).toContain(
+        `## ${heading}\n\n**Section Status:** \`Proposed\``,
+      );
+    }
+
+    expect(changelog).toContain('Brand DNA Founder Review 01');
+    expect(changelog).toContain('Core Expression：`Approved`');
+    expect(changelog).toContain('Mission：`Approved`');
+    expect(changelog).toContain(
+      'Vision / Promise / Core Thesis：`Proposed`',
+    );
+
+    expect(checklist).toContain('- [x] Brand DNA 核心表达审核');
+    expect(checklist).toContain('- [x] Mission 审核');
+    expect(checklist).toContain('创始人批准日期：2026-08-09');
+    expect(checklist).toContain('- [ ] Brand DNA 整体是否可以转为 `approved`');
+
+    expect(currentStatus).toContain('Brand Founder Review 已开始');
+    expect(currentStatus).toContain('- Core Expression: `Approved`');
+    expect(currentStatus).toContain('- Mission: `Approved`');
+    expect(currentStatus).toContain('- Remaining Brand DNA sections: `Proposed`');
+    expect(currentStatus).toContain('Sprint 002 — Brand Foundation Review');
+    expect(currentStatus).toContain('`Approved / Completed`');
+
+    expect(handoff).toContain(`核心表达：\`Approved\` — ${coreExpression}`);
+    expect(handoff).toContain(`品牌使命：\`Approved\` — ${approvedMission}`);
+    expect(handoff).toContain(
+      '品牌愿景、品牌承诺与核心命题：`Proposed`',
+    );
+    expect(bootstrap).toContain('核心表达和品牌使命已获批准');
+    expect(bootstrap).toContain(
+      'Brand Vision、Brand Promise 与 Core Thesis 仍为 proposed',
+    );
   });
 
   test('exports every brand file in the declared order at pack version 0.2.2', () => {

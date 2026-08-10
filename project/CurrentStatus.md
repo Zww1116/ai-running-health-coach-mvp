@@ -1,8 +1,8 @@
 ---
 title: Current Status
 status: approved
-version: 0.2.2
-last_updated: 2026-08-08
+version: 0.2.3
+last_updated: 2026-08-09
 owner: founder
 source_of_truth: true
 ---
@@ -21,9 +21,19 @@ Sprint 001：Governance + Privacy + AI Portability Foundation。
 
 Sprint 002 — Brand Foundation Review。
 
-Brand Foundation 当前状态为 `Proposed / Founder Review`。PR #2 contains proposed Brand Foundation documents.
+Brand Foundation 当前状态为 `Proposed / Founder Review`。PR #2 已将 proposed Brand Foundation 文档基线纳入 `main`，但未批准这些文件。
 
 将 `proposed` 文件合并进 `main`，只表示将草案纳入版本管理，不代表内容已经转为 `approved`。品牌内容只能在创始人逐项审核后，通过独立变更转为 `approved`。
+
+## Brand Founder Review
+
+Brand Founder Review 已开始。Brand DNA 当前批准矩阵：
+
+- Core Expression: `Approved`
+- Mission: `Approved`
+- Remaining Brand DNA sections: `Proposed`
+
+`brand/00_BrandDNA.md` 文件整体以及 Brand Foundation 其他文件仍为 `proposed`。
 
 ## 在线网站
 
@@ -53,7 +63,7 @@ Sprint 001 已批准 `manifest.exclude`、硬编码安全阻断、完整索引�
 
 ## 当前 Sprint
 
-Sprint 002 — Brand Foundation Review。Draft PR #2 包含 proposed 品牌文件，当前进入创始人审核阶段。
+Sprint 002 — Brand Foundation Review。Brand Foundation proposed 文档基线已进入 `main`，当前处于创始人逐项审核阶段。
 
 ## 下一步
 
@@ -65,4 +75,4 @@ Sprint 002 — Brand Foundation Review。Draft PR #2 包含 proposed 品牌文�
 - 过于精确的演示数据可能看起来像真实个人资料，公开前仍需人工确认。
 - 未来 AI 集成不得绕过用户确认和数据最小化原则。
 - 二进制图片、未被 Git 跟踪的本地文件及外部服务数据不属于当前文本隐私审计范围。
-- 所有品牌文件仍为 `proposed`，品牌名称、视觉与商标可用性均未确定。
+- 所有品牌文件整体仍为 `proposed`；仅 Brand DNA 的核心表达与 Mission 分区已获批准。品牌名称、视觉与商标可用性均未确定。

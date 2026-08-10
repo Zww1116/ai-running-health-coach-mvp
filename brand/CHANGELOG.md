@@ -1,13 +1,24 @@
 ---
 title: Brand Changelog
 status: proposed
-version: 0.1.1
-last_updated: 2026-08-05
+version: 0.1.2
+last_updated: 2026-08-09
 owner: founder
 source_of_truth: true
 ---
 
 # 品牌变更记录
+
+## Brand DNA Founder Review 01 — 2026-08-09
+
+**文件状态：** `Proposed`
+
+**创始人决定：**
+
+- Core Expression：`Approved`，准确原文为“记住来路，理解自己，成为自己。”
+- Mission：`Approved`，采用创始人本轮确认的新版本。
+- Vision / Promise / Core Thesis：`Proposed`，本轮未批准。
+- Brand DNA 文件整体继续保持 `proposed`；Brand Foundation 其他文件状态不变。
 
 ## Brand Foundation 0.1.1
 
@@ -44,7 +55,7 @@ source_of_truth: true
 
 ## 已形成内容
 
-已建立 Brand Foundation `0.1.0` 的 proposed 变更基线，未虚构更早历史版本。
+已建立 Brand Foundation `0.1.0` 的 proposed 变更基线，并记录 Brand DNA Founder Review 01 的两项分区批准决定，未虚构更早历史版本。
 
 ## 仍待确认事项
 
