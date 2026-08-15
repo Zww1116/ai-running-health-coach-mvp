@@ -123,8 +123,12 @@ describe('Sprint 001 foundation governance', () => {
   test('keeps Brand DNA as the only source for core brand wording', () => {
     for (const relativePath of brandFiles) {
       const source = read(relativePath);
+      const expectedStatus =
+        relativePath === 'brand/00_BrandDNA.md' ? 'approved' : 'proposed';
       expect(source, relativePath).toMatch(/\nsource_of_truth: (true|false)\r?\n/);
-      expect(source, relativePath).toMatch(/\nstatus: proposed\r?\n/);
+      expect(source, relativePath).toMatch(
+        new RegExp(`\\nstatus: ${expectedStatus}\\r?\\n`),
+      );
       expect(source, relativePath).toMatch(/\nversion: \d+\.\d+\.\d+\r?\n/);
     }
 
@@ -135,13 +139,17 @@ describe('Sprint 001 foundation governance', () => {
     expect(missionVision).toContain('source_of_truth: false');
     expect(missionVision).toContain('基于 Brand DNA 的展开说明');
     expect(missionVision).not.toContain(
-      '帮助每个人记住自己的成长轨迹，理解自己、找到自己，并通过持续行动成为自己。',
+      '帮助人们记住自己的成长轨迹，在持续的记录、理解与选择中找到自己，并一步一步成为自己。',
     );
     expect(missionVision).not.toContain(
-      '让每个人都拥有一个真正理解自己、记得自己来时的路，并长期陪伴自己成长的 AI 伙伴。',
+      '让每个人都拥有一个记得自己来时的路、真正理解自己，并能够长期陪伴自己成长的伙伴。',
     );
     expect(missionVision).not.toContain(
       '我们不会替用户定义理想的样子，而会陪伴用户找到属于自己的答案。',
+    );
+    expect(missionVision).not.toContain('人不是被工具塑造的。');
+    expect(missionVision).not.toContain(
+      '好的技术应该帮助人更清楚地看见自己，并成为自己。',
     );
 
     const sourceOfTruth = read('project/SourceOfTruth.md');

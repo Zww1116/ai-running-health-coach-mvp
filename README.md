@@ -5,7 +5,7 @@
 最高入口是 [PROJECT.md](PROJECT.md)，它只做项目级导航；当前项目阶段和审核状态只以 [project/CurrentStatus.md](project/CurrentStatus.md) 为准。详细规则分别保存在 `project/`、`brand/`、`architecture/`、`security/`、`schemas/`、`prompts/` 和 `migration/`。
 
 - Project Governance：Sprint 001 Foundation 已是 `Approved / Completed`，见 [project/README.md](project/README.md) 和 [project/SourceOfTruth.md](project/SourceOfTruth.md)。
-- Brand Foundation：所有文件整体仍为 `proposed`；Brand DNA 的核心表达与 Mission 分区已获批准，其余分区、品牌名称与视觉尚未确定，见 [brand/README.md](brand/README.md)。
+- Brand Foundation：Brand DNA 五个核心分区及文件整体已获批准；其余品牌文件仍为 `proposed`，品牌名称、英文表达与视觉尚未确定，见 [brand/README.md](brand/README.md)。
 - Privacy Boundary：私人健康记录、健康图片、导出包、数据库文件和密钥不进入 Git，见 [security/PrivacyModel.md](security/PrivacyModel.md)。
 - Data Ownership：用户拥有自己的健康数据；云端同步和 AI 分享必须由用户主动选择。
 - AI Portability：规则引擎、OpenAI、Claude、Gemini 和本地模型都应作为可替换 Provider，见 [architecture/AIProviderPortability.md](architecture/AIProviderPortability.md)。

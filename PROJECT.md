@@ -1,7 +1,7 @@
 ---
 title: Project Entry
 status: approved
-version: 0.2.3
+version: 0.2.4
 last_updated: 2026-08-15
 owner: founder
 source_of_truth: true
@@ -17,7 +17,7 @@ source_of_truth: true
 
 ## 当前品牌核心
 
-已批准的品牌核心表达是：[记住来路，理解自己，成为自己。](brand/00_BrandDNA.md) Brand DNA 文件整体仍为 `proposed`，品牌名称尚未确定。
+已批准的品牌核心表达是：[记住来路，理解自己，成为自己。](brand/00_BrandDNA.md) Brand DNA 文件整体已为 `approved`；Brand Foundation 其余文件仍为 `proposed`，品牌名称尚未确定。
 
 ## 当前产品
 

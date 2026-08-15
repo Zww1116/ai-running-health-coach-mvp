@@ -1,7 +1,7 @@
 ---
 title: Current Status
 status: approved
-version: 0.2.3
+version: 0.2.4
 last_updated: 2026-08-15
 owner: founder
 source_of_truth: true
@@ -27,13 +27,19 @@ Brand Foundation 当前状态为 `Proposed / Founder Review`。PR #2 已将 prop
 
 ## Brand Founder Review
 
-Brand Founder Review 已开始。Brand DNA 当前批准矩阵：
+Brand DNA Founder Review 已完成。当前批准矩阵：
 
 - Core Expression: `Approved`
 - Mission: `Approved`
-- Remaining Brand DNA sections: `Proposed`
+- Vision: `Approved`
+- Brand Promise: `Approved`
+- Core Thesis: `Approved`
 
-`brand/00_BrandDNA.md` 文件整体以及 Brand Foundation 其他文件仍为 `proposed`。
+Brand DNA：`Approved`
+
+Brand Foundation：`Proposed / Founder Review`
+
+Brand Foundation 其余文件继续保持 `proposed`。品牌名称、最终英文表达与视觉系统尚未确定。
 
 ## 在线网站
 
@@ -67,7 +73,7 @@ Sprint 002 — Brand Foundation Review。Brand Foundation proposed 文档基线�
 
 ## 下一步
 
-完成 Brand Foundation 创始人逐项审核，再通过独立 Commit 或 PR 将确认内容转为 `approved`。
+下一审核对象：Brand Positioning。后续继续通过独立 Commit 或 PR 记录逐项审核决定。
 
 ## 当前风险
 
@@ -75,4 +81,4 @@ Sprint 002 — Brand Foundation Review。Brand Foundation proposed 文档基线�
 - 过于精确的演示数据可能看起来像真实个人资料，公开前仍需人工确认。
 - 未来 AI 集成不得绕过用户确认和数据最小化原则。
 - 二进制图片、未被 Git 跟踪的本地文件及外部服务数据不属于当前文本隐私审计范围。
-- 所有品牌文件整体仍为 `proposed`；仅 Brand DNA 的核心表达与 Mission 分区已获批准。品牌名称、视觉与商标可用性均未确定。
+- Brand DNA 已整体 `approved`，Brand Foundation 其余文件仍为 `proposed`。品牌名称、英文表达、视觉与商标可用性均未确定。

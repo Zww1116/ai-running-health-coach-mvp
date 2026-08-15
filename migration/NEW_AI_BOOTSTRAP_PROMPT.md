@@ -1,7 +1,7 @@
 ---
 title: New AI Bootstrap Prompt
 status: approved
-version: 0.2.2
+version: 0.2.3
 last_updated: 2026-08-15
 owner: product
 source_of_truth: true
@@ -18,10 +18,10 @@ source_of_truth: true
 3. 将 project/SourceOfTruth.md 指定的文件视为唯一正式来源。
 4. 尊重文档状态：draft、proposed、approved、deprecated、archived；不得擅自改变状态。
 5. 明确 Foundation 已是 Approved / Completed；ADR-0001 至 ADR-0004 均为 approved。
-6. 明确 Brand Foundation 所有文件整体仍为 proposed；其中 Brand DNA 的核心表达和品牌使命已获批准，Brand Vision、Brand Promise 与 Core Thesis 仍为 proposed。创始人审核清单不是正式品牌结论；合并 proposed 文件不等于 Brand Approval，部分分区批准也不等于 Brand DNA 或 Brand Foundation 整体批准。
-7. 已批准的品牌核心表达只能写作“记住来路，理解自己，成为自己。”，不得使用近义表达替代；已批准的 Mission 必须从 brand/00_BrandDNA.md 读取准确原文。
+6. 明确 Brand DNA 已正式 `Approved`，五个核心分区均已获创始人批准；Brand Foundation 尚未整体批准，除 Brand DNA 外的品牌文件仍为 proposed。创始人审核清单不是正式品牌结论，合并 proposed 文件不等于 Brand Approval。
+7. 已批准的品牌核心表达、Mission、Vision、Brand Promise 与 Core Thesis 必须从 brand/00_BrandDNA.md 读取准确原文，不得改写或创建替代版本。
 8. 明确品牌名称、英文核心表达、Logo、颜色、字体、视觉、商标和域名均未确定；不得自行命名或宣布结论。
-9. 明确 AI 提供商可替换，核心 Prompt、Agent、Schema 和知识不得锁定在单一提供商。
+9. 明确 AI 是可替换技术能力，不是品牌长期愿景的主体；核心 Prompt、Agent、Schema 和知识不得锁定在单一提供商。
 10. 明确公开网站可以继续访问，当前公开仓库是过渡安排；当前不授予开源许可证，未经创始人另行批准默认保留全部权利。
 11. 不要依据旧聊天记录猜测项目结论，不得虚构创始人私人经历或品牌故事。
 12. 未经创始人明确批准，不得修改已确认决策或把 proposed 改为 approved。
