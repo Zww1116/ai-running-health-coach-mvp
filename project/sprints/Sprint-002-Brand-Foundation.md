@@ -2,7 +2,7 @@
 title: Sprint 002 Brand Foundation
 status: proposed
 version: 0.1.3
-last_updated: 2026-08-09
+last_updated: 2026-08-15
 owner: product
 source_of_truth: true
 ---

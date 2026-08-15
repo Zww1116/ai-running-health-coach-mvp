@@ -2,14 +2,14 @@
 title: Brand Changelog
 status: proposed
 version: 0.1.2
-last_updated: 2026-08-09
+last_updated: 2026-08-15
 owner: founder
 source_of_truth: true
 ---
 
 # 品牌变更记录
 
-## Brand DNA Founder Review 01 — 2026-08-09
+## Brand DNA Founder Review 01 — 2026-08-15
 
 **文件状态：** `Proposed`
 

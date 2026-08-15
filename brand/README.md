@@ -2,7 +2,7 @@
 title: Brand Foundation Index
 status: proposed
 version: 0.1.2
-last_updated: 2026-08-09
+last_updated: 2026-08-15
 owner: founder
 source_of_truth: true
 ---

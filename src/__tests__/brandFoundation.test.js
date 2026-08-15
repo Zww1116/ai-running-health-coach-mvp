@@ -122,7 +122,7 @@ describe('Sprint 002 brand foundation', () => {
 
     expect(checklist).toContain('- [x] Brand DNA 核心表达审核');
     expect(checklist).toContain('- [x] Mission 审核');
-    expect(checklist).toContain('创始人批准日期：2026-08-09');
+    expect(checklist).toContain('创始人批准日期：2026-08-15');
     expect(checklist).toContain('- [ ] Brand DNA 整体是否可以转为 `approved`');
 
     expect(currentStatus).toContain('Brand Founder Review 已开始');
