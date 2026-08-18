@@ -1,8 +1,8 @@
 ---
 title: Sprint 002 Brand Foundation
 status: proposed
-version: 0.1.4
-last_updated: 2026-08-15
+version: 0.1.5
+last_updated: 2026-08-18
 owner: product
 source_of_truth: true
 ---
@@ -19,7 +19,7 @@ Sprint 002。
 
 ## 背景
 
-Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Foundation 文档基线纳入 `main`；Brand DNA Founder Review 已完成，五个核心分区与文件整体均已获批准。Brand Foundation 其余文件继续保持 `proposed`。
+Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Foundation 文档基线纳入 `main`；Brand DNA 与 Brand Positioning Founder Review 已完成，两份文件整体均已获批准。Brand Foundation 其余文件继续保持 `proposed`。
 
 ## 目标
 
@@ -77,7 +77,7 @@ Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Founda
 
 正向且低风险。本 Sprint 仅使用抽象品牌理念，不加入私人健康数据、身份资料、照片、联系方式、密钥、私人上下文或未脱敏聊天。
 
-隐私审计扫描 172 个 Git 索引文本文件，未发现高可信 Secret；保留 9 条既有人工复核 warning，均不来自本 Sprint 品牌文件。
+隐私审计扫描 174 个 Git 索引文本文件，未发现高可信 Secret；保留 9 条既有人工复核 warning，均不来自本 Sprint 品牌文件。
 
 ## 数据影响
 
@@ -89,17 +89,19 @@ Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Founda
 
 ## 验收标准
 
-- 十三份品牌文件存在且元数据完整；Brand DNA 状态为 `approved`，其余十二份文件状态为 `proposed`。
+- 十三份品牌文件存在且元数据完整；Brand DNA 与 Brand Positioning 状态为 `approved`，其余十一份文件状态为 `proposed`。
 - 已批准的核心表达只使用“记住来路，理解自己，成为自己。”。
 - 已批准的 Mission 使用 Brand DNA 中的准确原文。
 - 已批准的 Vision、Brand Promise 与 Core Thesis 使用 Brand DNA 中的准确原文。
+- 已批准的母品牌定位不再以 `AI 成长伙伴品牌` 作为类别定义。
+- 母品牌未来公众方向与当前 Health 私人真实验证状态同时成立。
 - 品牌名称与视觉仍未确定。
 - 品牌文件按规定顺序进入单文件上下文和 AI-Core-Pack。
 - 测试、构建、隐私审计、基础验证和交接导出通过。
 
 ## 测试结果
 
-执行前基线为 20 个测试文件、77 项测试通过。Brand DNA Review 01 增加分区状态一致性验证；Review 02 将验证更新为 Brand DNA 整体批准与其余品牌文件继续 proposed，最终结果为 22 个测试文件、84 项测试通过。
+Brand Positioning Review 01 增加正式定位、状态矩阵、价值链、公众母品牌与私人 Health 验证并存等验证；最终结果为 22 个测试文件、85 项测试通过。
 
 ## Build 结果
 
@@ -115,28 +117,27 @@ Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Founda
 
 ## 待创始人确认内容
 
-- Brand Positioning、Values、Personality、Voice、Product Principles、Brand Architecture、Naming Brief 与 Guardrails。
+- Mission & Vision 派生说明、Values、Personality、Voice、Product Principles、Brand Architecture、Naming Brief 与 Guardrails。
 - 最终品牌名称和英文核心表达。
 - 母品牌与 Health 的命名关系。
-- 品牌面对个人还是未来公众品牌。
 - 视觉系统、商标、域名与品牌公开程度。
 
 ## 分支
 
-`sprint/002-brand-foundation`
+`codex/founder-brand-positioning-review-01`
 
 ## Commit
 
-提交标题为 `docs: establish brand foundation v0.1`；准确 SHA 以该分支 Git 记录为准。
+建议提交标题为 `docs: approve Brand Positioning v0.2.0`；准确 SHA 以该分支 Git 记录为准。
 
 ## Draft PR
 
-PR #2 已合并 proposed Brand Foundation 文档基线。Foundation 已获创始人批准。Draft PR #3 记录 Brand DNA Review 01 与 Review 02；Brand DNA 已整体 `approved`，Brand Foundation 其余文件仍为 `proposed`。PR #3 保持 Draft，未经创始人确认不得合并。
+PR #2 已合并 proposed Brand Foundation 文档基线，PR #3 已合并 Brand DNA Founder Review 决策。本分支独立记录 Brand Positioning Founder Review 01，并通过新的 Draft PR 审核；Brand Foundation 其余文件仍为 `proposed`。
 
 ## 已形成内容
 
-Brand DNA Founder Review completed。五个核心分区与文件整体均已批准；Brand Foundation 其余审核范围及记录结构保持不变。
+Brand DNA 与 Brand Positioning Founder Review completed。母品牌定位、公众方向、当前 Health 私人验证关系、核心价值链与差异化原则已批准；Brand Foundation 其余审核范围及记录结构保持不变。
 
 ## 仍待确认事项
 
-下一步：Brand Positioning Founder Review。Brand Foundation 的整体批准、最终命名与视觉工作均不属于本 Sprint 的自动结论。
+下一步：先审核 Mission & Vision 派生说明，再按既有顺序审核 Brand Values。Brand Foundation 的整体批准、最终命名与视觉工作均不属于本 Sprint 的自动结论。

@@ -36,6 +36,10 @@ const approvedCoreThesis =
   '人不是被工具塑造的。\n\n好的技术应该帮助人更清楚地看见自己，并成为自己。';
 const previousCoreThesis =
   '人不是被 AI 塑造的。\n\n人是在 AI 的陪伴下，更清楚地成为自己。';
+const approvedPositioning =
+  '一个帮助人们保存成长轨迹、理解自身规律、找到个人方向，并在持续的记录、理解与选择中，一步一步成为自己的长期成长伙伴。';
+const previousPositioning =
+  '一个帮助人们保存成长轨迹、理解自身规律、找到个人方向，并通过长期行动逐渐成为自己的 AI 成长伙伴品牌。';
 
 afterEach(() => {
   for (const directory of temporaryDirectories.splice(0)) {
@@ -44,14 +48,18 @@ afterEach(() => {
 });
 
 describe('Sprint 002 brand foundation', () => {
-  test('approves only Brand DNA while keeping other brand sources proposed', () => {
+  test('approves Brand DNA and Brand Positioning while keeping other brand sources proposed', () => {
     for (const relativePath of brandFiles) {
       const absolutePath = path.join(rootDir, relativePath);
       expect(fs.existsSync(absolutePath), `${relativePath} should exist`).toBe(true);
 
       const source = fs.readFileSync(absolutePath, 'utf8');
-      const expectedStatus =
-        relativePath === 'brand/00_BrandDNA.md' ? 'approved' : 'proposed';
+      const expectedStatus = [
+        'brand/00_BrandDNA.md',
+        'brand/01_BrandPositioning.md',
+      ].includes(relativePath)
+        ? 'approved'
+        : 'proposed';
       expect(source).toMatch(/^---\r?\n/);
       expect(source).toMatch(new RegExp(`\\nstatus: ${expectedStatus}\\r?\\n`));
       expect(source).toMatch(/\nversion: 0\.\d+\.\d+\r?\n/);
@@ -154,7 +162,7 @@ describe('Sprint 002 brand foundation', () => {
 
     expect(currentStatus).toContain('Brand DNA：`Approved`');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
-    expect(currentStatus).toContain('下一审核对象：Brand Positioning');
+    expect(currentStatus).toContain('下一审核对象：Mission & Vision 派生说明');
     expect(currentStatus).toContain('Sprint 002 — Brand Foundation Review');
     expect(currentStatus).toContain('`Approved / Completed`');
 
@@ -164,6 +172,64 @@ describe('Sprint 002 brand foundation', () => {
     expect(bootstrap).toContain('Brand DNA 已正式 `Approved`');
     expect(bootstrap).toContain('Brand Foundation 尚未整体批准');
     expect(bootstrap).toContain('AI 是可替换技术能力，不是品牌长期愿景的主体');
+  });
+
+  test('records the approved public mother-brand positioning and private Health validation', () => {
+    const positioning = fs.readFileSync(
+      path.join(rootDir, 'brand', '01_BrandPositioning.md'),
+      'utf8',
+    );
+    const project = fs.readFileSync(path.join(rootDir, 'PROJECT.md'), 'utf8');
+    const currentStatus = fs.readFileSync(
+      path.join(rootDir, 'project', 'CurrentStatus.md'),
+      'utf8',
+    );
+    const handoff = fs.readFileSync(
+      path.join(rootDir, 'migration', 'AI_HANDOFF.md'),
+      'utf8',
+    );
+    const bootstrap = fs.readFileSync(
+      path.join(rootDir, 'migration', 'NEW_AI_BOOTSTRAP_PROMPT.md'),
+      'utf8',
+    );
+
+    expect(positioning).toMatch(/\nstatus: approved\r?\n/);
+    expect(positioning).toMatch(/\nversion: 0\.2\.0\r?\n/);
+    expect(positioning).toContain('last_updated: 2026-08-18');
+    expect(positioning).toContain('owner: founder');
+    expect(positioning).toContain('source_of_truth: true');
+    expect(positioning).toContain(approvedPositioning);
+    expect(positioning).not.toContain(previousPositioning);
+    expect(positioning).toContain(
+      '人拥有越来越多的数据、建议和工具，却未必因此更加了解自己。',
+    );
+    expect(positioning).toContain('记住 → 理解 → 判断 → 行动 → 回看 → 成长');
+    expect(positioning).toContain(
+      '数据所有权不是价值链中的单独一步，而是贯穿整个价值链的基础原则和底线能力',
+    );
+    expect(positioning).toContain(
+      '其他工具通常解决一次问题；本品牌保存一个人的长期上下文。',
+    );
+    expect(positioning).toContain(
+      '其他系统往往告诉用户应该做什么；本品牌帮助用户理解自己为什么这样，并支持用户作出自己的选择。',
+    );
+    expect(positioning).toContain('母品牌面向未来公众');
+    expect(positioning).toContain('当前 Health 产品先作为创始人的私人产品进行真实验证');
+    expect(positioning).toContain('AI 是可替换的技术能力提供者');
+
+    expect(project).toContain(
+      '母品牌正式定位已批准，准确原文只从 [Brand Positioning](brand/01_BrandPositioning.md) 读取',
+    );
+    expect(project).not.toContain('并逐步成为自己的长期成长伙伴');
+
+    expect(currentStatus).toContain('Brand Positioning：`Approved`');
+    expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
+    expect(handoff).toContain('Brand Positioning：`Approved`');
+    expect(handoff).toContain('母品牌面向未来公众');
+    expect(handoff).toContain('当前 Health 产品处于创始人私人真实验证阶段');
+    expect(bootstrap).toContain('Brand Positioning 已正式 `Approved`');
+    expect(bootstrap).toContain('母品牌面向未来公众');
+    expect(bootstrap).toContain('当前 Health 产品处于创始人私人真实验证阶段');
   });
 
   test('exports every brand file in the declared order at pack version 0.2.2', () => {

@@ -123,8 +123,12 @@ describe('Sprint 001 foundation governance', () => {
   test('keeps Brand DNA as the only source for core brand wording', () => {
     for (const relativePath of brandFiles) {
       const source = read(relativePath);
-      const expectedStatus =
-        relativePath === 'brand/00_BrandDNA.md' ? 'approved' : 'proposed';
+      const expectedStatus = [
+        'brand/00_BrandDNA.md',
+        'brand/01_BrandPositioning.md',
+      ].includes(relativePath)
+        ? 'approved'
+        : 'proposed';
       expect(source, relativePath).toMatch(/\nsource_of_truth: (true|false)\r?\n/);
       expect(source, relativePath).toMatch(
         new RegExp(`\\nstatus: ${expectedStatus}\\r?\\n`),
