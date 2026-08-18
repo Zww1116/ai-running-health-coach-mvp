@@ -1,8 +1,8 @@
 ---
 title: Sprint 002 Brand Foundation
 status: proposed
-version: 0.1.2
-last_updated: 2026-08-08
+version: 0.1.4
+last_updated: 2026-08-15
 owner: product
 source_of_truth: true
 ---
@@ -19,7 +19,7 @@ Sprint 002。
 
 ## 背景
 
-Sprint 001 Foundation 已获创始人批准并完成。Brand Foundation 已形成 Draft PR #2，当前进入创始人逐项审核；所有品牌内容继续保持 `proposed`。
+Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Foundation 文档基线纳入 `main`；Brand DNA Founder Review 已完成，五个核心分区与文件整体均已获批准。Brand Foundation 其余文件继续保持 `proposed`。
 
 ## 目标
 
@@ -89,15 +89,17 @@ Sprint 001 Foundation 已获创始人批准并完成。Brand Foundation 已形�
 
 ## 验收标准
 
-- 十三份品牌文件存在、元数据完整且状态为 `proposed`。
-- 正式核心表达只使用“记住来路，理解自己，成为自己。”。
+- 十三份品牌文件存在且元数据完整；Brand DNA 状态为 `approved`，其余十二份文件状态为 `proposed`。
+- 已批准的核心表达只使用“记住来路，理解自己，成为自己。”。
+- 已批准的 Mission 使用 Brand DNA 中的准确原文。
+- 已批准的 Vision、Brand Promise 与 Core Thesis 使用 Brand DNA 中的准确原文。
 - 品牌名称与视觉仍未确定。
 - 品牌文件按规定顺序进入单文件上下文和 AI-Core-Pack。
 - 测试、构建、隐私审计、基础验证和交接导出通过。
 
 ## 测试结果
 
-执行前基线为 20 个测试文件、77 项测试通过。创始人治理决策更新后为 22 个测试文件、83 项测试通过；品牌状态测试继续确认所有 Brand Foundation 文件保持 `proposed`。
+执行前基线为 20 个测试文件、77 项测试通过。Brand DNA Review 01 增加分区状态一致性验证；Review 02 将验证更新为 Brand DNA 整体批准与其余品牌文件继续 proposed，最终结果为 22 个测试文件、84 项测试通过。
 
 ## Build 结果
 
@@ -113,7 +115,7 @@ Sprint 001 Foundation 已获创始人批准并完成。Brand Foundation 已形�
 
 ## 待创始人确认内容
 
-- 所有 Brand Foundation proposed 文件。
+- Brand Positioning、Values、Personality、Voice、Product Principles、Brand Architecture、Naming Brief 与 Guardrails。
 - 最终品牌名称和英文核心表达。
 - 母品牌与 Health 的命名关系。
 - 品牌面对个人还是未来公众品牌。
@@ -129,12 +131,12 @@ Sprint 001 Foundation 已获创始人批准并完成。Brand Foundation 已形�
 
 ## Draft PR
 
-PR #2 contains proposed Brand Foundation documents。Foundation 已获创始人批准；Brand Foundation 仍是 `proposed`。Merge 不等于 Brand Approval，后续品牌批准必须通过独立 Commit 或 PR 完成。
+PR #2 已合并 proposed Brand Foundation 文档基线。Foundation 已获创始人批准。Draft PR #3 记录 Brand DNA Review 01 与 Review 02；Brand DNA 已整体 `approved`，Brand Foundation 其余文件仍为 `proposed`。PR #3 保持 Draft，未经创始人确认不得合并。
 
 ## 已形成内容
 
-本 Sprint 已形成可供创始人审核的实施范围、验收边界与记录结构。
+Brand DNA Founder Review completed。五个核心分区与文件整体均已批准；Brand Foundation 其余审核范围及记录结构保持不变。
 
 ## 仍待确认事项
 
-Brand Foundation 的正式批准、最终命名与视觉工作均不属于本 Sprint 的自动结论。
+下一步：Brand Positioning Founder Review。Brand Foundation 的整体批准、最终命名与视觉工作均不属于本 Sprint 的自动结论。

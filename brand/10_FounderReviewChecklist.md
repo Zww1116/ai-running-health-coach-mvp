@@ -1,8 +1,8 @@
 ---
 title: Founder Review Checklist
 status: proposed
-version: 0.1.0
-last_updated: 2026-07-25
+version: 0.1.2
+last_updated: 2026-08-15
 owner: founder
 source_of_truth: false
 ---
@@ -13,14 +13,14 @@ source_of_truth: false
 
 ## Brand DNA
 
-- [ ] 我是否认可这一表述：
-- [ ] 哪些词最像我：
-- [ ] 哪些词不像我：
-- [ ] 哪些内容需要删除：
-- [ ] 哪些内容需要补充：
-- [ ] 是否可以转为 `approved`：
-- 创始人备注：
-- 审核日期：
+- [x] Brand DNA 核心表达审核
+- [x] Mission 审核
+- [x] Vision 审核
+- [x] Promise 审核
+- [x] Core Thesis 审核
+- [x] Brand DNA 整体 Approved
+- 创始人批准日期：2026-08-15
+- 创始人备注：Brand DNA 五个核心分区与文件整体均已批准；Brand Foundation 其余文件继续保持 `proposed`。
 
 ## Brand Positioning
 
@@ -35,14 +35,11 @@ source_of_truth: false
 
 ## Mission and Vision
 
-- [ ] 我是否认可这一表述：
-- [ ] 哪些词最像我：
-- [ ] 哪些词不像我：
-- [ ] 哪些内容需要删除：
-- [ ] 哪些内容需要补充：
-- [ ] 是否可以转为 `approved`：
-- 创始人备注：
-- 审核日期：
+- [x] Mission 已完成创始人审核。
+- [x] Vision 已完成创始人审核。
+- [ ] Mission and Vision 派生说明文件是否可以转为 `approved`。
+- 创始人批准日期：2026-08-15（适用于 Mission 与 Vision 正式原文）。
+- 创始人备注：正式 Mission 与 Vision 原文以 [Brand DNA](00_BrandDNA.md) 为准；派生说明文件继续保持 `proposed`。
 
 ## Values
 
@@ -127,7 +124,7 @@ source_of_truth: false
 
 ## 仍待确认事项
 
-所有检查项、备注和审核日期均等待创始人填写。
+Brand DNA 五个核心分区与文件整体已完成审核；Brand Foundation 其余文件仍等待创始人逐项确认。
 
 ## 尚未确认的重大问题
 

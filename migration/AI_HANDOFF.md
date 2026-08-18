@@ -1,8 +1,8 @@
 ---
 title: AI Handoff
 status: approved
-version: 0.2.2
-last_updated: 2026-08-08
+version: 0.2.4
+last_updated: 2026-08-15
 owner: product
 source_of_truth: true
 ---
@@ -15,15 +15,25 @@ source_of_truth: true
 
 ## 品牌核心
 
-拟议（`proposed`）：[记住来路，理解自己，成为自己。](../brand/00_BrandDNA.md)
+核心表达：`Approved` — 记住来路，理解自己，成为自己。
 
-品牌名称、最终英文表达和视觉系统尚未确定；Brand Foundation 当前为 `Proposed / Founder Review`。
+品牌使命：`Approved` — 帮助人们记住自己的成长轨迹，在持续的记录、理解与选择中找到自己，并一步一步成为自己。
+
+品牌愿景：`Approved` — 让每个人都拥有一个记得自己来时的路、真正理解自己，并能够长期陪伴自己成长的伙伴。
+
+品牌承诺：`Approved` — 我们不会替用户定义理想的样子，而会陪伴用户找到属于自己的答案。
+
+核心命题：`Approved` — 人不是被工具塑造的。好的技术应该帮助人更清楚地看见自己，并成为自己。
+
+Brand DNA 文件整体：`Approved`。
+
+Brand Foundation：`Proposed / Founder Review`。其余品牌文件仍为 `proposed`，品牌名称、最终英文表达和视觉系统尚未确定。以上品牌原文唯一正式来源是 [Brand DNA](../brand/00_BrandDNA.md)。AI 是可替换技术能力，不是品牌长期愿景的主体。
 
 ## 当前阶段
 
 当前阶段、当前 Sprint、审核状态和下一步只读取 `project/CurrentStatus.md`。本文件不独立维护动态状态。
 
-生成本交接快照时，Foundation 状态为 `Approved / Completed`，当前阶段为 `Sprint 002 — Brand Foundation Review`。PR #2 contains proposed Brand Foundation documents；合并草案不等于批准品牌内容。
+生成本交接快照时，Foundation 状态为 `Approved / Completed`，当前阶段为 `Sprint 002 — Brand Foundation Review`。Brand DNA 五个核心分区与文件整体均已获批；Brand Foundation 其余文件仍为 `proposed`，批准 Brand DNA 不等于批准整个 Brand Foundation。
 
 ## 已批准治理决策
 
@@ -83,7 +93,7 @@ source_of_truth: true
 
 ## 新 AI 接手检查
 
-开始修改前，从 `project/CurrentStatus.md` 读取并重新说明项目定位、当前阶段、正式品牌核心、品牌状态、已确认事项、未确认事项、隐私边界、当前 Sprint 和下一步。必须明确最终品牌名称与视觉均未确定。
+开始修改前，从 `project/CurrentStatus.md` 读取并重新说明项目定位、当前阶段、已批准的 Brand DNA、仍为 proposed 的其他 Brand Foundation 文件、隐私边界、当前 Sprint 和下一步。必须明确 Brand DNA 已整体 `approved`，但 Brand Foundation 尚未整体批准；最终品牌名称、英文表达与视觉系统仍未确定，AI 是可替换技术能力，不是品牌长期愿景的主体。
 
 ## 冲突处理
 

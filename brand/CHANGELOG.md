@@ -1,13 +1,36 @@
 ---
 title: Brand Changelog
 status: proposed
-version: 0.1.1
-last_updated: 2026-08-05
+version: 0.1.3
+last_updated: 2026-08-15
 owner: founder
 source_of_truth: true
 ---
 
 # 品牌变更记录
+
+## Brand DNA Founder Review 02 — 2026-08-15
+
+**Brand DNA 状态：** `Approved`
+
+**创始人决定：**
+
+- Vision：`Approved`，采用本轮确认的不含“AI 伙伴”的正式原文。
+- Brand Promise：`Approved`，正式原文保持不变。
+- Core Thesis：`Approved`，采用本轮确认的不直接绑定 AI 的正式原文。
+- Brand DNA 文件整体状态由 `proposed` 调整为 `approved`。
+- Brand Foundation 其余文件继续保持 `proposed`。
+
+## Brand DNA Founder Review 01 — 2026-08-15
+
+**文件状态：** `Proposed`
+
+**创始人决定：**
+
+- Core Expression：`Approved`，准确原文为“记住来路，理解自己，成为自己。”
+- Mission：`Approved`，采用创始人本轮确认的新版本。
+- Vision / Promise / Core Thesis：`Proposed`，本轮未批准。
+- Brand DNA 文件整体继续保持 `proposed`；Brand Foundation 其他文件状态不变。
 
 ## Brand Foundation 0.1.1
 
@@ -44,7 +67,7 @@ source_of_truth: true
 
 ## 已形成内容
 
-已建立 Brand Foundation `0.1.0` 的 proposed 变更基线，未虚构更早历史版本。
+已建立 Brand Foundation `0.1.0` 的 proposed 变更基线，并记录 Brand DNA Founder Review 01 与 Review 02 的创始人决定；Brand DNA 已整体批准，Brand Foundation 其余文件仍为 `proposed`。
 
 ## 仍待确认事项
 
@@ -55,4 +78,4 @@ source_of_truth: true
 - 字体。
 - 视觉系统。
 - 商标与域名审查。
-- 品牌文件 `approved` 状态。
+- Brand Foundation 其余文件的 `approved` 状态。
