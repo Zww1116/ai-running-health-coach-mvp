@@ -1,13 +1,25 @@
 ---
 title: Brand Changelog
 status: proposed
-version: 0.1.3
-last_updated: 2026-08-15
+version: 0.1.4
+last_updated: 2026-08-18
 owner: founder
 source_of_truth: true
 ---
 
 # 品牌变更记录
+
+## Brand Positioning Founder Review 01 — 2026-08-18
+
+**Brand Positioning 状态：** `Approved`
+
+**创始人决定：**
+
+- Brand Positioning 采用创始人本轮确认的长期成长伙伴正式表述，文件版本升级为 `0.2.0`。
+- 正式废弃以 `AI 成长伙伴品牌` 作为母品牌类别定义；AI 保持可替换技术能力定位。
+- 母品牌面向未来公众，当前 Health 产品先作为创始人的私人产品进行真实验证。
+- 批准用户根本问题、统一价值链、长期差异化原则、当前产品落点及风险边界。
+- Brand Foundation 仍为 `Proposed / Founder Review`；除 Brand DNA 与 Brand Positioning 外的品牌文件继续保持 `proposed`。
 
 ## Brand DNA Founder Review 02 — 2026-08-15
 
@@ -67,7 +79,7 @@ source_of_truth: true
 
 ## 已形成内容
 
-已建立 Brand Foundation `0.1.0` 的 proposed 变更基线，并记录 Brand DNA Founder Review 01 与 Review 02 的创始人决定；Brand DNA 已整体批准，Brand Foundation 其余文件仍为 `proposed`。
+已建立 Brand Foundation `0.1.0` 的 proposed 变更基线，并记录 Brand DNA 与 Brand Positioning 的创始人决定；两份文件已整体批准，Brand Foundation 其余文件仍为 `proposed`。
 
 ## 仍待确认事项
 
@@ -78,4 +90,4 @@ source_of_truth: true
 - 字体。
 - 视觉系统。
 - 商标与域名审查。
-- Brand Foundation 其余文件的 `approved` 状态。
+- Mission & Vision 派生说明、Brand Values 及后续 Brand Foundation 文件的 `approved` 状态。

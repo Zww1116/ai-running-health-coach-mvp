@@ -1,8 +1,8 @@
 ---
 title: AI Handoff
 status: approved
-version: 0.2.4
-last_updated: 2026-08-15
+version: 0.2.5
+last_updated: 2026-08-18
 owner: product
 source_of_truth: true
 ---
@@ -11,7 +11,7 @@ source_of_truth: true
 
 ## 项目定位
 
-当前正式产品是个人 AI 健康决策与成长伙伴，长期方向是 Personal AI Health OS。AI 是可替换能力，用户是系统主角。
+母品牌面向未来公众，正式定位只从 [Brand Positioning](../brand/01_BrandPositioning.md) 读取。当前 Health 产品处于创始人私人真实验证阶段，长期产品方向是 Personal AI Health OS。AI 是可替换能力，用户是系统主角。
 
 ## 品牌核心
 
@@ -27,13 +27,15 @@ source_of_truth: true
 
 Brand DNA 文件整体：`Approved`。
 
-Brand Foundation：`Proposed / Founder Review`。其余品牌文件仍为 `proposed`，品牌名称、最终英文表达和视觉系统尚未确定。以上品牌原文唯一正式来源是 [Brand DNA](../brand/00_BrandDNA.md)。AI 是可替换技术能力，不是品牌长期愿景的主体。
+Brand Positioning：`Approved`。母品牌面向未来公众；当前 Health 产品处于创始人私人真实验证阶段。AI 是可替换技术能力，不是品牌长期身份、愿景或叙事主体。
+
+Brand Foundation：`Proposed / Founder Review`。除 Brand DNA 与 Brand Positioning 外的品牌文件仍为 `proposed`，品牌名称、最终英文表达和视觉系统尚未确定。品牌核心原文唯一正式来源是 [Brand DNA](../brand/00_BrandDNA.md)，母品牌定位唯一正式来源是 [Brand Positioning](../brand/01_BrandPositioning.md)。
 
 ## 当前阶段
 
 当前阶段、当前 Sprint、审核状态和下一步只读取 `project/CurrentStatus.md`。本文件不独立维护动态状态。
 
-生成本交接快照时，Foundation 状态为 `Approved / Completed`，当前阶段为 `Sprint 002 — Brand Foundation Review`。Brand DNA 五个核心分区与文件整体均已获批；Brand Foundation 其余文件仍为 `proposed`，批准 Brand DNA 不等于批准整个 Brand Foundation。
+生成本交接快照时，Foundation 状态为 `Approved / Completed`，当前阶段为 `Sprint 002 — Brand Foundation Review`。Brand DNA 与 Brand Positioning 均已获批；Brand Foundation 其余文件仍为 `proposed`，批准这两份文件不等于批准整个 Brand Foundation。
 
 ## 已批准治理决策
 
@@ -93,7 +95,7 @@ Brand Foundation：`Proposed / Founder Review`。其余品牌文件仍为 `propo
 
 ## 新 AI 接手检查
 
-开始修改前，从 `project/CurrentStatus.md` 读取并重新说明项目定位、当前阶段、已批准的 Brand DNA、仍为 proposed 的其他 Brand Foundation 文件、隐私边界、当前 Sprint 和下一步。必须明确 Brand DNA 已整体 `approved`，但 Brand Foundation 尚未整体批准；最终品牌名称、英文表达与视觉系统仍未确定，AI 是可替换技术能力，不是品牌长期愿景的主体。
+开始修改前，从 `project/CurrentStatus.md` 读取并重新说明项目定位、当前阶段、已批准的 Brand DNA 与 Brand Positioning、仍为 proposed 的其他 Brand Foundation 文件、隐私边界、当前 Sprint 和下一步。必须明确母品牌面向未来公众，当前 Health 产品处于创始人私人真实验证阶段；Brand Foundation 尚未整体批准；下一审核对象是 Mission & Vision 派生说明，随后是 Brand Values；最终品牌名称、英文表达与视觉系统仍未确定；AI 是可替换技术能力，不是品牌长期愿景的主体。
 
 ## 冲突处理
 

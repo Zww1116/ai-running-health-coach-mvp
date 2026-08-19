@@ -1,8 +1,8 @@
 ---
 title: Project Entry
 status: approved
-version: 0.2.4
-last_updated: 2026-08-15
+version: 0.2.5
+last_updated: 2026-08-18
 owner: founder
 source_of_truth: true
 ---
@@ -13,15 +13,15 @@ source_of_truth: true
 
 ## 当前定位
 
-当前定位是：个人 AI 健康决策与成长伙伴。V2 的更长远方向是 Personal AI Health OS，围绕“获取数据、多专家分析、总教练决策、执行与复盘”组织产品。
+母品牌正式定位已批准，准确原文只从 [Brand Positioning](brand/01_BrandPositioning.md) 读取。母品牌面向未来公众；当前 Health 产品仍处于创始人私人真实验证阶段，围绕“获取数据、多专家分析、总教练决策、执行与复盘”验证 Personal AI Health OS。
 
 ## 当前品牌核心
 
-已批准的品牌核心表达是：[记住来路，理解自己，成为自己。](brand/00_BrandDNA.md) Brand DNA 文件整体已为 `approved`；Brand Foundation 其余文件仍为 `proposed`，品牌名称尚未确定。
+已批准的品牌核心表达是：[记住来路，理解自己，成为自己。](brand/00_BrandDNA.md) Brand DNA 与 Brand Positioning 已为 `approved`；Brand Foundation 整体仍为 `Proposed / Founder Review`，品牌名称尚未确定。
 
 ## 当前产品
 
-首个产品是面向跑者的 AI 辅助健康与训练管理系统。它以 React Web 应用形式运行，并可通过 GitHub Pages 或 Vercel 公开部署。
+首个产品是面向跑者的 AI 辅助健康与训练管理系统。当前先作为创始人的私人产品进行真实验证；它以 React Web 应用形式运行，并可通过 GitHub Pages 或 Vercel 部署。
 
 ## 当前状态入口
 
@@ -77,7 +77,7 @@ source_of_truth: true
 ## 未确认事项
 
 - 最终品牌名称。
-- Brand Foundation 中除已批准核心表达与 Mission 外的逐项审核结果。
+- Brand Foundation 中除 Brand DNA 与 Brand Positioning 外的逐项审核结果。
 - 从当前公开过渡仓库迁移到私有源资产仓库的时机与验证方案。
 - 最终生产环境 AI 提供商。
 - 最终长期备份产品流程。
