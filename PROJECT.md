@@ -1,8 +1,8 @@
 ---
 title: Project Entry
 status: approved
-version: 0.2.5
-last_updated: 2026-08-18
+version: 0.2.6
+last_updated: 2026-08-19
 owner: founder
 source_of_truth: true
 ---
@@ -17,7 +17,7 @@ source_of_truth: true
 
 ## 当前品牌核心
 
-已批准的品牌核心表达是：[记住来路，理解自己，成为自己。](brand/00_BrandDNA.md) Brand DNA 与 Brand Positioning 已为 `approved`；Brand Foundation 整体仍为 `Proposed / Founder Review`，品牌名称尚未确定。
+已批准的品牌核心表达是：[记住来路，理解自己，成为自己。](brand/00_BrandDNA.md) Brand DNA、Brand Positioning 与 Mission & Vision 派生说明已为 `approved`；派生说明不是正式原文来源。Brand Foundation 整体仍为 `Proposed / Founder Review`，品牌名称尚未确定。
 
 ## 当前产品
 
@@ -77,7 +77,7 @@ source_of_truth: true
 ## 未确认事项
 
 - 最终品牌名称。
-- Brand Foundation 中除 Brand DNA 与 Brand Positioning 外的逐项审核结果。
+- Brand Foundation 中除 Brand DNA、Brand Positioning 与 Mission & Vision 派生说明外的逐项审核结果。
 - 从当前公开过渡仓库迁移到私有源资产仓库的时机与验证方案。
 - 最终生产环境 AI 提供商。
 - 最终长期备份产品流程。

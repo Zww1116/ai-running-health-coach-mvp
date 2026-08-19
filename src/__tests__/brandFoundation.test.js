@@ -40,6 +40,14 @@ const approvedPositioning =
   '一个帮助人们保存成长轨迹、理解自身规律、找到个人方向，并在持续的记录、理解与选择中，一步一步成为自己的长期成长伙伴。';
 const previousPositioning =
   '一个帮助人们保存成长轨迹、理解自身规律、找到个人方向，并通过长期行动逐渐成为自己的 AI 成长伙伴品牌。';
+const approvedMissionDecision =
+  'Mission 要求产品帮助用户持续保存可迁移的成长轨迹，通过记录、数据、经历与长期上下文促进理解，明确选择空间，并把理解与选择转化为可以执行和复盘的下一步。';
+const approvedVisionDecision =
+  'Vision 描述品牌希望长期实现的未来，但不能被用来提前扩大当前产品范围。母品牌面向未来公众，而当前 Health 仍处于创始人私人真实验证阶段；未来方向应保留可能性，而不是被解释为当前开发承诺。';
+const approvedPromiseDecision =
+  'Brand Promise 要求每一次产品和 AI 交互都尊重用户的主体性、解释依据与不确定性，并保留真实的选择空间。系统可以提出建议，但不能通过权威语气、评分、焦虑、羞耻或依赖机制替用户定义理想状态。';
+const approvedCoreThesisDecision =
+  'Core Thesis 约束人与技术的关系：用户始终是主角；AI、规则引擎和未来其他技术都只是可替换的能力提供者，不能成为最终决定者，也不能成为用户记忆、数据或长期成长资产的唯一载体。';
 
 afterEach(() => {
   for (const directory of temporaryDirectories.splice(0)) {
@@ -57,6 +65,7 @@ describe('Sprint 002 brand foundation', () => {
       const expectedStatus = [
         'brand/00_BrandDNA.md',
         'brand/01_BrandPositioning.md',
+        'brand/02_MissionVision.md',
       ].includes(relativePath)
         ? 'approved'
         : 'proposed';
@@ -162,7 +171,7 @@ describe('Sprint 002 brand foundation', () => {
 
     expect(currentStatus).toContain('Brand DNA：`Approved`');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
-    expect(currentStatus).toContain('下一审核对象：Mission & Vision 派生说明');
+    expect(currentStatus).toContain('下一审核对象：Brand Values');
     expect(currentStatus).toContain('Sprint 002 — Brand Foundation Review');
     expect(currentStatus).toContain('`Approved / Completed`');
 
@@ -230,6 +239,53 @@ describe('Sprint 002 brand foundation', () => {
     expect(bootstrap).toContain('Brand Positioning 已正式 `Approved`');
     expect(bootstrap).toContain('母品牌面向未来公众');
     expect(bootstrap).toContain('当前 Health 产品处于创始人私人真实验证阶段');
+  });
+
+  test('approves the Mission and Vision derived explanation without replacing Brand DNA', () => {
+    const missionVision = fs.readFileSync(
+      path.join(rootDir, 'brand', '02_MissionVision.md'),
+      'utf8',
+    );
+    const currentStatus = fs.readFileSync(
+      path.join(rootDir, 'project', 'CurrentStatus.md'),
+      'utf8',
+    );
+    const handoff = fs.readFileSync(
+      path.join(rootDir, 'migration', 'AI_HANDOFF.md'),
+      'utf8',
+    );
+    const bootstrap = fs.readFileSync(
+      path.join(rootDir, 'migration', 'NEW_AI_BOOTSTRAP_PROMPT.md'),
+      'utf8',
+    );
+
+    expect(missionVision).toMatch(/\nstatus: approved\r?\n/);
+    expect(missionVision).toMatch(/\nversion: 0\.2\.0\r?\n/);
+    expect(missionVision).toContain('last_updated: 2026-08-19');
+    expect(missionVision).toContain('owner: founder');
+    expect(missionVision).toContain('source_of_truth: false');
+    expect(missionVision).toContain(approvedMissionDecision);
+    expect(missionVision).toContain(approvedVisionDecision);
+    expect(missionVision).toContain(approvedPromiseDecision);
+    expect(missionVision).toContain(approvedCoreThesisDecision);
+    expect(missionVision).toContain('未来公众母品牌 ≠ 当前立即开发公众 SaaS');
+    expect(missionVision).toContain(
+      '产品的成功不以“用户越来越依赖系统”为目标，而以“用户越来越理解自己、越来越能自主判断”为目标。',
+    );
+    expect(missionVision).toContain('记住 → 理解 → 判断 → 行动 → 回看 → 成长');
+    expect(missionVision).toContain('具体 Mission 正式措辞始终回到 [Brand DNA](00_BrandDNA.md) 核对');
+    expect(missionVision).not.toContain(approvedMission);
+    expect(missionVision).not.toContain(approvedVision);
+    expect(missionVision).not.toContain(approvedPromise);
+    expect(missionVision).not.toContain(approvedCoreThesis);
+
+    expect(currentStatus).toContain('Mission & Vision 派生说明：`Approved`');
+    expect(currentStatus).toContain('下一审核对象：Brand Values');
+    expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
+    expect(handoff).toContain('Mission & Vision 派生说明：`Approved`');
+    expect(handoff).toContain('派生说明不是正式原文来源');
+    expect(bootstrap).toContain('Mission & Vision 派生说明已正式 `Approved`');
+    expect(bootstrap).toContain('用户自主判断优先于 AI 依赖');
   });
 
   test('exports every brand file in the declared order at pack version 0.2.2', () => {

@@ -1,8 +1,8 @@
 ---
 title: Current Status
 status: approved
-version: 0.2.5
-last_updated: 2026-08-18
+version: 0.2.6
+last_updated: 2026-08-19
 owner: founder
 source_of_truth: true
 ---
@@ -27,7 +27,7 @@ Brand Foundation 当前状态为 `Proposed / Founder Review`。PR #2 已将 prop
 
 ## Brand Founder Review
 
-Brand DNA 与 Brand Positioning Founder Review 已完成。当前批准矩阵：
+Brand DNA、Brand Positioning 与 Mission & Vision 派生说明 Founder Review 已完成。当前批准矩阵：
 
 - Core Expression: `Approved`
 - Mission: `Approved`
@@ -35,14 +35,17 @@ Brand DNA 与 Brand Positioning Founder Review 已完成。当前批准矩阵：
 - Brand Promise: `Approved`
 - Core Thesis: `Approved`
 - Brand Positioning: `Approved`
+- Mission & Vision Derived Explanation: `Approved`
 
 Brand DNA：`Approved`
 
 Brand Positioning：`Approved`
 
+Mission & Vision 派生说明：`Approved`
+
 Brand Foundation：`Proposed / Founder Review`
 
-Brand Foundation 除 Brand DNA 与 Brand Positioning 外的文件继续保持 `proposed`。母品牌面向未来公众；当前 Health 产品处于创始人私人真实验证阶段。AI 是可替换技术能力，不是品牌主体。品牌名称、最终英文表达与视觉系统尚未确定。
+Brand Foundation 除 Brand DNA、Brand Positioning 与 Mission & Vision 派生说明外的文件继续保持 `proposed`。派生说明不是正式原文来源；其中的正式原文仍只从 Brand DNA 读取。母品牌面向未来公众；当前 Health 产品处于创始人私人真实验证阶段。用户自主判断优先于 AI 依赖；AI 与规则引擎均为可替换技术能力。品牌名称、最终英文表达与视觉系统尚未确定。
 
 ## 在线网站
 
@@ -76,7 +79,7 @@ Sprint 002 — Brand Foundation Review。Brand Foundation proposed 文档基线�
 
 ## 下一步
 
-下一审核对象：Mission & Vision 派生说明；随后按 Brand Foundation 既有顺序审核 Brand Values。后续继续通过独立 Commit 或 PR 记录逐项审核决定。
+下一审核对象：Brand Values。后续继续通过独立 Commit 或 PR 记录逐项审核决定。
 
 ## 当前风险
 
@@ -84,4 +87,4 @@ Sprint 002 — Brand Foundation Review。Brand Foundation proposed 文档基线�
 - 过于精确的演示数据可能看起来像真实个人资料，公开前仍需人工确认。
 - 未来 AI 集成不得绕过用户确认和数据最小化原则。
 - 二进制图片、未被 Git 跟踪的本地文件及外部服务数据不属于当前文本隐私审计范围。
-- Brand DNA 与 Brand Positioning 已整体 `approved`，Brand Foundation 其余文件仍为 `proposed`。品牌名称、英文表达、视觉与商标可用性均未确定。
+- Brand DNA、Brand Positioning 与 Mission & Vision 派生说明已整体 `approved`，Brand Foundation 其余文件仍为 `proposed`。品牌名称、英文表达、视觉与商标可用性均未确定。
