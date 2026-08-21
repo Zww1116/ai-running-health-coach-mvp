@@ -126,6 +126,7 @@ describe('Sprint 001 foundation governance', () => {
       const expectedStatus = [
         'brand/00_BrandDNA.md',
         'brand/01_BrandPositioning.md',
+        'brand/02_MissionVision.md',
       ].includes(relativePath)
         ? 'approved'
         : 'proposed';

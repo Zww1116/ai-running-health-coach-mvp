@@ -1,13 +1,25 @@
 ---
 title: Brand Changelog
 status: proposed
-version: 0.1.4
-last_updated: 2026-08-18
+version: 0.1.5
+last_updated: 2026-08-19
 owner: founder
 source_of_truth: true
 ---
 
 # 品牌变更记录
+
+## Mission & Vision Derived Explanation Founder Review 01 — 2026-08-19
+
+**Mission & Vision 派生说明状态：** `Approved`
+
+**创始人决定：**
+
+- 批准 Mission、Vision、Brand Promise 与 Core Thesis 的决策用途，`brand/02_MissionVision.md` 升级为 `0.2.0`。
+- 派生说明仍为 `source_of_truth: false`；Brand DNA 继续是正式原文的唯一来源。
+- 用户自主判断优先于 AI 依赖；AI、规则引擎与未来技术均为可替换能力。
+- 任何新功能必须能够映射到“记住 → 理解 → 判断 → 行动 → 回看 → 成长”中的至少一个环节。
+- Brand Foundation 仍为 `Proposed / Founder Review`；下一审核对象为 Brand Values。
 
 ## Brand Positioning Founder Review 01 — 2026-08-18
 
@@ -79,7 +91,7 @@ source_of_truth: true
 
 ## 已形成内容
 
-已建立 Brand Foundation `0.1.0` 的 proposed 变更基线，并记录 Brand DNA 与 Brand Positioning 的创始人决定；两份文件已整体批准，Brand Foundation 其余文件仍为 `proposed`。
+已建立 Brand Foundation `0.1.0` 的 proposed 变更基线，并记录 Brand DNA、Brand Positioning 与 Mission & Vision 派生说明的创始人决定；三份文件已整体批准，Brand Foundation 其余文件仍为 `proposed`。
 
 ## 仍待确认事项
 
@@ -90,4 +102,4 @@ source_of_truth: true
 - 字体。
 - 视觉系统。
 - 商标与域名审查。
-- Mission & Vision 派生说明、Brand Values 及后续 Brand Foundation 文件的 `approved` 状态。
+- Brand Values 及后续 Brand Foundation 文件的 `approved` 状态。

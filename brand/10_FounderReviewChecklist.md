@@ -1,8 +1,8 @@
 ---
 title: Founder Review Checklist
 status: proposed
-version: 0.1.3
-last_updated: 2026-08-18
+version: 0.1.4
+last_updated: 2026-08-19
 owner: founder
 source_of_truth: false
 ---
@@ -36,9 +36,10 @@ source_of_truth: false
 
 - [x] Mission 已完成创始人审核。
 - [x] Vision 已完成创始人审核。
-- [ ] Mission and Vision 派生说明文件是否可以转为 `approved`。
+- [x] Mission and Vision 派生说明文件已转为 `approved`。
 - 创始人批准日期：2026-08-15（适用于 Mission 与 Vision 正式原文）。
-- 创始人备注：正式 Mission 与 Vision 原文以 [Brand DNA](00_BrandDNA.md) 为准；派生说明文件继续保持 `proposed`。
+- 派生说明批准日期：2026-08-19。
+- 创始人备注：正式 Mission、Vision、Brand Promise 与 Core Thesis 原文以 [Brand DNA](00_BrandDNA.md) 为准；派生说明只约束决策用途，不是正式原文来源。
 
 ## Values
 
@@ -123,7 +124,7 @@ source_of_truth: false
 
 ## 仍待确认事项
 
-Brand DNA 与 Brand Positioning 已完成审核；Brand Foundation 其余文件仍等待创始人逐项确认。
+Brand DNA、Brand Positioning 与 Mission & Vision 派生说明已完成审核；Brand Foundation 其余文件仍等待创始人逐项确认。
 
 ## 尚未确认的重大问题
 
