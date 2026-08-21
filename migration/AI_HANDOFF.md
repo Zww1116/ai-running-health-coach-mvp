@@ -1,8 +1,8 @@
 ---
 title: AI Handoff
 status: approved
-version: 0.2.6
-last_updated: 2026-08-19
+version: 0.2.7
+last_updated: 2026-08-21
 owner: product
 source_of_truth: true
 ---
@@ -31,13 +31,15 @@ Brand Positioning：`Approved`。母品牌面向未来公众；当前 Health 产
 
 Mission & Vision 派生说明：`Approved`。该文件是 Mission、Vision、Brand Promise 与 Core Thesis 的决策用途说明，但 `source_of_truth: false`；派生说明不是正式原文来源，不得以替代版本覆盖 Brand DNA。用户自主判断优先于 AI 依赖；AI、规则引擎和未来技术均为可替换能力。
 
-Brand Foundation：`Proposed / Founder Review`。除 Brand DNA、Brand Positioning 与 Mission & Vision 派生说明外的品牌文件仍为 `proposed`，下一审核对象为 Brand Values。品牌名称、最终英文表达和视觉系统尚未确定。品牌核心原文唯一正式来源是 [Brand DNA](../brand/00_BrandDNA.md)，母品牌定位唯一正式来源是 [Brand Positioning](../brand/01_BrandPositioning.md)。
+Brand Values：`Approved`。正式价值观只有八项，第七项正式名称是“技术辅助，人来决定 / Technology Assists, Human Decides”。Values Decision Rule 不是第九项价值观；当价值观、产品目标或商业目标冲突时，人的安全、尊严、自主权与长期利益优先于增长、效率、完成率和技术能力。用户拥有数据及迁移权，AI 与规则引擎均为可替换技术能力。
+
+Brand Foundation：`Proposed / Founder Review`。除 Brand DNA、Brand Positioning、Mission & Vision 派生说明与 Brand Values 外的品牌文件仍为 `proposed`，下一审核对象为 Brand Personality。品牌名称、最终英文表达和视觉系统尚未确定。品牌核心原文唯一正式来源是 [Brand DNA](../brand/00_BrandDNA.md)，母品牌定位唯一正式来源是 [Brand Positioning](../brand/01_BrandPositioning.md)。
 
 ## 当前阶段
 
 当前阶段、当前 Sprint、审核状态和下一步只读取 `project/CurrentStatus.md`。本文件不独立维护动态状态。
 
-生成本交接快照时，Foundation 状态为 `Approved / Completed`，当前阶段为 `Sprint 002 — Brand Foundation Review`。Brand DNA、Brand Positioning 与 Mission & Vision 派生说明均已获批；Brand Foundation 其余文件仍为 `proposed`，批准这三份文件不等于批准整个 Brand Foundation。
+生成本交接快照时，Foundation 状态为 `Approved / Completed`，当前阶段为 `Sprint 002 — Brand Foundation Review`。Brand DNA、Brand Positioning、Mission & Vision 派生说明与 Brand Values 均已获批；Brand Foundation 其余文件仍为 `proposed`，批准这四份文件不等于批准整个 Brand Foundation。
 
 ## 已批准治理决策
 
@@ -97,7 +99,7 @@ Brand Foundation：`Proposed / Founder Review`。除 Brand DNA、Brand Positioni
 
 ## 新 AI 接手检查
 
-开始修改前，从 `project/CurrentStatus.md` 读取并重新说明项目定位、当前阶段、已批准的 Brand DNA、Brand Positioning 与 Mission & Vision 派生说明、仍为 proposed 的其他 Brand Foundation 文件、隐私边界、当前 Sprint 和下一步。必须明确派生说明不是正式原文来源；母品牌面向未来公众，当前 Health 产品处于创始人私人真实验证阶段；Brand Foundation 尚未整体批准；下一审核对象是 Brand Values；用户自主判断优先于 AI 依赖；最终品牌名称、英文表达与视觉系统仍未确定；AI 与规则引擎均为可替换技术能力，不是品牌长期愿景的主体。
+开始修改前，从 `project/CurrentStatus.md` 读取并重新说明项目定位、当前阶段、已批准的 Brand DNA、Brand Positioning、Mission & Vision 派生说明与 Brand Values、仍为 proposed 的其他 Brand Foundation 文件、隐私边界、当前 Sprint 和下一步。必须明确正式 Brand Values 只有八项，第七项是“技术辅助，人来决定”，Values Decision Rule 不是第九项价值观；人的安全、尊严、自主权与长期利益在冲突时优先；用户拥有数据及迁移权；当前 Health 产品处于创始人私人真实验证阶段；下一审核对象是 Brand Personality；AI 与规则引擎均为可替换技术能力。
 
 ## 冲突处理
 

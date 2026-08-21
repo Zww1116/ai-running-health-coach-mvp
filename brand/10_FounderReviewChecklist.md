@@ -1,8 +1,8 @@
 ---
 title: Founder Review Checklist
 status: proposed
-version: 0.1.4
-last_updated: 2026-08-19
+version: 0.1.5
+last_updated: 2026-08-21
 owner: founder
 source_of_truth: false
 ---
@@ -43,14 +43,12 @@ source_of_truth: false
 
 ## Values
 
-- [ ] 我是否认可这一表述：
-- [ ] 哪些词最像我：
-- [ ] 哪些词不像我：
-- [ ] 哪些内容需要删除：
-- [ ] 哪些内容需要补充：
-- [ ] 是否可以转为 `approved`：
-- 创始人备注：
-- 审核日期：
+- [x] 八项 Brand Values 已逐项批准。
+- [x] 第七项正式名称已改为“技术辅助，人来决定 / Technology Assists, Human Decides”。
+- [x] Values Decision Rule 已批准，并确认它不是第九项正式价值观。
+- [x] Brand Values 整体 Approved。
+- 创始人备注：正式价值观只有八项；人的安全、尊严、自主权与长期利益在冲突时优先。Brand Foundation 整体仍为 `Proposed / Founder Review`。
+- 审核日期：2026-08-21。
 
 ## Personality
 
@@ -124,7 +122,7 @@ source_of_truth: false
 
 ## 仍待确认事项
 
-Brand DNA、Brand Positioning 与 Mission & Vision 派生说明已完成审核；Brand Foundation 其余文件仍等待创始人逐项确认。
+Brand DNA、Brand Positioning、Mission & Vision 派生说明与 Brand Values 已完成审核；Brand Foundation 其余文件仍等待创始人逐项确认。
 
 ## 尚未确认的重大问题
 

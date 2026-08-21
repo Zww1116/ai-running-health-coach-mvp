@@ -56,7 +56,7 @@ afterEach(() => {
 });
 
 describe('Sprint 002 brand foundation', () => {
-  test('approves Brand DNA and Brand Positioning while keeping other brand sources proposed', () => {
+  test('approves reviewed brand sources while keeping later brand sources proposed', () => {
     for (const relativePath of brandFiles) {
       const absolutePath = path.join(rootDir, relativePath);
       expect(fs.existsSync(absolutePath), `${relativePath} should exist`).toBe(true);
@@ -66,6 +66,7 @@ describe('Sprint 002 brand foundation', () => {
         'brand/00_BrandDNA.md',
         'brand/01_BrandPositioning.md',
         'brand/02_MissionVision.md',
+        'brand/03_BrandValues.md',
       ].includes(relativePath)
         ? 'approved'
         : 'proposed';
@@ -171,7 +172,7 @@ describe('Sprint 002 brand foundation', () => {
 
     expect(currentStatus).toContain('Brand DNA：`Approved`');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
-    expect(currentStatus).toContain('下一审核对象：Brand Values');
+    expect(currentStatus).toContain('下一审核对象：Brand Personality');
     expect(currentStatus).toContain('Sprint 002 — Brand Foundation Review');
     expect(currentStatus).toContain('`Approved / Completed`');
 
@@ -280,12 +281,69 @@ describe('Sprint 002 brand foundation', () => {
     expect(missionVision).not.toContain(approvedCoreThesis);
 
     expect(currentStatus).toContain('Mission & Vision 派生说明：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Brand Values');
+    expect(currentStatus).toContain('下一审核对象：Brand Personality');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('Mission & Vision 派生说明：`Approved`');
     expect(handoff).toContain('派生说明不是正式原文来源');
     expect(bootstrap).toContain('Mission & Vision 派生说明已正式 `Approved`');
     expect(bootstrap).toContain('用户自主判断优先于 AI 依赖');
+  });
+
+  test('approves exactly eight Brand Values and keeps the decision rule separate', () => {
+    const values = fs.readFileSync(
+      path.join(rootDir, 'brand', '03_BrandValues.md'),
+      'utf8',
+    ).replace(/\r\n/g, '\n');
+    const checklist = fs.readFileSync(
+      path.join(rootDir, 'brand', '10_FounderReviewChecklist.md'),
+      'utf8',
+    );
+    const changelog = fs.readFileSync(
+      path.join(rootDir, 'brand', 'CHANGELOG.md'),
+      'utf8',
+    );
+    const currentStatus = fs.readFileSync(
+      path.join(rootDir, 'project', 'CurrentStatus.md'),
+      'utf8',
+    );
+    const handoff = fs.readFileSync(
+      path.join(rootDir, 'migration', 'AI_HANDOFF.md'),
+      'utf8',
+    );
+    const bootstrap = fs.readFileSync(
+      path.join(rootDir, 'migration', 'NEW_AI_BOOTSTRAP_PROMPT.md'),
+      'utf8',
+    );
+
+    expect(values).toMatch(/\nstatus: approved\n/);
+    expect(values).toMatch(/\nversion: 0\.2\.0\n/);
+    expect(values).toContain('last_updated: 2026-08-21');
+    expect(values).toContain('owner: founder');
+    expect(values).toContain('source_of_truth: true');
+    expect(values.match(/^## \d+\./gm)).toHaveLength(8);
+    expect(values).toContain(
+      '## 7. 技术辅助，人来决定 Technology Assists, Human Decides',
+    );
+    expect(values).not.toContain(
+      '## 7. AI 辅助，人来决定 AI Assists, Human Decides',
+    );
+    expect(values).toContain('## Values Decision Rule');
+    expect(values).toContain('这不是第九项 Brand Value');
+    expect(values).toContain(
+      '当价值观、产品目标或商业目标发生冲突时，人的安全、尊严、自主权与长期利益，优先于增长、效率、完成率和技术能力。',
+    );
+    expect(values).toContain('Brand Values 不是营销口号');
+
+    expect(checklist).toContain('Brand Values 整体 Approved');
+    expect(checklist).toContain('审核日期：2026-08-21');
+    expect(changelog).toContain('Brand Values Founder Review 01 — 2026-08-21');
+    expect(currentStatus).toContain('Brand Values：`Approved`');
+    expect(currentStatus).toContain('下一审核对象：Brand Personality');
+    expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
+    expect(handoff).toContain('正式价值观只有八项');
+    expect(handoff).toContain('Values Decision Rule 不是第九项价值观');
+    expect(bootstrap).toContain('Brand Values 已正式 `Approved`');
+    expect(bootstrap).toContain('技术辅助，人来决定');
   });
 
   test('exports every brand file in the declared order at pack version 0.2.2', () => {

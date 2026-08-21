@@ -1,13 +1,25 @@
 ---
 title: Brand Changelog
 status: proposed
-version: 0.1.5
-last_updated: 2026-08-19
+version: 0.1.6
+last_updated: 2026-08-21
 owner: founder
 source_of_truth: true
 ---
 
 # 品牌变更记录
+
+## Brand Values Founder Review 01 — 2026-08-21
+
+**Brand Values 状态：** `Approved`
+
+**创始人决定：**
+
+- 批准八项正式 Brand Values，`brand/03_BrandValues.md` 升级为 `0.2.0`，继续作为自身领域的正式来源并继承 Brand DNA。
+- 第七项由“AI 辅助，人来决定 / AI Assists, Human Decides”更名为“技术辅助，人来决定 / Technology Assists, Human Decides”。
+- 批准 Values Decision Rule；该规则是价值冲突时的决策优先级，不构成第九项正式价值观。
+- 人的安全、尊严、自主权与长期利益，在冲突时优先于增长、效率、完成率和技术能力。
+- Brand Foundation 仍为 `Proposed / Founder Review`；下一审核对象为 Brand Personality。
 
 ## Mission & Vision Derived Explanation Founder Review 01 — 2026-08-19
 
@@ -91,7 +103,7 @@ source_of_truth: true
 
 ## 已形成内容
 
-已建立 Brand Foundation `0.1.0` 的 proposed 变更基线，并记录 Brand DNA、Brand Positioning 与 Mission & Vision 派生说明的创始人决定；三份文件已整体批准，Brand Foundation 其余文件仍为 `proposed`。
+已建立 Brand Foundation `0.1.0` 的 proposed 变更基线，并记录 Brand DNA、Brand Positioning、Mission & Vision 派生说明与 Brand Values 的创始人决定；四份文件已整体批准，Brand Foundation 其余文件仍为 `proposed`。
 
 ## 仍待确认事项
 
@@ -102,4 +114,4 @@ source_of_truth: true
 - 字体。
 - 视觉系统。
 - 商标与域名审查。
-- Brand Values 及后续 Brand Foundation 文件的 `approved` 状态。
+- Brand Personality 及后续 Brand Foundation 文件的 `approved` 状态。
