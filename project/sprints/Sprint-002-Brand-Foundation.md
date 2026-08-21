@@ -1,8 +1,8 @@
 ---
 title: Sprint 002 Brand Foundation
 status: proposed
-version: 0.1.6
-last_updated: 2026-08-19
+version: 0.1.7
+last_updated: 2026-08-21
 owner: product
 source_of_truth: true
 ---
@@ -19,7 +19,7 @@ Sprint 002。
 
 ## 背景
 
-Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Foundation 文档基线纳入 `main`；Brand DNA、Brand Positioning 与 Mission & Vision 派生说明 Founder Review 已完成，三份文件整体均已获批准。Brand Foundation 其余文件继续保持 `proposed`。
+Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Foundation 文档基线纳入 `main`；Brand DNA、Brand Positioning、Mission & Vision 派生说明与 Brand Values Founder Review 已完成，四份文件整体均已获批准。Brand Foundation 其余文件继续保持 `proposed`。
 
 ## 目标
 
@@ -89,13 +89,16 @@ Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Founda
 
 ## 验收标准
 
-- 十三份品牌文件存在且元数据完整；Brand DNA、Brand Positioning 与 Mission & Vision 派生说明状态为 `approved`，其余十份文件状态为 `proposed`。
+- 十三份品牌文件存在且元数据完整；Brand DNA、Brand Positioning、Mission & Vision 派生说明与 Brand Values 状态为 `approved`，其余九份文件状态为 `proposed`。
 - 已批准的核心表达只使用“记住来路，理解自己，成为自己。”。
 - 已批准的 Mission 使用 Brand DNA 中的准确原文。
 - 已批准的 Vision、Brand Promise 与 Core Thesis 使用 Brand DNA 中的准确原文。
 - 已批准的母品牌定位不再以 `AI 成长伙伴品牌` 作为类别定义。
 - 母品牌未来公众方向与当前 Health 私人真实验证状态同时成立。
 - Mission & Vision 派生说明仍为 `source_of_truth: false`，不复制或改写 Brand DNA 正式原文。
+- Brand Values 正式集合只有八项；第七项为“技术辅助，人来决定 / Technology Assists, Human Decides”。
+- Values Decision Rule 是冲突决策规则，不构成第九项正式价值观。
+- 人的安全、尊严、自主权与长期利益在冲突时优先于增长、效率、完成率和技术能力。
 - 用户自主判断优先于 AI 依赖，AI 与规则引擎均为可替换技术能力。
 - 品牌名称与视觉仍未确定。
 - 品牌文件按规定顺序进入单文件上下文和 AI-Core-Pack。
@@ -103,7 +106,7 @@ Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Founda
 
 ## 测试结果
 
-Mission & Vision Derived Explanation Review 01 增加派生说明状态、正式原文边界、用户自主判断、可替换技术与价值链约束等验证；最终结果为 22 个测试文件、86 项测试通过。
+Brand Values Review 01 增加状态、版本、八项数量、第七项正式名称、Values Decision Rule 边界与下一审核对象验证；最终结果为 22 个测试文件、87 项测试通过。
 
 ## Build 结果
 
@@ -119,27 +122,27 @@ Mission & Vision Derived Explanation Review 01 增加派生说明状态、正式
 
 ## 待创始人确认内容
 
-- Values、Personality、Voice、Product Principles、Brand Architecture、Naming Brief 与 Guardrails。
+- Personality、Voice、Product Principles、Brand Architecture、Naming Brief 与 Guardrails。
 - 最终品牌名称和英文核心表达。
 - 母品牌与 Health 的命名关系。
 - 视觉系统、商标、域名与品牌公开程度。
 
 ## 分支
 
-`codex/founder-mission-vision-derived-review-01`
+`codex/founder-brand-values-review-01`
 
 ## Commit
 
-建议提交标题为 `docs: approve Mission Vision derived explanation v0.2.0`；准确 SHA 以该分支 Git 记录为准。
+建议提交标题为 `docs: approve Brand Values v0.2.0`；准确 SHA 以该分支 Git 记录为准。
 
 ## Draft PR
 
-PR #2 已合并 proposed Brand Foundation 文档基线，PR #3 已合并 Brand DNA Founder Review 决策，PR #4 已合并 Brand Positioning Founder Review 决策。本分支独立记录 Mission & Vision Derived Explanation Founder Review 01，并通过新的 Draft PR 审核；Brand Foundation 其余文件仍为 `proposed`。
+PR #2 已合并 proposed Brand Foundation 文档基线，PR #3 已合并 Brand DNA Founder Review 决策，PR #4 已合并 Brand Positioning Founder Review 决策，PR #5 已合并 Mission & Vision Derived Explanation Founder Review 决策。本分支独立记录 Brand Values Founder Review 01，并通过新的 Draft PR 审核；Brand Foundation 其余文件仍为 `proposed`。
 
 ## 已形成内容
 
-Brand DNA、Brand Positioning 与 Mission & Vision 派生说明 Founder Review completed。派生决策用途、正式原文边界、用户自主判断与可替换技术原则已批准；Brand Foundation 其余审核范围及记录结构保持不变。
+Brand DNA、Brand Positioning、Mission & Vision 派生说明与 Brand Values Founder Review completed。八项正式价值观、第七项新名称与 Values Decision Rule 已批准；Brand Foundation 其余审核范围及记录结构保持不变。
 
 ## 仍待确认事项
 
-下一步：审核 Brand Values。Brand Foundation 的整体批准、最终命名与视觉工作均不属于本 Sprint 的自动结论。
+下一步：审核 Brand Personality。Brand Foundation 的整体批准、最终命名与视觉工作均不属于本 Sprint 的自动结论。
