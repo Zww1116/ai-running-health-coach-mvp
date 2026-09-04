@@ -1,8 +1,8 @@
 ---
 title: Project Entry
 status: approved
-version: 0.2.7
-last_updated: 2026-08-21
+version: 0.2.8
+last_updated: 2026-09-01
 owner: founder
 source_of_truth: true
 ---
@@ -17,7 +17,7 @@ source_of_truth: true
 
 ## 当前品牌核心
 
-已批准的品牌核心表达是：[记住来路，理解自己，成为自己。](brand/00_BrandDNA.md) Brand DNA、Brand Positioning、Mission & Vision 派生说明与 Brand Values 已为 `approved`；Brand Values 正式集合只有八项，第七项为“技术辅助，人来决定”，Values Decision Rule 是冲突规则而非第九项价值观。Brand Foundation 整体仍为 `Proposed / Founder Review`，品牌名称尚未确定。
+已批准的品牌核心表达是：[记住来路，理解自己，成为自己。](brand/00_BrandDNA.md) Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values 与 Brand Personality 已为 `approved`；品牌关系原型为“可信赖的长期伙伴”，尊重与诚实是人格表达底线。Brand Foundation 整体仍为 `Proposed / Founder Review`，下一审核对象为 Brand Voice，品牌名称尚未确定。
 
 ## 当前产品
 
@@ -77,7 +77,7 @@ source_of_truth: true
 ## 未确认事项
 
 - 最终品牌名称。
-- Brand Foundation 中除 Brand DNA、Brand Positioning、Mission & Vision 派生说明与 Brand Values 外的逐项审核结果。
+- Brand Foundation 中除 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values 与 Brand Personality 外的逐项审核结果。
 - 从当前公开过渡仓库迁移到私有源资产仓库的时机与验证方案。
 - 最终生产环境 AI 提供商。
 - 最终长期备份产品流程。

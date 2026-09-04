@@ -1,8 +1,8 @@
 ---
 title: AI Handoff
 status: approved
-version: 0.2.7
-last_updated: 2026-08-21
+version: 0.2.8
+last_updated: 2026-09-01
 owner: product
 source_of_truth: true
 ---
@@ -33,13 +33,15 @@ Mission & Vision 派生说明：`Approved`。该文件是 Mission、Vision、Bra
 
 Brand Values：`Approved`。正式价值观只有八项，第七项正式名称是“技术辅助，人来决定 / Technology Assists, Human Decides”。Values Decision Rule 不是第九项价值观；当价值观、产品目标或商业目标冲突时，人的安全、尊严、自主权与长期利益优先于增长、效率、完成率和技术能力。用户拥有数据及迁移权，AI 与规则引擎均为可替换技术能力。
 
-Brand Foundation：`Proposed / Founder Review`。除 Brand DNA、Brand Positioning、Mission & Vision 派生说明与 Brand Values 外的品牌文件仍为 `proposed`，下一审核对象为 Brand Personality。品牌名称、最终英文表达和视觉系统尚未确定。品牌核心原文唯一正式来源是 [Brand DNA](../brand/00_BrandDNA.md)，母品牌定位唯一正式来源是 [Brand Positioning](../brand/01_BrandPositioning.md)。
+Brand Personality：`Approved`。Brand Relationship Archetype：`可信赖的长期伙伴`。尊重与诚实是人格表达底线；温度不能牺牲真实性，专业不能压过用户主体性，陪伴不能制造依赖，克制不能回避安全风险。AI 与技术不是品牌人格主体。
+
+Brand Foundation：`Proposed / Founder Review`。除 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values 与 Brand Personality 外的品牌文件仍为 `proposed`，下一审核对象为 Brand Voice。品牌名称、最终英文表达和视觉系统尚未确定。品牌核心原文唯一正式来源是 [Brand DNA](../brand/00_BrandDNA.md)，母品牌定位唯一正式来源是 [Brand Positioning](../brand/01_BrandPositioning.md)。
 
 ## 当前阶段
 
 当前阶段、当前 Sprint、审核状态和下一步只读取 `project/CurrentStatus.md`。本文件不独立维护动态状态。
 
-生成本交接快照时，Foundation 状态为 `Approved / Completed`，当前阶段为 `Sprint 002 — Brand Foundation Review`。Brand DNA、Brand Positioning、Mission & Vision 派生说明与 Brand Values 均已获批；Brand Foundation 其余文件仍为 `proposed`，批准这四份文件不等于批准整个 Brand Foundation。
+生成本交接快照时，Foundation 状态为 `Approved / Completed`，当前阶段为 `Sprint 002 — Brand Foundation Review`。Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values 与 Brand Personality 均已获批；Brand Foundation 其余文件仍为 `proposed`，批准这五份文件不等于批准整个 Brand Foundation。
 
 ## 已批准治理决策
 
@@ -99,7 +101,7 @@ Brand Foundation：`Proposed / Founder Review`。除 Brand DNA、Brand Positioni
 
 ## 新 AI 接手检查
 
-开始修改前，从 `project/CurrentStatus.md` 读取并重新说明项目定位、当前阶段、已批准的 Brand DNA、Brand Positioning、Mission & Vision 派生说明与 Brand Values、仍为 proposed 的其他 Brand Foundation 文件、隐私边界、当前 Sprint 和下一步。必须明确正式 Brand Values 只有八项，第七项是“技术辅助，人来决定”，Values Decision Rule 不是第九项价值观；人的安全、尊严、自主权与长期利益在冲突时优先；用户拥有数据及迁移权；当前 Health 产品处于创始人私人真实验证阶段；下一审核对象是 Brand Personality；AI 与规则引擎均为可替换技术能力。
+开始修改前，从 `project/CurrentStatus.md` 读取并重新说明项目定位、当前阶段、已批准的 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values 与 Brand Personality、仍为 proposed 的其他 Brand Foundation 文件、隐私边界、当前 Sprint 和下一步。必须明确 Brand Relationship Archetype 是“可信赖的长期伙伴”；尊重与诚实是人格表达底线；温度不能牺牲真实性，专业不能压过用户主体性，陪伴不能制造依赖，克制不能回避安全风险；AI 与技术不是品牌人格主体；下一审核对象是 Brand Voice。
 
 ## 冲突处理
 
