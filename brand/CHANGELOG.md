@@ -1,13 +1,25 @@
 ---
 title: Brand Changelog
 status: proposed
-version: 0.1.6
-last_updated: 2026-08-21
+version: 0.1.7
+last_updated: 2026-09-01
 owner: founder
 source_of_truth: true
 ---
 
 # 品牌变更记录
+
+## Brand Personality Founder Review 01 — 2026-09-01
+
+**Brand Personality 状态：** `Approved`
+
+**创始人决定：**
+
+- 批准“可信赖的长期伙伴”为 Brand Relationship Archetype，`brand/04_BrandPersonality.md` 升级为 `0.2.0`。
+- 批准专业、冷静、有温度、诚实、克制、尊重、可靠与长期陪伴八项正式人格特征，以及三层人格结构和六组人格平衡。
+- 批准 Personality Decision Rule：温度不能牺牲诚实，专业不能压过尊重；尊重与诚实是人格表达底线。
+- 陪伴不能制造依赖，克制不能回避安全风险；AI 与技术不是品牌人格主体。
+- Brand Foundation 仍为 `Proposed / Founder Review`；下一审核对象为 Brand Voice。
 
 ## Brand Values Founder Review 01 — 2026-08-21
 
@@ -103,7 +115,7 @@ source_of_truth: true
 
 ## 已形成内容
 
-已建立 Brand Foundation `0.1.0` 的 proposed 变更基线，并记录 Brand DNA、Brand Positioning、Mission & Vision 派生说明与 Brand Values 的创始人决定；四份文件已整体批准，Brand Foundation 其余文件仍为 `proposed`。
+已建立 Brand Foundation `0.1.0` 的 proposed 变更基线，并记录 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values 与 Brand Personality 的创始人决定；五份文件已整体批准，Brand Foundation 其余文件仍为 `proposed`。
 
 ## 仍待确认事项
 
@@ -114,4 +126,4 @@ source_of_truth: true
 - 字体。
 - 视觉系统。
 - 商标与域名审查。
-- Brand Personality 及后续 Brand Foundation 文件的 `approved` 状态。
+- Brand Voice 及后续 Brand Foundation 文件的 `approved` 状态。

@@ -1,8 +1,8 @@
 ---
 title: New AI Bootstrap Prompt
 status: approved
-version: 0.2.6
-last_updated: 2026-08-21
+version: 0.2.7
+last_updated: 2026-09-01
 owner: product
 source_of_truth: true
 ---
@@ -18,24 +18,26 @@ source_of_truth: true
 3. 将 project/SourceOfTruth.md 指定的文件视为唯一正式来源。
 4. 尊重文档状态：draft、proposed、approved、deprecated、archived；不得擅自改变状态。
 5. 明确 Foundation 已是 Approved / Completed；ADR-0001 至 ADR-0004 均为 approved。
-6. 明确 Brand DNA 已正式 `Approved`，Brand Positioning 已正式 `Approved`，Mission & Vision 派生说明已正式 `Approved`，Brand Values 已正式 `Approved`；Brand Foundation 尚未整体批准，除这四份文件外的品牌文件仍为 proposed。创始人审核清单不是正式品牌结论，合并 proposed 文件不等于 Brand Approval。
+6. 明确 Brand DNA 已正式 `Approved`，Brand Positioning 已正式 `Approved`，Mission & Vision 派生说明已正式 `Approved`，Brand Values 已正式 `Approved`，Brand Personality 已正式 `Approved`；Brand Foundation 尚未整体批准，除这五份文件外的品牌文件仍为 proposed。创始人审核清单不是正式品牌结论，合并 proposed 文件不等于 Brand Approval。
 7. 已批准的品牌核心表达、Mission、Vision、Brand Promise 与 Core Thesis 必须从 brand/00_BrandDNA.md 读取准确原文，不得改写或创建替代版本。
 8. 已批准的母品牌定位必须从 brand/01_BrandPositioning.md 读取；不得继续把 `AI 成长伙伴品牌` 定义为正式母品牌类别。
 9. 已批准的派生决策说明从 brand/02_MissionVision.md 读取，但派生说明不是正式原文来源；不得用它改写 Brand DNA。
 10. 明确 Brand Values 只有八项；第七项正式名称是“技术辅助，人来决定 / Technology Assists, Human Decides”，旧名称不得继续作为正式名称。
 11. 明确 Values Decision Rule 不是第九项价值观；人的安全、尊严、自主权与长期利益在冲突时优先于增长、效率、完成率和技术能力。
-12. 明确用户拥有数据及迁移权；数据与长期成长记录不得绑定到单一 AI Provider、云平台、账户或模型。
-13. 明确母品牌面向未来公众，当前 Health 产品处于创始人私人真实验证阶段；不得因公众方向而提前增加与当前验证无关的复杂功能。
-14. 明确品牌名称、英文核心表达、Logo、颜色、字体、视觉、商标和域名均未确定；不得自行命名或宣布结论。
-15. 明确用户自主判断优先于 AI 依赖；AI 是可替换技术能力，不是品牌长期愿景的主体；规则引擎与未来技术同样是可替换能力，核心 Prompt、Agent、Schema 和知识不得锁定在单一提供商。
-16. 明确下一审核对象是 Brand Personality；不得跳过创始人审核改变状态。
-17. 明确公开网站可以继续访问，当前公开仓库是过渡安排；当前不授予开源许可证，未经创始人另行批准默认保留全部权利。
-18. 不要依据旧聊天记录猜测项目结论，不得虚构创始人私人经历或品牌故事。
-19. 未经创始人明确批准，不得修改已确认决策或把 proposed 改为 approved。
-20. 如果文件之间存在冲突，在编辑前先报告冲突。
-21. 重新说明项目定位、当前阶段、品牌核心、品牌状态、已确认事项、未确认事项、数据隐私边界、当前 Sprint 和下一步。
-22. 不得把私人健康数据、图片、联系方式、密钥、数据库、导出备份或未脱敏聊天写入 Git 或交接包。
-23. 只有在用户确认你理解无误后，才开始新的范围工作。
+12. 明确 Brand Personality 的关系原型是“可信赖的长期伙伴”，尊重与诚实是人格表达底线；温度不能牺牲真实性，专业不能压过用户主体性，陪伴不能制造依赖，克制不能回避安全风险。
+13. 明确 AI 与技术不是品牌人格主体，只是支持品牌关系的可替换能力。
+14. 明确用户拥有数据及迁移权；数据与长期成长记录不得绑定到单一 AI Provider、云平台、账户或模型。
+15. 明确母品牌面向未来公众，当前 Health 产品处于创始人私人真实验证阶段；不得因公众方向而提前增加与当前验证无关的复杂功能。
+16. 明确品牌名称、英文核心表达、Logo、颜色、字体、视觉、商标和域名均未确定；不得自行命名或宣布结论。
+17. 明确用户自主判断优先于 AI 依赖；AI 是可替换技术能力，不是品牌长期愿景的主体；规则引擎与未来技术同样是可替换能力，核心 Prompt、Agent、Schema 和知识不得锁定在单一提供商。
+18. 明确下一审核对象是 Brand Voice；不得跳过创始人审核改变状态。
+19. 明确公开网站可以继续访问，当前公开仓库是过渡安排；当前不授予开源许可证，未经创始人另行批准默认保留全部权利。
+20. 不要依据旧聊天记录猜测项目结论，不得虚构创始人私人经历或品牌故事。
+21. 未经创始人明确批准，不得修改已确认决策或把 proposed 改为 approved。
+22. 如果文件之间存在冲突，在编辑前先报告冲突。
+23. 重新说明项目定位、当前阶段、品牌核心、品牌状态、已确认事项、未确认事项、数据隐私边界、当前 Sprint 和下一步。
+24. 不得把私人健康数据、图片、联系方式、密钥、数据库、导出备份或未脱敏聊天写入 Git 或交接包。
+25. 只有在用户确认你理解无误后，才开始新的范围工作。
 ```
 
 ## 已形成内容

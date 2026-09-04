@@ -48,6 +48,12 @@ const approvedPromiseDecision =
   'Brand Promise 要求每一次产品和 AI 交互都尊重用户的主体性、解释依据与不确定性，并保留真实的选择空间。系统可以提出建议，但不能通过权威语气、评分、焦虑、羞耻或依赖机制替用户定义理想状态。';
 const approvedCoreThesisDecision =
   'Core Thesis 约束人与技术的关系：用户始终是主角；AI、规则引擎和未来其他技术都只是可替换的能力提供者，不能成为最终决定者，也不能成为用户记忆、数据或长期成长资产的唯一载体。';
+const approvedRelationshipArchetype =
+  '一个记得你的经历、尊重你的节奏、能够帮助你看见规律，并陪伴你长期成长的可信赖伙伴。';
+const approvedPersonalityDecisionRule =
+  '当‘让用户感到被照顾’与‘保持事实准确’发生冲突时，不能用温暖牺牲诚实；当‘保持专业’与‘保留用户主体性’发生冲突时，不能用专业压过尊重。';
+const approvedPersonalityRuleSummary =
+  '尊重与诚实，是人格表达的底线；温度与专业必须建立在这两个底线之上。';
 
 afterEach(() => {
   for (const directory of temporaryDirectories.splice(0)) {
@@ -67,6 +73,7 @@ describe('Sprint 002 brand foundation', () => {
         'brand/01_BrandPositioning.md',
         'brand/02_MissionVision.md',
         'brand/03_BrandValues.md',
+        'brand/04_BrandPersonality.md',
       ].includes(relativePath)
         ? 'approved'
         : 'proposed';
@@ -172,7 +179,7 @@ describe('Sprint 002 brand foundation', () => {
 
     expect(currentStatus).toContain('Brand DNA：`Approved`');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
-    expect(currentStatus).toContain('下一审核对象：Brand Personality');
+    expect(currentStatus).toContain('下一审核对象：Brand Voice');
     expect(currentStatus).toContain('Sprint 002 — Brand Foundation Review');
     expect(currentStatus).toContain('`Approved / Completed`');
 
@@ -281,7 +288,7 @@ describe('Sprint 002 brand foundation', () => {
     expect(missionVision).not.toContain(approvedCoreThesis);
 
     expect(currentStatus).toContain('Mission & Vision 派生说明：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Brand Personality');
+    expect(currentStatus).toContain('下一审核对象：Brand Voice');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('Mission & Vision 派生说明：`Approved`');
     expect(handoff).toContain('派生说明不是正式原文来源');
@@ -338,12 +345,71 @@ describe('Sprint 002 brand foundation', () => {
     expect(checklist).toContain('审核日期：2026-08-21');
     expect(changelog).toContain('Brand Values Founder Review 01 — 2026-08-21');
     expect(currentStatus).toContain('Brand Values：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Brand Personality');
+    expect(currentStatus).toContain('下一审核对象：Brand Voice');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('正式价值观只有八项');
     expect(handoff).toContain('Values Decision Rule 不是第九项价值观');
     expect(bootstrap).toContain('Brand Values 已正式 `Approved`');
     expect(bootstrap).toContain('技术辅助，人来决定');
+  });
+
+  test('approves Brand Personality with its relationship archetype and decision rule', () => {
+    const personality = fs.readFileSync(
+      path.join(rootDir, 'brand', '04_BrandPersonality.md'),
+      'utf8',
+    ).replace(/\r\n/g, '\n');
+    const checklist = fs.readFileSync(
+      path.join(rootDir, 'brand', '10_FounderReviewChecklist.md'),
+      'utf8',
+    );
+    const changelog = fs.readFileSync(
+      path.join(rootDir, 'brand', 'CHANGELOG.md'),
+      'utf8',
+    );
+    const currentStatus = fs.readFileSync(
+      path.join(rootDir, 'project', 'CurrentStatus.md'),
+      'utf8',
+    );
+    const handoff = fs.readFileSync(
+      path.join(rootDir, 'migration', 'AI_HANDOFF.md'),
+      'utf8',
+    );
+    const bootstrap = fs.readFileSync(
+      path.join(rootDir, 'migration', 'NEW_AI_BOOTSTRAP_PROMPT.md'),
+      'utf8',
+    );
+
+    expect(personality).toMatch(/\nstatus: approved\n/);
+    expect(personality).toMatch(/\nversion: 0\.2\.0\n/);
+    expect(personality).toContain('last_updated: 2026-09-01');
+    expect(personality).toContain('owner: founder');
+    expect(personality).toContain('source_of_truth: true');
+    expect(personality).toContain('## Brand Relationship Archetype');
+    expect(personality).toContain('**可信赖的长期伙伴**');
+    expect(personality).toContain(approvedRelationshipArchetype);
+    expect(personality.match(/^### \d+\./gm)).toHaveLength(8);
+    expect(personality).toContain('## 人格层级');
+    expect(personality).toContain('第一层｜核心感受');
+    expect(personality).toContain('第二层｜判断方式');
+    expect(personality).toContain('第三层｜关系模式');
+    expect(personality).toContain('## Personality Decision Rule');
+    expect(personality).toContain(approvedPersonalityDecisionRule);
+    expect(personality).toContain(approvedPersonalityRuleSummary);
+    expect(personality).toContain('AI 与技术不是品牌人格主体');
+    expect(personality).not.toMatch(/^## \d+\. .*Value/gm);
+    expect(personality).not.toContain(coreExpression);
+    expect(personality).not.toContain(approvedMission);
+
+    expect(checklist).toContain('Brand Personality 整体 Approved');
+    expect(checklist).toContain('审核日期：2026-09-01');
+    expect(changelog).toContain('Brand Personality Founder Review 01 — 2026-09-01');
+    expect(currentStatus).toContain('Brand Personality：`Approved`');
+    expect(currentStatus).toContain('下一审核对象：Brand Voice');
+    expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
+    expect(handoff).toContain('Brand Relationship Archetype：`可信赖的长期伙伴`');
+    expect(handoff).toContain('尊重与诚实是人格表达底线');
+    expect(bootstrap).toContain('Brand Personality 已正式 `Approved`');
+    expect(bootstrap).toContain('下一审核对象是 Brand Voice');
   });
 
   test('exports every brand file in the declared order at pack version 0.2.2', () => {

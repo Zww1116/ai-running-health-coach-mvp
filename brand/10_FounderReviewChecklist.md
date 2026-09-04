@@ -1,8 +1,8 @@
 ---
 title: Founder Review Checklist
 status: proposed
-version: 0.1.5
-last_updated: 2026-08-21
+version: 0.1.6
+last_updated: 2026-09-01
 owner: founder
 source_of_truth: false
 ---
@@ -52,14 +52,13 @@ source_of_truth: false
 
 ## Personality
 
-- [ ] 我是否认可这一表述：
-- [ ] 哪些词最像我：
-- [ ] 哪些词不像我：
-- [ ] 哪些内容需要删除：
-- [ ] 哪些内容需要补充：
-- [ ] 是否可以转为 `approved`：
-- 创始人备注：
-- 审核日期：
+- [x] “可信赖的长期伙伴”关系原型已批准。
+- [x] 八项 Brand Personality 已逐项批准。
+- [x] 三层人格结构与六组人格平衡已批准。
+- [x] Personality Decision Rule 已批准。
+- [x] Brand Personality 整体 Approved。
+- 创始人备注：尊重与诚实是人格表达底线；温度不能牺牲真实性，专业不能压过用户主体性，陪伴不能制造依赖，克制不能回避安全风险。Brand Foundation 整体仍为 `Proposed / Founder Review`。
+- 审核日期：2026-09-01。
 
 ## Voice
 
@@ -122,7 +121,7 @@ source_of_truth: false
 
 ## 仍待确认事项
 
-Brand DNA、Brand Positioning、Mission & Vision 派生说明与 Brand Values 已完成审核；Brand Foundation 其余文件仍等待创始人逐项确认。
+Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values 与 Brand Personality 已完成审核；Brand Foundation 其余文件仍等待创始人逐项确认，下一审核对象为 Brand Voice。
 
 ## 尚未确认的重大问题
 
