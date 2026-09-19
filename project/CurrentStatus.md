@@ -1,8 +1,8 @@
 ---
 title: Current Status
 status: approved
-version: 0.2.8
-last_updated: 2026-09-01
+version: 0.2.9
+last_updated: 2026-09-19
 owner: founder
 source_of_truth: true
 ---
@@ -27,7 +27,7 @@ Brand Foundation 当前状态为 `Proposed / Founder Review`。PR #2 已将 prop
 
 ## Brand Founder Review
 
-Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values 与 Brand Personality Founder Review 已完成。当前批准矩阵：
+Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality 与 Brand Voice Founder Review 已完成。当前批准矩阵：
 
 - Core Expression: `Approved`
 - Mission: `Approved`
@@ -38,6 +38,7 @@ Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values 与
 - Mission & Vision Derived Explanation: `Approved`
 - Brand Values: `Approved`
 - Brand Personality: `Approved`
+- Brand Voice: `Approved`
 
 Brand DNA：`Approved`
 
@@ -49,9 +50,11 @@ Brand Values：`Approved`
 
 Brand Personality：`Approved`
 
+Brand Voice：`Approved`
+
 Brand Foundation：`Proposed / Founder Review`
 
-Brand Foundation 除 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values 与 Brand Personality 外的文件继续保持 `proposed`。Brand Relationship Archetype 是“可信赖的长期伙伴”；尊重与诚实是人格表达底线，温度不能牺牲真实性，专业不能压过用户主体性，陪伴不能制造依赖，克制不能回避安全风险。AI 与技术不是品牌人格主体。母品牌面向未来公众；当前 Health 产品处于创始人私人真实验证阶段。品牌名称、最终英文表达与视觉系统尚未确定。
+Brand Foundation 除 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality 与 Brand Voice 外的文件继续保持 `proposed`。Brand Voice 是母品牌通用表达系统，正式 Tone 为专业、冷静、有温度、诚实且克制；事实、判断与建议应尽量分开，回应保留不确定性、选择空间与用户主体权，记忆仅在有用时出现。AI 与技术不是品牌人格主体。母品牌面向未来公众；当前 Health 产品处于创始人私人真实验证阶段。品牌名称、最终英文表达与视觉系统尚未确定。
 
 ## 在线网站
 
@@ -85,7 +88,7 @@ Sprint 002 — Brand Foundation Review。Brand Foundation proposed 文档基线�
 
 ## 下一步
 
-下一审核对象：Brand Voice。后续继续通过独立 Commit 或 PR 记录逐项审核决定。
+下一审核对象：Product Principles。后续继续通过独立 Commit 或 PR 记录逐项审核决定。
 
 ## 当前风险
 
@@ -93,4 +96,4 @@ Sprint 002 — Brand Foundation Review。Brand Foundation proposed 文档基线�
 - 过于精确的演示数据可能看起来像真实个人资料，公开前仍需人工确认。
 - 未来 AI 集成不得绕过用户确认和数据最小化原则。
 - 二进制图片、未被 Git 跟踪的本地文件及外部服务数据不属于当前文本隐私审计范围。
-- Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values 与 Brand Personality 已整体 `approved`，Brand Foundation 其余文件仍为 `proposed`。品牌名称、英文表达、视觉与商标可用性均未确定。
+- Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality 与 Brand Voice 已整体 `approved`，Brand Foundation 其余文件仍为 `proposed`。品牌名称、英文表达、视觉与商标可用性均未确定。
