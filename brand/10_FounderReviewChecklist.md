@@ -1,8 +1,8 @@
 ---
 title: Founder Review Checklist
 status: proposed
-version: 0.1.6
-last_updated: 2026-09-01
+version: 0.1.7
+last_updated: 2026-09-19
 owner: founder
 source_of_truth: false
 ---
@@ -62,14 +62,14 @@ source_of_truth: false
 
 ## Voice
 
-- [ ] 我是否认可这一表述：
-- [ ] 哪些词最像我：
-- [ ] 哪些词不像我：
-- [ ] 哪些内容需要删除：
-- [ ] 哪些内容需要补充：
-- [ ] 是否可以转为 `approved`：
-- 创始人备注：
-- 审核日期：
+- [x] 专业、冷静、有温度、诚实、克制的 Tone of Voice 已批准。
+- [x] 六项 Brand Voice Principles 已批准。
+- [x] Voice Response Architecture 与三级 Directness Ladder 已批准。
+- [x] 原有十二类与新增三类场景已批准，共 15 类正式场景。
+- [x] Memory Voice Rule、语言禁区与 Voice Decision Rule 已批准。
+- [x] Brand Voice 整体 Approved。
+- 创始人备注：Brand Voice 是母品牌通用表达系统；事实、判断、建议应尽量分开，温度来自理解，记忆仅在有用时出现，不制造 AI 依赖。Brand Foundation 整体仍为 `Proposed / Founder Review`。
+- 审核日期：2026-09-19。
 
 ## Product Principles
 
@@ -121,7 +121,7 @@ source_of_truth: false
 
 ## 仍待确认事项
 
-Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values 与 Brand Personality 已完成审核；Brand Foundation 其余文件仍等待创始人逐项确认，下一审核对象为 Brand Voice。
+Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality 与 Brand Voice 已完成审核；Brand Foundation 其余文件仍等待创始人逐项确认，下一审核对象为 Product Principles。
 
 ## 尚未确认的重大问题
 

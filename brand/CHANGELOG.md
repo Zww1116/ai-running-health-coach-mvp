@@ -1,13 +1,25 @@
 ---
 title: Brand Changelog
 status: proposed
-version: 0.1.7
-last_updated: 2026-09-01
+version: 0.1.8
+last_updated: 2026-09-19
 owner: founder
 source_of_truth: true
 ---
 
 # 品牌变更记录
+
+## Brand Voice Founder Review 01 — 2026-09-19
+
+**Brand Voice 状态：** `Approved`
+
+**创始人决定：**
+
+- 批准专业、冷静、有温度、诚实、克制的母品牌通用表达系统，`brand/05_BrandVoice.md` 升级为 `0.2.0`。
+- 批准六项 Brand Voice Principles、Voice Response Architecture 与三级 Directness Ladder。
+- 批准原有十二类及新增三类场景，共 15 类正式场景。
+- 批准 Memory Voice Rule、语言禁区与 Voice Decision Rule：真实 > 好听，清楚 > 炫技，尊重 > 说服，安全 > 温和。
+- Brand Foundation 仍为 `Proposed / Founder Review`；下一审核对象为 Product Principles。
 
 ## Brand Personality Founder Review 01 — 2026-09-01
 
@@ -115,7 +127,7 @@ source_of_truth: true
 
 ## 已形成内容
 
-已建立 Brand Foundation `0.1.0` 的 proposed 变更基线，并记录 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values 与 Brand Personality 的创始人决定；五份文件已整体批准，Brand Foundation 其余文件仍为 `proposed`。
+已建立 Brand Foundation `0.1.0` 的 proposed 变更基线，并记录 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality 与 Brand Voice 的创始人决定；六份文件已整体批准，Brand Foundation 其余文件仍为 `proposed`。
 
 ## 仍待确认事项
 
@@ -126,4 +138,4 @@ source_of_truth: true
 - 字体。
 - 视觉系统。
 - 商标与域名审查。
-- Brand Voice 及后续 Brand Foundation 文件的 `approved` 状态。
+- Product Principles 及后续 Brand Foundation 文件的 `approved` 状态。

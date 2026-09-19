@@ -1,8 +1,8 @@
 ---
 title: AI Handoff
 status: approved
-version: 0.2.8
-last_updated: 2026-09-01
+version: 0.2.9
+last_updated: 2026-09-19
 owner: product
 source_of_truth: true
 ---
@@ -35,13 +35,15 @@ Brand Values：`Approved`。正式价值观只有八项，第七项正式名称�
 
 Brand Personality：`Approved`。Brand Relationship Archetype：`可信赖的长期伙伴`。尊重与诚实是人格表达底线；温度不能牺牲真实性，专业不能压过用户主体性，陪伴不能制造依赖，克制不能回避安全风险。AI 与技术不是品牌人格主体。
 
-Brand Foundation：`Proposed / Founder Review`。除 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values 与 Brand Personality 外的品牌文件仍为 `proposed`，下一审核对象为 Brand Voice。品牌名称、最终英文表达和视觉系统尚未确定。品牌核心原文唯一正式来源是 [Brand DNA](../brand/00_BrandDNA.md)，母品牌定位唯一正式来源是 [Brand Positioning](../brand/01_BrandPositioning.md)。
+Brand Voice：`Approved`，version `0.2.0`。它是母品牌通用表达系统，不仅属于 Health；Tone 为专业、冷静、有温度、诚实、克制。六项 Voice Principles 要求先理解再表达，区分事实、判断与建议，清楚而不命令，温暖而不表演情绪，有个性但不抢走用户主体性，并默认简洁、按需深入。重要回应遵循 `Understand → Facts → Interpretation → Uncertainty → Options → User Agency`；Directness Ladder 分为三级；15 类正式场景均已批准。温度来自理解，而不是情绪词数量。记忆应在有用时出现，而不是为了展示系统知道多少。不得制造 AI 依赖、假装人的情感意识或独占关系。Voice Decision Rule 为“真实 > 好听，清楚 > 炫技，尊重 > 说服，安全 > 温和。”
+
+Brand Foundation：`Proposed / Founder Review`。除 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality 与 Brand Voice 外的品牌文件仍为 `proposed`，下一审核对象为 Product Principles。品牌名称、最终英文表达和视觉系统尚未确定。品牌核心原文唯一正式来源是 [Brand DNA](../brand/00_BrandDNA.md)，母品牌定位唯一正式来源是 [Brand Positioning](../brand/01_BrandPositioning.md)。
 
 ## 当前阶段
 
 当前阶段、当前 Sprint、审核状态和下一步只读取 `project/CurrentStatus.md`。本文件不独立维护动态状态。
 
-生成本交接快照时，Foundation 状态为 `Approved / Completed`，当前阶段为 `Sprint 002 — Brand Foundation Review`。Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values 与 Brand Personality 均已获批；Brand Foundation 其余文件仍为 `proposed`，批准这五份文件不等于批准整个 Brand Foundation。
+生成本交接快照时，Foundation 状态为 `Approved / Completed`，当前阶段为 `Sprint 002 — Brand Foundation Review`。Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality 与 Brand Voice 均已获批；Brand Foundation 其余文件仍为 `proposed`，批准这六份文件不等于批准整个 Brand Foundation。
 
 ## 已批准治理决策
 
@@ -101,7 +103,7 @@ Brand Foundation：`Proposed / Founder Review`。除 Brand DNA、Brand Positioni
 
 ## 新 AI 接手检查
 
-开始修改前，从 `project/CurrentStatus.md` 读取并重新说明项目定位、当前阶段、已批准的 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values 与 Brand Personality、仍为 proposed 的其他 Brand Foundation 文件、隐私边界、当前 Sprint 和下一步。必须明确 Brand Relationship Archetype 是“可信赖的长期伙伴”；尊重与诚实是人格表达底线；温度不能牺牲真实性，专业不能压过用户主体性，陪伴不能制造依赖，克制不能回避安全风险；AI 与技术不是品牌人格主体；下一审核对象是 Brand Voice。
+开始修改前，从 `project/CurrentStatus.md` 读取并重新说明项目定位、当前阶段、已批准的 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality 与 Brand Voice、仍为 proposed 的其他 Brand Foundation 文件、隐私边界、当前 Sprint 和下一步。必须明确 Brand Voice 是母品牌通用表达系统；事实、判断与建议应尽量分开；Response Architecture、三级 Directness Ladder、15 类正式场景、Memory Voice Rule 与 Voice Decision Rule 均已获批；不得制造 AI 依赖或借记忆展示私人信息；下一审核对象是 Product Principles。
 
 ## 冲突处理
 
