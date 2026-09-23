@@ -1,7 +1,7 @@
 ---
 title: AI Handoff
 status: approved
-version: 0.2.9
+version: 0.2.10
 last_updated: 2026-09-19
 owner: product
 source_of_truth: true
@@ -37,13 +37,15 @@ Brand Personality：`Approved`。Brand Relationship Archetype：`可信赖的长
 
 Brand Voice：`Approved`，version `0.2.0`。它是母品牌通用表达系统，不仅属于 Health；Tone 为专业、冷静、有温度、诚实、克制。六项 Voice Principles 要求先理解再表达，区分事实、判断与建议，清楚而不命令，温暖而不表演情绪，有个性但不抢走用户主体性，并默认简洁、按需深入。重要回应遵循 `Understand → Facts → Interpretation → Uncertainty → Options → User Agency`；Directness Ladder 分为三级；15 类正式场景均已批准。温度来自理解，而不是情绪词数量。记忆应在有用时出现，而不是为了展示系统知道多少。不得制造 AI 依赖、假装人的情感意识或独占关系。Voice Decision Rule 为“真实 > 好听，清楚 > 炫技，尊重 > 说服，安全 > 温和。”
 
-Brand Foundation：`Proposed / Founder Review`。除 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality 与 Brand Voice 外的品牌文件仍为 `proposed`，下一审核对象为 Product Principles。品牌名称、最终英文表达和视觉系统尚未确定。品牌核心原文唯一正式来源是 [Brand DNA](../brand/00_BrandDNA.md)，母品牌定位唯一正式来源是 [Brand Positioning](../brand/01_BrandPositioning.md)。
+Product Principles：`Approved`，version `0.2.0`。正式共有 12 项母品牌 Product Principles；第 8 项是跨 Health、Finance、Legal 等领域的 High-Stakes Professional Boundary。Privacy by Default 要求敏感数据最小化并由用户控制；核心资产必须 Portable，AI Provider 必须 Replaceable，重要操作必须 Confirmable / Reversible / Recoverable。Product Decision Rule 为“最小化 > 多收集，控制权 > 自动化，长期利益 > 留存，安全 > 便利。”重要新功能进入实现前应通过八项 Product Review Gate，并得到 PASS、PASS WITH CONDITIONS、FOUNDER REVIEW REQUIRED 或 BLOCKED 结果。当前 Health 处于 Founder Private Validation；本次批准不要求立即改造现有 MVP。
+
+Brand Foundation：`Proposed / Founder Review`。除 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice 与 Product Principles 外的品牌文件仍为 `proposed`，下一审核对象为 Brand Architecture。品牌名称、最终英文表达和视觉系统尚未确定。品牌核心原文唯一正式来源是 [Brand DNA](../brand/00_BrandDNA.md)，母品牌定位唯一正式来源是 [Brand Positioning](../brand/01_BrandPositioning.md)。
 
 ## 当前阶段
 
 当前阶段、当前 Sprint、审核状态和下一步只读取 `project/CurrentStatus.md`。本文件不独立维护动态状态。
 
-生成本交接快照时，Foundation 状态为 `Approved / Completed`，当前阶段为 `Sprint 002 — Brand Foundation Review`。Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality 与 Brand Voice 均已获批；Brand Foundation 其余文件仍为 `proposed`，批准这六份文件不等于批准整个 Brand Foundation。
+生成本交接快照时，Foundation 状态为 `Approved / Completed`，当前阶段为 `Sprint 002 — Brand Foundation Review`。Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice 与 Product Principles 均已获批；Brand Foundation 其余文件仍为 `proposed`，批准这七份文件不等于批准整个 Brand Foundation。
 
 ## 已批准治理决策
 
@@ -103,7 +105,7 @@ Brand Foundation：`Proposed / Founder Review`。除 Brand DNA、Brand Positioni
 
 ## 新 AI 接手检查
 
-开始修改前，从 `project/CurrentStatus.md` 读取并重新说明项目定位、当前阶段、已批准的 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality 与 Brand Voice、仍为 proposed 的其他 Brand Foundation 文件、隐私边界、当前 Sprint 和下一步。必须明确 Brand Voice 是母品牌通用表达系统；事实、判断与建议应尽量分开；Response Architecture、三级 Directness Ladder、15 类正式场景、Memory Voice Rule 与 Voice Decision Rule 均已获批；不得制造 AI 依赖或借记忆展示私人信息；下一审核对象是 Product Principles。
+开始修改前，从 `project/CurrentStatus.md` 读取并重新说明项目定位、当前阶段、已批准的 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice 与 Product Principles、仍为 proposed 的其他 Brand Foundation 文件、隐私边界、当前 Sprint 和下一步。必须明确 Product Principles 正式共有 12 项；高风险专业边界、Privacy by Default、核心资产可迁移、AI Provider 可替换、重要操作可确认/撤销/恢复、Product Decision Rule 与八项 Review Gate 均已获批；当前 Health 处于 Founder Private Validation，且本次批准不要求立即改造现有 MVP；下一审核对象是 Brand Architecture。
 
 ## 冲突处理
 
