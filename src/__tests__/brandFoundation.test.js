@@ -56,6 +56,8 @@ const approvedPersonalityRuleSummary =
   '尊重与诚实，是人格表达的底线；温度与专业必须建立在这两个底线之上。';
 const approvedVoiceDecisionSummary =
   '真实 > 好听，清楚 > 炫技，尊重 > 说服，安全 > 温和。';
+const approvedProductDecisionSummary =
+  '最小化 > 多收集，控制权 > 自动化，长期利益 > 留存，安全 > 便利。';
 
 afterEach(() => {
   for (const directory of temporaryDirectories.splice(0)) {
@@ -77,6 +79,7 @@ describe('Sprint 002 brand foundation', () => {
         'brand/03_BrandValues.md',
         'brand/04_BrandPersonality.md',
         'brand/05_BrandVoice.md',
+        'brand/06_ProductPrinciples.md',
       ].includes(relativePath)
         ? 'approved'
         : 'proposed';
@@ -182,7 +185,7 @@ describe('Sprint 002 brand foundation', () => {
 
     expect(currentStatus).toContain('Brand DNA：`Approved`');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
-    expect(currentStatus).toContain('下一审核对象：Product Principles');
+    expect(currentStatus).toContain('下一审核对象：Brand Architecture');
     expect(currentStatus).toContain('Sprint 002 — Brand Foundation Review');
     expect(currentStatus).toContain('`Approved / Completed`');
 
@@ -291,7 +294,7 @@ describe('Sprint 002 brand foundation', () => {
     expect(missionVision).not.toContain(approvedCoreThesis);
 
     expect(currentStatus).toContain('Mission & Vision 派生说明：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Product Principles');
+    expect(currentStatus).toContain('下一审核对象：Brand Architecture');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('Mission & Vision 派生说明：`Approved`');
     expect(handoff).toContain('派生说明不是正式原文来源');
@@ -348,7 +351,7 @@ describe('Sprint 002 brand foundation', () => {
     expect(checklist).toContain('审核日期：2026-08-21');
     expect(changelog).toContain('Brand Values Founder Review 01 — 2026-08-21');
     expect(currentStatus).toContain('Brand Values：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Product Principles');
+    expect(currentStatus).toContain('下一审核对象：Brand Architecture');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('正式价值观只有八项');
     expect(handoff).toContain('Values Decision Rule 不是第九项价值观');
@@ -407,12 +410,12 @@ describe('Sprint 002 brand foundation', () => {
     expect(checklist).toContain('审核日期：2026-09-01');
     expect(changelog).toContain('Brand Personality Founder Review 01 — 2026-09-01');
     expect(currentStatus).toContain('Brand Personality：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Product Principles');
+    expect(currentStatus).toContain('下一审核对象：Brand Architecture');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('Brand Relationship Archetype：`可信赖的长期伙伴`');
     expect(handoff).toContain('尊重与诚实是人格表达底线');
     expect(bootstrap).toContain('Brand Personality 已正式 `Approved`');
-    expect(bootstrap).toContain('下一审核对象是 Product Principles');
+    expect(bootstrap).toContain('下一审核对象是 Brand Architecture');
   });
 
   test('approves Brand Voice as a cross-domain system with fifteen scenarios', () => {
@@ -515,17 +518,125 @@ describe('Sprint 002 brand foundation', () => {
     expect(voice).not.toContain(coreExpression);
     expect(voice).not.toContain(approvedMission);
 
-    expect(productPrinciples).toMatch(/\nstatus: proposed\r?\n/);
+    expect(productPrinciples).toMatch(/\nstatus: approved\r?\n/);
     expect(checklist).toContain('Brand Voice 整体 Approved');
     expect(checklist).toContain('审核日期：2026-09-19');
     expect(changelog).toContain('Brand Voice Founder Review 01 — 2026-09-19');
     expect(currentStatus).toContain('Brand Voice：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Product Principles');
+    expect(currentStatus).toContain('下一审核对象：Brand Architecture');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('Brand Voice：`Approved`');
     expect(handoff).toContain('15 类正式场景');
     expect(bootstrap).toContain('Brand Voice 已正式 `Approved`');
-    expect(bootstrap).toContain('下一审核对象是 Product Principles');
+    expect(bootstrap).toContain('下一审核对象是 Brand Architecture');
+  });
+
+  test('approves twelve mother-brand Product Principles and their review gate', () => {
+    const principles = fs.readFileSync(
+      path.join(rootDir, 'brand', '06_ProductPrinciples.md'),
+      'utf8',
+    ).replace(/\r\n/g, '\n');
+    const architecture = fs.readFileSync(
+      path.join(rootDir, 'brand', '07_BrandArchitecture.md'),
+      'utf8',
+    );
+    const naming = fs.readFileSync(
+      path.join(rootDir, 'brand', '08_NamingBrief.md'),
+      'utf8',
+    );
+    const guardrails = fs.readFileSync(
+      path.join(rootDir, 'brand', '09_BrandGuardrails.md'),
+      'utf8',
+    );
+    const checklist = fs.readFileSync(
+      path.join(rootDir, 'brand', '10_FounderReviewChecklist.md'),
+      'utf8',
+    );
+    const changelog = fs.readFileSync(
+      path.join(rootDir, 'brand', 'CHANGELOG.md'),
+      'utf8',
+    );
+    const currentStatus = fs.readFileSync(
+      path.join(rootDir, 'project', 'CurrentStatus.md'),
+      'utf8',
+    );
+    const handoff = fs.readFileSync(
+      path.join(rootDir, 'migration', 'AI_HANDOFF.md'),
+      'utf8',
+    );
+    const bootstrap = fs.readFileSync(
+      path.join(rootDir, 'migration', 'NEW_AI_BOOTSTRAP_PROMPT.md'),
+      'utf8',
+    );
+
+    expect(principles).toMatch(/\nstatus: approved\n/);
+    expect(principles).toMatch(/\nversion: 0\.2\.0\n/);
+    expect(principles).toContain('last_updated: 2026-09-19');
+    expect(principles).toContain('owner: product');
+    expect(principles).toContain('source_of_truth: true');
+    expect(principles).toContain('母品牌产品设计原则领域的正式来源');
+    expect(principles.match(/^## \d{2}\. /gm)).toHaveLength(12);
+
+    for (const principle of [
+      '01. 记录是为了理解，不是为了监控',
+      '02. 数据是成长轨迹，不是成绩单',
+      '03. 重要建议必须解释且可追溯',
+      '04. 最终决定权属于用户',
+      '05. 行动优先于指标堆积',
+      '06. 同时关注当下和长期趋势',
+      '07. 不用焦虑、羞耻或攀比驱动用户',
+      '08. 高风险领域必须尊重专业边界',
+      '09. 所有核心资产必须可导出和迁移',
+      '10. AI 服务商必须可替换',
+      '11. 隐私默认最小化，敏感数据由用户控制',
+      '12. 重要操作必须可确认、可撤销、可恢复',
+    ]) {
+      expect(principles).toContain(`## ${principle}`);
+    }
+
+    expect(principles).toContain('Respect Professional Boundaries in High-Stakes Domains');
+    expect(principles).toContain('### Health');
+    expect(principles).toContain('### Finance');
+    expect(principles).toContain('### Legal');
+    expect(principles).toContain('Privacy by Default, User-Controlled by Design');
+    expect(principles).toContain('如果不收集这项数据，这个功能真的无法完成吗？');
+    expect(principles).toContain('Confirmable, Reversible and Recoverable by Design');
+    expect(principles).toContain('### Confirmable');
+    expect(principles).toContain('### Reversible');
+    expect(principles).toContain('### Recoverable');
+    expect(principles).toContain('### Irreversible');
+
+    expect(principles).toContain('## Product Decision Rule');
+    expect(principles).toContain(approvedProductDecisionSummary);
+    expect(principles).toContain('## Product Review Gate');
+    expect(principles.match(/^### Gate \d+$/gm)).toHaveLength(8);
+    expect(principles).toContain('## Product Review Result');
+    for (const result of [
+      '### PASS',
+      '### PASS WITH CONDITIONS',
+      '### FOUNDER REVIEW REQUIRED',
+      '### BLOCKED',
+    ]) {
+      expect(principles).toContain(result);
+    }
+    expect(principles).toContain('Founder Private Validation');
+    expect(principles).toContain('本次 Founder Review 批准的是 Product Principles governance');
+    expect(principles).not.toContain(coreExpression);
+    expect(principles).not.toContain(approvedMission);
+
+    for (const source of [architecture, naming, guardrails]) {
+      expect(source).toMatch(/\nstatus: proposed\r?\n/);
+    }
+    expect(checklist).toContain('Product Principles 整体 Approved');
+    expect(checklist).toContain('审核日期：2026-09-19');
+    expect(changelog).toContain('Product Principles Founder Review 01 — 2026-09-19');
+    expect(currentStatus).toContain('Product Principles：`Approved`');
+    expect(currentStatus).toContain('下一审核对象：Brand Architecture');
+    expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
+    expect(handoff).toContain('Product Principles：`Approved`');
+    expect(handoff).toContain('正式共有 12 项母品牌 Product Principles');
+    expect(bootstrap).toContain('Product Principles 已正式 `Approved`');
+    expect(bootstrap).toContain('下一审核对象是 Brand Architecture');
   });
 
   test('exports every brand file in the declared order at pack version 0.2.2', () => {

@@ -1,13 +1,25 @@
 ---
 title: Brand Changelog
 status: proposed
-version: 0.1.8
+version: 0.1.9
 last_updated: 2026-09-19
 owner: founder
 source_of_truth: true
 ---
 
 # 品牌变更记录
+
+## Product Principles Founder Review 01 — 2026-09-19
+
+**Product Principles 状态：** `Approved`
+
+**创始人决定：**
+
+- 批准 12 项母品牌 Product Principles，`brand/06_ProductPrinciples.md` 升级为 `0.2.0`。
+- 将第 8 项升级为跨 Health、Finance、Legal 等领域的 High-Stakes Professional Boundary。
+- 批准 Privacy by Default、Core Asset Portability、AI Provider Replaceability 与 Confirmable / Reversible / Recoverable 原则。
+- 批准 Product Decision Rule、八项 Product Review Gate 和四种 Product Review Result。
+- 本次只建立正式治理来源，不要求立即改造当前 Health MVP；Brand Foundation 仍为 `Proposed / Founder Review`，下一审核对象为 Brand Architecture。
 
 ## Brand Voice Founder Review 01 — 2026-09-19
 
@@ -127,7 +139,7 @@ source_of_truth: true
 
 ## 已形成内容
 
-已建立 Brand Foundation `0.1.0` 的 proposed 变更基线，并记录 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality 与 Brand Voice 的创始人决定；六份文件已整体批准，Brand Foundation 其余文件仍为 `proposed`。
+已建立 Brand Foundation `0.1.0` 的 proposed 变更基线，并记录 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice 与 Product Principles 的创始人决定；七份文件已整体批准，Brand Foundation 其余文件仍为 `proposed`。
 
 ## 仍待确认事项
 
@@ -138,4 +150,4 @@ source_of_truth: true
 - 字体。
 - 视觉系统。
 - 商标与域名审查。
-- Product Principles 及后续 Brand Foundation 文件的 `approved` 状态。
+- Brand Architecture 及后续 Brand Foundation 文件的 `approved` 状态。
