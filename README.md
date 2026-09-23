@@ -5,7 +5,7 @@
 最高入口是 [PROJECT.md](PROJECT.md)，它只做项目级导航；当前项目阶段和审核状态只以 [project/CurrentStatus.md](project/CurrentStatus.md) 为准。详细规则分别保存在 `project/`、`brand/`、`architecture/`、`security/`、`schemas/`、`prompts/` 和 `migration/`。
 
 - Project Governance：Sprint 001 Foundation 已是 `Approved / Completed`，见 [project/README.md](project/README.md) 和 [project/SourceOfTruth.md](project/SourceOfTruth.md)。
-- Brand Foundation：Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice 与 Product Principles 已获批准；Product Principles 建立 12 项母品牌原则、决策冲突规则及进入实现前的八项 Review Gate。本次治理批准不要求立即改造当前 Health MVP；其余品牌文件仍为 `proposed`，下一审核对象为 Brand Architecture，见 [brand/README.md](brand/README.md)。
+- Brand Foundation：Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles 与 Brand Architecture 已获批准。Brand Architecture 正式采用 Branded House，Health 当前为 `Validating / Founder Private Validation`；FI 和其他未来领域没有进入当前产品开发范围。Naming Brief 与 Brand Guardrails 仍为 `proposed`，下一审核对象为 Naming Brief，见 [brand/README.md](brand/README.md)。
 - Privacy Boundary：私人健康记录、健康图片、导出包、数据库文件和密钥不进入 Git，见 [security/PrivacyModel.md](security/PrivacyModel.md)。
 - Data Ownership：用户拥有自己的健康数据；云端同步和 AI 分享必须由用户主动选择。
 - AI Portability：规则引擎、OpenAI、Claude、Gemini 和本地模型都应作为可替换 Provider，见 [architecture/AIProviderPortability.md](architecture/AIProviderPortability.md)。

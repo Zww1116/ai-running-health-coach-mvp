@@ -1,13 +1,26 @@
 ---
 title: Brand Changelog
 status: proposed
-version: 0.1.9
-last_updated: 2026-09-19
+version: 0.1.10
+last_updated: 2026-09-23
 owner: founder
 source_of_truth: true
 ---
 
 # 品牌变更记录
+
+## Brand Architecture Founder Review 01 — 2026-09-23
+
+**Brand Architecture 状态：** `Approved`
+
+**创始人决定：**
+
+- 批准 Branded House 母品牌主导型架构，`brand/07_BrandArchitecture.md` 升级为 `0.2.0`。
+- 批准 Brand Inheritance Rule、产品数据默认隔离与 Cross-Product Data Rule。
+- 明确 Brand Architecture 与 Repository、Database、Deployment 技术拓扑解耦；当前单仓库不是永久架构约束。
+- 批准 Product Independence Principle、Product Admission Rule 与 Proposed → Validating → Active 生命周期。
+- Health 为 `Validating / Founder Private Validation`；Financial Intelligence 仍为 `Proposed Product Direction`；Learning、Career、Life / Personal Growth 仅为 `Future Possibility`。
+- 批准 Architecture Decision Rule；Brand Foundation 仍为 `Proposed / Founder Review`，下一审核对象为 Naming Brief。
 
 ## Product Principles Founder Review 01 — 2026-09-19
 
@@ -139,7 +152,7 @@ source_of_truth: true
 
 ## 已形成内容
 
-已建立 Brand Foundation `0.1.0` 的 proposed 变更基线，并记录 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice 与 Product Principles 的创始人决定；七份文件已整体批准，Brand Foundation 其余文件仍为 `proposed`。
+已建立 Brand Foundation `0.1.0` 的 proposed 变更基线，并记录 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles 与 Brand Architecture 的创始人决定；八份文件已整体批准，Brand Foundation 其余文件仍为 `proposed`。
 
 ## 仍待确认事项
 
@@ -150,4 +163,4 @@ source_of_truth: true
 - 字体。
 - 视觉系统。
 - 商标与域名审查。
-- Brand Architecture 及后续 Brand Foundation 文件的 `approved` 状态。
+- Naming Brief 与 Brand Guardrails 的 `approved` 状态。
