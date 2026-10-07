@@ -1,13 +1,26 @@
 ---
 title: Brand Changelog
 status: proposed
-version: 0.1.10
-last_updated: 2026-09-23
+version: 0.1.11
+last_updated: 2026-10-07
 owner: founder
 source_of_truth: true
 ---
 
 # 品牌变更记录
+
+## Naming Brief Founder Review 01 — 2026-10-07
+
+**Naming Brief 状态：** `Approved`
+
+**创始人决定：**
+
+- 批准母品牌优先的 Naming Objective 与 11 项 Naming Requirements，`brand/08_NamingBrief.md` 升级为 `0.2.0`。
+- 批准 8 项 Naming Red Flag Gate、100 分 Weighted Naming Score、Chinese / English Naming Relationship 与 Naming Territories 方法。
+- 批准 Mother Brand / Product Naming Rule、Naming Decision Rule、13 步 Naming Sprint Process 与候选状态治理。
+- Naming Score 不自动产生最终决定；外部商标、域名、社交账号与法律可用性必须独立核验。
+- 本次不生成或批准任何候选名称；Mother Brand 继续为 `[Brand Name Pending]`。
+- Brand Foundation 仍为 `Proposed / Founder Review`；Brand Guardrails 继续为 `proposed`，并成为下一审核对象。
 
 ## Brand Architecture Founder Review 01 — 2026-09-23
 

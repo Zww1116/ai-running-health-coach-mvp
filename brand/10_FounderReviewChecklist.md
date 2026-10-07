@@ -1,8 +1,8 @@
 ---
 title: Founder Review Checklist
 status: proposed
-version: 0.1.9
-last_updated: 2026-09-23
+version: 0.1.10
+last_updated: 2026-10-07
 owner: founder
 source_of_truth: false
 ---
@@ -98,14 +98,16 @@ source_of_truth: false
 
 ## Naming Brief
 
-- [ ] 我是否认可这一表述：
-- [ ] 哪些词最像我：
-- [ ] 哪些词不像我：
-- [ ] 哪些内容需要删除：
-- [ ] 哪些内容需要补充：
-- [ ] 是否可以转为 `approved`：
-- 创始人备注：
-- 审核日期：
+- [x] 母品牌优先的 Naming Objective 已批准。
+- [x] 十一项 Naming Requirements 已批准。
+- [x] 八项 Naming Red Flag Gate 与 100 分 Weighted Naming Score 已批准。
+- [x] Chinese / English Naming Relationship 与 Naming Territories 方法已批准。
+- [x] Mother Brand / Product Naming Rule 与 Naming Decision Rule 已批准。
+- [x] 十三步 Naming Sprint Process 与候选状态治理已批准。
+- [x] 已确认本轮不选择、生成或批准任何最终品牌名称。
+- [x] Naming Brief 整体 Approved。
+- 创始人备注：Naming Brief 是命名治理规则，不是最终品牌名。Mother Brand 继续为 `[Brand Name Pending]`；Brand Foundation 整体仍为 `Proposed / Founder Review`。
+- 审核日期：2026-10-07。
 
 ## Guardrails
 
@@ -124,7 +126,7 @@ source_of_truth: false
 
 ## 仍待确认事项
 
-Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles 与 Brand Architecture 已完成审核；Naming Brief 与 Brand Guardrails 仍等待创始人逐项确认，下一审核对象为 Naming Brief。
+Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture 与 Naming Brief 已完成审核；Brand Guardrails 仍等待创始人逐项确认，下一审核对象为 Brand Guardrails。
 
 ## 尚未确认的重大问题
 
