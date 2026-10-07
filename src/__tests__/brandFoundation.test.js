@@ -60,6 +60,8 @@ const approvedProductDecisionSummary =
   '最小化 > 多收集，控制权 > 自动化，长期利益 > 留存，安全 > 便利。';
 const approvedArchitectureDecisionRule =
   '母品牌一致性 > 子产品个性化，用户边界 > 跨产品整合，可分离性 > 短期便利，真实验证 > 提前扩张。';
+const approvedNamingDecisionRule =
+  '长期 > 潮流，扩展性 > 描述性，清晰易记 > 炫技，契合 > 偏好，安全 > 喜爱。';
 
 afterEach(() => {
   for (const directory of temporaryDirectories.splice(0)) {
@@ -83,6 +85,7 @@ describe('Sprint 002 brand foundation', () => {
         'brand/05_BrandVoice.md',
         'brand/06_ProductPrinciples.md',
         'brand/07_BrandArchitecture.md',
+        'brand/08_NamingBrief.md',
       ].includes(relativePath)
         ? 'approved'
         : 'proposed';
@@ -188,7 +191,7 @@ describe('Sprint 002 brand foundation', () => {
 
     expect(currentStatus).toContain('Brand DNA：`Approved`');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
-    expect(currentStatus).toContain('下一审核对象：Naming Brief');
+    expect(currentStatus).toContain('下一审核对象：Brand Guardrails');
     expect(currentStatus).toContain('Sprint 002 — Brand Foundation Review');
     expect(currentStatus).toContain('`Approved / Completed`');
 
@@ -297,7 +300,7 @@ describe('Sprint 002 brand foundation', () => {
     expect(missionVision).not.toContain(approvedCoreThesis);
 
     expect(currentStatus).toContain('Mission & Vision 派生说明：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Naming Brief');
+    expect(currentStatus).toContain('下一审核对象：Brand Guardrails');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('Mission & Vision 派生说明：`Approved`');
     expect(handoff).toContain('派生说明不是正式原文来源');
@@ -354,7 +357,7 @@ describe('Sprint 002 brand foundation', () => {
     expect(checklist).toContain('审核日期：2026-08-21');
     expect(changelog).toContain('Brand Values Founder Review 01 — 2026-08-21');
     expect(currentStatus).toContain('Brand Values：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Naming Brief');
+    expect(currentStatus).toContain('下一审核对象：Brand Guardrails');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('正式价值观只有八项');
     expect(handoff).toContain('Values Decision Rule 不是第九项价值观');
@@ -413,12 +416,12 @@ describe('Sprint 002 brand foundation', () => {
     expect(checklist).toContain('审核日期：2026-09-01');
     expect(changelog).toContain('Brand Personality Founder Review 01 — 2026-09-01');
     expect(currentStatus).toContain('Brand Personality：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Naming Brief');
+    expect(currentStatus).toContain('下一审核对象：Brand Guardrails');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('Brand Relationship Archetype：`可信赖的长期伙伴`');
     expect(handoff).toContain('尊重与诚实是人格表达底线');
     expect(bootstrap).toContain('Brand Personality 已正式 `Approved`');
-    expect(bootstrap).toContain('下一审核对象是 Naming Brief');
+    expect(bootstrap).toContain('下一审核对象是 Brand Guardrails');
   });
 
   test('approves Brand Voice as a cross-domain system with fifteen scenarios', () => {
@@ -526,12 +529,12 @@ describe('Sprint 002 brand foundation', () => {
     expect(checklist).toContain('审核日期：2026-09-19');
     expect(changelog).toContain('Brand Voice Founder Review 01 — 2026-09-19');
     expect(currentStatus).toContain('Brand Voice：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Naming Brief');
+    expect(currentStatus).toContain('下一审核对象：Brand Guardrails');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('Brand Voice：`Approved`');
     expect(handoff).toContain('15 类正式场景');
     expect(bootstrap).toContain('Brand Voice 已正式 `Approved`');
-    expect(bootstrap).toContain('下一审核对象是 Naming Brief');
+    expect(bootstrap).toContain('下一审核对象是 Brand Guardrails');
   });
 
   test('approves twelve mother-brand Product Principles and their review gate', () => {
@@ -628,19 +631,18 @@ describe('Sprint 002 brand foundation', () => {
     expect(principles).not.toContain(approvedMission);
 
     expect(architecture).toMatch(/\nstatus: approved\r?\n/);
-    for (const source of [naming, guardrails]) {
-      expect(source).toMatch(/\nstatus: proposed\r?\n/);
-    }
+    expect(naming).toMatch(/\nstatus: approved\r?\n/);
+    expect(guardrails).toMatch(/\nstatus: proposed\r?\n/);
     expect(checklist).toContain('Product Principles 整体 Approved');
     expect(checklist).toContain('审核日期：2026-09-19');
     expect(changelog).toContain('Product Principles Founder Review 01 — 2026-09-19');
     expect(currentStatus).toContain('Product Principles：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Naming Brief');
+    expect(currentStatus).toContain('下一审核对象：Brand Guardrails');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('Product Principles：`Approved`');
     expect(handoff).toContain('正式共有 12 项母品牌 Product Principles');
     expect(bootstrap).toContain('Product Principles 已正式 `Approved`');
-    expect(bootstrap).toContain('下一审核对象是 Naming Brief');
+    expect(bootstrap).toContain('下一审核对象是 Brand Guardrails');
   });
 
   test('approves the Branded House architecture and separable product boundaries', () => {
@@ -725,19 +727,176 @@ describe('Sprint 002 brand foundation', () => {
     expect(architecture).toContain('中文是正式核心表达');
     expect(architecture).toContain('不得由 AI、Codex、自动化系统或产品建议算法自行升级');
 
-    expect(naming).toMatch(/\nstatus: proposed\r?\n/);
+    expect(naming).toMatch(/\nstatus: approved\r?\n/);
     expect(guardrails).toMatch(/\nstatus: proposed\r?\n/);
     expect(checklist).toContain('Brand Architecture 整体 Approved');
     expect(checklist).toContain('审核日期：2026-09-23');
     expect(changelog).toContain('Brand Architecture Founder Review 01 — 2026-09-23');
     expect(currentStatus).toContain('Brand Architecture：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Naming Brief');
+    expect(currentStatus).toContain('下一审核对象：Brand Guardrails');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('Architecture type：`Branded House`');
     expect(handoff).toContain('Health lifecycle：`Validating`');
-    expect(handoff).toContain('下一审核对象：Naming Brief');
+    expect(handoff).toContain('下一审核对象：Brand Guardrails');
     expect(bootstrap).toContain('Brand Architecture 已正式 `Approved`');
-    expect(bootstrap).toContain('下一审核对象是 Naming Brief');
+    expect(bootstrap).toContain('下一审核对象是 Brand Guardrails');
+  });
+
+  test('approves the mother-brand Naming Brief without selecting a name', () => {
+    const naming = fs.readFileSync(
+      path.join(rootDir, 'brand', '08_NamingBrief.md'),
+      'utf8',
+    ).replace(/\r\n/g, '\n');
+    const guardrails = fs.readFileSync(
+      path.join(rootDir, 'brand', '09_BrandGuardrails.md'),
+      'utf8',
+    );
+    const checklist = fs.readFileSync(
+      path.join(rootDir, 'brand', '10_FounderReviewChecklist.md'),
+      'utf8',
+    );
+    const changelog = fs.readFileSync(
+      path.join(rootDir, 'brand', 'CHANGELOG.md'),
+      'utf8',
+    );
+    const currentStatus = fs.readFileSync(
+      path.join(rootDir, 'project', 'CurrentStatus.md'),
+      'utf8',
+    );
+    const handoff = fs.readFileSync(
+      path.join(rootDir, 'migration', 'AI_HANDOFF.md'),
+      'utf8',
+    );
+    const bootstrap = fs.readFileSync(
+      path.join(rootDir, 'migration', 'NEW_AI_BOOTSTRAP_PROMPT.md'),
+      'utf8',
+    );
+
+    expect(naming).toMatch(/\nstatus: approved\n/);
+    expect(naming).toMatch(/\nversion: 0\.2\.0\n/);
+    expect(naming).toContain('last_updated: 2026-10-07');
+    expect(naming).toContain('owner: founder');
+    expect(naming).toContain('source_of_truth: true');
+
+    for (const heading of [
+      'Naming Objective',
+      'Naming Requirements',
+      'Naming Red Flag Gate',
+      'Weighted Naming Score',
+      'Chinese / English Naming Relationship',
+      'Naming Territories',
+      'Mother Brand / Product Naming Rule',
+      'Naming Decision Rule',
+      'Naming Sprint Process',
+      'Naming Candidate States',
+    ]) {
+      expect(naming).toContain(`## ${heading}`);
+    }
+
+    expect(naming.match(/^### Requirement \d+ — /gm)).toHaveLength(11);
+    for (const requirement of [
+      '不被单一领域锁定',
+      '能承载长期多领域成长',
+      '简短、易读、易记',
+      '中英文具有良好表达空间',
+      '有陪伴感但不过度幼稚',
+      '有成长感但不制造成功焦虑',
+      '有个人感但不依赖 Founder 姓名',
+      '适配长期产品体系',
+      '不依赖任何 AI Provider',
+      '不暗示不当专业确定性',
+      '能承载十年以上发展',
+    ]) {
+      expect(naming).toContain(requirement);
+    }
+    expect(naming.match(/^### Red Flag \d+ — /gm)).toHaveLength(8);
+    for (const redFlag of [
+      '单领域锁定',
+      'Provider Lock-in',
+      '不当专业承诺',
+      'Founder Identity Lock-in',
+      '明显语言或文化风险',
+      '极高传播摩擦',
+      'Brand Foundation 冲突',
+      '无法支持 Branded House',
+    ]) {
+      expect(naming).toContain(redFlag);
+    }
+    expect(naming).toContain('Hard Filter');
+    expect(naming).toContain('Red Flag Gate 通过，不代表名称已批准');
+
+    const scoreWeights = [...naming.matchAll(/^### Score \d+ — .+ — (\d+) 分$/gm)]
+      .map((match) => Number(match[1]));
+    expect(scoreWeights).toEqual([25, 20, 15, 15, 10, 10, 5]);
+    expect(scoreWeights.reduce((total, weight) => total + weight, 0)).toBe(100);
+    expect(naming).toContain('Score 是比较工具，不是自动批准器');
+    expect(naming).toContain('商标、域名、社交账号、公司名称、App Store 名称与法律风险');
+    expect(naming).toContain('本次 Review 不执行最终外部可用性审查');
+
+    expect(naming).toContain('Meaning Consistency > Literal Translation');
+    expect(naming).toContain('中英文需要共享品牌含义，不要求字面完全一致。');
+    expect(naming).toContain('4–6 个 Naming Territories');
+    for (const territory of [
+      '轨迹 / 来路',
+      '理解 / 清晰',
+      '成长 / 成为',
+      '陪伴',
+      '自主 / 选择',
+      '其他经 Founder Review 的方向',
+    ]) {
+      expect(naming).toContain(territory);
+    }
+    expect(naming).toContain('参考词不是候选名称');
+
+    expect(naming).toContain('[Brand] Health');
+    expect(naming).toContain('[Brand] + Product Name');
+    expect(naming).toContain(
+      'Product naming must not weaken the mother brand or accidentally create a second mother brand.',
+    );
+    expect(naming).toContain(approvedNamingDecisionRule);
+    expect(naming).toContain('中文是正式核心表达');
+
+    expect(naming.match(/^\d+\. /gm)).toHaveLength(13);
+    expect(naming).toContain('30–50 个探索项');
+    expect(naming).toContain('约 12 个');
+    expect(naming).toContain('5–6 个');
+    expect(naming).toContain('2–3 个 Finalist');
+    expect(naming).toContain('日期、范围、来源与法律免责声明');
+    expect(naming).toContain('最终批准前不得批量重命名');
+
+    for (const state of [
+      'Exploration Candidate',
+      'Shortlisted Candidate',
+      'Finalist',
+      'Approved Name',
+      'Rejected',
+    ]) {
+      expect(naming).toContain(`### ${state}`);
+    }
+    expect(naming).toContain('只有 Founder Final Decision 可以将候选状态变为 Approved Name');
+
+    expect(naming).toContain('Mother Brand：`[Brand Name Pending]`');
+    expect(naming).toContain('Final Brand Name：`Pending`');
+    expect(naming).toContain('Final Chinese Name：`Pending`');
+    expect(naming).toContain('Final English Name：`Pending`');
+    expect(naming).toContain('Final Chinese Brand Name：`Pending`');
+    expect(naming).toContain('Final English Brand Name：`Pending`');
+    expect(naming).toContain('Final Product Names：`Pending`');
+    expect(naming).toContain('Naming Brief Approved ≠ Final Brand Name Approved');
+    expect(naming).not.toMatch(/^Approved Name[:：]\s*\S+/gm);
+
+    expect(guardrails).toMatch(/\nstatus: proposed\r?\n/);
+    expect(checklist).toContain('Naming Brief 整体 Approved');
+    expect(checklist).toContain('审核日期：2026-10-07');
+    expect(changelog).toContain('Naming Brief Founder Review 01 — 2026-10-07');
+    expect(currentStatus).toContain('Naming Brief：`Approved`');
+    expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
+    expect(currentStatus).toContain('下一审核对象：Brand Guardrails');
+    expect(handoff).toContain('Naming Brief：`Approved`，version `0.2.0`');
+    expect(handoff).toContain('没有任何候选名称获批');
+    expect(handoff).toContain('下一审核对象：Brand Guardrails');
+    expect(bootstrap).toContain('Naming Brief 已正式 `Approved`');
+    expect(bootstrap).toContain('下一审核对象是 Brand Guardrails');
   });
 
   test('exports every brand file in the declared order at pack version 0.2.2', () => {
