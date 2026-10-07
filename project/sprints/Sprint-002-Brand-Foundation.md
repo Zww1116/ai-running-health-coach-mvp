@@ -1,8 +1,8 @@
 ---
 title: Sprint 002 Brand Foundation
 status: proposed
-version: 0.1.10
-last_updated: 2026-09-19
+version: 0.1.11
+last_updated: 2026-09-23
 owner: product
 source_of_truth: true
 ---
@@ -19,7 +19,7 @@ Sprint 002。
 
 ## 背景
 
-Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Foundation 文档基线纳入 `main`；Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice 与 Product Principles Founder Review 已完成，七份文件整体均已获批准。Brand Foundation 其余文件继续保持 `proposed`。
+Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Foundation 文档基线纳入 `main`；Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles 与 Brand Architecture Founder Review 已完成，八份文件整体均已获批准。Naming Brief 与 Brand Guardrails 继续保持 `proposed`。
 
 ## 目标
 
@@ -89,7 +89,7 @@ Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Founda
 
 ## 验收标准
 
-- 十三份品牌文件存在且元数据完整；Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice 与 Product Principles 状态为 `approved`，其余六份文件状态为 `proposed`。
+- 十三份品牌文件存在且元数据完整；Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles 与 Brand Architecture 状态为 `approved`，其余五份文件状态为 `proposed`。
 - 已批准的核心表达只使用“记住来路，理解自己，成为自己。”。
 - 已批准的 Mission 使用 Brand DNA 中的准确原文。
 - 已批准的 Vision、Brand Promise 与 Core Thesis 使用 Brand DNA 中的准确原文。
@@ -108,6 +108,9 @@ Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Founda
 - Product Decision Rule 为“最小化 > 多收集，控制权 > 自动化，长期利益 > 留存，安全 > 便利。”。
 - 重要新功能进入实现前应通过八项 Product Review Gate，并得到 PASS、PASS WITH CONDITIONS、FOUNDER REVIEW REQUIRED 或 BLOCKED 结果。
 - 当前 Health 仍处于 Founder Private Validation；本次批准不要求立即改造现有 MVP。
+- Brand Architecture 正式采用 Branded House，Health lifecycle 为 `Validating`，FI 为 Proposed Product Direction，其他领域仅为 Future Possibility。
+- Brand Inheritance Rule、Cross-Product Data Rule、Product Independence Principle、Product Admission Rule、三级生命周期与 Architecture Decision Rule 已批准。
+- Brand Architecture 与 Repository、Database、Deployment 技术拓扑解耦；当前单仓库不是永久品牌架构约束。
 - 用户自主判断优先于 AI 依赖，AI 与规则引擎均为可替换技术能力。
 - 品牌名称与视觉仍未确定。
 - 品牌文件按规定顺序进入单文件上下文和 AI-Core-Pack。
@@ -115,7 +118,7 @@ Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Founda
 
 ## 测试结果
 
-Product Principles Review 01 增加状态、版本、12 项原则、Product Decision Rule、八项 Review Gate、四种 Review Result、Health 实施边界与下一审核对象验证。完整测试通过：22 个测试文件、90 项测试全部通过。
+Brand Architecture Review 01 增加状态、版本、Branded House、产品生命周期、品牌继承、跨产品数据边界、产品独立性、产品准入、Architecture Decision Rule 与下一审核对象验证。完整测试通过：22 个测试文件、91 项测试全部通过。
 
 ## Build 结果
 
@@ -123,7 +126,7 @@ Product Principles Review 01 增加状态、版本、12 项原则、Product Deci
 
 ## Privacy Audit 结果
 
-隐私审计扫描 174 个 Git 跟踪文本文件，没有发现高可信 Secret；保留 9 条既有人工复核 warning，均不来自本次 Product Principles 变更。
+隐私审计扫描 174 个 Git 跟踪文本文件，没有发现高可信 Secret；保留 9 条既有人工复核 warning，均不来自本次 Brand Architecture 变更。
 
 ## Foundation Validation 结果
 
@@ -135,27 +138,27 @@ Product Principles Review 01 增加状态、版本、12 项原则、Product Deci
 
 ## 待创始人确认内容
 
-- Brand Architecture、Naming Brief 与 Guardrails。
+- Naming Brief 与 Guardrails。
 - 最终品牌名称和英文核心表达。
 - 母品牌与 Health 的命名关系。
 - 视觉系统、商标、域名与品牌公开程度。
 
 ## 分支
 
-`codex/founder-product-principles-review-01`
+`codex/founder-brand-architecture-review-01`
 
 ## Commit
 
-建议提交标题为 `docs: approve Product Principles v0.2.0`；准确 SHA 以该分支 Git 记录为准。
+建议提交标题为 `docs: approve Brand Architecture v0.2.0`；准确 SHA 以该分支 Git 记录为准。
 
 ## Draft PR
 
-PR #2 已合并 proposed Brand Foundation 文档基线，PR #3 已合并 Brand DNA Founder Review 决策，PR #4 已合并 Brand Positioning Founder Review 决策，PR #5 已合并 Mission & Vision Derived Explanation Founder Review 决策，PR #6 已合并 Brand Values Founder Review 决策，PR #7 已合并 Brand Personality Founder Review 决策，PR #8 已合并 Brand Voice Founder Review 决策。本分支独立记录 Product Principles Founder Review 01，并通过新的 Draft PR 审核；Brand Foundation 其余文件仍为 `proposed`。
+PR #2 至 PR #9 已依次记录并合并 Brand Foundation 基线、Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice 与 Product Principles 决策。本分支独立记录 Brand Architecture Founder Review 01，并通过新的 Draft PR 审核；Naming Brief 与 Brand Guardrails 仍为 `proposed`。
 
 ## 已形成内容
 
-Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice 与 Product Principles Founder Review completed。12 项母品牌产品原则、Product Decision Rule、八项 Product Review Gate、四种 Review Result 与 Health Implementation Boundary 已批准；Brand Foundation 其余审核范围及记录结构保持不变。
+Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles 与 Brand Architecture Founder Review completed。Branded House、母品牌继承、产品数据默认隔离、产品可分离演进、产品准入、三级生命周期与 Architecture Decision Rule 已批准；当前 Health MVP 与未来产品功能均未改变。
 
 ## 仍待确认事项
 
-下一步：审核 Brand Architecture。Brand Foundation 的整体批准、最终命名与视觉工作均不属于本 Sprint 的自动结论。
+下一步：审核 Naming Brief。Brand Foundation 的整体批准、最终命名与视觉工作均不属于本 Sprint 的自动结论。
