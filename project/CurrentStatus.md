@@ -1,8 +1,8 @@
 ---
 title: Current Status
 status: approved
-version: 0.2.11
-last_updated: 2026-09-23
+version: 0.2.12
+last_updated: 2026-10-07
 owner: founder
 source_of_truth: true
 ---
@@ -27,7 +27,7 @@ Brand Foundation 当前状态为 `Proposed / Founder Review`。PR #2 已将 prop
 
 ## Brand Founder Review
 
-Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles 与 Brand Architecture Founder Review 已完成。当前批准矩阵：
+Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture 与 Naming Brief Founder Review 已完成。当前批准矩阵：
 
 - Core Expression: `Approved`
 - Mission: `Approved`
@@ -41,6 +41,7 @@ Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、B
 - Brand Voice: `Approved`
 - Product Principles: `Approved`
 - Brand Architecture: `Approved`
+- Naming Brief: `Approved`
 
 Brand DNA：`Approved`
 
@@ -58,9 +59,11 @@ Product Principles：`Approved`
 
 Brand Architecture：`Approved`
 
+Naming Brief：`Approved`
+
 Brand Foundation：`Proposed / Founder Review`
 
-Naming Brief 与 Brand Guardrails 继续保持 `proposed`。Brand Architecture 正式采用 `Branded House`：一个母品牌承载共同核心，多个产品保持可分离演进；Health 当前 lifecycle 为 `Validating`，验证方式为 Founder Private Validation；Financial Intelligence 仅为 Proposed Product Direction，Learning、Career 与 Life / Personal Growth 仅为 Future Possibility。产品数据默认按 Domain 隔离，跨产品使用必须由用户明确选择；当前单仓库不是永久品牌架构约束。本次批准不要求改造当前 Health MVP，也不批准任何未来产品功能。品牌名称、最终英文表达与视觉系统尚未确定。
+Brand Guardrails 继续保持 `proposed`。Naming Brief 已批准母品牌优先的命名目标、硬门槛、100 分比较机制、双语关系、命名流程与候选状态治理；它不批准任何候选名称。Mother Brand 继续为 `[Brand Name Pending]`，最终中文名、英文名、产品名、视觉、商标与域名仍未确定。
 
 ## 在线网站
 
@@ -94,7 +97,7 @@ Sprint 002 — Brand Foundation Review。Brand Foundation proposed 文档基线�
 
 ## 下一步
 
-下一审核对象：Naming Brief。后续继续通过独立 Commit 或 PR 记录逐项审核决定。
+下一审核对象：Brand Guardrails。后续继续通过独立 Commit 或 PR 记录逐项审核决定。
 
 ## 当前风险
 
@@ -102,4 +105,4 @@ Sprint 002 — Brand Foundation Review。Brand Foundation proposed 文档基线�
 - 过于精确的演示数据可能看起来像真实个人资料，公开前仍需人工确认。
 - 未来 AI 集成不得绕过用户确认和数据最小化原则。
 - 二进制图片、未被 Git 跟踪的本地文件及外部服务数据不属于当前文本隐私审计范围。
-- Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles 与 Brand Architecture 已整体 `approved`，Naming Brief 与 Brand Guardrails 仍为 `proposed`。品牌名称、英文表达、视觉与商标可用性均未确定。
+- Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture 与 Naming Brief 已整体 `approved`，Brand Guardrails 仍为 `proposed`。Naming Brief 的批准不等于最终品牌名批准；品牌名称、英文表达、视觉与商标可用性均未确定。
