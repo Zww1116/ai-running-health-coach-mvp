@@ -1,8 +1,8 @@
 ---
 title: AI Handoff
 status: approved
-version: 0.2.12
-last_updated: 2026-10-07
+version: 0.2.13
+last_updated: 2026-10-20
 owner: product
 source_of_truth: true
 ---
@@ -43,13 +43,15 @@ Brand Architecture：`Approved`，version `0.2.0`。Architecture type：`Branded
 
 Naming Brief：`Approved`，version `0.2.0`。它是母品牌命名治理规则，不是最终品牌名。Mother Brand 仍为 `[Brand Name Pending]`，没有任何候选名称获批。命名先经过 8 项 Naming Red Flag Gate，再使用总分 100 的 Weighted Naming Score 比较；Score 不自动产生最终决定，商标、域名、社交账号、公司名称、App Store 与法律可用性必须独立核验。中英文遵循 `Meaning Consistency > Literal Translation`；Naming Territories 是创意搜索空间，不是候选名。母品牌名称优先于产品名，产品命名不得削弱母品牌或无意创造第二母品牌。正式命名必须进入独立 Naming Sprint，并由 Founder Final Decision 批准后再建立 ADR 与迁移计划。AI、Codex 与评分系统不得决定最终名称。
 
-Brand Foundation：`Proposed / Founder Review`。Brand Guardrails 仍为 `proposed`，下一审核对象：Brand Guardrails。品牌名称、最终中文名、最终英文名、产品名、视觉系统以及商标与域名可用性尚未确定。本次不修改网站、仓库或产品名称。品牌核心原文唯一正式来源是 [Brand DNA](../brand/00_BrandDNA.md)，母品牌定位唯一正式来源是 [Brand Positioning](../brand/01_BrandPositioning.md)，母品牌与产品层级和隔离关系唯一正式来源是 [Brand Architecture](../brand/07_BrandArchitecture.md)，命名治理唯一正式来源是 [Naming Brief](../brand/08_NamingBrief.md)。
+Brand Guardrails：`Approved`，version `0.2.0`。Guardrails Decision Rule 要求在增长、效率、商业收益、技术能力或组织便利与人的安全、尊严、自主权、隐私及长期利益冲突时优先保护人。正式规则包括 G0–G3 风险分级、不可通过创始人例外绕过的 G3 Hard Stop、G2 专业复核、敏感数据用途限制、WCAG 2.2 AA 长期目标、Guardrails Review Gate、Product Definition of Done 护栏门槛、最长 30 天的流程性例外以及风险升级与恢复机制。AI 不得批准自身的高风险例外。
+
+Brand Foundation：`Proposed / Founder Review`。十份品牌正式来源已分别获批，但 Brand Foundation 整体完成状态仍为 `Pending Founder Review`，下一审核对象：Brand Foundation 整体完成状态。品牌名称、最终中文名、最终英文名、产品名、视觉系统以及商标与域名可用性尚未确定。本次不修改网站、仓库或产品名称。品牌核心原文唯一正式来源是 [Brand DNA](../brand/00_BrandDNA.md)，母品牌定位唯一正式来源是 [Brand Positioning](../brand/01_BrandPositioning.md)，母品牌与产品层级和隔离关系唯一正式来源是 [Brand Architecture](../brand/07_BrandArchitecture.md)，命名治理唯一正式来源是 [Naming Brief](../brand/08_NamingBrief.md)，护栏唯一正式来源是 [Brand Guardrails](../brand/09_BrandGuardrails.md)。
 
 ## 当前阶段
 
 当前阶段、当前 Sprint、审核状态和下一步只读取 `project/CurrentStatus.md`。本文件不独立维护动态状态。
 
-生成本交接快照时，Foundation 状态为 `Approved / Completed`，当前阶段为 `Sprint 002 — Brand Foundation Review`。Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture 与 Naming Brief 均已获批；Brand Guardrails 仍为 `proposed`，批准这九份文件不等于批准整个 Brand Foundation，也不等于批准最终品牌名称。
+生成本交接快照时，Foundation 状态为 `Approved / Completed`，当前阶段为 `Sprint 002 — Brand Foundation Review`。Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture、Naming Brief 与 Brand Guardrails 均已分别获批；这不等于批准整个 Brand Foundation，也不等于批准最终品牌名称。
 
 ## 已批准治理决策
 
@@ -109,7 +111,7 @@ Brand Foundation：`Proposed / Founder Review`。Brand Guardrails 仍为 `propos
 
 ## 新 AI 接手检查
 
-开始修改前，从 `project/CurrentStatus.md` 读取并重新说明项目定位、当前阶段、已批准的 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture 与 Naming Brief、仍为 proposed 的 Brand Guardrails、隐私边界、当前 Sprint 和下一步。必须明确 Mother Brand 仍为 `[Brand Name Pending]`；Naming Brief 只批准治理规则；8 项 Red Flag Gate、100 分 Score、双语关系、Territories、母品牌优先规则、Decision Rule、独立 Naming Sprint、Founder Final Decision、ADR 和 Migration Plan 均不可跳过；Score 与外部可用性都不能自动批准名称；本次没有候选名、外部可用性结论或网站 / repo / product name 变更；下一审核对象：Brand Guardrails。
+开始修改前，从 `project/CurrentStatus.md` 读取并重新说明项目定位、当前阶段、已批准的 Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture、Naming Brief 与 Brand Guardrails、隐私边界、当前 Sprint 和下一步。必须明确 Mother Brand 仍为 `[Brand Name Pending]`；Naming Brief 只批准治理规则；Guardrails 的 G0–G3、G3 Hard Stop、G2 专业复核、敏感数据限制、DoD、例外与升级规则不可绕过；`AIProviderPortability.md` 与 `DataOwnershipAndBoundaries.md` 仍为 `proposed`。十份品牌正式来源分别获批不等于 Brand Foundation 整体获批；下一审核对象：Brand Foundation 整体完成状态。
 
 ## 冲突处理
 

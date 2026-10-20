@@ -62,6 +62,8 @@ const approvedArchitectureDecisionRule =
   '母品牌一致性 > 子产品个性化，用户边界 > 跨产品整合，可分离性 > 短期便利，真实验证 > 提前扩张。';
 const approvedNamingDecisionRule =
   '长期 > 潮流，扩展性 > 描述性，清晰易记 > 炫技，契合 > 偏好，安全 > 喜爱。';
+const approvedGuardrailsDecisionRule =
+  '当增长、效率、商业收益、技术能力或组织便利与人的安全、尊严、自主权、隐私及长期利益发生冲突时，优先保护人。';
 
 afterEach(() => {
   for (const directory of temporaryDirectories.splice(0)) {
@@ -86,6 +88,7 @@ describe('Sprint 002 brand foundation', () => {
         'brand/06_ProductPrinciples.md',
         'brand/07_BrandArchitecture.md',
         'brand/08_NamingBrief.md',
+        'brand/09_BrandGuardrails.md',
       ].includes(relativePath)
         ? 'approved'
         : 'proposed';
@@ -191,7 +194,7 @@ describe('Sprint 002 brand foundation', () => {
 
     expect(currentStatus).toContain('Brand DNA：`Approved`');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
-    expect(currentStatus).toContain('下一审核对象：Brand Guardrails');
+    expect(currentStatus).toContain('下一审核对象：Brand Foundation 整体完成状态');
     expect(currentStatus).toContain('Sprint 002 — Brand Foundation Review');
     expect(currentStatus).toContain('`Approved / Completed`');
 
@@ -300,7 +303,7 @@ describe('Sprint 002 brand foundation', () => {
     expect(missionVision).not.toContain(approvedCoreThesis);
 
     expect(currentStatus).toContain('Mission & Vision 派生说明：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Brand Guardrails');
+    expect(currentStatus).toContain('下一审核对象：Brand Foundation 整体完成状态');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('Mission & Vision 派生说明：`Approved`');
     expect(handoff).toContain('派生说明不是正式原文来源');
@@ -357,7 +360,7 @@ describe('Sprint 002 brand foundation', () => {
     expect(checklist).toContain('审核日期：2026-08-21');
     expect(changelog).toContain('Brand Values Founder Review 01 — 2026-08-21');
     expect(currentStatus).toContain('Brand Values：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Brand Guardrails');
+    expect(currentStatus).toContain('下一审核对象：Brand Foundation 整体完成状态');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('正式价值观只有八项');
     expect(handoff).toContain('Values Decision Rule 不是第九项价值观');
@@ -416,12 +419,12 @@ describe('Sprint 002 brand foundation', () => {
     expect(checklist).toContain('审核日期：2026-09-01');
     expect(changelog).toContain('Brand Personality Founder Review 01 — 2026-09-01');
     expect(currentStatus).toContain('Brand Personality：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Brand Guardrails');
+    expect(currentStatus).toContain('下一审核对象：Brand Foundation 整体完成状态');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('Brand Relationship Archetype：`可信赖的长期伙伴`');
     expect(handoff).toContain('尊重与诚实是人格表达底线');
     expect(bootstrap).toContain('Brand Personality 已正式 `Approved`');
-    expect(bootstrap).toContain('下一审核对象是 Brand Guardrails');
+    expect(bootstrap).toContain('下一审核对象是 Brand Foundation 整体完成状态');
   });
 
   test('approves Brand Voice as a cross-domain system with fifteen scenarios', () => {
@@ -529,12 +532,12 @@ describe('Sprint 002 brand foundation', () => {
     expect(checklist).toContain('审核日期：2026-09-19');
     expect(changelog).toContain('Brand Voice Founder Review 01 — 2026-09-19');
     expect(currentStatus).toContain('Brand Voice：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Brand Guardrails');
+    expect(currentStatus).toContain('下一审核对象：Brand Foundation 整体完成状态');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('Brand Voice：`Approved`');
     expect(handoff).toContain('15 类正式场景');
     expect(bootstrap).toContain('Brand Voice 已正式 `Approved`');
-    expect(bootstrap).toContain('下一审核对象是 Brand Guardrails');
+    expect(bootstrap).toContain('下一审核对象是 Brand Foundation 整体完成状态');
   });
 
   test('approves twelve mother-brand Product Principles and their review gate', () => {
@@ -632,17 +635,17 @@ describe('Sprint 002 brand foundation', () => {
 
     expect(architecture).toMatch(/\nstatus: approved\r?\n/);
     expect(naming).toMatch(/\nstatus: approved\r?\n/);
-    expect(guardrails).toMatch(/\nstatus: proposed\r?\n/);
+    expect(guardrails).toMatch(/\nstatus: approved\r?\n/);
     expect(checklist).toContain('Product Principles 整体 Approved');
     expect(checklist).toContain('审核日期：2026-09-19');
     expect(changelog).toContain('Product Principles Founder Review 01 — 2026-09-19');
     expect(currentStatus).toContain('Product Principles：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Brand Guardrails');
+    expect(currentStatus).toContain('下一审核对象：Brand Foundation 整体完成状态');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('Product Principles：`Approved`');
     expect(handoff).toContain('正式共有 12 项母品牌 Product Principles');
     expect(bootstrap).toContain('Product Principles 已正式 `Approved`');
-    expect(bootstrap).toContain('下一审核对象是 Brand Guardrails');
+    expect(bootstrap).toContain('下一审核对象是 Brand Foundation 整体完成状态');
   });
 
   test('approves the Branded House architecture and separable product boundaries', () => {
@@ -728,18 +731,18 @@ describe('Sprint 002 brand foundation', () => {
     expect(architecture).toContain('不得由 AI、Codex、自动化系统或产品建议算法自行升级');
 
     expect(naming).toMatch(/\nstatus: approved\r?\n/);
-    expect(guardrails).toMatch(/\nstatus: proposed\r?\n/);
+    expect(guardrails).toMatch(/\nstatus: approved\r?\n/);
     expect(checklist).toContain('Brand Architecture 整体 Approved');
     expect(checklist).toContain('审核日期：2026-09-23');
     expect(changelog).toContain('Brand Architecture Founder Review 01 — 2026-09-23');
     expect(currentStatus).toContain('Brand Architecture：`Approved`');
-    expect(currentStatus).toContain('下一审核对象：Brand Guardrails');
+    expect(currentStatus).toContain('下一审核对象：Brand Foundation 整体完成状态');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
     expect(handoff).toContain('Architecture type：`Branded House`');
     expect(handoff).toContain('Health lifecycle：`Validating`');
-    expect(handoff).toContain('下一审核对象：Brand Guardrails');
+    expect(handoff).toContain('下一审核对象：Brand Foundation 整体完成状态');
     expect(bootstrap).toContain('Brand Architecture 已正式 `Approved`');
-    expect(bootstrap).toContain('下一审核对象是 Brand Guardrails');
+    expect(bootstrap).toContain('下一审核对象是 Brand Foundation 整体完成状态');
   });
 
   test('approves the mother-brand Naming Brief without selecting a name', () => {
@@ -885,18 +888,96 @@ describe('Sprint 002 brand foundation', () => {
     expect(naming).toContain('Naming Brief Approved ≠ Final Brand Name Approved');
     expect(naming).not.toMatch(/^Approved Name[:：]\s*\S+/gm);
 
-    expect(guardrails).toMatch(/\nstatus: proposed\r?\n/);
+    expect(guardrails).toMatch(/\nstatus: approved\r?\n/);
     expect(checklist).toContain('Naming Brief 整体 Approved');
     expect(checklist).toContain('审核日期：2026-10-07');
     expect(changelog).toContain('Naming Brief Founder Review 01 — 2026-10-07');
     expect(currentStatus).toContain('Naming Brief：`Approved`');
     expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
-    expect(currentStatus).toContain('下一审核对象：Brand Guardrails');
+    expect(currentStatus).toContain('下一审核对象：Brand Foundation 整体完成状态');
     expect(handoff).toContain('Naming Brief：`Approved`，version `0.2.0`');
     expect(handoff).toContain('没有任何候选名称获批');
-    expect(handoff).toContain('下一审核对象：Brand Guardrails');
+    expect(handoff).toContain('下一审核对象：Brand Foundation 整体完成状态');
     expect(bootstrap).toContain('Naming Brief 已正式 `Approved`');
-    expect(bootstrap).toContain('下一审核对象是 Brand Guardrails');
+    expect(bootstrap).toContain('下一审核对象是 Brand Foundation 整体完成状态');
+  });
+
+  test('approves Brand Guardrails without approving the whole Brand Foundation', () => {
+    const guardrails = fs
+      .readFileSync(path.join(rootDir, 'brand', '09_BrandGuardrails.md'), 'utf8')
+      .replace(/\r\n/g, '\n');
+    const checklist = fs.readFileSync(
+      path.join(rootDir, 'brand', '10_FounderReviewChecklist.md'),
+      'utf8',
+    );
+    const currentStatus = fs.readFileSync(
+      path.join(rootDir, 'project', 'CurrentStatus.md'),
+      'utf8',
+    );
+    const handoff = fs.readFileSync(
+      path.join(rootDir, 'migration', 'AI_HANDOFF.md'),
+      'utf8',
+    );
+    const bootstrap = fs.readFileSync(
+      path.join(rootDir, 'migration', 'NEW_AI_BOOTSTRAP_PROMPT.md'),
+      'utf8',
+    );
+    const portability = fs.readFileSync(
+      path.join(rootDir, 'architecture', 'AIProviderPortability.md'),
+      'utf8',
+    );
+    const dataBoundaries = fs.readFileSync(
+      path.join(rootDir, 'architecture', 'DataOwnershipAndBoundaries.md'),
+      'utf8',
+    );
+
+    expect(guardrails).toMatch(/\nstatus: approved\n/);
+    expect(guardrails).toMatch(/\nversion: 0\.2\.0\n/);
+    expect(guardrails).toContain('last_updated: 2026-10-20');
+    expect(guardrails).toContain('owner: founder');
+    expect(guardrails).toContain('source_of_truth: true');
+    expect(guardrails).toContain(approvedGuardrailsDecisionRule);
+    expect(guardrails).toContain(
+      '无法证明风险处于可接受范围时，应暂停相关功能或行动并升级复核。',
+    );
+
+    for (const level of ['G0', 'G1', 'G2', 'G3']) {
+      expect(guardrails).toContain(`### ${level}`);
+    }
+    for (const factor of [
+      '潜在伤害',
+      '发生可能性',
+      '可逆性',
+      '数据敏感程度',
+      '影响范围',
+    ]) {
+      expect(guardrails).toContain(factor);
+    }
+
+    expect(guardrails).toContain('G3 Hard Stop');
+    expect(guardrails).toContain('G3 不得通过创始人个人例外授权绕过');
+    expect(guardrails).toContain('G2 专业复核');
+    expect(guardrails).toContain('普通低风险跑步建议不需要逐条医生审批');
+    expect(guardrails).toContain('广告定向');
+    expect(guardrails).toContain('保险风险定价或承保');
+    expect(guardrails).toContain('就业画像');
+    expect(guardrails).toContain('通用模型训练');
+    expect(guardrails).toContain('WCAG 2.2 AA');
+    expect(guardrails).toContain('https://www.w3.org/TR/WCAG22/');
+    expect(guardrails).toContain('Product Definition of Done 护栏门槛');
+    expect(guardrails).toContain('最长有效期为 30 天');
+    expect(guardrails).toContain('至少每季度一次');
+    expect(guardrails).toContain('AI 不得自动批准自身的高风险例外');
+
+    expect(checklist).toContain('Brand Guardrails 整体 Approved');
+    expect(checklist).toContain('审核日期：2026-10-20');
+    expect(currentStatus).toContain('Brand Guardrails：`Approved`');
+    expect(currentStatus).toContain('Brand Foundation：`Proposed / Founder Review`');
+    expect(currentStatus).toContain('Brand Foundation 整体完成状态：`Pending Founder Review`');
+    expect(handoff).toContain('Brand Guardrails：`Approved`，version `0.2.0`');
+    expect(bootstrap).toContain('Brand Guardrails 已正式 `Approved`');
+    expect(portability).toMatch(/\nstatus: proposed\r?\n/);
+    expect(dataBoundaries).toMatch(/\nstatus: proposed\r?\n/);
   });
 
   test('exports every brand file in the declared order at pack version 0.2.2', () => {
