@@ -133,6 +133,7 @@ describe('Sprint 001 foundation governance', () => {
         'brand/06_ProductPrinciples.md',
         'brand/07_BrandArchitecture.md',
         'brand/08_NamingBrief.md',
+        'brand/09_BrandGuardrails.md',
       ].includes(relativePath)
         ? 'approved'
         : 'proposed';

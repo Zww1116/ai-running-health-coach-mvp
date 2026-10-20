@@ -1,8 +1,8 @@
 ---
 title: Current Status
 status: approved
-version: 0.2.12
-last_updated: 2026-10-07
+version: 0.2.13
+last_updated: 2026-10-20
 owner: founder
 source_of_truth: true
 ---
@@ -27,7 +27,7 @@ Brand Foundation 当前状态为 `Proposed / Founder Review`。PR #2 已将 prop
 
 ## Brand Founder Review
 
-Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture 与 Naming Brief Founder Review 已完成。当前批准矩阵：
+Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture、Naming Brief 与 Brand Guardrails Founder Review 已完成。当前批准矩阵：
 
 - Core Expression: `Approved`
 - Mission: `Approved`
@@ -42,6 +42,7 @@ Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、B
 - Product Principles: `Approved`
 - Brand Architecture: `Approved`
 - Naming Brief: `Approved`
+- Brand Guardrails: `Approved`
 
 Brand DNA：`Approved`
 
@@ -61,9 +62,13 @@ Brand Architecture：`Approved`
 
 Naming Brief：`Approved`
 
+Brand Guardrails：`Approved`
+
 Brand Foundation：`Proposed / Founder Review`
 
-Brand Guardrails 继续保持 `proposed`。Naming Brief 已批准母品牌优先的命名目标、硬门槛、100 分比较机制、双语关系、命名流程与候选状态治理；它不批准任何候选名称。Mother Brand 继续为 `[Brand Name Pending]`，最终中文名、英文名、产品名、视觉、商标与域名仍未确定。
+Brand Foundation 整体完成状态：`Pending Founder Review`
+
+Brand Guardrails 已批准人的尊严与自主权保护、Guardrails Decision Rule、G0–G3 风险分级、G3 Hard Stop、G2 专业复核、敏感数据限制、WCAG 2.2 AA 长期目标、Product Definition of Done 护栏门槛、例外与风险升级机制。该批准不修改当前网站，也不自动批准 Brand Foundation 整体。Mother Brand 继续为 `[Brand Name Pending]`，最终中文名、英文名、产品名、视觉、商标与域名仍未确定。
 
 ## 在线网站
 
@@ -97,7 +102,7 @@ Sprint 002 — Brand Foundation Review。Brand Foundation proposed 文档基线�
 
 ## 下一步
 
-下一审核对象：Brand Guardrails。后续继续通过独立 Commit 或 PR 记录逐项审核决定。
+下一审核对象：Brand Foundation 整体完成状态。该复核必须独立进行，不得根据十份品牌正式来源已分别批准而自动得出整体 `approved` 结论。
 
 ## 当前风险
 
@@ -105,4 +110,4 @@ Sprint 002 — Brand Foundation Review。Brand Foundation proposed 文档基线�
 - 过于精确的演示数据可能看起来像真实个人资料，公开前仍需人工确认。
 - 未来 AI 集成不得绕过用户确认和数据最小化原则。
 - 二进制图片、未被 Git 跟踪的本地文件及外部服务数据不属于当前文本隐私审计范围。
-- Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture 与 Naming Brief 已整体 `approved`，Brand Guardrails 仍为 `proposed`。Naming Brief 的批准不等于最终品牌名批准；品牌名称、英文表达、视觉与商标可用性均未确定。
+- Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture、Naming Brief 与 Brand Guardrails 已分别 `approved`，但 Brand Foundation 整体仍为 `Proposed / Founder Review`。Naming Brief 的批准不等于最终品牌名批准；品牌名称、英文表达、视觉与商标可用性均未确定。

@@ -1,8 +1,8 @@
 ---
 title: Sprint 002 Brand Foundation
 status: proposed
-version: 0.1.12
-last_updated: 2026-10-07
+version: 0.1.13
+last_updated: 2026-10-20
 owner: product
 source_of_truth: true
 ---
@@ -19,7 +19,7 @@ Sprint 002。
 
 ## 背景
 
-Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Foundation 文档基线纳入 `main`；Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture 与 Naming Brief Founder Review 已完成，九份文件整体均已获批准。Brand Guardrails 继续保持 `proposed`。
+Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Foundation 文档基线纳入 `main`；Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture、Naming Brief 与 Brand Guardrails Founder Review 已完成，十份品牌正式来源均已分别获批准。Brand Foundation 整体仍为 `Proposed / Founder Review`。
 
 ## 目标
 
@@ -89,7 +89,7 @@ Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Founda
 
 ## 验收标准
 
-- 十三份品牌文件存在且元数据完整；Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture 与 Naming Brief 状态为 `approved`，Brand Guardrails 继续为 `proposed`。
+- 十三份品牌文件存在且元数据完整；十份品牌正式来源状态均为 `approved`，Brand Foundation 整体继续为 `Proposed / Founder Review`。
 - 已批准的核心表达只使用“记住来路，理解自己，成为自己。”。
 - 已批准的 Mission 使用 Brand DNA 中的准确原文。
 - 已批准的 Vision、Brand Promise 与 Core Thesis 使用 Brand DNA 中的准确原文。
@@ -116,6 +116,12 @@ Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Founda
 - 中英文遵循 `Meaning Consistency > Literal Translation`；Naming Territories 是创意搜索空间，不是候选名称。
 - Product naming 不得削弱母品牌或无意创造第二母品牌；正式 Naming Decision Rule 与 13 步独立 Naming Sprint Process 已批准。
 - Mother Brand 继续为 `[Brand Name Pending]`；本轮没有生成或批准候选名称，也没有得出商标、域名或账号最终可用性结论。
+- Guardrails Decision Rule、G0–G3 风险分级、G3 Hard Stop 与 G2 专业复核已批准。
+- G3 不得通过创始人例外绕过；G2 在适用专业复核完成前不得通过发布门槛。
+- 敏感数据广告、保险、就业画像及通用模型训练限制已批准；其他用途仍需独立审查。
+- WCAG 2.2 AA 是面向公众界面的长期目标，不构成本轮当前网站改造或合规达成声明。
+- Guardrails Review Gate、Product Definition of Done、30 天例外上限、季度复核及风险恢复机制已批准。
+- `architecture/AIProviderPortability.md` 与 `architecture/DataOwnershipAndBoundaries.md` 仍为 `proposed`，本轮没有静默升级其状态。
 - 用户自主判断优先于 AI 依赖，AI 与规则引擎均为可替换技术能力。
 - 品牌名称与视觉仍未确定。
 - 品牌文件按规定顺序进入单文件上下文和 AI-Core-Pack。
@@ -123,7 +129,7 @@ Sprint 001 Foundation 已获创始人批准并完成。PR #2 已将 Brand Founda
 
 ## 测试结果
 
-Naming Brief Review 01 增加状态、版本、Naming Objective、11 项要求、8 项 Red Flag、100 分权重、双语关系、Territories、母品牌与产品命名规则、Decision Rule、13 步流程、候选状态与 Pending 边界验证。完整测试通过：22 个测试文件、92 项测试全部通过。
+Brand Guardrails Review 01 增加状态、版本、Decision Rule、G0–G3、G3 Hard Stop、G2 专业复核、敏感数据限制、无障碍目标、Review Gate、Definition of Done、例外和风险恢复验证。完整测试通过：22 个测试文件、93 项测试全部通过。
 
 ## Build 结果
 
@@ -131,7 +137,7 @@ Naming Brief Review 01 增加状态、版本、Naming Objective、11 项要求�
 
 ## Privacy Audit 结果
 
-隐私审计扫描 174 个 Git 跟踪文本文件，没有发现高可信 Secret；保留 9 条既有人工复核 warning，均不来自本次 Naming Brief 变更。
+隐私审计扫描 174 个 Git 跟踪文本文件，没有发现高可信 Secret；保留 9 条既有人工复核 warning，本轮新增 warning 为 0。
 
 ## Foundation Validation 结果
 
@@ -139,31 +145,31 @@ Naming Brief Review 01 增加状态、版本、Naming Objective、11 项要求�
 
 ## AI 迁移包结果
 
-导出成功：`packVersion 0.2.2`、`projectVersion 0.2.2`，46 个合并来源、68 个 AI-Core-Pack 文件；完整索引与校验值验证通过。
+导出成功：`packVersion 0.2.2`、`projectVersion 0.2.2`，46 个合并来源、68 个 AI-Core-Pack 文件；`FILE_INDEX.md` 含 72 项，`CHECKSUMS.txt` 校验其自身以外 71 个最终文件且 0 错误。
 
 ## 待创始人确认内容
 
-- Brand Guardrails。
+- Brand Foundation 整体完成状态的独立创始人复核。
 - 最终品牌名称和英文核心表达。
 - 母品牌与 Health 的命名关系。
 - 视觉系统、商标、域名与品牌公开程度。
 
 ## 分支
 
-`codex/founder-naming-brief-review-01`
+`codex/founder-brand-guardrails-review-01`
 
 ## Commit
 
-建议提交标题为 `docs: approve Naming Brief v0.2.0`；准确 SHA 以该分支 Git 记录为准。
+建议提交标题为 `docs: approve Brand Guardrails v0.2.0`；准确 SHA 以该分支 Git 记录为准。
 
 ## Draft PR
 
-PR #2 至 PR #10 已依次记录并合并 Brand Foundation 基线、Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles 与 Brand Architecture 决策。本分支独立记录 Naming Brief Founder Review 01，并通过新的 Draft PR 审核；Brand Guardrails 仍为 `proposed`。
+PR #2 至 PR #11 已依次记录并合并 Brand Foundation 基线至 Naming Brief 的逐项决策。本分支独立记录 Brand Guardrails Founder Review 01，并通过新的 Draft PR 审核；本轮不得自动批准 Brand Foundation 整体。
 
 ## 已形成内容
 
-Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture 与 Naming Brief Founder Review completed。母品牌优先的命名治理、Hard Filter、100 分比较机制、双语关系、命名流程与候选状态已批准；最终品牌名仍为 Pending，当前 Health MVP 未改变。
+Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture、Naming Brief 与 Brand Guardrails Founder Review completed。正式护栏覆盖人的尊严与自主权、AI 与专业边界、敏感数据、商业伦理、风险分级、发布门槛、例外和恢复机制；最终品牌名仍为 Pending，当前 Health MVP 未改变。
 
 ## 仍待确认事项
 
-下一步：审核 Brand Guardrails。Brand Foundation 的整体批准、最终命名与视觉工作均不属于本 Sprint 的自动结论。
+下一步：独立审核 Brand Foundation 整体完成状态。逐项文件已批准不等于整体自动批准；最终命名与视觉工作也不属于本轮结论。

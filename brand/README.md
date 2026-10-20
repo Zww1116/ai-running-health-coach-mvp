@@ -1,8 +1,8 @@
 ---
 title: Brand Foundation Index
 status: proposed
-version: 0.1.11
-last_updated: 2026-10-07
+version: 0.1.12
+last_updated: 2026-10-20
 owner: founder
 source_of_truth: true
 ---
@@ -15,7 +15,8 @@ source_of_truth: true
 
 ## 当前品牌状态
 
-- Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture 与 Naming Brief 已获创始人批准；Brand Guardrails 继续保持 `proposed`，当前处于创始人逐项审核阶段。
+- Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture、Naming Brief 与 Brand Guardrails 已获创始人逐项批准。
+- Brand Foundation 整体继续保持 `Proposed / Founder Review`；整体完成状态必须单独审核，不随单文件批准自动改变。
 - Brand DNA 不等于最终品牌名称；品牌名称尚未确定。
 - 品牌视觉尚未开始，Logo、颜色、字体、图标和视觉系统均未确定。
 - 母品牌面向未来公众；当前 Health 产品先作为创始人的私人产品进行真实验证，不提前增加与验证无关的公众产品复杂度。
@@ -47,7 +48,7 @@ Brand DNA 是品牌核心原文的唯一正式来源。Values、Voice、Product 
 - `approved`：仅能由创始人完成逐项审核后设置。
 - `deprecated` 或 `archived`：应记录替代关系与原因。
 
-本目录当前有 [Brand DNA](00_BrandDNA.md)、[Brand Positioning](01_BrandPositioning.md)、[Mission & Vision 派生说明](02_MissionVision.md)、[Brand Values](03_BrandValues.md)、[Brand Personality](04_BrandPersonality.md)、[Brand Voice](05_BrandVoice.md)、[Product Principles](06_ProductPrinciples.md)、[Brand Architecture](07_BrandArchitecture.md) 与 [Naming Brief](08_NamingBrief.md) 九份文件的整体状态为 `approved`；Brand Guardrails 继续保持 `proposed`。Mission & Vision 派生说明仍为 `source_of_truth: false`。Naming Brief 只批准命名治理规则，最终品牌名称仍为 Pending。
+本目录当前有 [Brand DNA](00_BrandDNA.md)、[Brand Positioning](01_BrandPositioning.md)、[Mission & Vision 派生说明](02_MissionVision.md)、[Brand Values](03_BrandValues.md)、[Brand Personality](04_BrandPersonality.md)、[Brand Voice](05_BrandVoice.md)、[Product Principles](06_ProductPrinciples.md)、[Brand Architecture](07_BrandArchitecture.md)、[Naming Brief](08_NamingBrief.md) 与 [Brand Guardrails](09_BrandGuardrails.md) 十份文件的整体状态为 `approved`。Mission & Vision 派生说明仍为 `source_of_truth: false`。Naming Brief 只批准命名治理规则，最终品牌名称仍为 Pending；十份文件分别获批也不等于 Brand Foundation 整体已获批准。
 
 ## 品牌变更流程
 
@@ -64,7 +65,7 @@ Brand DNA 是品牌核心原文的唯一正式来源。Values、Voice、Product 
 
 ## 已形成内容
 
-已形成完整的品牌基础结构、正式来源关系、审核与变更流程，以及与当前 Health 产品相适配的边界；Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture 与 Naming Brief 已完成审核，Brand Guardrails 继续保持 `proposed`，下一审核对象为 Brand Guardrails。
+已形成完整的品牌基础结构、正式来源关系、审核与变更流程，以及与当前 Health 产品相适配的边界；十份品牌正式来源均已完成逐项审核。下一审核对象为 Brand Foundation 整体完成状态。
 
 ## 仍待确认事项
 
@@ -72,7 +73,7 @@ Brand DNA 是品牌核心原文的唯一正式来源。Values、Voice、Product 
 - 母品牌与 Health 的最终命名关系。
 - Logo、颜色、字体、视觉风格。
 - 商标、域名和社交账号可用性。
-- Brand Foundation 其余文件是否可以转为 `approved`。
+- Brand Foundation 整体是否完成并可转为 `approved`，仍需创始人单独复核。
 
 ## 不允许存放的内容
 
