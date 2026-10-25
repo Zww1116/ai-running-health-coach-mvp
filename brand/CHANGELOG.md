@@ -1,13 +1,26 @@
 ---
 title: Brand Changelog
 status: proposed
-version: 0.1.11
-last_updated: 2026-10-07
+version: 0.1.12
+last_updated: 2026-10-20
 owner: founder
 source_of_truth: true
 ---
 
 # 品牌变更记录
+
+## Brand Guardrails Founder Review 01 — 2026-10-20
+
+**Brand Guardrails 状态：** `Approved`
+
+**创始人决定：**
+
+- 批准人的尊严、自主权、安全和长期利益保护框架，`brand/09_BrandGuardrails.md` 升级为 `0.2.0`。
+- 批准 Guardrails Decision Rule、G0–G3 风险分级、G3 Hard Stop 与 G2 专业复核机制。
+- 批准敏感数据商业用途及通用模型训练限制、WCAG 2.2 AA 长期目标和技术资产独立性要求。
+- 批准 Guardrails Review Gate、Product Definition of Done 护栏门槛、风险升级与恢复机制。
+- 创始人例外仅适用于可例外的流程要求，最长 30 天并至少每季度集中复核；G3、法律义务和不可豁免安全要求不得例外。
+- Brand Foundation 整体仍为 `Proposed / Founder Review`；下一审核对象为 Brand Foundation 整体完成状态。最终品牌名称继续为 Pending。
 
 ## Naming Brief Founder Review 01 — 2026-10-07
 

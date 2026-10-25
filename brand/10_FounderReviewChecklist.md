@@ -1,8 +1,8 @@
 ---
 title: Founder Review Checklist
 status: proposed
-version: 0.1.10
-last_updated: 2026-10-07
+version: 0.1.11
+last_updated: 2026-10-20
 owner: founder
 source_of_truth: false
 ---
@@ -111,14 +111,18 @@ source_of_truth: false
 
 ## Guardrails
 
-- [ ] 我是否认可这一表述：
-- [ ] 哪些词最像我：
-- [ ] 哪些词不像我：
-- [ ] 哪些内容需要删除：
-- [ ] 哪些内容需要补充：
-- [ ] 是否可以转为 `approved`：
-- 创始人备注：
-- 审核日期：
+- [x] 人的尊严、自主权、安全与长期利益保护框架已批准。
+- [x] Guardrails Decision Rule 已批准。
+- [x] G0–G3 风险分级与 G3 Hard Stop 已批准。
+- [x] G2 专业复核、可审计记录与风险相称原则已批准。
+- [x] 敏感数据商业用途和通用模型训练限制已批准。
+- [x] WCAG 2.2 AA 长期无障碍目标已批准。
+- [x] Guardrails Review Gate 与 Product Definition of Done 护栏门槛已批准。
+- [x] 创始人例外权限边界、30 天有效期和季度复核已批准。
+- [x] 风险升级、责任归属、恢复条件及 AI 不得自批高风险例外已批准。
+- [x] Brand Guardrails 整体 Approved。
+- 创始人备注：本次只批准 Brand Guardrails；G3 不可通过创始人例外绕过。Brand Foundation 整体完成状态仍须独立复核，继续保持 `Proposed / Founder Review`。
+- 审核日期：2026-10-20。
 
 ## 已形成内容
 
@@ -126,7 +130,7 @@ source_of_truth: false
 
 ## 仍待确认事项
 
-Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture 与 Naming Brief 已完成审核；Brand Guardrails 仍等待创始人逐项确认，下一审核对象为 Brand Guardrails。
+Brand DNA、Brand Positioning、Mission & Vision 派生说明、Brand Values、Brand Personality、Brand Voice、Product Principles、Brand Architecture、Naming Brief 与 Brand Guardrails 均已完成逐项审核。下一审核对象为 Brand Foundation 整体完成状态；逐项文件批准不会自动将 Brand Foundation 整体转为 `approved`。
 
 ## 尚未确认的重大问题
 

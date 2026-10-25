@@ -1,8 +1,8 @@
 ---
 title: New AI Bootstrap Prompt
 status: approved
-version: 0.2.11
-last_updated: 2026-10-07
+version: 0.2.12
+last_updated: 2026-10-20
 owner: product
 source_of_truth: true
 ---
@@ -18,7 +18,7 @@ source_of_truth: true
 3. 将 project/SourceOfTruth.md 指定的文件视为唯一正式来源。
 4. 尊重文档状态：draft、proposed、approved、deprecated、archived；不得擅自改变状态。
 5. 明确 Foundation 已是 Approved / Completed；ADR-0001 至 ADR-0004 均为 approved。
-6. 明确 Brand DNA 已正式 `Approved`，Brand Positioning 已正式 `Approved`，Mission & Vision 派生说明已正式 `Approved`，Brand Values 已正式 `Approved`，Brand Personality 已正式 `Approved`，Brand Voice 已正式 `Approved`，Product Principles 已正式 `Approved`，Brand Architecture 已正式 `Approved`，Naming Brief 已正式 `Approved`；Brand Guardrails 仍为 proposed，Brand Foundation 尚未整体批准。创始人审核清单不是正式品牌结论，合并 proposed 文件不等于 Brand Approval。
+6. 明确 Brand DNA 已正式 `Approved`，Brand Positioning 已正式 `Approved`，Mission & Vision 派生说明已正式 `Approved`，Brand Values 已正式 `Approved`，Brand Personality 已正式 `Approved`，Brand Voice 已正式 `Approved`，Product Principles 已正式 `Approved`，Brand Architecture 已正式 `Approved`，Naming Brief 已正式 `Approved`，Brand Guardrails 已正式 `Approved`；Brand Foundation 尚未整体批准。创始人审核清单不是正式品牌结论；合并 proposed 文件不等于 Brand Approval；单文件获批不等于 Brand Foundation 整体获批。
 7. 已批准的品牌核心表达、Mission、Vision、Brand Promise 与 Core Thesis 必须从 brand/00_BrandDNA.md 读取准确原文，不得改写或创建替代版本。
 8. 已批准的母品牌定位必须从 brand/01_BrandPositioning.md 读取；不得继续把 `AI 成长伙伴品牌` 定义为正式母品牌类别。
 9. 已批准的派生决策说明从 brand/02_MissionVision.md 读取，但派生说明不是正式原文来源；不得用它改写 Brand DNA。
@@ -38,7 +38,7 @@ source_of_truth: true
 23. 明确母品牌面向未来公众，当前 Health 产品处于创始人私人真实验证阶段；不得因公众方向而提前增加与当前验证无关的复杂功能。
 24. 明确品牌名称、英文核心表达、Logo、颜色、字体、视觉、商标和域名均未确定；不得自行命名或宣布结论。
 25. 明确用户自主判断优先于 AI 依赖；AI 是可替换技术能力，不是品牌长期愿景的主体；规则引擎与未来技术同样是可替换能力，核心 Prompt、Agent、Schema 和知识不得锁定在单一提供商。
-26. 明确下一审核对象是 Brand Guardrails；不得跳过创始人审核改变状态。
+26. 明确 Brand Guardrails 已正式 `Approved`，version `0.2.0`。遵守 Guardrails Decision Rule、G0–G3 风险分级、不可例外的 G3 Hard Stop、G2 专业复核、敏感数据用途限制、WCAG 2.2 AA 长期目标、Product Definition of Done、30 天例外上限及风险升级规则；AI 不得批准自身的高风险例外。下一审核对象是 Brand Foundation 整体完成状态，不得根据十份品牌正式来源已分别获批而自动批准整体。
 27. 明确公开网站可以继续访问，当前公开仓库是过渡安排；当前不授予开源许可证，未经创始人另行批准默认保留全部权利。
 28. 不要依据旧聊天记录猜测项目结论，不得虚构创始人私人经历或品牌故事。
 29. 未经创始人明确批准，不得修改已确认决策或把 proposed 改为 approved。
